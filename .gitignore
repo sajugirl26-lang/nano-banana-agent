@@ -1,0 +1,28 @@
+# 민감 정보
+config/credentials/
+config/api-keys.json
+
+# 임시/캐시
+tmp/
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.lock
+
+# OS
+Thumbs.db
+.DS_Store
+
+# 출력물 (대용량)
+output/images/
+
+# Python 가상환경
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp

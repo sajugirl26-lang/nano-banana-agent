@@ -1,0 +1,44 @@
+{
+  "templates": [
+    {
+      "id": "style_01",
+      "text": "첨부 이미지의 디자인 퀄리티·컬러 감각·재질 표현·조명 무드를 충실히 흡수하되, 피사체는 새롭게 {word1}({word1_en})과 {word2}({word2_en})로 재해석하여 완성도 높은 이미지를 만들어줘"
+    },
+    {
+      "id": "style_02",
+      "text": "첨부 이미지의 색감·질감·분위기·렌더링 퀄리티를 깊이 참고하여 {word1}({word1_en})과 {word2}({word2_en})를 결합한 새로운 고퀄리티 이미지를 만들어줘. 레퍼런스의 오브젝트가 아닌 스타일을 흡수해줘. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo"
+    },
+    {
+      "id": "style_03",
+      "text": "첨부 이미지에서 느껴지는 무드·컬러톤·라이팅·소재의 질감을 유지하면서 {word1}({word1_en})과 {word2}({word2_en})를 결합한 기발하고 디테일한 이미지를 만들어줘"
+    },
+    {
+      "id": "style_04",
+      "text": "첨부 이미지의 비주얼 완성도와 색채 감각을 그대로 이어받아 {word1}({word1_en})과 {word2}({word2_en})를 결합한 상상력 넘치는 이미지를 만들어줘. 피사체만 새롭게 표현해줘. a stylized realism 3D render, slightly exaggerated forms with realistic textures, accurate reflections, filmic lens look, shallow depth of field, no text, no logo"
+    },
+    {
+      "id": "style_05",
+      "text": "첨부 이미지의 톤·무드·컬러 팔레트·텍스처 퀄리티를 충실히 반영하되 주제는 {word1}({word1_en})과 {word2}({word2_en})로 완전히 새롭게 만들어줘"
+    },
+    {
+      "id": "style_06",
+      "text": "첨부 이미지가 가진 디자인적 감각(색감, 조명, 재질, 공간감)을 살려서 {word1}({word1_en})과 {word2}({word2_en})를 결합한 재치있고 완성도 높은 이미지를 만들어줘. a high-end PBR 3D render (Octane/Redshift vibe), realistic materials for fabric, accurate roughness maps, strong sunlight with sharp shadows, preserve colors, no text, no logo"
+    },
+    {
+      "id": "style_07",
+      "text": "첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 {word1}({word1_en})과 {word2}({word2_en})를 결합한 프로페셔널한 이미지를 만들어줘"
+    },
+    {
+      "id": "style_08",
+      "text": "첨부 이미지의 비주얼 톤과 퀄리티를 기준으로 삼아 {word1}({word1_en})과 {word2}({word2_en})를 결합한 리얼리스틱하고 디테일한 이미지를 만들어줘. 레퍼런스의 스타일만 흡수하고 주제는 새롭게. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo"
+    },
+    {
+      "id": "style_09",
+      "text": "첨부 이미지를 스타일 무드보드로 삼아 컬러톤·재질감·공간 분위기·디자인 퀄리티를 깊이 참고하여 {word1}({word1_en})과 {word2}({word2_en})를 결합한 영감을 주는 이미지를 만들어줘"
+    },
+    {
+      "id": "style_10",
+      "text": "첨부 이미지의 아트 디렉션(색상, 질감, 조명, 무드)을 충실히 따르되 {word1}({word1_en})과 {word2}({word2_en})를 주제로 새롭게 표현한 흥미로운 이미지를 만들어줘. a stylized realism 3D render, slightly exaggerated forms with realistic textures, accurate reflections, filmic lens look, shallow depth of field, no text, no logo"
+    }
+  ]
+}

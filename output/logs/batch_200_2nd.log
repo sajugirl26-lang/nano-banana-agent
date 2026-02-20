@@ -1,0 +1,93 @@
+[Nano-Banana] Batch Mode
+  target: 200
+  boards: 26
+==================================================
+[OK] 새 세션 생성: ses_20260218_194329 (200쌍)
+
+[START] session ses_20260218_194329
+
+[1/200] 구형 조이스틱 x 눈 [OK] $0.134 (1376x768)
+  [WAIT] 38s ... OK
+
+[2/200] 블록 레고 x 원자  [WARN] ref pins 2 (min 3 recommended)
+ [OK] $0.134 (1376x768)
+  [WAIT] 60s ... OK
+
+[3/200] 명찰 x 유리구슬 [OK] $0.134 (1376x768)
+  [WAIT] 43s ... OK
+
+[4/200] 나무 x 덩굴 [OK] $0.134 (1024x1024)
+  [WAIT] 46s ... OK
+
+[5/200] 오디오 테이프 x 조화 [OK] $0.134 (1024x1024)
+  [WAIT] 50s ... OK
+
+[6/200] 키보드 x 비 [OK] $0.134 (944x1136)
+  [WAIT] 49s ... OK
+
+[7/200] 햇빛 x 꿈 [OK] $0.134 (768x1376)
+  [WAIT] 30s ... OK
+
+[8/200] 닌텐도 마리오 x 문 [OK] $0.134 (1376x768)
+  [WAIT] 54s ... OK
+
+[9/200] 사람들의 욕구 x 블랙홀  [WARN] ref pins 2 (min 3 recommended)
+ [OK] $0.134 (1376x768)
+  [WAIT] 47s ... OK
+
+[10/200] 트랜지스터 라디오 x 별자리  [WARN] ref pins 2 (min 3 recommended)
+ [OK] $0.134 (1152x928)
+  [WAIT] 33s ... OK
+
+[11/200] 명찰 x 지하철  [WARN] ref pins 2 (min 3 recommended)
+ [OK] $0.134 (1200x896)
+  [WAIT] 51s ... OK
+
+[12/200] 나비 x 우산 [OK] $0.134 (928x1152)
+  [WAIT] 44s ... OK
+
+[13/200] 하트 x 심장 [OK] $0.134 (1376x768)
+  [WAIT] 58s ... OK
+
+[14/200] 기업의 로고 x 혼돈  [WARN] ref pins 2 (min 3 recommended)
+ [OK] $0.134 (1376x768)
+  [WAIT] 51s ... OK
+
+[15/200] 로에베 x 낙엽 [OK] $0.134 (768x1376)
+  [WAIT] 44s ... OK
+
+[16/200] 구글 x 열정  [WARN] ref pins 2 (min 3 recommended)
+ [OK] $0.134 (1376x768)
+  [WAIT] 57s ... OK
+
+[17/200] 오리 인형 x 열정 [OK] $0.134 (768x1376)
+  [WAIT] 30s ... OK
+
+[18/200] 크래커 x 오로라  [WARN] ref pins 2 (min 3 recommended)
+ [OK] $0.134 (1376x768)
+  [WAIT] 37s ... OK
+
+[19/200] 별 x 안개  [WARN] ref pins 2 (min 3 recommended)
+ [OK] $0.134 (928x1152)
+  [WAIT] 54s ... OK
+
+[20/200] 촛불 x 부두 [OK] $0.134 (832x1280)
+  [WAIT] 43s ... OK
+
+[21/200] 날개 x 가시  [WARN] ref pins 2 (min 3 recommended)
+ [OK] $0.134 (1024x1024)
+  [WAIT] 56s ... OK
+
+[22/200] 푸딩 x 환상  [WARN] ref pins 2 (min 3 recommended)
+ [OK] $0.134 (768x1376)
+  [WAIT] 57s ... OK
+
+[23/200] 폴라로이드 x 고양이 [OK] $0.134 (928x1152)
+  [WAIT] 36s ... OK
+
+[24/200] 선글라스 x 경이 [OK] $0.134 (848x1264)
+  [WAIT] 54s ... OK
+
+[25/200] 필통 x 폭포 [OK] $0.134 (1024x1024)
+  [WAIT] 30s ...8x1152)
+  [WAIT] 58s ...

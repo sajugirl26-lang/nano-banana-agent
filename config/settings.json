@@ -1,0 +1,33 @@
+{
+  "model_pro": "gemini-3-pro-image-preview",
+  "model_flash": "gemini-2.5-flash-image",
+  "generation": {
+    "ref_images_per_request": 5,
+    "min_ref_images": 3,
+    "max_inline_mb": 20
+  },
+  "pinterest": {
+    "cache_ttl_hours": 1,
+    "download_workers": 8,
+    "max_image_size_mb": 3,
+    "resize_max_px": 1500,
+    "jpeg_quality": 80,
+    "success_threshold": 0.8
+  },
+  "session": {
+    "word1_repeat_max": 3,
+    "flash_pro_retry_interval": 10,
+    "consecutive_error_threshold": 5,
+    "error_wait_seconds": 30,
+    "all_exhausted_wait_seconds": 60
+  },
+  "notifications": {
+    "slack_webhook_url": "https://hooks.slack.com/services/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",
+    "events": {
+      "session_complete": true,
+      "model_switch_to_flash": true,
+      "consecutive_errors_threshold": 5,
+      "cost_limit_reached": true
+    }
+  }
+}

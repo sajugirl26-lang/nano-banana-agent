@@ -1,0 +1,23 @@
+{
+  "limits": {
+    "daily_cost_cap": 100.0,
+    "monthly_cost_cap": 500.0,
+    "session_cost_cap_default": null
+  },
+  "daily": {
+    "date": "2026-02-20",
+    "pro_count": 164,
+    "pro_cost": 21.976,
+    "flash_count": 0,
+    "flash_cost": 0.0,
+    "total_cost": 21.976
+  },
+  "monthly": {
+    "month": "2026-02",
+    "pro_count": 838,
+    "pro_cost": 112.292,
+    "flash_count": 233,
+    "flash_cost": 9.087,
+    "total_cost": 121.379
+  }
+}

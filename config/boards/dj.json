@@ -1,0 +1,31 @@
+{
+  "board_name": "dj",
+  "board_url": "https://kr.pinterest.com/dolchea6/dj/",
+  "is_private": false,
+  "collected_at": "2026-02-17T16:04:22.721772+00:00",
+  "last_incremental_update": "2026-02-17T16:04:22.721772+00:00",
+  "pin_count": 3,
+  "pins": [
+    {
+      "pin_id": "914090055632406076",
+      "image_url": "https://i.pinimg.com/originals/71/c3/47/71c34785208e10c91f824eefa9e9c105.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:04:22.721772+00:00",
+      "local_cache": "D:\\01\\nano-banana-agent\\tmp\\pins\\dj\\914090055632406076.jpg"
+    },
+    {
+      "pin_id": "914090055632406073",
+      "image_url": "https://i.pinimg.com/originals/b7/2b/03/b72b0340906e95368826878b1617ea21.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:04:22.721772+00:00",
+      "local_cache": "D:\\01\\nano-banana-agent\\tmp\\pins\\dj\\914090055632406073.jpg"
+    },
+    {
+      "pin_id": "914090055631624332",
+      "image_url": "https://i.pinimg.com/originals/8a/97/1e/8a971ec1fc5bf5211eee45b3f1db5462.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:04:22.721772+00:00",
+      "local_cache": "D:\\01\\nano-banana-agent\\tmp\\pins\\dj\\914090055631624332.jpg"
+    }
+  ]
+}

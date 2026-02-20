@@ -1,0 +1,1848 @@
+{
+  "session_id": "ses_260219_234620",
+  "started_at": "2026-02-19T14:46:21.155222+00:00",
+  "boards_used": [
+    "2503",
+    "2503_02",
+    "2506",
+    "2d graphic",
+    "artwork",
+    "bok",
+    "chrome",
+    "coex",
+    "dj",
+    "exterior",
+    "flower",
+    "idea",
+    "interior",
+    "interior_productbg",
+    "motion",
+    "new",
+    "nr2",
+    "object",
+    "object_2509",
+    "pink_interior",
+    "prada",
+    "prada2",
+    "robot_hand",
+    "sa",
+    "statue",
+    "td"
+  ],
+  "settings": {
+    "target_count": 200,
+    "max_duration_hours": -1,
+    "session_cost_cap": null
+  },
+  "word_pairs": [
+    {
+      "word1": "글라마라티",
+      "word1_en": "glamoratti, 80s glam fashion, bold shoulder sculptural",
+      "word2": "미세한",
+      "word2_en": "microscopic, tiny intricacy",
+      "combo_id": "260219_0783",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "아프로헤미안",
+      "word1_en": "afrohemian, African bohemian decor, natural fiber rattan",
+      "word2": "현미경",
+      "word2_en": "microscope, tiny revealer",
+      "combo_id": "260219_0784",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "온실",
+      "word1_en": "greenhouse, glass garden, lush botanical",
+      "word2": "용암",
+      "word2_en": "lava, molten rock",
+      "combo_id": "260219_0785",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "버블코어",
+      "word1_en": "bubblecore, pastel bubbles, playful inflated aesthetic",
+      "word2": "나사",
+      "word2_en": "screw, spiral thread, fastening helix",
+      "combo_id": "260219_0786",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "모래시계",
+      "word1_en": "hourglass, flowing sand, time vessel",
+      "word2": "계단",
+      "word2_en": "staircase, ascending path",
+      "combo_id": "260219_0787",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "디즈니캐릭터",
+      "word1_en": "Disney character, animated icon, magical world",
+      "word2": "리본",
+      "word2_en": "ribbon, silk strip, decorative bow",
+      "combo_id": "260219_0788",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "폐허",
+      "word1_en": "ruins, crumbling stone, forgotten place",
+      "word2": "양자",
+      "word2_en": "quantum, probabilistic state",
+      "combo_id": "260219_0789",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "키네틱 타이포",
+      "word1_en": "kinetic typography, moving text, animated letter",
+      "word2": "반지",
+      "word2_en": "ring, circular bond",
+      "combo_id": "260219_0790",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "지하철",
+      "word1_en": "subway, urban tunnel, neon underground",
+      "word2": "홀씨",
+      "word2_en": "dandelion seed, wind traveler",
+      "combo_id": "260219_0791",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "태양",
+      "word1_en": "sun, blazing star, radiant circle",
+      "word2": "양초",
+      "word2_en": "wax candle, dripping form, slow melt",
+      "combo_id": "260219_0792",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "스마일",
+      "word1_en": "smile, curved lips, cheerful face",
+      "word2": "개미",
+      "word2_en": "ant, organized colony, tiny strength",
+      "combo_id": "260219_0793",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "코티지코어",
+      "word1_en": "cottagecore, rural charm, wildflower pastoral",
+      "word2": "공명",
+      "word2_en": "resonance, sympathetic vibration",
+      "combo_id": "260219_0794",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "프리즘",
+      "word1_en": "prism, light splitter, rainbow maker",
+      "word2": "소용돌이",
+      "word2_en": "vortex, spiraling force",
+      "combo_id": "260219_0795",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "조개",
+      "word1_en": "seashell, spiral chamber, ocean memory",
+      "word2": "빙하",
+      "word2_en": "glacier, ancient ice",
+      "combo_id": "260219_0796",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "아이소메트릭",
+      "word1_en": "isometric, angled perspective, flat 3D",
+      "word2": "척추",
+      "word2_en": "spine, central column",
+      "combo_id": "260219_0797",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "연필",
+      "word1_en": "pencil, graphite trace, creative tool",
+      "word2": "만화경",
+      "word2_en": "kaleidoscope, symmetrical pattern",
+      "combo_id": "260219_0798",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "루빅스 큐브",
+      "word1_en": "Rubik's cube, color puzzle, twisting logic",
+      "word2": "운명",
+      "word2_en": "fate, predetermined path, cosmic design",
+      "combo_id": "260219_0799",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "키네틱 아트",
+      "word1_en": "kinetic art, moving sculpture, mechanical beauty",
+      "word2": "투명한",
+      "word2_en": "transparent, see-through clarity",
+      "combo_id": "260219_0800",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "입술",
+      "word1_en": "lips, speaking curve, sensual form",
+      "word2": "안테나",
+      "word2_en": "antenna, signal receiver",
+      "combo_id": "260219_0801",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "메타",
+      "word1_en": "Meta, infinity loop, digital connection",
+      "word2": "노끈",
+      "word2_en": "rope, twisted fiber, binding cord",
+      "combo_id": "260219_0802",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "곰돌이 캐릭터",
+      "word1_en": "bear doll character, stuffed teddy, plush figure",
+      "word2": "기어",
+      "word2_en": "mechanical gear, interlocking teeth",
+      "combo_id": "260219_0803",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "조개",
+      "word1_en": "seashell, spiral chamber, ocean memory",
+      "word2": "꿈",
+      "word2_en": "dream, surreal landscape, sleeping vision",
+      "combo_id": "260219_0804",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "로에베",
+      "word1_en": "Loewe, luxury craft, anagram logo",
+      "word2": "고대",
+      "word2_en": "ancient, primordial, timeworn mystery",
+      "combo_id": "260219_0805",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "연필",
+      "word1_en": "pencil, graphite trace, creative tool",
+      "word2": "경이",
+      "word2_en": "wonder, awe, breathtaking marvel",
+      "combo_id": "260219_0806",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "웃음",
+      "word1_en": "laughter, joyful burst, happy sound",
+      "word2": "만다라",
+      "word2_en": "mandala, geometric cosmos",
+      "combo_id": "260219_0807",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "서재",
+      "word1_en": "study room, wooden desk, scholarly retreat",
+      "word2": "터널",
+      "word2_en": "tunnel, passage through",
+      "combo_id": "260219_0808",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "액자",
+      "word1_en": "picture frame, bordered view, contained art",
+      "word2": "유리구슬",
+      "word2_en": "glass marble, captured world",
+      "combo_id": "260219_0809",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "스누피",
+      "word1_en": "Snoopy, Peanuts beagle, classic cartoon dog",
+      "word2": "기쁨",
+      "word2_en": "joy, elation, radiant happiness",
+      "combo_id": "260219_0810",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "유리병",
+      "word1_en": "glass bottle, transparent vessel, captured light",
+      "word2": "화석",
+      "word2_en": "fossil, time-preserved life",
+      "combo_id": "260219_0811",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "촛불",
+      "word1_en": "candle, flickering flame, warm wax",
+      "word2": "기쁨",
+      "word2_en": "joy, elation, radiant happiness",
+      "combo_id": "260219_0812",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "물방울",
+      "word1_en": "water drop, liquid lens, surface tension",
+      "word2": "외로움",
+      "word2_en": "loneliness, solitude, distant echo",
+      "combo_id": "260219_0813",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "스티커",
+      "word1_en": "sticker, adhesive art, peel-and-stick",
+      "word2": "존재",
+      "word2_en": "existence, being itself, fundamental presence",
+      "combo_id": "260219_0814",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "키보드",
+      "word1_en": "keyboard, key grid, typing device",
+      "word2": "진주",
+      "word2_en": "pearl, lustrous sphere, layered nacre",
+      "combo_id": "260219_0815",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "스테인드글라스",
+      "word1_en": "stained glass, colored light, mosaic window",
+      "word2": "그네",
+      "word2_en": "swing, pendulum arc, soaring child",
+      "combo_id": "260219_0816",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "모래시계",
+      "word1_en": "hourglass, flowing sand, time vessel",
+      "word2": "시간",
+      "word2_en": "time, ceaseless flow, measured eternity",
+      "combo_id": "260219_0817",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "레고",
+      "word1_en": "LEGO, building brick, snap-together block",
+      "word2": "용기",
+      "word2_en": "courage, bold flame, unyielding spirit",
+      "combo_id": "260219_0818",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "하트",
+      "word1_en": "heart, love symbol, red shape",
+      "word2": "타로카드",
+      "word2_en": "tarot card, mystical image, divination art",
+      "combo_id": "260219_0819",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "수영장",
+      "word1_en": "swimming pool, rippling blue, summer reflection",
+      "word2": "모비우스",
+      "word2_en": "mobius strip, infinite loop",
+      "combo_id": "260219_0820",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "모래시계",
+      "word1_en": "hourglass, flowing sand, time vessel",
+      "word2": "용기",
+      "word2_en": "courage, bold flame, unyielding spirit",
+      "combo_id": "260219_0821",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "용기",
+      "word1_en": "courage, bold heart, fearless spirit",
+      "word2": "거북이",
+      "word2_en": "turtle, patterned shell, ancient patience",
+      "combo_id": "260219_0822",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "보보코어",
+      "word1_en": "bobocore, bohemian bourgeois, eclectic layered style",
+      "word2": "갑옷",
+      "word2_en": "armor, protective shell",
+      "combo_id": "260219_0823",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "코티지가든",
+      "word1_en": "cottage garden, English wildflower, overgrown pastoral bloom",
+      "word2": "광산",
+      "word2_en": "mine, underground extraction",
+      "combo_id": "260219_0824",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "강아지 캐릭터",
+      "word1_en": "dog character, puppy figure, loyal companion",
+      "word2": "운명",
+      "word2_en": "fate, predetermined path, cosmic design",
+      "combo_id": "260219_0825",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "레이스",
+      "word1_en": "lace, delicate mesh pattern, intricate textile texture",
+      "word2": "불꽃",
+      "word2_en": "flame, dancing fire, crackling warmth",
+      "combo_id": "260219_0826",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "별",
+      "word1_en": "star, twinkling point, celestial light",
+      "word2": "안테나",
+      "word2_en": "antenna, signal receiver",
+      "combo_id": "260219_0827",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "보로노이",
+      "word1_en": "Voronoi diagram, cell pattern, organic grid",
+      "word2": "고래",
+      "word2_en": "whale, ocean giant, deep song",
+      "combo_id": "260219_0828",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "꽃",
+      "word1_en": "flower, delicate bloom, petal beauty",
+      "word2": "빙수",
+      "word2_en": "shaved ice, fluffy snow, sweet topping",
+      "combo_id": "260219_0829",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "연필",
+      "word1_en": "pencil, graphite trace, creative tool",
+      "word2": "포탈",
+      "word2_en": "portal, dimensional gateway, swirling vortex",
+      "combo_id": "260219_0830",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "필통",
+      "word1_en": "pencil case, stationery pouch, student tool",
+      "word2": "새벽",
+      "word2_en": "dawn, first light, quiet awakening",
+      "combo_id": "260219_0831",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "그리드 시스템",
+      "word1_en": "grid system, structured layout, modular design",
+      "word2": "보석",
+      "word2_en": "gemstone, faceted brilliance, light trap",
+      "combo_id": "260219_0832",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "강아지 캐릭터",
+      "word1_en": "dog character, puppy figure, loyal companion",
+      "word2": "암호",
+      "word2_en": "cipher, coded message",
+      "combo_id": "260219_0833",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "지우개",
+      "word1_en": "eraser, rubber block, clean correction",
+      "word2": "설렘",
+      "word2_en": "excitement, fluttering anticipation",
+      "combo_id": "260219_0834",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "명찰",
+      "word1_en": "name tag, identity label, pinned badge",
+      "word2": "계량컵",
+      "word2_en": "measuring cup, graduated mark, liquid level",
+      "combo_id": "260219_0835",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "블롭",
+      "word1_en": "blob, organic shape, amorphous form",
+      "word2": "창조",
+      "word2_en": "creation, birth of form, generative force",
+      "combo_id": "260219_0836",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "열쇠",
+      "word1_en": "key, metal teeth, unlocking tool",
+      "word2": "종이비행기",
+      "word2_en": "paper airplane, folded glider, thrown dream",
+      "combo_id": "260219_0837",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "소녀",
+      "word1_en": "girl, youthful figure, innocent charm",
+      "word2": "바다",
+      "word2_en": "ocean, vast depth, endless waves",
+      "combo_id": "260219_0838",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "무한대 기호",
+      "word1_en": "infinity symbol, endless loop, eternal form",
+      "word2": "용암",
+      "word2_en": "lava, molten rock",
+      "combo_id": "260219_0839",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "에일리언코어",
+      "word1_en": "alien-core, sci-fi extraterrestrial aesthetic, otherworldly",
+      "word2": "블랙홀",
+      "word2_en": "black hole, event horizon",
+      "combo_id": "260219_0840",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "연필",
+      "word1_en": "pencil, graphite trace, creative tool",
+      "word2": "창문",
+      "word2_en": "window, framed world, liminal view",
+      "combo_id": "260219_0841",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "촛불",
+      "word1_en": "candle, flickering flame, warm wax",
+      "word2": "갑옷",
+      "word2_en": "armor, protective shell",
+      "combo_id": "260219_0842",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "타이포그래피",
+      "word1_en": "typography, letter form, type design",
+      "word2": "빛나는",
+      "word2_en": "glowing, luminous radiance",
+      "combo_id": "260219_0843",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "루빅스 큐브",
+      "word1_en": "Rubik's cube, color puzzle, twisting logic",
+      "word2": "지진",
+      "word2_en": "earthquake, ground tremor",
+      "combo_id": "260219_0844",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "다크아카데미아",
+      "word1_en": "dark academia, gothic study, candlelit knowledge",
+      "word2": "미세한",
+      "word2_en": "microscopic, tiny intricacy",
+      "combo_id": "260219_0845",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "나무",
+      "word1_en": "tree, rooted growth, branching canopy",
+      "word2": "모비우스",
+      "word2_en": "mobius strip, infinite loop",
+      "combo_id": "260219_0846",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "코티지코어",
+      "word1_en": "cottagecore, rural charm, wildflower pastoral",
+      "word2": "DNA",
+      "word2_en": "DNA helix, double spiral, genetic code",
+      "combo_id": "260219_0847",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "카메라",
+      "word1_en": "camera, lens eye, frozen moment",
+      "word2": "설렘",
+      "word2_en": "excitement, fluttering anticipation",
+      "combo_id": "260219_0848",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "주사위",
+      "word1_en": "dice, random chance, spotted cube",
+      "word2": "축음기",
+      "word2_en": "gramophone, spinning record, vintage sound",
+      "combo_id": "260219_0849",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "하트",
+      "word1_en": "heart, love symbol, red shape",
+      "word2": "반지",
+      "word2_en": "ring, circular bond",
+      "combo_id": "260219_0850",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "크롬 반사",
+      "word1_en": "chrome reflection, mirror metal, liquid silver",
+      "word2": "불사",
+      "word2_en": "immortal, undying, eternal existence",
+      "combo_id": "260219_0851",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "강아지 캐릭터",
+      "word1_en": "dog character, puppy figure, loyal companion",
+      "word2": "퍼즐 조각",
+      "word2_en": "puzzle piece, interlocking form, missing fragment",
+      "combo_id": "260219_0852",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "강아지 캐릭터",
+      "word1_en": "dog character, puppy figure, loyal companion",
+      "word2": "양자",
+      "word2_en": "quantum, probabilistic state",
+      "combo_id": "260219_0853",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "장난감",
+      "word1_en": "toy, playful object, childhood wonder",
+      "word2": "기억",
+      "word2_en": "memory, faded photograph, echo of past",
+      "combo_id": "260219_0854",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "깃털",
+      "word1_en": "feather, soft barb, floating grace",
+      "word2": "뿔",
+      "word2_en": "horn, protruding growth",
+      "combo_id": "260219_0855",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "날개",
+      "word1_en": "wings, feathered span, soaring flight",
+      "word2": "분자",
+      "word2_en": "molecule, atomic bond",
+      "combo_id": "260219_0856",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "우산",
+      "word1_en": "umbrella, curved canopy, rain shelter",
+      "word2": "공명",
+      "word2_en": "resonance, sympathetic vibration",
+      "combo_id": "260219_0857",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "고양이 캐릭터",
+      "word1_en": "cat character, feline figure, cute kitty",
+      "word2": "신발",
+      "word2_en": "shoe, path-worn sole",
+      "combo_id": "260219_0858",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "보로노이",
+      "word1_en": "Voronoi diagram, cell pattern, organic grid",
+      "word2": "반지",
+      "word2_en": "ring, circular bond",
+      "combo_id": "260219_0859",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "고독",
+      "word1_en": "solitude, lonely stillness, quiet isolation",
+      "word2": "바람",
+      "word2_en": "wind, invisible force, rustling leaves",
+      "combo_id": "260219_0860",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "키네틱 아트",
+      "word1_en": "kinetic art, moving sculpture, mechanical beauty",
+      "word2": "촛불",
+      "word2_en": "candle, warm flickering light",
+      "combo_id": "260219_0861",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "산호",
+      "word1_en": "coral, ocean colony, branching form",
+      "word2": "그림자 놀이",
+      "word2_en": "shadow play, silhouette theater, projected form",
+      "combo_id": "260219_0862",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "구글",
+      "word1_en": "Google, colorful logo, tech giant",
+      "word2": "탑",
+      "word2_en": "tower, solitary height",
+      "combo_id": "260219_0863",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "보보코어",
+      "word1_en": "bobocore, bohemian bourgeois, eclectic layered style",
+      "word2": "고대",
+      "word2_en": "ancient, primordial, timeworn mystery",
+      "combo_id": "260219_0864",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "쿨블루",
+      "word1_en": "cool blue, icy blue mood, frosty palette",
+      "word2": "뿌리",
+      "word2_en": "roots, deep foundation",
+      "combo_id": "260219_0865",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "피크닉",
+      "word1_en": "picnic, checkered blanket, outdoor leisure",
+      "word2": "그네",
+      "word2_en": "swing, pendulum arc, soaring child",
+      "combo_id": "260219_0866",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "주사위",
+      "word1_en": "dice, random chance, spotted cube",
+      "word2": "금박",
+      "word2_en": "gold leaf, metallic foil, precious layer",
+      "combo_id": "260219_0867",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "거울",
+      "word1_en": "mirror, reflective surface, distorted self",
+      "word2": "안개꽃",
+      "word2_en": "baby's breath, delicate cluster, misty bloom",
+      "combo_id": "260219_0868",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "하트",
+      "word1_en": "heart, love symbol, red shape",
+      "word2": "공허",
+      "word2_en": "emptiness, void, hollow silence",
+      "combo_id": "260219_0869",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "광선",
+      "word1_en": "light ray, volumetric beam, god ray",
+      "word2": "균열",
+      "word2_en": "crack, fractured surface",
+      "combo_id": "260219_0870",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "명찰",
+      "word1_en": "name tag, identity label, pinned badge",
+      "word2": "증기",
+      "word2_en": "steam, heated vapor",
+      "combo_id": "260219_0871",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "종이접기",
+      "word1_en": "origami, folded paper, geometric art",
+      "word2": "도자기",
+      "word2_en": "pottery, wheel-thrown form, glazed surface",
+      "combo_id": "260219_0872",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "스누피",
+      "word1_en": "Snoopy, Peanuts beagle, classic cartoon dog",
+      "word2": "행성",
+      "word2_en": "planet, spherical world",
+      "combo_id": "260219_0873",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "바우하우스",
+      "word1_en": "Bauhaus, functional form, geometric simplicity",
+      "word2": "이끼",
+      "word2_en": "moss, soft covering",
+      "combo_id": "260219_0874",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "무한대 기호",
+      "word1_en": "infinity symbol, endless loop, eternal form",
+      "word2": "열쇠",
+      "word2_en": "key, unlocking mystery",
+      "combo_id": "260219_0875",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "레고",
+      "word1_en": "LEGO, building brick, snap-together block",
+      "word2": "빙수",
+      "word2_en": "shaved ice, fluffy snow, sweet topping",
+      "combo_id": "260219_0876",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "아이소메트릭",
+      "word1_en": "isometric, angled perspective, flat 3D",
+      "word2": "화석",
+      "word2_en": "fossil, time-preserved life",
+      "combo_id": "260219_0877",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "그리드 시스템",
+      "word1_en": "grid system, structured layout, modular design",
+      "word2": "빨대",
+      "word2_en": "straw, hollow tube, sipping curve",
+      "combo_id": "260219_0878",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "메타",
+      "word1_en": "Meta, infinity loop, digital connection",
+      "word2": "은색 물감",
+      "word2_en": "silver paint, metallic pigment, reflective stroke",
+      "combo_id": "260219_0879",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "게임기",
+      "word1_en": "game console, gaming device, play machine",
+      "word2": "달",
+      "word2_en": "moon, silver glow, night guardian",
+      "combo_id": "260219_0880",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "날개",
+      "word1_en": "wings, feathered span, soaring flight",
+      "word2": "진주",
+      "word2_en": "pearl, lustrous sphere, layered nacre",
+      "combo_id": "260219_0881",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "구글",
+      "word1_en": "Google, colorful logo, tech giant",
+      "word2": "빙하",
+      "word2_en": "glacier, ancient ice",
+      "combo_id": "260219_0882",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "그래디언트 구체",
+      "word1_en": "gradient sphere, color transition, smooth orb",
+      "word2": "프랙탈",
+      "word2_en": "fractal, self-similar infinity",
+      "combo_id": "260219_0883",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "팽이",
+      "word1_en": "spinning top, rotating axis, balanced motion",
+      "word2": "진자",
+      "word2_en": "pendulum, rhythmic swing",
+      "combo_id": "260219_0884",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "홀로그래픽",
+      "word1_en": "holographic, iridescent sheen, rainbow surface",
+      "word2": "오메가",
+      "word2_en": "omega, final point",
+      "combo_id": "260219_0885",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "구글",
+      "word1_en": "Google, colorful logo, tech giant",
+      "word2": "코르크",
+      "word2_en": "cork, natural stopper, textured bark",
+      "combo_id": "260219_0886",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "선인장",
+      "word1_en": "cactus, desert spine, resilient bloom",
+      "word2": "지퍼",
+      "word2_en": "zipper, interlocking teeth, opening line",
+      "combo_id": "260219_0887",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "키네틱 아트",
+      "word1_en": "kinetic art, moving sculpture, mechanical beauty",
+      "word2": "산맥",
+      "word2_en": "mountain range, geological spine",
+      "combo_id": "260219_0888",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "애플",
+      "word1_en": "Apple, bitten fruit logo, minimalist design",
+      "word2": "미끄럼틀",
+      "word2_en": "slide, curving descent, playground arc",
+      "combo_id": "260219_0889",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "나비",
+      "word1_en": "butterfly, wing pattern, graceful flutter",
+      "word2": "홀씨",
+      "word2_en": "dandelion seed, wind traveler",
+      "combo_id": "260219_0890",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "세라믹",
+      "word1_en": "ceramic, glazed form, kiln-fired art",
+      "word2": "용암",
+      "word2_en": "lava, molten rock",
+      "combo_id": "260219_0891",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "패브릭 주름",
+      "word1_en": "fabric fold, draped textile, soft crease",
+      "word2": "톱니바퀴",
+      "word2_en": "gear, clockwork mechanism",
+      "combo_id": "260219_0892",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "다락방",
+      "word1_en": "attic, dusty vintage, hidden loft space",
+      "word2": "투명한",
+      "word2_en": "transparent, see-through clarity",
+      "combo_id": "260219_0893",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "나비",
+      "word1_en": "butterfly, wing pattern, graceful flutter",
+      "word2": "소라",
+      "word2_en": "conch shell, spiral chamber",
+      "combo_id": "260219_0894",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "헬로키티",
+      "word1_en": "Hello Kitty, kawaii cat, Sanrio icon",
+      "word2": "방어막",
+      "word2_en": "shield, protective barrier",
+      "combo_id": "260219_0895",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "스티커",
+      "word1_en": "sticker, adhesive art, peel-and-stick",
+      "word2": "강",
+      "word2_en": "river, flowing journey, carved valley",
+      "combo_id": "260219_0896",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "느낌표",
+      "word1_en": "exclamation mark, surprise impact, bold emphasis",
+      "word2": "변화",
+      "word2_en": "change, constant flux, evolving form",
+      "combo_id": "260219_0897",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "디즈니캐릭터",
+      "word1_en": "Disney character, animated icon, magical world",
+      "word2": "실타래",
+      "word2_en": "thread spool, wound yarn, tangled color",
+      "combo_id": "260219_0898",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "가위",
+      "word1_en": "scissors, crossing blades, cutting edge",
+      "word2": "고대",
+      "word2_en": "ancient, primordial, timeworn mystery",
+      "combo_id": "260219_0899",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "잎사귀",
+      "word1_en": "leaf, green vein, organic pattern",
+      "word2": "운석",
+      "word2_en": "meteorite, cosmic visitor",
+      "combo_id": "260219_0900",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "전구",
+      "word1_en": "light bulb, glowing filament, idea symbol",
+      "word2": "덩굴",
+      "word2_en": "vine, climbing growth",
+      "combo_id": "260219_0901",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "프리즘",
+      "word1_en": "prism, light splitter, rainbow maker",
+      "word2": "폐허",
+      "word2_en": "ruins, forgotten glory",
+      "combo_id": "260219_0902",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "선글라스",
+      "word1_en": "sunglasses, tinted lens, cool shade",
+      "word2": "황홀",
+      "word2_en": "ecstasy, transcendence, blissful dissolution",
+      "combo_id": "260219_0903",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "와이어프레임",
+      "word1_en": "wireframe, 3D mesh, geometric skeleton",
+      "word2": "포탈",
+      "word2_en": "portal, dimensional gateway, swirling vortex",
+      "combo_id": "260219_0904",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "폐허",
+      "word1_en": "ruins, crumbling stone, forgotten place",
+      "word2": "활자",
+      "word2_en": "movable type, letter block, printing press",
+      "combo_id": "260219_0905",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "고독",
+      "word1_en": "solitude, lonely stillness, quiet isolation",
+      "word2": "악마",
+      "word2_en": "demon, dark power, shadowy temptation",
+      "combo_id": "260219_0906",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "꽃",
+      "word1_en": "flower, delicate bloom, petal beauty",
+      "word2": "모비우스",
+      "word2_en": "mobius strip, infinite loop",
+      "combo_id": "260219_0907",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "카페",
+      "word1_en": "cafe, warm interior, coffee atmosphere",
+      "word2": "타로카드",
+      "word2_en": "tarot card, mystical image, divination art",
+      "combo_id": "260219_0908",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "선글라스",
+      "word1_en": "sunglasses, tinted lens, cool shade",
+      "word2": "얼음",
+      "word2_en": "ice, crystalline cold, frozen time",
+      "combo_id": "260219_0909",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "소녀",
+      "word1_en": "girl, youthful figure, innocent charm",
+      "word2": "결정",
+      "word2_en": "crystal formation, ordered structure",
+      "combo_id": "260219_0910",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "자",
+      "word1_en": "ruler, measured edge, straight line",
+      "word2": "날개",
+      "word2_en": "wing, flight mechanism",
+      "combo_id": "260219_0911",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "닌텐도 마리오",
+      "word1_en": "Nintendo Mario, pixel hero, red cap plumber",
+      "word2": "황홀",
+      "word2_en": "ecstasy, transcendence, blissful dissolution",
+      "combo_id": "260219_0912",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "아르누보",
+      "word1_en": "Art Nouveau, organic curve, decorative vine",
+      "word2": "연기",
+      "word2_en": "smoke, wisping trail",
+      "combo_id": "260219_0913",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "미니멀 조각",
+      "word1_en": "minimal sculpture, reduced form, pure shape",
+      "word2": "흉터",
+      "word2_en": "scar, healed wound",
+      "combo_id": "260219_0914",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "사람들의 욕구",
+      "word1_en": "human desire, primal want, inner craving",
+      "word2": "미끄럼틀",
+      "word2_en": "slide, curving descent, playground arc",
+      "combo_id": "260219_0915",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "에일리언코어",
+      "word1_en": "alien-core, sci-fi extraterrestrial aesthetic, otherworldly",
+      "word2": "성역",
+      "word2_en": "sanctuary, sacred space, divine refuge",
+      "combo_id": "260219_0916",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "맥시멀리즘",
+      "word1_en": "maximalism, ornate decoration, abundant layered beauty",
+      "word2": "유리구슬",
+      "word2_en": "glass marble, captured world",
+      "combo_id": "260219_0917",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "피카츄",
+      "word1_en": "Pikachu, electric mouse, yellow mascot",
+      "word2": "오로라",
+      "word2_en": "aurora, atmospheric dance",
+      "combo_id": "260219_0918",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "키네틱 타이포",
+      "word1_en": "kinetic typography, moving text, animated letter",
+      "word2": "교차로",
+      "word2_en": "crossroads, decision point",
+      "combo_id": "260219_0919",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "나무",
+      "word1_en": "tree, rooted growth, branching canopy",
+      "word2": "번개",
+      "word2_en": "lightning, electric strike",
+      "combo_id": "260219_0920",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "조개",
+      "word1_en": "seashell, spiral chamber, ocean memory",
+      "word2": "양초",
+      "word2_en": "wax candle, dripping form, slow melt",
+      "combo_id": "260219_0921",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "장난감",
+      "word1_en": "toy, playful object, childhood wonder",
+      "word2": "파도",
+      "word2_en": "wave, rhythmic surge",
+      "combo_id": "260219_0922",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "콜라주",
+      "word1_en": "collage, layered cutout, mixed media",
+      "word2": "존재",
+      "word2_en": "existence, being itself, fundamental presence",
+      "combo_id": "260219_0923",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "설렘",
+      "word1_en": "excitement, fluttering heart, anticipation",
+      "word2": "도자기",
+      "word2_en": "pottery, wheel-thrown form, glazed surface",
+      "combo_id": "260219_0924",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "코티지코어",
+      "word1_en": "cottagecore, rural charm, wildflower pastoral",
+      "word2": "수정",
+      "word2_en": "crystal, prismatic clarity",
+      "combo_id": "260219_0925",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "크롬 반사",
+      "word1_en": "chrome reflection, mirror metal, liquid silver",
+      "word2": "관람차",
+      "word2_en": "Ferris wheel, giant circle, sky gondola",
+      "combo_id": "260219_0926",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "그리움",
+      "word1_en": "longing, distant yearning, aching miss",
+      "word2": "나팔",
+      "word2_en": "trumpet, brass bell, bold sound",
+      "combo_id": "260219_0927",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "디즈니캐릭터",
+      "word1_en": "Disney character, animated icon, magical world",
+      "word2": "선풍기",
+      "word2_en": "fan, spinning blade, circular breeze",
+      "combo_id": "260219_0928",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "루빅스 큐브",
+      "word1_en": "Rubik's cube, color puzzle, twisting logic",
+      "word2": "악마",
+      "word2_en": "demon, dark power, shadowy temptation",
+      "combo_id": "260219_0929",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "손",
+      "word1_en": "hand, reaching fingers, human touch",
+      "word2": "소라",
+      "word2_en": "conch shell, spiral chamber",
+      "combo_id": "260219_0930",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "스마일",
+      "word1_en": "smile, curved lips, cheerful face",
+      "word2": "기쁨",
+      "word2_en": "joy, elation, radiant happiness",
+      "combo_id": "260219_0931",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "리퀴드",
+      "word1_en": "liquid, fluid motion, viscous flow",
+      "word2": "DNA",
+      "word2_en": "DNA helix, double spiral, genetic code",
+      "combo_id": "260219_0932",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "보로노이",
+      "word1_en": "Voronoi diagram, cell pattern, organic grid",
+      "word2": "열정",
+      "word2_en": "passion, blazing desire, unstoppable drive",
+      "combo_id": "260219_0933",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "젤리코어",
+      "word1_en": "jellycore, transparent jelly texture, glossy aesthetic",
+      "word2": "투명한",
+      "word2_en": "transparent, see-through clarity",
+      "combo_id": "260219_0934",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "문어",
+      "word1_en": "octopus, eight arms, fluid intelligence",
+      "word2": "안테나",
+      "word2_en": "antenna, signal receiver",
+      "combo_id": "260219_0935",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "사슴 캐릭터",
+      "word1_en": "deer character, gentle figure, antlered grace",
+      "word2": "환상",
+      "word2_en": "illusion, shifting mirage, beautiful deception",
+      "combo_id": "260219_0936",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "클린걸",
+      "word1_en": "clean girl, effortless minimal, dewy skin aesthetic",
+      "word2": "원반",
+      "word2_en": "disc, spinning form",
+      "combo_id": "260219_0937",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "패브릭 주름",
+      "word1_en": "fabric fold, draped textile, soft crease",
+      "word2": "블랙홀",
+      "word2_en": "black hole, event horizon",
+      "combo_id": "260219_0938",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "스마일",
+      "word1_en": "smile, curved lips, cheerful face",
+      "word2": "사랑",
+      "word2_en": "love, tender warmth, longing",
+      "combo_id": "260219_0939",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "자",
+      "word1_en": "ruler, measured edge, straight line",
+      "word2": "알",
+      "word2_en": "egg, embryonic potential",
+      "combo_id": "260219_0940",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "여우 캐릭터",
+      "word1_en": "fox character, cunning figure, russet tail",
+      "word2": "물거품",
+      "word2_en": "bubble, fleeting sphere",
+      "combo_id": "260219_0941",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "우산",
+      "word1_en": "umbrella, curved canopy, rain shelter",
+      "word2": "파동",
+      "word2_en": "wave pattern, oscillating energy",
+      "combo_id": "260219_0942",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "폐허",
+      "word1_en": "ruins, crumbling stone, forgotten place",
+      "word2": "개미",
+      "word2_en": "ant, organized colony, tiny strength",
+      "combo_id": "260219_0943",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "오리 인형",
+      "word1_en": "rubber duck, yellow toy, bath companion",
+      "word2": "지진",
+      "word2_en": "earthquake, ground tremor",
+      "combo_id": "260219_0944",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "샤넬",
+      "word1_en": "Chanel, interlocking C, timeless elegance",
+      "word2": "번개",
+      "word2_en": "lightning, electric strike",
+      "combo_id": "260219_0945",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "햇빛",
+      "word1_en": "sunlight, warm rays, golden glow",
+      "word2": "사막",
+      "word2_en": "desert, endless sand, scorching silence",
+      "combo_id": "260219_0946",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "서커스 인테리어",
+      "word1_en": "circus interior, striped ceiling, flamboyant showroom",
+      "word2": "행성",
+      "word2_en": "planet, spherical world",
+      "combo_id": "260219_0947",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "가위",
+      "word1_en": "scissors, crossing blades, cutting edge",
+      "word2": "의지",
+      "word2_en": "will, determined force, purposeful drive",
+      "combo_id": "260219_0948",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "산호",
+      "word1_en": "coral, ocean colony, branching form",
+      "word2": "계단",
+      "word2_en": "staircase, ascending path",
+      "combo_id": "260219_0949",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "용기",
+      "word1_en": "courage, bold heart, fearless spirit",
+      "word2": "경계",
+      "word2_en": "boundary, liminal edge, threshold",
+      "combo_id": "260219_0950",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "가위",
+      "word1_en": "scissors, crossing blades, cutting edge",
+      "word2": "도장",
+      "word2_en": "stamp seal, carved imprint, pressed mark",
+      "combo_id": "260219_0951",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "타이포그래피",
+      "word1_en": "typography, letter form, type design",
+      "word2": "칼",
+      "word2_en": "sword, decisive edge",
+      "combo_id": "260219_0952",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "오리 인형",
+      "word1_en": "rubber duck, yellow toy, bath companion",
+      "word2": "허물",
+      "word2_en": "shed skin, past form",
+      "combo_id": "260219_0953",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "풍선",
+      "word1_en": "balloon, floating color, inflated joy",
+      "word2": "절벽",
+      "word2_en": "cliff, dramatic edge",
+      "combo_id": "260219_0954",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "디즈니캐릭터",
+      "word1_en": "Disney character, animated icon, magical world",
+      "word2": "홀로그램",
+      "word2_en": "hologram, 3D projection",
+      "combo_id": "260219_0955",
+      "template_id": null,
+      "status": "failed"
+    },
+    {
+      "word1": "필통",
+      "word1_en": "pencil case, stationery pouch, student tool",
+      "word2": "나선",
+      "word2_en": "helix, winding ascent",
+      "combo_id": "260219_0956",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "기업의 로고",
+      "word1_en": "corporate logo, brand mark, iconic symbol",
+      "word2": "책",
+      "word2_en": "book, infinite worlds, paper wisdom",
+      "combo_id": "260219_0957",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "필통",
+      "word1_en": "pencil case, stationery pouch, student tool",
+      "word2": "꽃",
+      "word2_en": "flower, delicate bloom, fleeting beauty",
+      "combo_id": "260219_0958",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "나비",
+      "word1_en": "butterfly, wing pattern, graceful flutter",
+      "word2": "파문",
+      "word2_en": "ripple, expanding circle, water echo",
+      "combo_id": "260219_0959",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "고양이 캐릭터",
+      "word1_en": "cat character, feline figure, cute kitty",
+      "word2": "협곡",
+      "word2_en": "canyon, eroded chasm",
+      "combo_id": "260219_0960",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "손",
+      "word1_en": "hand, reaching fingers, human touch",
+      "word2": "기쁨",
+      "word2_en": "joy, elation, radiant happiness",
+      "combo_id": "260219_0961",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "메타볼",
+      "word1_en": "metaball, blobby merge, organic 3D form",
+      "word2": "물거품",
+      "word2_en": "bubble, fleeting sphere",
+      "combo_id": "260219_0962",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "사슴 캐릭터",
+      "word1_en": "deer character, gentle figure, antlered grace",
+      "word2": "성역",
+      "word2_en": "sanctuary, sacred space, divine refuge",
+      "combo_id": "260219_0963",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "나이키",
+      "word1_en": "Nike, swoosh logo, athletic brand",
+      "word2": "알약",
+      "word2_en": "pill, capsule form, compact dose",
+      "combo_id": "260219_0964",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "고독",
+      "word1_en": "solitude, lonely stillness, quiet isolation",
+      "word2": "회전목마",
+      "word2_en": "carousel, spinning ride, painted horse",
+      "combo_id": "260219_0965",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "지하철",
+      "word1_en": "subway, urban tunnel, neon underground",
+      "word2": "타로카드",
+      "word2_en": "tarot card, mystical image, divination art",
+      "combo_id": "260219_0966",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "스마일",
+      "word1_en": "smile, curved lips, cheerful face",
+      "word2": "포탈",
+      "word2_en": "portal, dimensional gateway, swirling vortex",
+      "combo_id": "260219_0967",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "깊은 숲",
+      "word1_en": "deep forest, ancient trees, misty wilderness",
+      "word2": "무한",
+      "word2_en": "infinity, boundless, endless recursion",
+      "combo_id": "260219_0968",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "코티지가든",
+      "word1_en": "cottage garden, English wildflower, overgrown pastoral bloom",
+      "word2": "의지",
+      "word2_en": "will, determined force, purposeful drive",
+      "combo_id": "260219_0969",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "고프코어",
+      "word1_en": "gorpcore, outdoor utility, functional adventure wear",
+      "word2": "녹아내리는",
+      "word2_en": "melting, dissolving form",
+      "combo_id": "260219_0970",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "여우 캐릭터",
+      "word1_en": "fox character, cunning figure, russet tail",
+      "word2": "잠자리",
+      "word2_en": "dragonfly, transparent wing, hovering jewel",
+      "combo_id": "260219_0971",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "로에베",
+      "word1_en": "Loewe, luxury craft, anagram logo",
+      "word2": "두려움",
+      "word2_en": "fear, shadowy dread, trembling darkness",
+      "combo_id": "260219_0972",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "키보드",
+      "word1_en": "keyboard, key grid, typing device",
+      "word2": "광산",
+      "word2_en": "mine, underground extraction",
+      "combo_id": "260219_0973",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "모빌",
+      "word1_en": "mobile, hanging sculpture, balanced art",
+      "word2": "달",
+      "word2_en": "moon, silver glow, night guardian",
+      "combo_id": "260219_0974",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "잎사귀",
+      "word1_en": "leaf, green vein, organic pattern",
+      "word2": "철망",
+      "word2_en": "wire mesh, grid constraint",
+      "combo_id": "260219_0975",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "헬로키티",
+      "word1_en": "Hello Kitty, kawaii cat, Sanrio icon",
+      "word2": "접시",
+      "word2_en": "plate, circular canvas, ceramic circle",
+      "combo_id": "260219_0976",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "필통",
+      "word1_en": "pencil case, stationery pouch, student tool",
+      "word2": "부서지는",
+      "word2_en": "shattering, explosive break",
+      "combo_id": "260219_0977",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "테라조",
+      "word1_en": "terrazzo, speckled stone, composite surface",
+      "word2": "만년필",
+      "word2_en": "fountain pen, ink flow, elegant nib",
+      "combo_id": "260219_0978",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "입술",
+      "word1_en": "lips, speaking curve, sensual form",
+      "word2": "핵",
+      "word2_en": "nucleus, central core",
+      "combo_id": "260219_0979",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "전구",
+      "word1_en": "light bulb, glowing filament, idea symbol",
+      "word2": "도르래",
+      "word2_en": "pulley, lifting wheel, mechanical leverage",
+      "combo_id": "260219_0980",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "에르메스",
+      "word1_en": "Hermes, horse carriage, luxury craft",
+      "word2": "전류",
+      "word2_en": "current, flowing electricity",
+      "combo_id": "260219_0981",
+      "template_id": null,
+      "status": "done"
+    },
+    {
+      "word1": "구글",
+      "word1_en": "Google, colorful logo, tech giant",
+      "word2": "변화",
+      "word2_en": "change, constant flux, evolving form",
+      "combo_id": "260219_0982",
+      "template_id": null,
+      "status": "done"
+    }
+  ],
+  "progress": {
+    "generated": 164,
+    "failed": 44,
+    "pro_count": 164,
+    "flash_count": 0,
+    "session_cost": 21.976
+  },
+  "stop_reason": "batch complete",
+  "ended_at": "2026-02-19T23:01:22.804351+00:00"
+}

@@ -1,0 +1,52 @@
+{
+  "board_name": "prada",
+  "board_url": "https://kr.pinterest.com/dolchea6/prada/",
+  "is_private": false,
+  "collected_at": "2026-02-17T16:02:19.967895+00:00",
+  "last_incremental_update": "2026-02-17T16:07:52.277518+00:00",
+  "pin_count": 6,
+  "pins": [
+    {
+      "pin_id": "914090055632069231",
+      "image_url": "https://i.pinimg.com/originals/8b/ce/91/8bce91a181412d298254f2641f70ccce.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:07:52.277518+00:00",
+      "local_cache": "/tmp/pins/prada/914090055632069231.jpg"
+    },
+    {
+      "pin_id": "914090055631419083",
+      "image_url": "https://i.pinimg.com/originals/a7/57/ef/a757ef7ab68986a46a952272941c40ef.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:07:52.277518+00:00",
+      "local_cache": "/tmp/pins/prada/914090055631419083.jpg"
+    },
+    {
+      "pin_id": "914090055630918573",
+      "image_url": "https://i.pinimg.com/originals/70/30/03/70300328e838493f5cfd90e4eefaf467.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:07:52.277518+00:00",
+      "local_cache": "/tmp/pins/prada/914090055630918573.jpg"
+    },
+    {
+      "pin_id": "914090055630918566",
+      "image_url": "https://i.pinimg.com/originals/df/44/0b/df440babfecdc09b6f6ac15826c98170.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:07:52.277518+00:00",
+      "local_cache": "/tmp/pins/prada/914090055630918566.jpg"
+    },
+    {
+      "pin_id": "914090055630918563",
+      "image_url": "https://i.pinimg.com/originals/3c/26/c3/3c26c311a5a6099ab77d34be36a948b3.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:07:52.277518+00:00",
+      "local_cache": "/tmp/pins/prada/914090055630918563.jpg"
+    },
+    {
+      "pin_id": "914090055630918551",
+      "image_url": "https://i.pinimg.com/originals/d3/58/53/d35853d21cf623789a509c03dfa96c6f.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:07:52.277518+00:00",
+      "local_cache": "/tmp/pins/prada/914090055630918551.jpg"
+    }
+  ]
+}

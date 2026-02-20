@@ -1,0 +1,52 @@
+{
+  "board_name": "bok",
+  "board_url": "https://kr.pinterest.com/dolchea6/bok/",
+  "is_private": false,
+  "collected_at": "2026-02-17T16:03:48.154276+00:00",
+  "last_incremental_update": "2026-02-17T16:03:48.154276+00:00",
+  "pin_count": 6,
+  "pins": [
+    {
+      "pin_id": "914090055631906953",
+      "image_url": "https://i.pinimg.com/originals/32/9c/6a/329c6a7a6ca9674abb935ca75de1aa5b.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:03:48.154276+00:00",
+      "local_cache": "D:\\01\\nano-banana-agent\\tmp\\pins\\bok\\914090055631906953.jpg"
+    },
+    {
+      "pin_id": "914090055631905948",
+      "image_url": "https://i.pinimg.com/originals/bf/01/1b/bf011b912f2172a11f912fbc973d1cb1.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:03:48.154276+00:00",
+      "local_cache": "D:\\01\\nano-banana-agent\\tmp\\pins\\bok\\914090055631905948.jpg"
+    },
+    {
+      "pin_id": "914090055631905941",
+      "image_url": "https://i.pinimg.com/originals/f1/f1/66/f1f1663c02b03741ab6326b0c3d66fd2.png",
+      "description": "",
+      "added_at": "2026-02-17T16:03:48.154276+00:00",
+      "local_cache": "D:\\01\\nano-banana-agent\\tmp\\pins\\bok\\914090055631905941.jpg"
+    },
+    {
+      "pin_id": "914090055631905937",
+      "image_url": "https://i.pinimg.com/originals/e0/4e/d1/e04ed1088fb0c78c9f1baee0ce4a31ea.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:03:48.154276+00:00",
+      "local_cache": "D:\\01\\nano-banana-agent\\tmp\\pins\\bok\\914090055631905937.jpg"
+    },
+    {
+      "pin_id": "914090055631905931",
+      "image_url": "https://i.pinimg.com/originals/ce/2b/04/ce2b04b78894ddb33ab25bd9d0a04811.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:03:48.154276+00:00",
+      "local_cache": "D:\\01\\nano-banana-agent\\tmp\\pins\\bok\\914090055631905931.jpg"
+    },
+    {
+      "pin_id": "914090055631905929",
+      "image_url": "https://i.pinimg.com/originals/c5/4a/86/c54a86ccfba6f2da637c0a451425905e.jpg",
+      "description": "",
+      "added_at": "2026-02-17T16:03:48.154276+00:00",
+      "local_cache": "D:\\01\\nano-banana-agent\\tmp\\pins\\bok\\914090055631905929.jpg"
+    }
+  ]
+}
