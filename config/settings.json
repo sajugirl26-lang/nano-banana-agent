@@ -1,6 +1,8 @@
 {
   "model_pro": "gemini-3-pro-image-preview",
   "model_flash": "gemini-2.5-flash-image",
+  "price_pro": 0.134,
+  "price_flash": 0.039,
   "generation": {
     "ref_images_per_request": 5,
     "min_ref_images": 3,
@@ -21,8 +23,19 @@
     "error_wait_seconds": 30,
     "all_exhausted_wait_seconds": 60
   },
+  "style_weights": {
+    "style_01": 3,
+    "style_02": 2,
+    "style_03": 3,
+    "style_04": 1,
+    "style_05": 1,
+    "style_06": 3,
+    "style_07": 2,
+    "style_08": 2,
+    "style_09": 3
+  },
   "notifications": {
-    "slack_webhook_url": "https://hooks.slack.com/services/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",
+    "slack_webhook_url": "__see_config/secrets.json__",
     "events": {
       "session_complete": true,
       "model_switch_to_flash": true,

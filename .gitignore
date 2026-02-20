@@ -1,6 +1,7 @@
 # 민감 정보
 config/credentials/
 config/api-keys.json
+config/secrets.json
 
 # 임시/캐시
 tmp/

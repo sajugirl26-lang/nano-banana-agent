@@ -10,6 +10,20 @@ BASE_DIR = Path(__file__).parents[4]
 OUTPUT_DIR = BASE_DIR / "output" / "images"
 METADATA_DIR = OUTPUT_DIR / "metadata"
 HTML_DIR = OUTPUT_DIR / "html"
+SECRETS_FILE = BASE_DIR / "config" / "secrets.json"
+
+
+def _load_firebase_config() -> dict:
+    """secrets.json에서 Firebase 설정 로드"""
+    default = {
+        "apiKey": "", "authDomain": "",
+        "databaseURL": "", "projectId": ""
+    }
+    if SECRETS_FILE.exists():
+        with open(SECRETS_FILE, encoding="utf-8") as f:
+            s = json.load(f)
+        return s.get("firebase", default)
+    return default
 
 
 def _to_kst_date(generated_at: str) -> str:
@@ -175,6 +189,8 @@ h1 {{ font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }}
 .pin-popup-close {{ position: absolute; top: -12px; right: -12px; background: #333; color: #fff; border: none; font-size: 1.2rem; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }}
 .pin-popup-close:hover {{ background: #ff4757; }}
 .failed {{ opacity: 0.4; }}
+.load-more-btn {{ display: block; margin: 20px auto; padding: 10px 40px; background: #333; color: #e0e0e0; border: 1px solid #555; border-radius: 8px; font-size: 0.9rem; cursor: pointer; }}
+.load-more-btn:hover {{ background: #444; }}
 @media (max-width: 1200px) {{ .grid {{ grid-template-columns: repeat(3, 1fr); }} }}
 @media (max-width: 768px) {{ .grid {{ grid-template-columns: repeat(2, 1fr); }} }}
 </style>
@@ -207,14 +223,15 @@ h1 {{ font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }}
 <div class="grid" id="grid">
 {html_cards}
 </div>
+<button id="load-more" class="load-more-btn" onclick="loadMore()" style="display:none">Load More</button>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <script>
 firebase.initializeApp({{
-  apiKey: "AIzaSyBviHK_QiJIAUWI2VmzwEGgi2ioOMbQgLM",
-  authDomain: "claudecode-eb187.firebaseapp.com",
-  databaseURL: "https://claudecode-eb187-default-rtdb.firebaseio.com",
-  projectId: "claudecode-eb187"
+  apiKey: "{_load_firebase_config()['apiKey']}",
+  authDomain: "{_load_firebase_config()['authDomain']}",
+  databaseURL: "{_load_firebase_config()['databaseURL']}",
+  projectId: "{_load_firebase_config()['projectId']}"
 }});
 const db = firebase.database();
 const likesRef = db.ref('likes');
@@ -272,22 +289,36 @@ function getSelectedDates() {{
   cbs.forEach(cb => {{ if (cb.checked) selected.push(cb.value); }});
   return selected;
 }}
+const PAGE_SIZE = 50;
+let currentPage = 1;
+let filteredCards = [];
+
 function filterCards() {{
   const q = document.getElementById('search').value.toLowerCase();
   const dates = getSelectedDates();
   const mf = document.getElementById('model-filter').value;
   const lo = document.getElementById('liked-only').checked;
-  let visible = 0;
-  cards.forEach(c => {{
+  filteredCards = cards.filter(c => {{
     const w = (c.dataset.word1 + ' ' + c.dataset.word2).toLowerCase();
-    const show = w.includes(q)
+    return w.includes(q)
       && (dates.length === 0 || dates.includes(c.dataset.date))
       && (mf === 'all' || c.dataset.model === mf)
       && (!lo || c.dataset.liked === 'true');
-    c.style.display = show ? '' : 'none';
-    if (show) visible++;
   }});
-  document.getElementById('count').textContent = visible + ' shown';
+  currentPage = 1;
+  renderPage();
+}}
+function renderPage() {{
+  const end = currentPage * PAGE_SIZE;
+  cards.forEach(c => c.style.display = 'none');
+  filteredCards.slice(0, end).forEach(c => c.style.display = '');
+  document.getElementById('count').textContent = Math.min(end, filteredCards.length) + '/' + filteredCards.length + ' shown';
+  const btn = document.getElementById('load-more');
+  btn.style.display = end < filteredCards.length ? '' : 'none';
+}}
+function loadMore() {{
+  currentPage++;
+  renderPage();
 }}
 function showPinPopup(url) {{
   const overlay = document.createElement('div');

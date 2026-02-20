@@ -8,6 +8,7 @@ import random
 import sys
 import time
 import atexit
+from collections import deque
 from datetime import datetime
 from pathlib import Path
 
@@ -109,11 +110,40 @@ def print_report(report_type, session_id, generated, failed_count, pro_count, fl
 
     print(f"  세션: {session_id}")
     print(f"  진행: {generated}/{target} 완료 | {failed_count} 실패 | {pending} 남음")
-    print(f"  모델: Pro {pro_count}장 (${pro_count * 0.134:.2f}) | Flash {flash_count}장 (${flash_count * 0.039:.2f})")
+    from stop_checker import PRICE_PRO, PRICE_FLASH
+    print(f"  모델: Pro {pro_count}장 (${pro_count * PRICE_PRO:.2f}) | Flash {flash_count}장 (${flash_count * PRICE_FLASH:.2f})")
     print(f"  API 호출: 총 {pro_count + flash_count + failed_count}회 (성공 {generated}, 실패 {failed_count})")
     print(f"  비용: ${session_cost:.2f} (세션) | {get_status_summary()}")
     print(f"  시간: {hours}h {mins}m 경과")
     print(f"{'=' * 55}\n", flush=True)
+
+
+def deploy_to_github_pages(html_path):
+    """뷰어 HTML을 docs/index.html로 복사 후 GitHub에 push"""
+    import shutil, subprocess
+    try:
+        docs_dir = BASE_DIR / "docs"
+        docs_dir.mkdir(exist_ok=True)
+        dest = docs_dir / "index.html"
+        shutil.copy2(str(html_path), str(dest))
+        print(f"[DEPLOY] docs/index.html 업데이트")
+
+        now = datetime.now().strftime("%m/%d %H:%M")
+        subprocess.run(["git", "add", "docs/index.html"], cwd=str(BASE_DIR), timeout=30)
+        subprocess.run(
+            ["git", "commit", "-m", f"Update viewer {now}"],
+            cwd=str(BASE_DIR), capture_output=True, timeout=30
+        )
+        result = subprocess.run(
+            ["git", "push"], cwd=str(BASE_DIR),
+            capture_output=True, text=True, timeout=60
+        )
+        if result.returncode == 0:
+            print(f"[DEPLOY] GitHub Pages 배포 완료")
+        else:
+            print(f"[WARN] git push 실패: {result.stderr[:200]}")
+    except Exception as e:
+        print(f"[WARN] GitHub Pages 배포 실패: {e}")
 
 
 def refresh_pins():
@@ -180,7 +210,7 @@ def main():
     rl = get_rate_limiter()
     consecutive_errors = 0
     template_index = 0
-    recent_pins = []
+    recent_pins = deque(maxlen=50)
     generated = 0
     failed_count = 0
     pro_count = 0
@@ -219,7 +249,7 @@ def main():
             monthly_total=monthly_total,
             monthly_cap=limits.get("monthly_cost_cap", 0),
             all_models_exhausted=rl.all_keys_rate_limited(),
-            next_is_flash=False
+            next_is_flash=rl.is_flash_mode
         )
 
         if should_stop:
@@ -302,12 +332,13 @@ def main():
     # 완료 보고
     print_report("complete", session["session_id"], generated, failed_count, pro_count, flash_count, session_cost, start_time, target)
 
-    # HTML viewer 생성 + Drive 업로드
+    # HTML viewer 생성 + Drive 업로드 + GitHub Pages 배포
     try:
         from generate_viewer import generate_viewer
         html_path = generate_viewer(session["session_id"])
         if html_path:
             upload_html_file(str(html_path))
+            deploy_to_github_pages(html_path)
     except Exception as e:
         print(f"[WARN] viewer: {e}")
 

@@ -28,8 +28,10 @@ def load_metadata(date_str: str = None) -> list:
 def save_metadata(entries: list, date_str: str = None):
     f = get_metadata_file(date_str)
     METADATA_DIR.mkdir(parents=True, exist_ok=True)
-    with open(f, "w", encoding="utf-8") as fp:
+    tmp = f.with_suffix(".tmp")
+    with open(tmp, "w", encoding="utf-8") as fp:
         json.dump(entries, fp, ensure_ascii=False, indent=2)
+    tmp.replace(f)
 
 
 def append_entry(entry: dict, date_str: str = None):

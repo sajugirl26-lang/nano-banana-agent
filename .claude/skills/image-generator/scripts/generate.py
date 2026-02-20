@@ -31,16 +31,28 @@ sys.path.insert(0, str(Path(__file__).parent))
 from rate_limiter import get_rate_limiter
 from prompt_builder import build_prompt, round_robin_template
 
-PRICE_PRO = 0.134
-PRICE_FLASH = 0.039
+SETTINGS_FILE = CONFIG_DIR / "settings.json"
+
+def _load_prices():
+    if SETTINGS_FILE.exists():
+        with open(SETTINGS_FILE, encoding="utf-8") as f:
+            s = json.load(f)
+        return s.get("price_pro", 0.134), s.get("price_flash", 0.039)
+    return 0.134, 0.039
+
+PRICE_PRO, PRICE_FLASH = _load_prices()
 MAX_REF_IMAGES = 5
 MAX_INLINE_BYTES = 20 * 1024 * 1024
 MAX_RECENT_PINS = 50
 
+# 세션 레벨 핀 이미지 캐시 (URL → (bytes, mime))
+_pin_cache: dict = {}
+
 
 def select_reference_pins(board_names: list, recent_used: list) -> list:
-    """보드 캐시 JSON에서 핀 URL 선택 (로컬 파일 불필요)"""
+    """보드 캐시 JSON에서 핀 URL 선택 (보드간 중복 제거)"""
     all_pins = []  # [(board_name, pin_id, image_url), ...]
+    seen_urls = set()
     for name in board_names:
         cache = CONFIG_DIR / "boards" / f"{name}.json"
         if not cache.exists():
@@ -49,7 +61,8 @@ def select_reference_pins(board_names: list, recent_used: list) -> list:
             bd = json.load(f)
         for pin in bd.get("pins", []):
             url = pin.get("image_url", "")
-            if url:
+            if url and url not in seen_urls:
+                seen_urls.add(url)
                 all_pins.append((name, pin.get("pin_id", ""), url))
 
     recent_set = set(recent_used[-MAX_RECENT_PINS:])
@@ -100,12 +113,16 @@ def generate_image(
 
     for board_name, pin_id, pin_url in ref_pins:
         try:
-            resp = _requests.get(pin_url, timeout=15)
-            resp.raise_for_status()
-            img_data = resp.content
+            if pin_url in _pin_cache:
+                img_data, mime = _pin_cache[pin_url]
+            else:
+                resp = _requests.get(pin_url, timeout=15)
+                resp.raise_for_status()
+                img_data = resp.content
+                mime = resp.headers.get("content-type", "image/jpeg").split(";")[0]
+                _pin_cache[pin_url] = (img_data, mime)
             if total_size + len(img_data) > MAX_INLINE_BYTES:
                 break
-            mime = resp.headers.get("content-type", "image/jpeg").split(";")[0]
             content_parts.append(types.Part.from_bytes(
                 data=img_data,
                 mime_type=mime

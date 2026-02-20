@@ -1,9 +1,19 @@
 #!/usr/bin/env python3
 """6개 정지 조건 순차 확인"""
+import json
 import time
+from pathlib import Path
 
-PRICE_PRO = 0.134
-PRICE_FLASH = 0.039
+SETTINGS_FILE = Path(__file__).parents[4] / "config" / "settings.json"
+
+def _load_prices():
+    if SETTINGS_FILE.exists():
+        with open(SETTINGS_FILE, encoding="utf-8") as f:
+            s = json.load(f)
+        return s.get("price_pro", 0.134), s.get("price_flash", 0.039)
+    return 0.134, 0.039
+
+PRICE_PRO, PRICE_FLASH = _load_prices()
 
 
 def check_stop_conditions(

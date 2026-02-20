@@ -9,6 +9,7 @@ from datetime import date
 CONFIG_DIR = Path(__file__).parents[4] / "config"
 API_KEYS_FILE = CONFIG_DIR / "api-keys.json"
 SETTINGS_FILE = CONFIG_DIR / "settings.json"
+DAILY_COUNTS_FILE = Path(__file__).parents[4] / "output" / "logs" / "daily_counts.json"
 
 
 def load_api_config() -> dict:
@@ -49,6 +50,33 @@ class RateLimiter:
         self._using_flash = False
         self._flash_count = 0
 
+        self._load_daily_counts()
+
+    def _load_daily_counts(self):
+        """파일에서 일일 카운트 로드 (프로세스 재시작 시 복원)"""
+        if not DAILY_COUNTS_FILE.exists():
+            return
+        try:
+            with open(DAILY_COUNTS_FILE, encoding="utf-8") as f:
+                saved = json.load(f)
+            today = str(date.today())
+            for ck, info in saved.items():
+                if info.get("date") == today:
+                    self._daily_counts[ck] = info
+        except Exception:
+            pass
+
+    def _save_daily_counts(self):
+        """일일 카운트를 파일에 저장"""
+        try:
+            DAILY_COUNTS_FILE.parent.mkdir(parents=True, exist_ok=True)
+            tmp = DAILY_COUNTS_FILE.with_suffix(".tmp")
+            with open(tmp, "w", encoding="utf-8") as f:
+                json.dump(self._daily_counts, f, ensure_ascii=False)
+            tmp.replace(DAILY_COUNTS_FILE)
+        except Exception:
+            pass
+
     def _count_key(self, key_id: str) -> str:
         """모델별 분리된 카운트 키 (Pro/Flash 별도 한도)"""
         mode = "flash" if self._using_flash else "pro"
@@ -67,6 +95,7 @@ class RateLimiter:
         if ck not in self._daily_counts or self._daily_counts[ck]["date"] != today:
             self._daily_counts[ck] = {"date": today, "count": 0}
         self._daily_counts[ck]["count"] += 1
+        self._save_daily_counts()
 
     def _is_key_available(self, key: dict) -> bool:
         key_id = key["id"]

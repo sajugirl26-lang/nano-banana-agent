@@ -6,6 +6,7 @@ from pathlib import Path
 
 CONFIG_DIR = Path(__file__).parents[4] / "config"
 TEMPLATES_FILE = CONFIG_DIR / "prompt-templates.json"
+SETTINGS_FILE = CONFIG_DIR / "settings.json"
 
 
 def load_templates() -> list:
@@ -14,6 +15,22 @@ def load_templates() -> list:
     with open(TEMPLATES_FILE, encoding="utf-8") as f:
         data = json.load(f)
     return data.get("templates", [])
+
+
+def _load_style_weights() -> dict:
+    """settings.json에서 스타일 가중치 로드"""
+    if SETTINGS_FILE.exists():
+        with open(SETTINGS_FILE, encoding="utf-8") as f:
+            s = json.load(f)
+        return s.get("style_weights", {})
+    return {}
+
+
+def _weighted_choice(templates: list) -> dict:
+    """가중치 기반 템플릿 선택"""
+    sw = _load_style_weights()
+    weights = [sw.get(t["id"], 1) for t in templates]
+    return random.choices(templates, weights=weights, k=1)[0]
 
 
 def build_prompt(word1: str, word1_en: str, word2: str, word2_en: str,
@@ -26,9 +43,9 @@ def build_prompt(word1: str, word1_en: str, word2: str, word2_en: str,
     if template_id:
         tpl = next((t for t in templates if t["id"] == template_id), None)
         if not tpl:
-            tpl = random.choice(templates)
+            tpl = _weighted_choice(templates)
     else:
-        tpl = random.choice(templates)
+        tpl = _weighted_choice(templates)
 
     prompt = tpl["text"]
     prompt = prompt.replace("{word1}", word1)
@@ -43,12 +60,16 @@ def build_prompt(word1: str, word1_en: str, word2: str, word2_en: str,
     return prompt, tpl["id"]
 
 
-def round_robin_template(index: int) -> str:
-    """랜덤 템플릿 선택 (12종 중 무작위)"""
+def weighted_random_template(index: int = 0) -> str:
+    """가중치 기반 템플릿 선택"""
     templates = load_templates()
     if not templates:
         return None
-    return random.choice(templates)["id"]
+    return _weighted_choice(templates)["id"]
+
+
+# 하위호환 alias
+round_robin_template = weighted_random_template
 
 
 if __name__ == "__main__":

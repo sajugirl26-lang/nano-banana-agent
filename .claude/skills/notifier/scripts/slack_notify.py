@@ -9,30 +9,45 @@ CONFIG_DIR = Path(__file__).parents[4] / "config"
 SETTINGS_FILE = CONFIG_DIR / "settings.json"
 
 
+SECRETS_FILE = CONFIG_DIR / "secrets.json"
+
+
 def get_webhook_url() -> str | None:
+    # secrets.json 우선, 없으면 settings.json fallback
+    if SECRETS_FILE.exists():
+        with open(SECRETS_FILE, encoding="utf-8") as f:
+            s = json.load(f)
+        url = s.get("slack_webhook_url", "")
+        if url and "YOUR/WEBHOOK" not in url:
+            return url
     if not SETTINGS_FILE.exists():
         return None
     with open(SETTINGS_FILE, encoding="utf-8") as f:
         s = json.load(f)
     url = s.get("notifications", {}).get("slack_webhook_url", "")
-    if not url or "YOUR/WEBHOOK" in url:
+    if not url or "YOUR/WEBHOOK" in url or "__see_" in url:
         return None
     return url
 
 
-def send_slack(message: str, emoji: str = "📢") -> bool:
-    """Slack 웹훅으로 메시지 전송. 설정 없으면 무시"""
+def send_slack(message: str, emoji: str = "📢", retries: int = 2) -> bool:
+    """Slack 웹훅으로 메시지 전송. 실패 시 재시도."""
+    import time
     url = get_webhook_url()
     if not url:
         return False
-    try:
-        payload = {"text": f"{emoji} {message}"}
-        resp = requests.post(url, json=payload, timeout=10)
-        resp.raise_for_status()
-        return True
-    except Exception as e:
-        print(f"[WARN] Slack 알림 실패: {e}")
-        return False
+    payload = {"text": f"{emoji} {message}"}
+    for attempt in range(retries + 1):
+        try:
+            resp = requests.post(url, json=payload, timeout=10)
+            resp.raise_for_status()
+            return True
+        except Exception as e:
+            if attempt < retries:
+                time.sleep(2 ** attempt)
+            else:
+                print(f"[WARN] Slack 알림 실패 ({retries+1}회 시도): {e}")
+                return False
 
 
 def notify_session_complete(
