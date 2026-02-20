@@ -85,6 +85,29 @@ def notify_cost_limit(limit_type: str, limit_val: float, current: float) -> bool
     return send_slack(msg, "⚠️")
 
 
+def notify_batch_submitted(count: int, estimated_cost: float, model: str) -> bool:
+    msg = (
+        f"Gemini Batch 제출 완료\n"
+        f"• {count}장 요청 (모델: {model})\n"
+        f"• 예상 비용: ${estimated_cost:.2f} (50% 할인 적용)"
+    )
+    return send_slack(msg, "📦")
+
+
+def notify_batch_complete(
+    success: int, fail: int, total_cost: float,
+    drive_ok: int, elapsed_min: int
+) -> bool:
+    msg = (
+        f"Gemini Batch 완료\n"
+        f"• 성공 {success}장 / 실패 {fail}장\n"
+        f"• 비용: ${total_cost:.2f}\n"
+        f"• Drive 업로드: {drive_ok}장\n"
+        f"• 소요 시간: {elapsed_min}분"
+    )
+    return send_slack(msg, "✅")
+
+
 if __name__ == "__main__":
     print("Slack 알림 테스트...")
     result = send_slack("테스트 메시지", "🔔")

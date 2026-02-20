@@ -6,7 +6,7 @@
     },
     {
       "id": "style_02",
-      "text": "첨부 이미지의 색감·질감·분위기·렌더링 퀄리티를 깊이 참고하여 {word1}({word1_en})과 {word2}({word2_en})를 결합한 새로운 고퀄리티 이미지를 만들어줘. 레퍼런스의 오브젝트가 아닌 스타일을 흡수해줘. IMPORTANT: Do NOT reproduce any objects, shapes, or compositions from the reference image. Only extract color palette, lighting mood, material finish, and spatial atmosphere. Create a completely new scene. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo"
+      "text": "첨부 이미지의 색감·질감·분위기·렌더링 퀄리티를 깊이 참고하여 {word1}({word1_en})과 {word2}({word2_en})를 결합한 새로운 고퀄리티 이미지를 만들어줘. 레퍼런스의 오브젝트가 아닌 스타일을 흡수해줘. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo"
     },
     {
       "id": "style_03",
@@ -22,7 +22,7 @@
     },
     {
       "id": "style_06",
-      "text": "첨부 이미지가 가진 디자인적 감각(색감, 조명, 재질, 공간감)을 살려서 {word1}({word1_en})과 {word2}({word2_en})를 결합한 재치있고 완성도 높은 이미지를 만들어줘. IMPORTANT: Do NOT copy or recreate objects from the reference. The reference is ONLY a style guide for color, lighting, and texture. Build an entirely original scene. a high-end PBR 3D render (Octane/Redshift vibe), realistic materials for fabric, accurate roughness maps, strong sunlight with sharp shadows, preserve colors, no text, no logo"
+      "text": "첨부 이미지가 가진 디자인적 감각(색감, 조명, 재질, 공간감)을 살려서 {word1}({word1_en})과 {word2}({word2_en})를 결합한 재치있고 완성도 높은 이미지를 만들어줘. a high-end PBR 3D render (Octane/Redshift vibe), realistic materials for fabric, accurate roughness maps, strong sunlight with sharp shadows, preserve colors, no text, no logo"
     },
     {
       "id": "style_07",
@@ -34,7 +34,7 @@
     },
     {
       "id": "style_09",
-      "text": "첨부 이미지를 스타일 무드보드로 삼아 컬러톤·재질감·공간 분위기·디자인 퀄리티를 깊이 참고하여 {word1}({word1_en})과 {word2}({word2_en})를 결합한 영감을 주는 이미지를 만들어줘. IMPORTANT: Do NOT reproduce any objects, shapes, or compositions from the reference image. Only extract color palette, lighting mood, material finish, and spatial atmosphere. Create a completely new scene."
+      "text": "첨부 이미지를 스타일 무드보드로 삼아 컬러톤·재질감·공간 분위기·디자인 퀄리티를 깊이 참고하여 {word1}({word1_en})과 {word2}({word2_en})를 결합한 영감을 주는 이미지를 만들어줘"
     }
   ]
 }

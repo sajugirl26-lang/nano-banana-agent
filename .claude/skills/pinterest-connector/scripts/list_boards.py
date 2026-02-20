@@ -18,51 +18,101 @@ def load_cookies() -> dict:
     with open(COOKIE_FILE) as f:
         raw = json.load(f)
     if isinstance(raw, list):
-        return {c["name"]: c["value"] for c in raw if "name" in c and "value" in c}
+        # 도메인 무관하게 모든 쿠키를 name:value로 통합
+        # (kr.pinterest.com / www.pinterest.com / .pinterest.com 모두 포함)
+        cookies = {}
+        for c in raw:
+            if "name" in c and "value" in c:
+                cookies[c["name"]] = c["value"]
+        return cookies
     return raw
+
+
+def _build_session(cookies: dict):
+    """Pinterest API용 requests 세션 + 헤더 구성"""
+    session = requests.Session()
+    session.cookies.update(cookies)
+
+    # /me/ 리다이렉트로 username 추출
+    ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+    username = ""
+    try:
+        resp = session.get("https://www.pinterest.com/me/",
+                           headers={"User-Agent": ua}, allow_redirects=False, timeout=15)
+        loc = resp.headers.get("Location", "")
+        parts = [p for p in loc.strip("/").split("/") if p]
+        if parts:
+            username = parts[-1]
+    except Exception:
+        pass
+
+    headers = {
+        "User-Agent": ua,
+        "X-Requested-With": "XMLHttpRequest",
+        "X-CSRFToken": cookies.get("csrftoken", ""),
+        "Accept": "application/json, text/javascript, */*, q=0.01",
+        "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
+        "Referer": "https://www.pinterest.com/",
+        "Origin": "https://www.pinterest.com",
+        "X-Pinterest-AppState": "active",
+        "X-Pinterest-Source-Url": f"/{username}/_saved/" if username else "/",
+        "X-Pinterest-PWS-Handler": "www/[username]/_saved.js",
+        "X-APP-VERSION": "e8144ac",
+    }
+    return session, headers, username
 
 
 def fetch_boards_via_api(cookies: dict) -> list:
     """Pinterest API로 내 보드 목록 조회"""
-    session = requests.Session()
-    session.cookies.update(cookies)
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "X-Requested-With": "XMLHttpRequest",
-    }
-    url = "https://www.pinterest.com/resource/BoardsResource/get/"
-    params = {
-        "source_url": "/me/boards/",
-        "data": json.dumps({
-            "options": {
-                "username": "",
-                "page_size": 100,
-                "privacy_filter": "all",
-                "sort": "alphabetical",
-                "field_set_key": "profile_grid_item"
-            },
-            "context": {}
-        })
-    }
-    try:
-        resp = session.get(url, params=params, headers=headers, timeout=30)
-        resp.raise_for_status()
-        data = resp.json()
-        raw_boards = data.get("resource_response", {}).get("data", [])
-        boards = []
-        for b in raw_boards:
-            boards.append({
-                "board_id": b.get("id", ""),
-                "board_name": b.get("name", ""),
-                "board_url": b.get("url", ""),
-                "is_private": b.get("privacy", "public") != "public",
-                "pin_count": b.get("pin_count", 0),
-                "description": b.get("description", "")
-            })
-        return boards
-    except Exception as e:
-        print(f"[WARN] Pinterest API 직접 호출 실패: {e}")
+    session, headers, username = _build_session(cookies)
+    if not username:
+        print("[WARN] Pinterest username 확인 불가 (쿠키 만료?)")
         return []
+
+    url = "https://www.pinterest.com/resource/BoardsResource/get/"
+    all_boards = []
+    bookmark = None
+
+    while True:
+        options = {
+            "username": username,
+            "page_size": 25,
+            "privacy_filter": "all",
+            "sort": "alphabetical",
+            "field_set_key": "profile_grid_item",
+            "filter": "all",
+        }
+        if bookmark:
+            options["bookmarks"] = [bookmark]
+
+        params = {
+            "source_url": f"/{username}/_saved/",
+            "data": json.dumps({"options": options, "context": {}})
+        }
+        try:
+            resp = session.get(url, params=params, headers=headers, timeout=30)
+            resp.raise_for_status()
+            data = resp.json()
+            raw_boards = data.get("resource_response", {}).get("data", [])
+            if not raw_boards:
+                break
+            for b in raw_boards:
+                all_boards.append({
+                    "board_id": b.get("id", ""),
+                    "board_name": b.get("name", ""),
+                    "board_url": b.get("url", ""),
+                    "is_private": b.get("privacy", "public") != "public",
+                    "pin_count": b.get("pin_count", 0),
+                    "description": b.get("description", "")
+                })
+            bookmark = data.get("resource_response", {}).get("bookmark")
+            if not bookmark or bookmark == "-end-":
+                break
+        except Exception as e:
+            print(f"[WARN] Pinterest API 직접 호출 실패: {e}")
+            break
+
+    return all_boards
 
 
 def fetch_boards_via_playwright() -> list:

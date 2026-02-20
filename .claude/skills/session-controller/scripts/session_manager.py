@@ -56,19 +56,22 @@ def archive_old_session(session: dict):
 
 
 def _get_next_image_number(date_str: str) -> int:
-    """오늘 날짜 폴더에서 YYMMDD_NNNN 형식의 최대 번호 + 1 반환"""
+    """전체 이미지 폴더에서 YYMMDD_NNNN 형식의 최대 번호 + 1 반환 (날짜 무관 누적)"""
     import re
-    output_dir = BASE_DIR / "output" / "images" / date_str
-    if not output_dir.exists():
+    images_dir = BASE_DIR / "output" / "images"
+    if not images_dir.exists():
         return 1
     max_num = 0
-    pattern = re.compile(rf"^{date_str}_(\d{{4}})_")
-    for f in output_dir.iterdir():
-        m = pattern.match(f.name)
-        if m:
-            n = int(m.group(1))
-            if n > max_num:
-                max_num = n
+    pattern = re.compile(r"^\d{6}_(\d{4})_")
+    for folder in images_dir.iterdir():
+        if not folder.is_dir() or not re.match(r"^\d{6}$", folder.name):
+            continue
+        for f in folder.iterdir():
+            m = pattern.match(f.name)
+            if m:
+                n = int(m.group(1))
+                if n > max_num:
+                    max_num = n
     return max_num + 1
 
 

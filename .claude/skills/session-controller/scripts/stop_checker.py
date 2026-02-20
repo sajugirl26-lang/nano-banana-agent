@@ -10,10 +10,15 @@ def _load_prices():
     if SETTINGS_FILE.exists():
         with open(SETTINGS_FILE, encoding="utf-8") as f:
             s = json.load(f)
-        return s.get("price_pro", 0.134), s.get("price_flash", 0.039)
-    return 0.134, 0.039
+        return (
+            s.get("price_pro", 0.134),
+            s.get("price_flash", 0.039),
+            s.get("price_pro_batch", 0.067),
+            s.get("price_flash_batch", 0.0195),
+        )
+    return 0.134, 0.039, 0.067, 0.0195
 
-PRICE_PRO, PRICE_FLASH = _load_prices()
+PRICE_PRO, PRICE_FLASH, PRICE_PRO_BATCH, PRICE_FLASH_BATCH = _load_prices()
 
 
 def check_stop_conditions(
@@ -29,10 +34,14 @@ def check_stop_conditions(
     monthly_total: float,
     monthly_cap: float,
     all_models_exhausted: bool,
-    next_is_flash: bool = False
+    next_is_flash: bool = False,
+    is_batch: bool = False
 ) -> tuple:
     """정지 조건 확인. (should_stop: bool, reason: str)"""
-    next_cost = PRICE_FLASH if next_is_flash else PRICE_PRO
+    if is_batch:
+        next_cost = PRICE_FLASH_BATCH if next_is_flash else PRICE_PRO_BATCH
+    else:
+        next_cost = PRICE_FLASH if next_is_flash else PRICE_PRO
 
     # ① 수량 도달
     if target_count > 0 and generated >= target_count:

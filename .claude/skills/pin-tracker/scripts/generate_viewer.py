@@ -78,7 +78,10 @@ def generate_viewer(session_id: str = None, date_str: str = None) -> Path | None
 
     dates = sorted(set(
         _to_kst_date(e.get("generated_at", "")) for e in entries if e.get("generated_at")
-    ) - {""})
+    ) - {""}, reverse=True)
+
+    # 최신순 정렬 (generated_at 역순, 없으면 combo_id 역순)
+    entries.sort(key=lambda e: e.get("generated_at", e.get("combo_id", "")), reverse=True)
 
     html_cards = ""
     for entry in entries:

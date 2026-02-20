@@ -275,17 +275,17 @@ def main():
     print("\n[HTML 뷰어 생성 중...]")
     generate_viewer(session["session_id"], today_date)
 
-    # Drive 업로드
+    # Drive 업로드 (metadata + HTML)
+    drive_ok = 0
     try:
-        from upload import upload_session
-        from track_pins import get_all_entries
-        entries = get_all_entries(today_date)
-        print("\n[Drive 업로드 중...]")
-        drive_result = upload_session(today_date, session["session_id"], entries)
-        drive_ok = drive_result.get("uploaded", 0)
+        from upload import upload_metadata_file, upload_html_file
+        from track_pins import get_metadata_file
+        meta_path = get_metadata_file(today_date)
+        if meta_path.exists():
+            upload_metadata_file(str(meta_path))
+            print("[Drive] metadata 업로드 완료")
     except Exception as e:
         print(f"[WARN] Drive 업로드 실패: {e}")
-        drive_ok = 0
 
     # 리포트
     final_session = session.copy()

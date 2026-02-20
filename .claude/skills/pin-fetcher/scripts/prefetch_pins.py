@@ -35,7 +35,12 @@ def load_cookies() -> dict:
     with open(COOKIE_FILE) as f:
         raw = json.load(f)
     if isinstance(raw, list):
-        return {c["name"]: c["value"] for c in raw if "name" in c}
+        # 도메인 무관하게 모든 쿠키를 name:value로 통합
+        cookies = {}
+        for c in raw:
+            if "name" in c and "value" in c:
+                cookies[c["name"]] = c["value"]
+        return cookies
     return raw
 
 

@@ -65,13 +65,14 @@ def select_reference_pins(board_names: list, recent_used: list) -> list:
                 seen_urls.add(url)
                 all_pins.append((name, pin.get("pin_id", ""), url))
 
-    recent_set = set(recent_used[-MAX_RECENT_PINS:])
+    recent_list = list(recent_used)
+    recent_set = set(recent_list[-MAX_RECENT_PINS:])
     available = [p for p in all_pins if p[2] not in recent_set]
     if not available:
         available = all_pins
     if not available:
         return []
-    count = min(random.randint(2, 5), len(available))
+    count = min(random.randint(2, 4), len(available))
     return random.sample(available, count)
 
 
@@ -104,7 +105,7 @@ def generate_image(
         return {"status": "failed", "error": "모든 API 키 소진", "combo_id": combo_id}
 
     model_name = rl.current_model
-    cost = PRICE_PRO
+    cost = PRICE_FLASH if rl.is_flash_mode else PRICE_PRO
 
     # 컨텐츠 구성: URL에서 직접 다운로드
     content_parts = [prompt]

@@ -3,6 +3,13 @@
   "model_flash": "gemini-2.5-flash-image",
   "price_pro": 0.134,
   "price_flash": 0.039,
+  "price_pro_batch": 0.067,
+  "price_flash_batch": 0.0195,
+  "batch": {
+    "poll_interval_seconds": 30,
+    "poll_timeout_seconds": 7200,
+    "max_batch_size": 200
+  },
   "generation": {
     "ref_images_per_request": 5,
     "min_ref_images": 3,
