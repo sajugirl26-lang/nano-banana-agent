@@ -34612,7 +34612,8 @@ likesRef.on('value', snap => {
     });
     likesRef.update(updates);
   }
-  filterCards(false);
+  updateLikedCounts();
+  if (document.getElementById('liked-only').checked) filterCards(false);
 });
 
 function toggleHeart(btn) {
@@ -34671,6 +34672,7 @@ function getColCount() {
   return 5;
 }
 function renderPage() {
+  const scrollY = window.scrollY;
   const end = currentPage * PAGE_SIZE;
   const colCount = getColCount();
   while (grid.firstChild) grid.removeChild(grid.firstChild);
@@ -34688,6 +34690,7 @@ function renderPage() {
   });
   const btn = document.getElementById('load-more');
   btn.style.display = end < filteredCards.length ? '' : 'none';
+  requestAnimationFrame(() => window.scrollTo(0, scrollY));
 }
 function loadMore() {
   currentPage++;
