@@ -21,10 +21,10 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 .date-filters label { font-size: 0.85rem; color: #aaa; cursor: pointer; }
 .date-filters label input { margin-right: 3px; }
 #count { color: #888; font-size: 0.8rem; }
-.grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
-.card { background: #1a1a1a; border-radius: 8px; overflow: hidden; }
+.grid { column-count: 5; column-gap: 12px; }
+.card { background: #1a1a1a; border-radius: 8px; overflow: hidden; break-inside: avoid; margin-bottom: 12px; display: inline-block; width: 100%; }
 .card-img-wrap { position: relative; }
-.card-img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; background: #222; }
+.card-img { width: 100%; display: block; background: #222; }
 .card-img-placeholder { width: 100%; aspect-ratio: 1; background: #222; display: flex; align-items: center; justify-content: center; color: #444; font-size: 0.75rem; }
 .heart-btn { position: absolute; top: 6px; right: 6px; background: rgba(0,0,0,0.5); border: none; color: #888; font-size: 1.4rem; cursor: pointer; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; transition: color 0.2s; line-height: 1; }
 .heart-btn:hover { color: #ff6b6b; }
@@ -47,16 +47,16 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 .failed { opacity: 0.4; }
 .load-more-btn { display: block; margin: 20px auto; padding: 10px 40px; background: #333; color: #e0e0e0; border: 1px solid #555; border-radius: 8px; font-size: 0.9rem; cursor: pointer; }
 .load-more-btn:hover { background: #444; }
-@media (max-width: 1200px) { .grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1200px) { .grid { column-count: 3; } }
+@media (max-width: 768px) { .grid { column-count: 2; } }
 </style>
 </head>
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1167</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1169</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$127.90</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$128.16</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -77,6 +77,62 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260221_1220"
+       data-word1="그리움"
+       data-word2="관람차"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-21"
+       data-time="2026-02-21T10:06:46.075684+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1j8Q8snXZXXodi2XY1qF2AXvukxSy2D-s" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1j8Q8snXZXXodi2XY1qF2AXvukxSy2D-s')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">그리움</span> x
+        <span class="w2">관람차</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260221_1220 ·
+        2026-02-21
+      </div>
+      <div class="prompt">첨부 이미지가 가진 디자인적 감각(색감, 조명, 재질, 공간감)을 살려서 그리움(longing, distant yearning, aching miss)과 관람차(Ferris wheel, giant circle, sky gondola)를 결합한 재치있고 완성도 높은 이미지를 만들어줘. a high-end PBR 3D render (Octane/Redshift vibe), realistic materials for fabric, accurate roughness maps, strong sunlight with sharp shadows, preserve colors, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://dm.savee-cdn.com/asset-image/original/6216c5b9bbfd663cd9177edb.avif" loading="lazy" onclick="showPinPopup('https://dm.savee-cdn.com/asset-image/original/6216c5b9bbfd663cd9177edb.avif')"><img class="pin-thumb" src="https://i.pinimg.com/originals/f5/21/70/f521704929f64cac39747a4f6dc9c135.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/f5/21/70/f521704929f64cac39747a4f6dc9c135.png')"></div>
+    </div>
+  </div>
+  <div class="card"
+       data-id="260221_1219"
+       data-word1="기억"
+       data-word2="등대"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-21"
+       data-time="2026-02-21T10:04:43.453732+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1k65JwmmG49UtB2GjW3CW2h_kzFYPF-kc" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1k65JwmmG49UtB2GjW3CW2h_kzFYPF-kc')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">기억</span> x
+        <span class="w2">등대</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260221_1219 ·
+        2026-02-21
+      </div>
+      <div class="prompt">첨부 이미지를 스타일 무드보드로 삼아 컬러톤·재질감·공간 분위기·디자인 퀄리티를 깊이 참고하여 기억(memory, faded moment, nostalgic trace)과 등대(lighthouse, guiding beacon)를 결합한 영감을 주는 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/dc/4b/ef/dc4befadf54f6a8ef46d106cb3858eb0.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/dc/4b/ef/dc4befadf54f6a8ef46d106cb3858eb0.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/8d/12/a7/8d12a70a300a1205fbfc6f3d209683c7.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/8d/12/a7/8d12a70a300a1205fbfc6f3d209683c7.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/8e/9d/1f/8e9d1fba5bc4f32b3079309665cc8914.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/8e/9d/1f/8e9d1fba5bc4f32b3079309665cc8914.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/f7/ee/63/f7ee6326d0ecb0fe69750ffe29b69a25.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/f7/ee/63/f7ee6326d0ecb0fe69750ffe29b69a25.jpg')"></div>
+    </div>
+  </div>
   <div class="card"
        data-id="260221_1218"
        data-word1="풍선"
