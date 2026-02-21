@@ -53,13 +53,13 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1231</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1232</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$136.47</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$136.61</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
-  <span class="date-filters"><label><input type="checkbox" id="date-all" checked onchange="toggleAllDates(this)"> All</label><label><input type="checkbox" class="date-cb" value="2026-02-21" checked onchange="onDateCbChange()"> 02-21</label><label><input type="checkbox" class="date-cb" value="2026-02-20" checked onchange="onDateCbChange()"> 02-20</label><label><input type="checkbox" class="date-cb" value="2026-02-19" checked onchange="onDateCbChange()"> 02-19</label><label><input type="checkbox" class="date-cb" value="2026-02-18" checked onchange="onDateCbChange()"> 02-18</label></span>
+  <span class="date-filters"><label><input type="checkbox" id="date-all" checked onchange="toggleAllDates(this)"> All</label><label><input type="checkbox" class="date-cb" value="2026-02-22" checked onchange="onDateCbChange()"> 02-22</label><label><input type="checkbox" class="date-cb" value="2026-02-21" checked onchange="onDateCbChange()"> 02-21</label><label><input type="checkbox" class="date-cb" value="2026-02-20" checked onchange="onDateCbChange()"> 02-20</label><label><input type="checkbox" class="date-cb" value="2026-02-19" checked onchange="onDateCbChange()"> 02-19</label><label><input type="checkbox" class="date-cb" value="2026-02-18" checked onchange="onDateCbChange()"> 02-18</label></span>
   <select id="model-filter" onchange="filterCards()">
     <option value="all">All models</option>
     <option value="pro">Pro</option>
@@ -76,6 +76,34 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260222_1284"
+       data-word1="케이크"
+       data-word2="공명"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-22"
+       data-time="2026-02-21T17:09:33.664912+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/11LVa8tb0P4MMWwM-OQDWzQFeVv5Ea4ou" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/11LVa8tb0P4MMWwM-OQDWzQFeVv5Ea4ou')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">케이크</span> x
+        <span class="w2">공명</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260222_1284 ·
+        2026-02-22
+      </div>
+      <div class="prompt">첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 케이크(cake, layered confection, frosted art)과 공명(resonance, sympathetic vibration)를 결합한 프로페셔널한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://dm.savee-cdn.com/asset-image/original/65c876445b51fe27fd2c6055.avif" loading="lazy" onclick="showPinPopup('https://dm.savee-cdn.com/asset-image/original/65c876445b51fe27fd2c6055.avif')"><img class="pin-thumb" src="https://i.pinimg.com/originals/ec/02/a9/ec02a952eb6189f550e3ef3f25350611.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ec/02/a9/ec02a952eb6189f550e3ef3f25350611.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/1a/48/f3/1a48f38b7af59d3e32ffb9a0a7626aee.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/1a/48/f3/1a48f38b7af59d3e32ffb9a0a7626aee.png')"></div>
+    </div>
+  </div>
   <div class="card"
        data-id="260221_1283"
        data-word1="코티지코어"
