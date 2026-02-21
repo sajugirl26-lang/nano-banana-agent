@@ -54,14 +54,14 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>Nano Banana Viewer</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1031</div><div class="stat-lbl">Total</div></div>
-  <div class="stat"><div class="stat-val">1031</div><div class="stat-lbl">Success</div></div>
+  <div class="stat"><div class="stat-val">1032</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1032</div><div class="stat-lbl">Success</div></div>
   <div class="stat"><div class="stat-val">0</div><div class="stat-lbl">Failed</div></div>
-  <div class="stat"><div class="stat-val">$109.67</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$109.81</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
-  <span class="date-filters"><label><input type="checkbox" id="date-all" checked onchange="toggleAllDates(this)"> All</label><label><input type="checkbox" class="date-cb" value="2026-02-20" checked onchange="onDateCbChange()"> 02-20</label><label><input type="checkbox" class="date-cb" value="2026-02-19" checked onchange="onDateCbChange()"> 02-19</label><label><input type="checkbox" class="date-cb" value="2026-02-18" checked onchange="onDateCbChange()"> 02-18</label></span>
+  <span class="date-filters"><label><input type="checkbox" id="date-all" checked onchange="toggleAllDates(this)"> All</label><label><input type="checkbox" class="date-cb" value="2026-02-21" checked onchange="onDateCbChange()"> 02-21</label><label><input type="checkbox" class="date-cb" value="2026-02-20" checked onchange="onDateCbChange()"> 02-20</label><label><input type="checkbox" class="date-cb" value="2026-02-19" checked onchange="onDateCbChange()"> 02-19</label><label><input type="checkbox" class="date-cb" value="2026-02-18" checked onchange="onDateCbChange()"> 02-18</label></span>
   <select id="model-filter" onchange="filterCards()">
     <option value="all">All models</option>
     <option value="pro">Pro</option>
@@ -78,6 +78,33 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-word1="순수"
+       data-word2="지구본"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-21"
+       data-time="2026-02-21T06:43:52.269020+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1_iiyIo9F6afD47Q5PztfR0vzzxEYfQ_s" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1_iiyIo9F6afD47Q5PztfR0vzzxEYfQ_s')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">순수</span> x
+        <span class="w2">지구본</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260221_1083 ·
+        2026-02-21
+      </div>
+      <div class="prompt">첨부 이미지의 톤·무드·컬러 팔레트·텍스처 퀄리티를 충실히 반영하되 주제는 순수(purity, innocent light, untainted beauty)과 지구본(globe, spinning earth, world sphere)로 완전히 새롭게 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/ac/d6/6c/acd66cff2556c4966cf97afbd8434972.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ac/d6/6c/acd66cff2556c4966cf97afbd8434972.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/7c/13/3b/7c133b87d47c3a3432814ee8d927fa30.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/7c/13/3b/7c133b87d47c3a3432814ee8d927fa30.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/4c/a4/79/4ca479d966ba1447eafd43205b3f3ed7.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/4c/a4/79/4ca479d966ba1447eafd43205b3f3ed7.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/91/29/67/9129670fff7ebbb827339a550cc35ff7.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/91/29/67/9129670fff7ebbb827339a550cc35ff7.jpg')"></div>
+    </div>
+  </div>
   <div class="card"
        data-word1="그리움"
        data-word2="소라"
