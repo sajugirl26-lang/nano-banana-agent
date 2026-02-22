@@ -53,9 +53,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1381</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1382</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$156.57</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$156.71</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -76,6 +76,34 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260223_1436"
+       data-word1="오로라"
+       data-word2="엔트로피"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-23"
+       data-time="2026-02-22T21:35:10.955977+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1BWvK2IXBjWKStyDYwz6PC0DqkA7w5HJW" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1BWvK2IXBjWKStyDYwz6PC0DqkA7w5HJW')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">오로라</span> x
+        <span class="w2">엔트로피</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260223_1436 ·
+        2026-02-23
+      </div>
+      <div class="prompt">첨부 이미지의 디자인 퀄리티·컬러 감각·재질 표현·조명 무드를 충실히 흡수하되, 피사체는 새롭게 오로라(aurora, polar light gradient, iridescent sky glow)과 엔트로피(entropy, inevitable disorder)로 재해석하여 완성도 높은 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/73/73/e4/7373e491d2cfa4e42d2ac116d269acdd.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/73/73/e4/7373e491d2cfa4e42d2ac116d269acdd.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/a2/17/1b/a2171b91ee5fece4fefdaf17bec1752d.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/a2/17/1b/a2171b91ee5fece4fefdaf17bec1752d.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/fc/32/a8/fc32a82e47b0ebbd9fc4aa5e7a4c71ba.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/fc/32/a8/fc32a82e47b0ebbd9fc4aa5e7a4c71ba.jpg')"></div>
+    </div>
+  </div>
   <div class="card"
        data-id="260223_1435"
        data-word1="다이아몬드"
