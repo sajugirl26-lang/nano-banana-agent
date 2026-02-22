@@ -53,13 +53,13 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1232</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1233</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$136.61</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$136.74</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
-  <span class="date-filters"><label><input type="checkbox" id="date-all" checked onchange="toggleAllDates(this)"> All</label><label><input type="checkbox" class="date-cb" value="2026-02-22" checked onchange="onDateCbChange()"> 02-22</label><label><input type="checkbox" class="date-cb" value="2026-02-21" checked onchange="onDateCbChange()"> 02-21</label><label><input type="checkbox" class="date-cb" value="2026-02-20" checked onchange="onDateCbChange()"> 02-20</label><label><input type="checkbox" class="date-cb" value="2026-02-19" checked onchange="onDateCbChange()"> 02-19</label><label><input type="checkbox" class="date-cb" value="2026-02-18" checked onchange="onDateCbChange()"> 02-18</label></span>
+  <span class="date-filters"><label><input type="checkbox" id="date-all" checked onchange="toggleAllDates(this)"> All</label><label><input type="checkbox" class="date-cb" value="2026-02-23" checked onchange="onDateCbChange()"> 02-23</label><label><input type="checkbox" class="date-cb" value="2026-02-22" checked onchange="onDateCbChange()"> 02-22</label><label><input type="checkbox" class="date-cb" value="2026-02-21" checked onchange="onDateCbChange()"> 02-21</label><label><input type="checkbox" class="date-cb" value="2026-02-20" checked onchange="onDateCbChange()"> 02-20</label><label><input type="checkbox" class="date-cb" value="2026-02-19" checked onchange="onDateCbChange()"> 02-19</label><label><input type="checkbox" class="date-cb" value="2026-02-18" checked onchange="onDateCbChange()"> 02-18</label></span>
   <select id="model-filter" onchange="filterCards()">
     <option value="all">All models</option>
     <option value="pro">Pro</option>
@@ -76,6 +76,34 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260223_1285"
+       data-word1="주사위"
+       data-word2="나침반"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-23"
+       data-time="2026-02-22T17:54:57.076310+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1vSBj3XV0q9DZGbglimvd0el04Pvigt1o" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1vSBj3XV0q9DZGbglimvd0el04Pvigt1o')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">주사위</span> x
+        <span class="w2">나침반</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260223_1285 ·
+        2026-02-23
+      </div>
+      <div class="prompt">첨부 이미지의 비주얼 톤과 퀄리티를 기준으로 삼아 주사위(dice, random chance, spotted cube)과 나침반(compass, guiding direction)를 결합한 리얼리스틱하고 디테일한 이미지를 만들어줘. 레퍼런스의 스타일만 흡수하고 주제는 새롭게. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/dc/fd/0f/dcfd0faa9db626830eba3d730aeb1156.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/dc/fd/0f/dcfd0faa9db626830eba3d730aeb1156.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/be/3c/7b/be3c7bdf8aa52771a401ccc7a0c1307f.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/be/3c/7b/be3c7bdf8aa52771a401ccc7a0c1307f.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/d1/53/87/d15387053285cdf65a8cf17d1b090a06.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/d1/53/87/d15387053285cdf65a8cf17d1b090a06.png')"></div>
+    </div>
+  </div>
   <div class="card"
        data-id="260222_1284"
        data-word1="케이크"
