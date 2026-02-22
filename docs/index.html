@@ -53,9 +53,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1248</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1249</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$138.75</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$138.88</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -76,6 +76,34 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260223_1301"
+       data-word1="다이아몬드"
+       data-word2="불가사리"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-23"
+       data-time="2026-02-22T18:19:28.496219+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1I5UzyCzmU5TFKug_eOcLMY8hrc0dzH2n" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1I5UzyCzmU5TFKug_eOcLMY8hrc0dzH2n')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">다이아몬드</span> x
+        <span class="w2">불가사리</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260223_1301 ·
+        2026-02-23
+      </div>
+      <div class="prompt">첨부 이미지에서 느껴지는 무드·컬러톤·라이팅·소재의 질감을 유지하면서 다이아몬드(diamond, faceted gem, brilliant refraction)과 불가사리(starfish, radial symmetry, ocean star)를 결합한 기발하고 디테일한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/42/82/42/428242dde48724295abb9e7a4643cb85.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/42/82/42/428242dde48724295abb9e7a4643cb85.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/a1/70/7c/a1707c5d8d22829c14fa538230535bf1.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/a1/70/7c/a1707c5d8d22829c14fa538230535bf1.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/f6/33/e1/f633e18049386326032f1e15667b3869.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/f6/33/e1/f633e18049386326032f1e15667b3869.jpg')"></div>
+    </div>
+  </div>
   <div class="card"
        data-id="260223_1300"
        data-word1="향수"
