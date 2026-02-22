@@ -53,9 +53,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1359</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1360</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$153.62</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$153.76</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -76,6 +76,34 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260223_1414"
+       data-word1="깃털"
+       data-word2="망원경"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-23"
+       data-time="2026-02-22T21:04:04.382023+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1oC0vN5QyQ7BYfCplcRpv8T5aSOOCt7OV" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1oC0vN5QyQ7BYfCplcRpv8T5aSOOCt7OV')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">깃털</span> x
+        <span class="w2">망원경</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260223_1414 ·
+        2026-02-23
+      </div>
+      <div class="prompt">첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 깃털(feather, soft barb, floating grace)과 망원경(telescope, distant viewer)를 결합한 프로페셔널한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/70/0d/7d/700d7d35c70548c31b7644d7a189d205.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/70/0d/7d/700d7d35c70548c31b7644d7a189d205.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/2b/25/e0/2b25e003928468133be587710b39271e.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/2b/25/e0/2b25e003928468133be587710b39271e.jpg')"></div>
+    </div>
+  </div>
   <div class="card"
        data-id="260223_1413"
        data-word1="무한대 기호"
