@@ -53,9 +53,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1258</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1259</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$140.09</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$140.22</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -76,6 +76,34 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260223_1312"
+       data-word1="장난감"
+       data-word2="왕관"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-23"
+       data-time="2026-02-22T18:35:48.068413+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1N-gqNz8VpfBbLyJOQsv1TNSCwEAzX6xg" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1N-gqNz8VpfBbLyJOQsv1TNSCwEAzX6xg')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">장난감</span> x
+        <span class="w2">왕관</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260223_1312 ·
+        2026-02-23
+      </div>
+      <div class="prompt">첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 장난감(toy, playful object, childhood wonder)과 왕관(crown, sovereign symbol)를 결합한 프로페셔널한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/a2/5e/50/a25e506d4043adc4f49c658c97000739.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/a2/5e/50/a25e506d4043adc4f49c658c97000739.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/34/83/8d/34838db819c6d7702203d9ceb6e9c181.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/34/83/8d/34838db819c6d7702203d9ceb6e9c181.png')"></div>
+    </div>
+  </div>
   <div class="card"
        data-id="260223_1311"
        data-word1="보드게임 말"
