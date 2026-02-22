@@ -53,9 +53,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1387</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1388</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$157.38</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$157.51</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -76,6 +76,34 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260223_1442"
+       data-word1="강아지 캐릭터"
+       data-word2="해파리"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-23"
+       data-time="2026-02-22T21:43:08.945820+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1dClivHxBTXyaDMa0396q945uqOxVXK60" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1dClivHxBTXyaDMa0396q945uqOxVXK60')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">강아지 캐릭터</span> x
+        <span class="w2">해파리</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260223_1442 ·
+        2026-02-23
+      </div>
+      <div class="prompt">첨부 이미지의 디자인 퀄리티·컬러 감각·재질 표현·조명 무드를 충실히 흡수하되, 피사체는 새롭게 강아지 캐릭터(dog character, puppy figure, loyal companion)과 해파리(jellyfish, drifting translucence)로 재해석하여 완성도 높은 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/ce/1e/7d/ce1e7def688702e1bc89d6e2dbc56cb0.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ce/1e/7d/ce1e7def688702e1bc89d6e2dbc56cb0.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/73/fc/4d/73fc4d59d0c99010f88608adef00b201.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/73/fc/4d/73fc4d59d0c99010f88608adef00b201.jpg')"></div>
+    </div>
+  </div>
   <div class="card"
        data-id="260223_1441"
        data-word1="용기"
