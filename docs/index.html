@@ -53,9 +53,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1233</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1234</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$136.74</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$136.87</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -76,6 +76,34 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260223_1286"
+       data-word1="나비"
+       data-word2="책"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-23"
+       data-time="2026-02-22T17:56:20.284195+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1bpPu5eYP7AQrc9De_B2qHKSW7HuuvfuJ" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1bpPu5eYP7AQrc9De_B2qHKSW7HuuvfuJ')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">나비</span> x
+        <span class="w2">책</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260223_1286 ·
+        2026-02-23
+      </div>
+      <div class="prompt">첨부 이미지를 스타일 무드보드로 삼아 컬러톤·재질감·공간 분위기·디자인 퀄리티를 깊이 참고하여 나비(butterfly, wing pattern, graceful flutter)과 책(book, infinite worlds, paper wisdom)를 결합한 영감을 주는 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/d9/4a/16/d94a166c5e3d91c6732079b027577207.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/d9/4a/16/d94a166c5e3d91c6732079b027577207.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/52/d9/f1/52d9f108696c09495f74b3e8125ec1cc.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/52/d9/f1/52d9f108696c09495f74b3e8125ec1cc.jpg')"></div>
+    </div>
+  </div>
   <div class="card"
        data-id="260223_1285"
        data-word1="주사위"
