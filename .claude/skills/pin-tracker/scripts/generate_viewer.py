@@ -49,9 +49,15 @@ def _load_all_metadata() -> list:
     for meta_file in sorted(METADATA_DIR.glob("*_metadata.json")):
         if "backup" in meta_file.name:
             continue
-        with open(meta_file, encoding="utf-8") as f:
-            entries = json.load(f)
-        all_entries.extend(entries)
+        try:
+            with open(meta_file, encoding="utf-8") as f:
+                entries = json.load(f)
+            if isinstance(entries, list):
+                all_entries.extend(entries)
+            else:
+                print(f"  [WARN] 메타데이터 형식 오류 (list 아님): {meta_file.name}")
+        except (json.JSONDecodeError, UnicodeDecodeError) as e:
+            print(f"  [WARN] 깨진 메타데이터 건너뜀: {meta_file.name} ({e})")
     return all_entries
 
 
@@ -61,10 +67,17 @@ def generate_viewer(session_id: str = None, date_str: str = None) -> Path | None
         if not meta_file.exists():
             print(f"[ERROR] metadata 없음: {meta_file}")
             return None
-        with open(meta_file, encoding="utf-8") as f:
-            entries = json.load(f)
+        try:
+            with open(meta_file, encoding="utf-8") as f:
+                entries = json.load(f)
+        except (json.JSONDecodeError, UnicodeDecodeError) as e:
+            print(f"[ERROR] 깨진 metadata: {meta_file} ({e})")
+            return None
     else:
         entries = _load_all_metadata()
+
+    # MJ 항목 제외 (미드저니는 웹 뷰어에 표시하지 않음)
+    entries = [e for e in entries if "midjourney" not in e.get("model_used", "").lower()]
 
     if not entries:
         print("[ERROR] metadata 항목 없음")
@@ -110,8 +123,10 @@ def generate_viewer(session_id: str = None, date_str: str = None) -> Path | None
                     f'onclick="showPinPopup(\'{pin_url}\')">'
                 )
 
+        combo_id = entry.get('combo_id', '').replace('/', '_').replace('.', '_')
         html_cards += f"""
   <div class="card{card_cls}"
+       data-id="{combo_id}"
        data-word1="{entry.get('word1','')}"
        data-word2="{entry.get('word2','')}"
        data-cost="{entry.get('cost', 0)}"
@@ -136,6 +151,10 @@ def generate_viewer(session_id: str = None, date_str: str = None) -> Path | None
       </div>
       <div class="prompt">{prompt_text}</div>
       <div class="pins">{pins_html}</div>
+      <div class="memo-area" data-memo-id="{combo_id}">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
     </div>
   </div>"""
 
@@ -150,7 +169,7 @@ def generate_viewer(session_id: str = None, date_str: str = None) -> Path | None
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nano Banana Viewer</title>
+<title>BOKBOK STUDIO</title>
 <style>
 * {{ box-sizing: border-box; margin: 0; padding: 0; }}
 body {{ font-family: -apple-system, sans-serif; background: #0a0a0a; color: #e0e0e0; padding: 20px; }}
@@ -168,10 +187,11 @@ h1 {{ font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }}
 .date-filters label {{ font-size: 0.85rem; color: #aaa; cursor: pointer; }}
 .date-filters label input {{ margin-right: 3px; }}
 #count {{ color: #888; font-size: 0.8rem; }}
-.grid {{ display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }}
+.grid {{ display: flex; gap: 12px; align-items: flex-start; }}
+.grid-col {{ flex: 1; display: flex; flex-direction: column; gap: 12px; min-width: 0; }}
 .card {{ background: #1a1a1a; border-radius: 8px; overflow: hidden; }}
 .card-img-wrap {{ position: relative; }}
-.card-img {{ width: 100%; aspect-ratio: 1; object-fit: cover; display: block; background: #222; }}
+.card-img {{ width: 100%; display: block; background: #222; }}
 .card-img-placeholder {{ width: 100%; aspect-ratio: 1; background: #222; display: flex; align-items: center; justify-content: center; color: #444; font-size: 0.75rem; }}
 .heart-btn {{ position: absolute; top: 6px; right: 6px; background: rgba(0,0,0,0.5); border: none; color: #888; font-size: 1.4rem; cursor: pointer; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; transition: color 0.2s; line-height: 1; }}
 .heart-btn:hover {{ color: #ff6b6b; }}
@@ -191,19 +211,24 @@ h1 {{ font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }}
 .pin-popup img {{ max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 8px; }}
 .pin-popup-close {{ position: absolute; top: -12px; right: -12px; background: #333; color: #fff; border: none; font-size: 1.2rem; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }}
 .pin-popup-close:hover {{ background: #ff4757; }}
+.memo-area {{ position: relative; margin-top: 6px; }}
+.memo-text {{ font-size: 0.75rem; color: #f0c040; background: #222; border-radius: 4px; padding: 4px 8px; min-height: 0; white-space: pre-wrap; word-break: break-word; cursor: pointer; }}
+.memo-text:empty {{ display: none; }}
+.memo-text:empty + .memo-btn {{ opacity: 0.4; }}
+.memo-btn {{ position: absolute; top: 2px; right: 2px; background: none; border: none; color: #888; font-size: 0.85rem; cursor: pointer; padding: 2px 4px; }}
+.memo-btn:hover {{ color: #f0c040; }}
+.memo-text:not(:empty) + .memo-btn {{ display: none; }}
+.memo-edit {{ width: 100%; background: #222; border: 1px solid #f0c040; border-radius: 4px; color: #f0c040; font-size: 0.75rem; padding: 4px 8px; resize: vertical; min-height: 32px; font-family: inherit; }}
 .failed {{ opacity: 0.4; }}
 .load-more-btn {{ display: block; margin: 20px auto; padding: 10px 40px; background: #333; color: #e0e0e0; border: 1px solid #555; border-radius: 8px; font-size: 0.9rem; cursor: pointer; }}
 .load-more-btn:hover {{ background: #444; }}
-@media (max-width: 1200px) {{ .grid {{ grid-template-columns: repeat(3, 1fr); }} }}
-@media (max-width: 768px) {{ .grid {{ grid-template-columns: repeat(2, 1fr); }} }}
 </style>
 </head>
 <body>
-<h1>Nano Banana Viewer</h1>
+<h1>BOKBOK STUDIO</h1>
 <div class="stats">
   <div class="stat"><div class="stat-val">{len(entries)}</div><div class="stat-lbl">Total</div></div>
-  <div class="stat"><div class="stat-val">{len(success)}</div><div class="stat-lbl">Success</div></div>
-  <div class="stat"><div class="stat-val">{len(entries)-len(success)}</div><div class="stat-lbl">Failed</div></div>
+  <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
   <div class="stat"><div class="stat-val">${total_cost:.2f}</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
@@ -238,19 +263,25 @@ firebase.initializeApp({{
 }});
 const db = firebase.database();
 const likesRef = db.ref('likes');
+const memosRef = db.ref('memos');
 
 const grid = document.getElementById('grid');
 const cards = [...grid.children];
 const likedSet = new Set();
 const cardMap = {{}};
+const oldKeyToNew = {{}};
 
 cards.forEach(c => {{
-  const key = (c.dataset.word1 + '_' + c.dataset.word2 + '_' + c.dataset.time).replace(/[.#$/\\[\\]]/g, '_');
-  c.dataset.key = key;
-  cardMap[key] = c;
+  const newKey = c.dataset.id;
+  c.dataset.key = newKey;
+  if (newKey) cardMap[newKey] = c;
+  // 이전 키 형식 매핑 (word1_word2_time → combo_id)
+  const oldKey = (c.dataset.word1 + '_' + c.dataset.word2 + '_' + c.dataset.time).replace(/[.#$/\\[\\]]/g, '_');
+  oldKeyToNew[oldKey] = newKey;
 }});
 
-// Firebase에서 하트 데이터 실시간 수신
+// Firebase에서 하트 데이터 실시간 수신 + 이전 키 마이그레이션
+let migrated = false;
 likesRef.on('value', snap => {{
   const data = snap.val() || {{}};
   likedSet.clear();
@@ -259,15 +290,37 @@ likesRef.on('value', snap => {{
     c.querySelector('.heart-btn').classList.remove('liked');
     c.querySelector('.heart-btn').innerHTML = '\\u2661';
   }});
+  const toMigrate = {{}};
   Object.keys(data).forEach(key => {{
-    if (data[key] && cardMap[key]) {{
+    let target = cardMap[key];
+    if (target) {{
+      // 새 키 형식 매칭
       likedSet.add(key);
-      cardMap[key].dataset.liked = 'true';
-      cardMap[key].querySelector('.heart-btn').classList.add('liked');
-      cardMap[key].querySelector('.heart-btn').innerHTML = '\\u2665';
+      target.dataset.liked = 'true';
+      target.querySelector('.heart-btn').classList.add('liked');
+      target.querySelector('.heart-btn').innerHTML = '\\u2665';
+    }} else if (oldKeyToNew[key] && cardMap[oldKeyToNew[key]]) {{
+      // 이전 키 → 새 키로 마이그레이션
+      const nk = oldKeyToNew[key];
+      likedSet.add(nk);
+      cardMap[nk].dataset.liked = 'true';
+      cardMap[nk].querySelector('.heart-btn').classList.add('liked');
+      cardMap[nk].querySelector('.heart-btn').innerHTML = '\\u2665';
+      if (!migrated) toMigrate[key] = nk;
     }}
   }});
-  filterCards();
+  // 이전 키를 새 키로 한번만 마이그레이션
+  if (!migrated && Object.keys(toMigrate).length > 0) {{
+    migrated = true;
+    const updates = {{}};
+    Object.entries(toMigrate).forEach(([oldK, newK]) => {{
+      updates[oldK] = null;
+      updates[newK] = true;
+    }});
+    likesRef.update(updates);
+  }}
+  updateLikedCounts();
+  if (document.getElementById('liked-only').checked) filterCards(false);
 }});
 
 function toggleHeart(btn) {{
@@ -296,7 +349,15 @@ const PAGE_SIZE = 50;
 let currentPage = 1;
 let filteredCards = [];
 
-function filterCards() {{
+function updateLikedCounts() {{
+  const dates = getSelectedDates();
+  const dateLiked = cards.filter(c => c.dataset.liked === 'true' && (dates.length === 0 || dates.includes(c.dataset.date))).length;
+  const totalLiked = cards.filter(c => c.dataset.liked === 'true').length;
+  document.getElementById('liked-stat').textContent = totalLiked;
+  const lo = document.getElementById('liked-only').checked;
+  document.getElementById('count').textContent = lo ? dateLiked + ' liked' : '';
+}}
+function filterCards(resetPage) {{
   const q = document.getElementById('search').value.toLowerCase();
   const dates = getSelectedDates();
   const mf = document.getElementById('model-filter').value;
@@ -308,21 +369,45 @@ function filterCards() {{
       && (mf === 'all' || c.dataset.model === mf)
       && (!lo || c.dataset.liked === 'true');
   }});
-  currentPage = 1;
+  if (resetPage !== false) currentPage = 1;
+  updateLikedCounts();
   renderPage();
 }}
+function getColCount() {{
+  if (window.innerWidth <= 768) return 2;
+  if (window.innerWidth <= 1200) return 3;
+  return 5;
+}}
 function renderPage() {{
+  const scrollY = window.scrollY;
   const end = currentPage * PAGE_SIZE;
-  cards.forEach(c => c.style.display = 'none');
-  filteredCards.slice(0, end).forEach(c => c.style.display = '');
-  document.getElementById('count').textContent = Math.min(end, filteredCards.length) + '/' + filteredCards.length + ' shown';
+  const colCount = getColCount();
+  while (grid.firstChild) grid.removeChild(grid.firstChild);
+  const cols = [];
+  for (let i = 0; i < colCount; i++) {{
+    const col = document.createElement('div');
+    col.className = 'grid-col';
+    grid.appendChild(col);
+    cols.push(col);
+  }}
+  const visible = filteredCards.slice(0, end);
+  visible.forEach((card, i) => {{
+    card.style.display = '';
+    cols[i % colCount].appendChild(card);
+  }});
   const btn = document.getElementById('load-more');
   btn.style.display = end < filteredCards.length ? '' : 'none';
+  requestAnimationFrame(() => window.scrollTo(0, scrollY));
 }}
 function loadMore() {{
   currentPage++;
   renderPage();
 }}
+let resizeTimer;
+window.addEventListener('resize', () => {{
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(renderPage, 200);
+}});
 function showPinPopup(url) {{
   const overlay = document.createElement('div');
   overlay.className = 'pin-popup-overlay';
@@ -330,14 +415,56 @@ function showPinPopup(url) {{
   overlay.addEventListener('click', function(e) {{ if (e.target === overlay) overlay.remove(); }});
   document.body.appendChild(overlay);
 }}
+// 메모 기능 — Firebase 실시간
+memosRef.on('value', snap => {{
+  const data = snap.val() || {{}};
+  document.querySelectorAll('.memo-area').forEach(area => {{
+    const mid = area.dataset.memoId;
+    const textEl = area.querySelector('.memo-text');
+    if (data[mid]) {{
+      textEl.textContent = data[mid];
+    }} else {{
+      textEl.textContent = '';
+    }}
+  }});
+}});
+function editMemo(textEl) {{
+  const area = textEl.closest('.memo-area');
+  const mid = area.dataset.memoId;
+  const current = textEl.textContent || '';
+  const ta = document.createElement('textarea');
+  ta.className = 'memo-edit';
+  ta.value = current;
+  ta.placeholder = '메모 입력...';
+  textEl.style.display = 'none';
+  area.querySelector('.memo-btn').style.display = 'none';
+  area.appendChild(ta);
+  ta.focus();
+  function save() {{
+    const val = ta.value.trim();
+    ta.remove();
+    textEl.style.display = '';
+    if (val) {{
+      memosRef.child(mid).set(val);
+    }} else {{
+      memosRef.child(mid).remove();
+    }}
+  }}
+  ta.addEventListener('blur', save);
+  ta.addEventListener('keydown', function(e) {{
+    if (e.key === 'Enter' && !e.shiftKey) {{ e.preventDefault(); save(); }}
+    if (e.key === 'Escape') {{ ta.value = current; save(); }}
+  }});
+}}
 function sortCards() {{
   const s = document.getElementById('sort').value;
-  [...cards].sort((a, b) => {{
+  cards.sort((a, b) => {{
     if (s === 'cost-high') return parseFloat(b.dataset.cost) - parseFloat(a.dataset.cost);
     if (s === 'cost-low') return parseFloat(a.dataset.cost) - parseFloat(b.dataset.cost);
     if (s === 'oldest') return a.dataset.time.localeCompare(b.dataset.time);
     return b.dataset.time.localeCompare(a.dataset.time);
-  }}).forEach(c => grid.appendChild(c));
+  }});
+  filterCards();
 }}
 filterCards();
 </script>
