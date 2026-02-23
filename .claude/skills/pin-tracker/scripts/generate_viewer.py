@@ -211,13 +211,12 @@ h1 {{ font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }}
 .pin-popup img {{ max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 8px; }}
 .pin-popup-close {{ position: absolute; top: -12px; right: -12px; background: #333; color: #fff; border: none; font-size: 1.2rem; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }}
 .pin-popup-close:hover {{ background: #ff4757; }}
-.memo-area {{ position: relative; margin-top: 6px; }}
-.memo-text {{ font-size: 0.75rem; color: #f0c040; background: #222; border-radius: 4px; padding: 4px 8px; min-height: 0; white-space: pre-wrap; word-break: break-word; cursor: pointer; }}
+.memo-area {{ margin-top: 6px; }}
+.memo-text {{ font-size: 0.75rem; color: #f0c040; background: #222; border-radius: 4px; padding: 4px 8px; white-space: pre-wrap; word-break: break-word; cursor: pointer; }}
 .memo-text:empty {{ display: none; }}
-.memo-text:empty + .memo-btn {{ opacity: 0.4; }}
-.memo-btn {{ position: absolute; top: 2px; right: 2px; background: none; border: none; color: #888; font-size: 0.85rem; cursor: pointer; padding: 2px 4px; }}
-.memo-btn:hover {{ color: #f0c040; }}
-.memo-text:not(:empty) + .memo-btn {{ display: none; }}
+.memo-btn {{ background: none; border: 1px solid #333; color: #666; font-size: 0.75rem; cursor: pointer; padding: 2px 8px; border-radius: 4px; }}
+.memo-btn:hover {{ color: #f0c040; border-color: #f0c040; }}
+.memo-text:not(:empty) ~ .memo-btn {{ display: none; }}
 .memo-edit {{ width: 100%; background: #222; border: 1px solid #f0c040; border-radius: 4px; color: #f0c040; font-size: 0.75rem; padding: 4px 8px; resize: vertical; min-height: 32px; font-family: inherit; }}
 .failed {{ opacity: 0.4; }}
 .load-more-btn {{ display: block; margin: 20px auto; padding: 10px 40px; background: #333; color: #e0e0e0; border: 1px solid #555; border-radius: 8px; font-size: 0.9rem; cursor: pointer; }}
