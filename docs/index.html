@@ -46008,18 +46008,24 @@ function showPinPopup(url) {
   overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
   document.body.appendChild(overlay);
 }
-// 메모 기능 — Firebase 실시간
-memosRef.on('value', snap => {
-  const data = snap.val() || {};
-  document.querySelectorAll('.memo-area').forEach(area => {
+// 메모 기능 — Firebase 실시간 (모든 카드에 적용, DOM 밖 카드 포함)
+let memoData = {};
+function applyMemos() {
+  cards.forEach(c => {
+    const area = c.querySelector('.memo-area');
+    if (!area) return;
     const mid = area.dataset.memoId;
     const textEl = area.querySelector('.memo-text');
-    if (data[mid]) {
-      textEl.textContent = data[mid];
+    if (memoData[mid]) {
+      textEl.textContent = memoData[mid];
     } else {
       textEl.textContent = '';
     }
   });
+}
+memosRef.on('value', snap => {
+  memoData = snap.val() || {};
+  applyMemos();
 });
 function editMemo(textEl) {
   const area = textEl.closest('.memo-area');
