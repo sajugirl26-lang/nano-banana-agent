@@ -46039,9 +46039,13 @@ function editMemo(textEl) {
   area.querySelector('.memo-btn').style.display = 'none';
   area.appendChild(ta);
   ta.focus();
+  let saved = false;
   function save() {
+    if (saved) return;
+    saved = true;
     const val = ta.value.trim();
     ta.remove();
+    textEl.textContent = val;
     textEl.style.display = '';
     const btn = area.querySelector('.memo-btn');
     if (btn) btn.style.display = '';
