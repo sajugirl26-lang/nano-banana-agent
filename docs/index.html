@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1526</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1527</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$176.00</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$176.14</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1582"
+       data-word1="입술"
+       data-word2="천사"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:33:01.303479+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/11YqnCaLLVdjYY83QM0BhOVYrKiensWMe" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/11YqnCaLLVdjYY83QM0BhOVYrKiensWMe')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">입술</span> x
+        <span class="w2">천사</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1582 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지에서 느껴지는 무드·컬러톤·라이팅·소재의 질감을 유지하면서 입술(lips, speaking curve, sensual form)과 천사(angel, divine wings, radiant halo)를 결합한 기발하고 디테일한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/94/ae/45/94ae454732b64c182610777b8efef3a5.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/94/ae/45/94ae454732b64c182610777b8efef3a5.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/ac/d6/6c/acd66cff2556c4966cf97afbd8434972.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ac/d6/6c/acd66cff2556c4966cf97afbd8434972.png')"></div>
+      <div class="memo-area" data-memo-id="260224_1582">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1581"
        data-word1="이모지"
