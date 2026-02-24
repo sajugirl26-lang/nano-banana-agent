@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1520</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1521</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$175.20</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$175.33</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1576"
+       data-word1="에메랄드"
+       data-word2="차원"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:24:31.786653+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1je0yl1u0DYp6S82qjVNgEpmo5NkuhUS0" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1je0yl1u0DYp6S82qjVNgEpmo5NkuhUS0')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">에메랄드</span> x
+        <span class="w2">차원</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1576 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지에서 느껴지는 무드·컬러톤·라이팅·소재의 질감을 유지하면서 에메랄드(emerald, green gem, crystalline depth)과 차원(dimension, spatial layer)를 결합한 기발하고 디테일한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/58/16/27/58162789304cb16303cf697da0aaaa00.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/58/16/27/58162789304cb16303cf697da0aaaa00.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/d9/d3/42/d9d3428a709ffb6de15f533f45846926.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/d9/d3/42/d9d3428a709ffb6de15f533f45846926.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/59/f3/b1/59f3b1da8cb2a269383f391108a8b441.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/59/f3/b1/59f3b1da8cb2a269383f391108a8b441.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1576">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1575"
        data-word1="꽃"
