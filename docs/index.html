@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1536</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1537</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$177.34</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$177.48</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1592"
+       data-word1="콜라주"
+       data-word2="투명한"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:48:57.845228+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1vL1hHE8sbUcmsRm9dUcEiYfRatXsck-_" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1vL1hHE8sbUcmsRm9dUcEiYfRatXsck-_')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">콜라주</span> x
+        <span class="w2">투명한</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1592 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 비주얼 완성도와 색채 감각을 그대로 이어받아 콜라주(collage, layered cutout, mixed media)과 투명한(transparent, see-through clarity)를 결합한 상상력 넘치는 이미지를 만들어줘. 피사체만 새롭게 표현해줘. a stylized realism 3D render, slightly exaggerated forms with realistic textures, accurate reflections, filmic lens look, shallow depth of field, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/75/d1/3f/75d13f5b044484ec5568a238066b3f43.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/75/d1/3f/75d13f5b044484ec5568a238066b3f43.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/b4/4d/1a/b44d1afafdd5e8710173dd3d9a37bb4b.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/b4/4d/1a/b44d1afafdd5e8710173dd3d9a37bb4b.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/eb/57/72/eb5772b013342ee1704b459a4f0041a6.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/eb/57/72/eb5772b013342ee1704b459a4f0041a6.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/e6/d0/e1/e6d0e1a6160ae9fa00521e5589f1c4a2.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/e6/d0/e1/e6d0e1a6160ae9fa00521e5589f1c4a2.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1592">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1591"
        data-word1="모빌"
