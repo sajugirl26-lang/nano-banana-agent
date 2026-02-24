@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1584</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1585</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$179.88</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$179.92</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1649"
+       data-word1="점토 놀이"
+       data-word2="낙엽"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T11:19:42.258974+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1_L56oBBSi44_QSch6KLXZwZlD7qeHAD_" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1_L56oBBSi44_QSch6KLXZwZlD7qeHAD_')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">점토 놀이</span> x
+        <span class="w2">낙엽</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1649 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 비주얼 톤과 퀄리티를 기준으로 삼아 점토 놀이(play-doh, moldable color, squishy creation)과 낙엽(fallen leaf, autumnal end)를 결합한 리얼리스틱하고 디테일한 이미지를 만들어줘. 레퍼런스의 스타일만 흡수하고 주제는 새롭게. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/62/b3/fd/62b3fd71ceb453374b17b6f44b7b3227.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/62/b3/fd/62b3fd71ceb453374b17b6f44b7b3227.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/82/51/8e/82518ee5cda97e02d39173c9bb62cce8.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/82/51/8e/82518ee5cda97e02d39173c9bb62cce8.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/ab/22/c3/ab22c3c7cedfdacd73afff51c4a52d7a.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ab/22/c3/ab22c3c7cedfdacd73afff51c4a52d7a.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/d2/21/b3/d221b321b7af30799bb16bd7af02a0a7.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/d2/21/b3/d221b321b7af30799bb16bd7af02a0a7.png')"></div>
+      <div class="memo-area" data-memo-id="260224_1649">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1648"
        data-word1="카드 게임"
