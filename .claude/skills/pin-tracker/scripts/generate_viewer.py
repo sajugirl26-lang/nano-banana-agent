@@ -93,8 +93,8 @@ def generate_viewer(session_id: str = None, date_str: str = None) -> Path | None
         _to_kst_date(e.get("generated_at", "")) for e in entries if e.get("generated_at")
     ) - {""}, reverse=True)
 
-    # 최신순 정렬 (generated_at 역순, 없으면 combo_id 역순)
-    entries.sort(key=lambda e: e.get("generated_at", e.get("combo_id", "")), reverse=True)
+    # 최신순 정렬 (combo_id 역순 — 안정적 순서 보장)
+    entries.sort(key=lambda e: e.get("combo_id", ""), reverse=True)
 
     html_cards = ""
     for entry in entries:
@@ -123,7 +123,9 @@ def generate_viewer(session_id: str = None, date_str: str = None) -> Path | None
                     f'onclick="showPinPopup(\'{pin_url}\')">'
                 )
 
-        combo_id = entry.get('combo_id', '').replace('/', '_').replace('.', '_')
+        combo_id = entry.get('combo_id', '')
+        for ch in ['/', '.', '$', '#', '[', ']']:
+            combo_id = combo_id.replace(ch, '_')
         html_cards += f"""
   <div class="card{card_cls}"
        data-id="{combo_id}"
@@ -187,8 +189,7 @@ h1 {{ font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }}
 .date-filters label {{ font-size: 0.85rem; color: #aaa; cursor: pointer; }}
 .date-filters label input {{ margin-right: 3px; }}
 #count {{ color: #888; font-size: 0.8rem; }}
-.grid {{ display: flex; gap: 12px; align-items: flex-start; }}
-.grid-col {{ flex: 1; display: flex; flex-direction: column; gap: 12px; min-width: 0; }}
+.grid {{ position: relative; }}
 .card {{ background: #1a1a1a; border-radius: 8px; overflow: hidden; }}
 .card-img-wrap {{ position: relative; }}
 .card-img {{ width: 100%; display: block; background: #222; }}
@@ -377,22 +378,45 @@ function getColCount() {{
   if (window.innerWidth <= 1200) return 3;
   return 5;
 }}
+function layoutCards(visible, colCount, colWidth, gap) {{
+  const colHeights = new Array(colCount).fill(0);
+  visible.forEach((card, i) => {{
+    const col = i % colCount;
+    const h = card.offsetHeight;
+    card.style.cssText = 'position:absolute;width:' + colWidth + 'px;left:' + (col * (colWidth + gap)) + 'px;top:' + colHeights[col] + 'px';
+    colHeights[col] += h + gap;
+  }});
+  grid.style.height = Math.max(...colHeights) + 'px';
+}}
+let _relayoutTimer;
 function renderPage() {{
   const scrollY = window.scrollY;
   const end = currentPage * PAGE_SIZE;
-  const colCount = getColCount();
   while (grid.firstChild) grid.removeChild(grid.firstChild);
-  const cols = [];
-  for (let i = 0; i < colCount; i++) {{
-    const col = document.createElement('div');
-    col.className = 'grid-col';
-    grid.appendChild(col);
-    cols.push(col);
-  }}
   const visible = filteredCards.slice(0, end);
-  visible.forEach((card, i) => {{
-    card.style.display = '';
-    cols[i % colCount].appendChild(card);
+  const gap = 12;
+  const colCount = getColCount();
+  const gridWidth = grid.clientWidth || grid.parentElement.clientWidth;
+  const colWidth = (gridWidth - gap * (colCount - 1)) / colCount;
+  // DOM에 추가
+  visible.forEach(card => {{
+    card.style.cssText = 'position:absolute;visibility:hidden;width:' + colWidth + 'px';
+    grid.appendChild(card);
+  }});
+  // 초기 배치
+  layoutCards(visible, colCount, colWidth, gap);
+  // 이미지 로드 후 재배치
+  let pending = 0;
+  visible.forEach(card => {{
+    const img = card.querySelector('.card-img');
+    if (img && !img.complete) {{
+      pending++;
+      img.onload = img.onerror = () => {{
+        pending--;
+        clearTimeout(_relayoutTimer);
+        _relayoutTimer = setTimeout(() => layoutCards(visible, colCount, colWidth, gap), pending > 0 ? 50 : 0);
+      }};
+    }}
   }});
   const btn = document.getElementById('load-more');
   btn.style.display = end < filteredCards.length ? '' : 'none';
@@ -414,18 +438,24 @@ function showPinPopup(url) {{
   overlay.addEventListener('click', function(e) {{ if (e.target === overlay) overlay.remove(); }});
   document.body.appendChild(overlay);
 }}
-// 메모 기능 — Firebase 실시간
-memosRef.on('value', snap => {{
-  const data = snap.val() || {{}};
-  document.querySelectorAll('.memo-area').forEach(area => {{
+// 메모 기능 — Firebase 실시간 (모든 카드에 적용, DOM 밖 카드 포함)
+let memoData = {{}};
+function applyMemos() {{
+  cards.forEach(c => {{
+    const area = c.querySelector('.memo-area');
+    if (!area) return;
     const mid = area.dataset.memoId;
     const textEl = area.querySelector('.memo-text');
-    if (data[mid]) {{
-      textEl.textContent = data[mid];
+    if (memoData[mid]) {{
+      textEl.textContent = memoData[mid];
     }} else {{
       textEl.textContent = '';
     }}
   }});
+}}
+memosRef.on('value', snap => {{
+  memoData = snap.val() || {{}};
+  applyMemos();
 }});
 function editMemo(textEl) {{
   const area = textEl.closest('.memo-area');
@@ -439,10 +469,16 @@ function editMemo(textEl) {{
   area.querySelector('.memo-btn').style.display = 'none';
   area.appendChild(ta);
   ta.focus();
+  let saved = false;
   function save() {{
+    if (saved) return;
+    saved = true;
     const val = ta.value.trim();
     ta.remove();
+    textEl.textContent = val;
     textEl.style.display = '';
+    const btn = area.querySelector('.memo-btn');
+    if (btn) btn.style.display = '';
     if (val) {{
       memosRef.child(mid).set(val);
     }} else {{
@@ -460,8 +496,8 @@ function sortCards() {{
   cards.sort((a, b) => {{
     if (s === 'cost-high') return parseFloat(b.dataset.cost) - parseFloat(a.dataset.cost);
     if (s === 'cost-low') return parseFloat(a.dataset.cost) - parseFloat(b.dataset.cost);
-    if (s === 'oldest') return a.dataset.time.localeCompare(b.dataset.time);
-    return b.dataset.time.localeCompare(a.dataset.time);
+    if (s === 'oldest') return a.dataset.id.localeCompare(b.dataset.id);
+    return b.dataset.id.localeCompare(a.dataset.id);
   }});
   filterCards();
 }}
