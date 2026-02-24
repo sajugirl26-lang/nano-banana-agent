@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1504</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1505</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$173.05</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$173.19</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1560"
+       data-word1="바우하우스"
+       data-word2="만화경"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T04:57:03.945886+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1-yHicfnwFyfSSikqD5lNfKzWJZFJCDkz" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1-yHicfnwFyfSSikqD5lNfKzWJZFJCDkz')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">바우하우스</span> x
+        <span class="w2">만화경</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1560 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 비주얼 톤과 퀄리티를 기준으로 삼아 바우하우스(Bauhaus, functional form, geometric simplicity)과 만화경(kaleidoscope, symmetrical pattern)를 결합한 리얼리스틱하고 디테일한 이미지를 만들어줘. 레퍼런스의 스타일만 흡수하고 주제는 새롭게. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/c6/0a/6f/c60a6f4a35bef2020e89d4848889be34.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/c6/0a/6f/c60a6f4a35bef2020e89d4848889be34.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/40/ee/2b/40ee2b28978574062db543912d3b815f.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/40/ee/2b/40ee2b28978574062db543912d3b815f.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1560">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1559"
        data-word1="환영"
