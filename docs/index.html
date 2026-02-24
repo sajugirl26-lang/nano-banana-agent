@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1553</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1554</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$178.67</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$178.71</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1617"
+       data-word1="연인"
+       data-word2="방어막"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T10:40:45.404523+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1pe6NC8FnkmqvvTCu7e7wNYxAI4CCEmYK" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1pe6NC8FnkmqvvTCu7e7wNYxAI4CCEmYK')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">연인</span> x
+        <span class="w2">방어막</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1617 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 색감·질감·분위기·렌더링 퀄리티를 깊이 참고하여 연인(lovers, intertwined figures, tender embrace)과 방어막(shield, protective barrier)를 결합한 새로운 고퀄리티 이미지를 만들어줘. 레퍼런스의 오브젝트가 아닌 스타일을 흡수해줘. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/62/a2/37/62a23789e87b2cd3a7585defcddc377a.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/62/a2/37/62a23789e87b2cd3a7585defcddc377a.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/41/c1/a6/41c1a6c42d25a83f2a82b2faec8a4ebc.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/41/c1/a6/41c1a6c42d25a83f2a82b2faec8a4ebc.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1617">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1616"
        data-word1="아이스크림"
