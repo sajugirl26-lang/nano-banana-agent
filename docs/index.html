@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1492</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1493</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$171.45</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$171.58</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1548"
+       data-word1="눈"
+       data-word2="산호"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T04:40:17.019875+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1Ti-d5QGGDtXGVeRRXCpLu4PbxLlR9Bhp" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1Ti-d5QGGDtXGVeRRXCpLu4PbxLlR9Bhp')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">눈</span> x
+        <span class="w2">산호</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1548 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 톤·무드·컬러 팔레트·텍스처 퀄리티를 충실히 반영하되 주제는 눈(eye, gazing pupil, window to soul)과 산호(coral, ocean colony)로 완전히 새롭게 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/3b/fb/62/3bfb62781915248a57753bc23daa3430.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/3b/fb/62/3bfb62781915248a57753bc23daa3430.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/a9/2e/36/a92e366659285d51329a8077b6edef16.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/a9/2e/36/a92e366659285d51329a8077b6edef16.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/23/29/df/2329df84041ae5609840d9d7820ff62d.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/23/29/df/2329df84041ae5609840d9d7820ff62d.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/bd/48/49/bd48492994278e909d125aa9ee9a6c5f.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/bd/48/49/bd48492994278e909d125aa9ee9a6c5f.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1548">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1547"
        data-word1="토끼 캐릭터"
