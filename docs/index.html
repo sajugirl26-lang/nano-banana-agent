@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1585</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1586</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$179.92</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$179.96</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1650"
+       data-word1="향"
+       data-word2="모래시계"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T11:20:43.605656+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1vSakWr8XqzyClAFbyZRrKn72dRtk0VfY" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1vSakWr8XqzyClAFbyZRrKn72dRtk0VfY')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">향</span> x
+        <span class="w2">모래시계</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1650 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 비주얼 완성도와 색채 감각을 그대로 이어받아 향(incense, smoky trail, aromatic stick)과 모래시계(hourglass, flowing time)를 결합한 상상력 넘치는 이미지를 만들어줘. 피사체만 새롭게 표현해줘. a stylized realism 3D render, slightly exaggerated forms with realistic textures, accurate reflections, filmic lens look, shallow depth of field, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/fd/9d/89/fd9d89992757370fcdc57c102a8d4b9e.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/fd/9d/89/fd9d89992757370fcdc57c102a8d4b9e.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/48/15/26/48152690b75f5f6dc0c66646b2bdf942.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/48/15/26/48152690b75f5f6dc0c66646b2bdf942.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1650">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1649"
        data-word1="점토 놀이"
