@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1513</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1514</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$174.26</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$174.39</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1569"
+       data-word1="블록 레고"
+       data-word2="은색 물감"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:11:54.504194+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/14jzJOl0FSuFDfkxkN3hM2KH4b8Zv6YR3" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/14jzJOl0FSuFDfkxkN3hM2KH4b8Zv6YR3')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">블록 레고</span> x
+        <span class="w2">은색 물감</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1569 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 톤·무드·컬러 팔레트·텍스처 퀄리티를 충실히 반영하되 주제는 블록 레고(LEGO blocks, colorful bricks, stacked construction)과 은색 물감(silver paint, metallic pigment, reflective stroke)로 완전히 새롭게 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/13/9b/f0/139bf02f641f106551ab63cc69889ede.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/13/9b/f0/139bf02f641f106551ab63cc69889ede.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/1d/29/fb/1d29fb29496a906e132373440ee4a5c8.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/1d/29/fb/1d29fb29496a906e132373440ee4a5c8.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/06/0c/ca/060cca927939298e8925c68201846be3.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/06/0c/ca/060cca927939298e8925c68201846be3.png')"></div>
+      <div class="memo-area" data-memo-id="260224_1569">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1568"
        data-word1="산호"
