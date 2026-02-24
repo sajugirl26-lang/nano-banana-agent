@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1534</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1535</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$177.07</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$177.21</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1590"
+       data-word1="순수"
+       data-word2="프랙탈"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:45:54.407365+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/13eHXVpZsYKRBnYTFkpRqX-B-uPOQG-iH" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/13eHXVpZsYKRBnYTFkpRqX-B-uPOQG-iH')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">순수</span> x
+        <span class="w2">프랙탈</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1590 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지에서 느껴지는 무드·컬러톤·라이팅·소재의 질감을 유지하면서 순수(purity, innocent light, untainted beauty)과 프랙탈(fractal, self-similar infinity)를 결합한 기발하고 디테일한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/3a/5d/72/3a5d7253ea7c345a4dda830bd35b4c07.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/3a/5d/72/3a5d7253ea7c345a4dda830bd35b4c07.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/5b/bb/e7/5bbbe7d302fc8bf443cc1c450c9030b0.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/5b/bb/e7/5bbbe7d302fc8bf443cc1c450c9030b0.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/4c/ef/1e/4cef1e84c0103f75ace30a4b0af223eb.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/4c/ef/1e/4cef1e84c0103f75ace30a4b0af223eb.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1590">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1589"
        data-word1="설렘"
