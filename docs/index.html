@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1450</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1451</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$165.82</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$165.95</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1506"
+       data-word1="글라마라티"
+       data-word2="도자기"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T03:36:06.644759+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1ZokgJ0wmWHRz0MrsEHtntPPWzTy-qSOM" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1ZokgJ0wmWHRz0MrsEHtntPPWzTy-qSOM')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">글라마라티</span> x
+        <span class="w2">도자기</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1506 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지가 가진 디자인적 감각(색감, 조명, 재질, 공간감)을 살려서 글라마라티(glamoratti, 80s glam fashion, bold shoulder sculptural)과 도자기(pottery, wheel-thrown form, glazed surface)를 결합한 재치있고 완성도 높은 이미지를 만들어줘. a high-end PBR 3D render (Octane/Redshift vibe), realistic materials for fabric, accurate roughness maps, strong sunlight with sharp shadows, preserve colors, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/d7/cb/44/d7cb44c13b8c797939d99694b5706c1b.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/d7/cb/44/d7cb44c13b8c797939d99694b5706c1b.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/c2/90/04/c29004b9ae3b3c0333190d0a4e6c92fa.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/c2/90/04/c29004b9ae3b3c0333190d0a4e6c92fa.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/d7/93/69/d7936964e61c100495714d0794e42b03.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/d7/93/69/d7936964e61c100495714d0794e42b03.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1506">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1505"
        data-word1="산호"
