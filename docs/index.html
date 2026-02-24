@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1574</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1575</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$179.49</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$179.53</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1639"
+       data-word1="투명"
+       data-word2="마계"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T11:07:50.651772+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/11t57O_kxkzTS2ZvEoZyICPTSJpFOQTyB" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/11t57O_kxkzTS2ZvEoZyICPTSJpFOQTyB')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">투명</span> x
+        <span class="w2">마계</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1639 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 투명(transparency, see-through clarity, invisible layer)과 마계(underworld, shadow realm, infernal domain)를 결합한 프로페셔널한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/80/78/32/807832353af71f4aca0dcb948edd9f3f.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/80/78/32/807832353af71f4aca0dcb948edd9f3f.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/ec/b8/c2/ecb8c2ebd9e03e9bf51614ae18d44946.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ec/b8/c2/ecb8c2ebd9e03e9bf51614ae18d44946.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/11/ed/29/11ed2985b33cc23752031b2fbf7ba9be.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/11/ed/29/11ed2985b33cc23752031b2fbf7ba9be.png')"></div>
+      <div class="memo-area" data-memo-id="260224_1639">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1638"
        data-word1="레트로퓨처"
