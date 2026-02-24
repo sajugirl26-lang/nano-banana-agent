@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1561</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1562</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$178.98</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$179.02</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1625"
+       data-word1="초콜릿"
+       data-word2="엽서"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T10:51:09.044569+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1KKdr5uH824g1JL3cKnEIu12VxSSs2orD" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1KKdr5uH824g1JL3cKnEIu12VxSSs2orD')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">초콜릿</span> x
+        <span class="w2">엽서</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1625 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지가 가진 디자인적 감각(색감, 조명, 재질, 공간감)을 살려서 초콜릿(chocolate, dark sheen, melted richness)과 엽서(postcard, distant greeting, stamped memory)를 결합한 재치있고 완성도 높은 이미지를 만들어줘. a high-end PBR 3D render (Octane/Redshift vibe), realistic materials for fabric, accurate roughness maps, strong sunlight with sharp shadows, preserve colors, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/09/d3/d8/09d3d85f400d5afc1a9b01cc7477eaae.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/09/d3/d8/09d3d85f400d5afc1a9b01cc7477eaae.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/09/57/be/0957bed2fdf11e5ab717bd09fa5dc243.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/09/57/be/0957bed2fdf11e5ab717bd09fa5dc243.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/26/4e/27/264e27bc8fc5f198d006998d86b2baec.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/26/4e/27/264e27bc8fc5f198d006998d86b2baec.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1625">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1624"
        data-word1="피크닉"
