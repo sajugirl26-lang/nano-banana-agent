@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1440</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1441</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$164.48</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$164.61</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1496"
+       data-word1="햇빛"
+       data-word2="증기"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T03:20:33.061844+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1K_1z4JDa0DwbSOw3zVMF4qmyelFguQlZ" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1K_1z4JDa0DwbSOw3zVMF4qmyelFguQlZ')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">햇빛</span> x
+        <span class="w2">증기</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1496 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지에서 느껴지는 무드·컬러톤·라이팅·소재의 질감을 유지하면서 햇빛(sunlight, warm rays, golden glow)과 증기(steam, heated vapor)를 결합한 기발하고 디테일한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/38/f8/15/38f8152402ce90a0e63718d4202a6437.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/38/f8/15/38f8152402ce90a0e63718d4202a6437.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/e2/ea/6e/e2ea6eee30feb12a51c8635d7425f961.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/e2/ea/6e/e2ea6eee30feb12a51c8635d7425f961.png')"></div>
+      <div class="memo-area" data-memo-id="260224_1496">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1495"
        data-word1="버블코어"
