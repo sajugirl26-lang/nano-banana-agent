@@ -21,8 +21,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 .date-filters label { font-size: 0.85rem; color: #aaa; cursor: pointer; }
 .date-filters label input { margin-right: 3px; }
 #count { color: #888; font-size: 0.8rem; }
-.grid { display: flex; gap: 12px; align-items: flex-start; }
-.grid-col { flex: 1; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 1200px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
 .card { background: #1a1a1a; border-radius: 8px; overflow: hidden; }
 .card-img-wrap { position: relative; }
 .card-img { width: 100%; display: block; background: #222; }
@@ -49102,27 +49103,14 @@ function filterCards(resetPage) {
   updateLikedCounts();
   renderPage();
 }
-function getColCount() {
-  if (window.innerWidth <= 768) return 2;
-  if (window.innerWidth <= 1200) return 3;
-  return 5;
-}
 function renderPage() {
   const scrollY = window.scrollY;
   const end = currentPage * PAGE_SIZE;
-  const colCount = getColCount();
   while (grid.firstChild) grid.removeChild(grid.firstChild);
-  const cols = [];
-  for (let i = 0; i < colCount; i++) {
-    const col = document.createElement('div');
-    col.className = 'grid-col';
-    grid.appendChild(col);
-    cols.push(col);
-  }
   const visible = filteredCards.slice(0, end);
-  visible.forEach((card, i) => {
+  visible.forEach((card) => {
     card.style.display = '';
-    cols[i % colCount].appendChild(card);
+    grid.appendChild(card);
   });
   const btn = document.getElementById('load-more');
   btn.style.display = end < filteredCards.length ? '' : 'none';
