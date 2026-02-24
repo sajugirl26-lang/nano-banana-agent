@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1470</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1471</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$168.50</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$168.63</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1526"
+       data-word1="사탕"
+       data-word2="불사"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T04:09:05.848998+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1OiE2htI4JBf7_SAH-hR6i5OFH-TuXmiJ" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1OiE2htI4JBf7_SAH-hR6i5OFH-TuXmiJ')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">사탕</span> x
+        <span class="w2">불사</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1526 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 비주얼 톤과 퀄리티를 기준으로 삼아 사탕(candy, wrapped sweetness, sugar crystal)과 불사(immortal, undying, eternal existence)를 결합한 리얼리스틱하고 디테일한 이미지를 만들어줘. 레퍼런스의 스타일만 흡수하고 주제는 새롭게. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/e2/73/4c/e2734ce6bd8200a4011f72fbf3e3c3d3.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/e2/73/4c/e2734ce6bd8200a4011f72fbf3e3c3d3.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/ec/7f/7b/ec7f7b1bfc948d6cb9da64498321de30.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ec/7f/7b/ec7f7b1bfc948d6cb9da64498321de30.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/13/17/ce/1317cef77d4455a903d5d08bb3ed1143.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/13/17/ce/1317cef77d4455a903d5d08bb3ed1143.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/e8/f0/89/e8f089d6f3a2738a696909c4589bdfee.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/e8/f0/89/e8f089d6f3a2738a696909c4589bdfee.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1526">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1525"
        data-word1="연인"
