@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1483</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1484</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$170.24</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$170.37</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1539"
+       data-word1="리퀴드"
+       data-word2="시계탑"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T04:27:44.996816+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1LZyL_18lXh73yFuxhmAAmY9YQ0pJRNMo" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1LZyL_18lXh73yFuxhmAAmY9YQ0pJRNMo')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">리퀴드</span> x
+        <span class="w2">시계탑</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1539 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 색감·질감·분위기·렌더링 퀄리티를 깊이 참고하여 리퀴드(liquid, fluid motion, viscous flow)과 시계탑(clock tower, time monument)를 결합한 새로운 고퀄리티 이미지를 만들어줘. 레퍼런스의 오브젝트가 아닌 스타일을 흡수해줘. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/b0/d9/78/b0d9787354cdc4bc759a0c605a383def.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/b0/d9/78/b0d9787354cdc4bc759a0c605a383def.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/36/28/b5/3628b5c4733bee41dc9e8d737467df69.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/36/28/b5/3628b5c4733bee41dc9e8d737467df69.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1539">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1538"
        data-word1="아이소메트릭"
