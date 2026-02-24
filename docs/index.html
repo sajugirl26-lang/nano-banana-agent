@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1516</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1517</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$174.66</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$174.80</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1572"
+       data-word1="스티커"
+       data-word2="바코드"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:17:08.535811+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1nAPTu247572f4zsoQ2xVPImPT1jHkxeV" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1nAPTu247572f4zsoQ2xVPImPT1jHkxeV')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">스티커</span> x
+        <span class="w2">바코드</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1572 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 톤·무드·컬러 팔레트·텍스처 퀄리티를 충실히 반영하되 주제는 스티커(sticker, adhesive art, peel-and-stick)과 바코드(barcode, lined pattern, scanned identity)로 완전히 새롭게 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/3a/f8/2a/3af82a12c7e9721e465cfcfe34f92d76.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/3a/f8/2a/3af82a12c7e9721e465cfcfe34f92d76.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/ec/e8/61/ece861ef3a7ae947ae026c04b3dee1c4.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ec/e8/61/ece861ef3a7ae947ae026c04b3dee1c4.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/00/00/f5/0000f5ab43b549a9fb54803d0e9dce04.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/00/00/f5/0000f5ab43b549a9fb54803d0e9dce04.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1572">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1571"
        data-word1="토끼 캐릭터"
