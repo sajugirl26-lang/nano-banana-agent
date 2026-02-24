@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1455</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1456</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$166.49</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$166.62</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1511"
+       data-word1="리퀴드 메탈"
+       data-word2="모래시계"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T03:44:20.868020+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1YCbv2NU7-54mcuCnp_WIc8vteIHSNOaQ" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1YCbv2NU7-54mcuCnp_WIc8vteIHSNOaQ')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">리퀴드 메탈</span> x
+        <span class="w2">모래시계</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1511 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지가 가진 디자인적 감각(색감, 조명, 재질, 공간감)을 살려서 리퀴드 메탈(liquid metal, mercury surface, molten chrome reflection)과 모래시계(hourglass, flowing time)를 결합한 재치있고 완성도 높은 이미지를 만들어줘. a high-end PBR 3D render (Octane/Redshift vibe), realistic materials for fabric, accurate roughness maps, strong sunlight with sharp shadows, preserve colors, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/43/fe/9d/43fe9d5fcde444eaf4dd3df808e07d5a.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/43/fe/9d/43fe9d5fcde444eaf4dd3df808e07d5a.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/56/0a/2d/560a2d175da48ae5a8b6b117f9086fe7.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/56/0a/2d/560a2d175da48ae5a8b6b117f9086fe7.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/ff/76/5f/ff765ff0cc489b3d39536378db65216f.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ff/76/5f/ff765ff0cc489b3d39536378db65216f.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/ac/3c/c4/ac3cc48d1a51b2c8979cbe1b89945af9.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ac/3c/c4/ac3cc48d1a51b2c8979cbe1b89945af9.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1511">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1510"
        data-word1="울림"
