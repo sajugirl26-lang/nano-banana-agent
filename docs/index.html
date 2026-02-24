@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1527</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1528</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$176.14</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$176.27</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1583"
+       data-word1="게임기"
+       data-word2="프리즘"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:34:34.185429+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1-hxlNqBpHEZjishonR0xlZSHvRTHWm12" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1-hxlNqBpHEZjishonR0xlZSHvRTHWm12')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">게임기</span> x
+        <span class="w2">프리즘</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1583 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 톤·무드·컬러 팔레트·텍스처 퀄리티를 충실히 반영하되 주제는 게임기(game console, gaming device, play machine)과 프리즘(prism, light splitter)로 완전히 새롭게 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/54/7a/24/547a246e3fb11191729b42aab3396583.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/54/7a/24/547a246e3fb11191729b42aab3396583.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/85/de/ac/85deac8dd28d0f038ef6c5d176616f14.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/85/de/ac/85deac8dd28d0f038ef6c5d176616f14.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1583">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1582"
        data-word1="입술"
