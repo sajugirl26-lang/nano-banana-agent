@@ -66,15 +66,15 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1747</div><div class="stat-lbl">Total</div></div>
-  <div class="stat"><div class="stat-val">$181.01</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">1748</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">$181.08</div><div class="stat-lbl">Cost</div></div>
   <div class="stat"><div class="stat-val" id="nb-liked-stat">0</div><div class="stat-lbl">NB LIKED</div></div>
   <div class="stat"><div class="stat-val">134</div><div class="stat-lbl">MJ LIKED</div></div>
   <div class="stat"><div class="stat-val" id="all-liked-stat">0</div><div class="stat-lbl">ALL LIKED</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
-  <span class="date-filters"><label><input type="checkbox" id="date-all" checked onchange="toggleAllDates(this)"> All</label><label><input type="checkbox" class="date-cb" value="2026-02-24" checked onchange="onDateCbChange()"> 02-24</label><label><input type="checkbox" class="date-cb" value="2026-02-23" checked onchange="onDateCbChange()"> 02-23</label><label><input type="checkbox" class="date-cb" value="2026-02-22" checked onchange="onDateCbChange()"> 02-22</label><label><input type="checkbox" class="date-cb" value="2026-02-21" checked onchange="onDateCbChange()"> 02-21</label><label><input type="checkbox" class="date-cb" value="2026-02-20" checked onchange="onDateCbChange()"> 02-20</label><label><input type="checkbox" class="date-cb" value="2026-02-19" checked onchange="onDateCbChange()"> 02-19</label><label><input type="checkbox" class="date-cb" value="2026-02-18" checked onchange="onDateCbChange()"> 02-18</label></span>
+  <span class="date-filters"><label><input type="checkbox" id="date-all" checked onchange="toggleAllDates(this)"> All</label><label><input type="checkbox" class="date-cb" value="2026-02-25" checked onchange="onDateCbChange()"> 02-25</label><label><input type="checkbox" class="date-cb" value="2026-02-24" checked onchange="onDateCbChange()"> 02-24</label><label><input type="checkbox" class="date-cb" value="2026-02-23" checked onchange="onDateCbChange()"> 02-23</label><label><input type="checkbox" class="date-cb" value="2026-02-22" checked onchange="onDateCbChange()"> 02-22</label><label><input type="checkbox" class="date-cb" value="2026-02-21" checked onchange="onDateCbChange()"> 02-21</label><label><input type="checkbox" class="date-cb" value="2026-02-20" checked onchange="onDateCbChange()"> 02-20</label><label><input type="checkbox" class="date-cb" value="2026-02-19" checked onchange="onDateCbChange()"> 02-19</label><label><input type="checkbox" class="date-cb" value="2026-02-18" checked onchange="onDateCbChange()"> 02-18</label></span>
   <select id="sort" onchange="sortCards()">
     <option value="newest">Newest</option>
     <option value="oldest">Oldest</option>
@@ -93,6 +93,30 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260225_1829"
+       data-word1="무당벌레"
+       data-word2="보석"
+       data-cost="0.067"
+       data-model="pro"
+       data-date="2026-02-25"
+       data-time="2026-02-24T16:57:38.899903+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1HDoQsQleKmYMxX8kN75uGSPC686fCKaf" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1HDoQsQleKmYMxX8kN75uGSPC686fCKaf')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words"><span class="w1">무당벌레</span> x <span class="w2">보석</span></div>
+      <div class="meta"><span class="model-nb">NB</span> · <span class="model-pro">Pro</span> · $0.067 · 260225_1829 · 2026-02-25</div>
+      <div class="prompt">첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 무당벌레(ladybug, spotted shell, tiny crimson beetle)과 보석(gemstone, faceted brilliance, light trap)를 결합한 프로페셔널한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/52/63/18/52631863c8c42e887f9c892faf68d422.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/52/63/18/52631863c8c42e887f9c892faf68d422.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/ad/34/2a/ad342a1a8140fdc1f0b085f6c9081914.webp" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ad/34/2a/ad342a1a8140fdc1f0b085f6c9081914.webp')"><img class="pin-thumb" src="https://i.pinimg.com/originals/f3/8c/5c/f38c5c0841796a8f3d7697adcdc23328.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/f3/8c/5c/f38c5c0841796a8f3d7697adcdc23328.jpg')"></div>
+      <div class="memo-area" data-memo-id="260225_1829">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1678"
        data-word1="곰돌이 캐릭터"
