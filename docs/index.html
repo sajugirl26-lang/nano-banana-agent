@@ -12,10 +12,13 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 .stat { text-align: center; }
 .stat-val { font-size: 1.5rem; font-weight: bold; color: #f0c040; }
 .stat-lbl { font-size: 0.7rem; color: #888; }
-.source-filter { display: flex; gap: 6px; margin-bottom: 12px; }
+.source-filter { display: flex; gap: 6px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
 .src-btn { padding: 6px 16px; border-radius: 6px; border: 1px solid #333; background: #1a1a1a; color: #666; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; user-select: none; }
 .src-btn:hover { border-color: #555; color: #aaa; }
-.src-btn.active { border-color: #f0c040; color: #f0c040; background: #2a2200; }
+.src-btn.nb.active { border-color: #22c55e; color: #22c55e; background: #0a2a10; }
+.src-btn.mj.active { border-color: #a855f7; color: #a855f7; background: #1a0a2a; }
+.src-btn.liked-btn { padding: 6px 14px; margin-left: 8px; }
+.src-btn.liked-btn.active { border-color: #ff4757; color: #ff4757; background: #2a0a0a; }
 .controls { margin-bottom: 16px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 .controls input, .controls select { background: #1a1a1a; border: 1px solid #333; color: #e0e0e0; padding: 6px 10px; border-radius: 6px; font-size: 0.85rem; }
 .controls input[type="text"] { width: 180px; }
@@ -71,8 +74,10 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
   <div class="stat"><div class="stat-val" id="mj-liked-stat">0</div><div class="stat-lbl">MJ LIKED</div></div>
 </div>
 <div class="source-filter">
-  <button id="filter-nb" class="src-btn active" onclick="toggleSource('nb')">NanoBanana</button>
-  <button id="filter-mj" class="src-btn active" onclick="toggleSource('mj')">Midjourney</button>
+  <button id="filter-nb" class="src-btn nb active" onclick="toggleSource('nb')">NanoBanana</button>
+  <button id="filter-mj" class="src-btn mj active" onclick="toggleSource('mj')">Midjourney</button>
+  <button id="filter-liked" class="src-btn liked-btn" onclick="toggleLiked()">Liked Only</button>
+  <span id="count"></span>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,8 +88,6 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
     <option value="cost-high">Cost High</option>
     <option value="cost-low">Cost Low</option>
   </select>
-  <label><input type="checkbox" id="liked-only" onchange="filterCards()"> Liked only</label>
-  <span id="count"></span>
 </div>
 <div class="grid" id="grid">
 
@@ -42057,7 +42060,7 @@ likesRef.on('value', snap => {
     likesRef.update(updates);
   }
   updateLikedCounts();
-  if (document.getElementById('liked-only').checked) filterCards(false);
+  if (document.getElementById('filter-liked').classList.contains('active')) filterCards(false);
 });
 
 function toggleHeart(btn) {
@@ -42091,12 +42094,17 @@ function toggleSource(src) {
   btn.classList.toggle('active');
   filterCards();
 }
+function toggleLiked() {
+  const btn = document.getElementById('filter-liked');
+  btn.classList.toggle('active');
+  filterCards();
+}
 function updateLikedCounts() {
   const nbLiked = cards.filter(c => c.dataset.liked === 'true' && c.dataset.model !== 'mj').length;
   const mjLiked = cards.filter(c => c.dataset.liked === 'true' && c.dataset.model === 'mj').length;
   document.getElementById('nb-liked-stat').textContent = nbLiked;
   document.getElementById('mj-liked-stat').textContent = mjLiked;
-  const lo = document.getElementById('liked-only').checked;
+  const lo = document.getElementById('filter-liked').classList.contains('active');
   document.getElementById('count').textContent = lo ? (nbLiked + mjLiked) + ' liked' : '';
 }
 function filterCards(resetPage) {
@@ -42104,15 +42112,16 @@ function filterCards(resetPage) {
   const dates = getSelectedDates();
   const nbOn = document.getElementById('filter-nb').classList.contains('active');
   const mjOn = document.getElementById('filter-mj').classList.contains('active');
-  const lo = document.getElementById('liked-only').checked;
+  const lo = document.getElementById('filter-liked').classList.contains('active');
   filteredCards = cards.filter(c => {
     const w = (c.dataset.word1 + ' ' + c.dataset.word2).toLowerCase();
     const p = (c.querySelector('.prompt')?.textContent || '').toLowerCase();
     const isMj = c.dataset.model === 'mj';
     const srcOk = (isMj && mjOn) || (!isMj && nbOn);
+    const dateOk = dates.length === 0 || dates.includes(c.dataset.date) || !c.dataset.date;
     return srcOk
       && (w.includes(q) || p.includes(q))
-      && (dates.length === 0 || dates.includes(c.dataset.date))
+      && dateOk
       && (!lo || c.dataset.liked === 'true');
   });
   if (resetPage !== false) currentPage = 1;
