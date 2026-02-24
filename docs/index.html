@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1612</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1613</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$180.97</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$181.01</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1678"
+       data-word1="곰돌이 캐릭터"
+       data-word2="황홀"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T11:56:34.652655+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1VSJQzZfHKeuANIV3ivfmxYxdCqlni1xH" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1VSJQzZfHKeuANIV3ivfmxYxdCqlni1xH')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">곰돌이 캐릭터</span> x
+        <span class="w2">황홀</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1678 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 비주얼 완성도와 색채 감각을 그대로 이어받아 곰돌이 캐릭터(bear doll character, stuffed teddy, plush figure)과 황홀(ecstasy, transcendence, blissful dissolution)를 결합한 상상력 넘치는 이미지를 만들어줘. 피사체만 새롭게 표현해줘. a stylized realism 3D render, slightly exaggerated forms with realistic textures, accurate reflections, filmic lens look, shallow depth of field, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/82/db/df/82dbdf2e880c4d77ca3c96be2b91a8e8.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/82/db/df/82dbdf2e880c4d77ca3c96be2b91a8e8.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/9c/00/67/9c00672f905e54124fd3eb0c22c2e728.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/9c/00/67/9c00672f905e54124fd3eb0c22c2e728.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/90/a1/e8/90a1e8ff50fb5c4d673e2666d6a64ec5.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/90/a1/e8/90a1e8ff50fb5c4d673e2666d6a64ec5.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1678">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1677"
        data-word1="풍선"
