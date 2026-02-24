@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1517</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1518</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$174.80</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$174.93</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1573"
+       data-word1="팝아트"
+       data-word2="바이올린"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:19:00.382601+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1WNCqXexCi3xuywxPzSnio6rSUdBBz9Bq" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1WNCqXexCi3xuywxPzSnio6rSUdBBz9Bq')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">팝아트</span> x
+        <span class="w2">바이올린</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1573 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지에서 느껴지는 무드·컬러톤·라이팅·소재의 질감을 유지하면서 팝아트(pop art, bold color, Warhol style)과 바이올린(violin, trembling string)를 결합한 기발하고 디테일한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/1c/95/46/1c95466730f7e751d39d80d1ffe93bba.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/1c/95/46/1c95466730f7e751d39d80d1ffe93bba.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/0c/2d/5d/0c2d5d0934193612bfb849c9dd9afacd.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/0c/2d/5d/0c2d5d0934193612bfb849c9dd9afacd.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/48/ec/8d/48ec8df2a9b79cbead00c9836aee307a.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/48/ec/8d/48ec8df2a9b79cbead00c9836aee307a.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/c7/fb/66/c7fb661c84e588dab515af511b9f147c.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/c7/fb/66/c7fb661c84e588dab515af511b9f147c.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1573">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1572"
        data-word1="스티커"
