@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1521</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1522</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$175.33</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$175.47</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1577"
+       data-word1="투명"
+       data-word2="인형"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:25:54.391536+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1SI5mkhyKbtZvQgycAgg_geQpW-GjSxHk" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1SI5mkhyKbtZvQgycAgg_geQpW-GjSxHk')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">투명</span> x
+        <span class="w2">인형</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1577 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 디자인 퀄리티·컬러 감각·재질 표현·조명 무드를 충실히 흡수하되, 피사체는 새롭게 투명(transparency, see-through clarity, invisible layer)과 인형(doll, miniature human)로 재해석하여 완성도 높은 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/c1/89/8e/c1898e57fb8a55a4373e5b0199716e13.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/c1/89/8e/c1898e57fb8a55a4373e5b0199716e13.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/4f/c9/63/4fc9633e4aab0cf57f043d59d22971c4.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/4f/c9/63/4fc9633e4aab0cf57f043d59d22971c4.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1577">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1576"
        data-word1="에메랄드"
