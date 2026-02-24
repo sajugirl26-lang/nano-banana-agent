@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1485</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1486</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$170.51</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$170.64</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1541"
+       data-word1="노이즈 텍스처"
+       data-word2="체스말"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T04:30:23.125928+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1peHSfRdvBmhlhtdRHylE_wwCwhXwB0Af" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1peHSfRdvBmhlhtdRHylE_wwCwhXwB0Af')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">노이즈 텍스처</span> x
+        <span class="w2">체스말</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1541 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 노이즈 텍스처(noise texture, Perlin grain, procedural surface)과 체스말(chess piece, strategic figure, game sculpture)를 결합한 프로페셔널한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/c1/79/a8/c179a8c11b812fa2f8f411df3fd8c1d7.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/c1/79/a8/c179a8c11b812fa2f8f411df3fd8c1d7.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/3d/0d/9f/3d0d9faefc517cfefdb1fb78a4e9657d.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/3d/0d/9f/3d0d9faefc517cfefdb1fb78a4e9657d.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/5b/7a/ff/5b7affbe8d574ec79f174fad2a57d9ff.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/5b/7a/ff/5b7affbe8d574ec79f174fad2a57d9ff.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/4e/6a/9f/4e6a9f935e9e1e4ede1ae7ec3f54cdcc.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/4e/6a/9f/4e6a9f935e9e1e4ede1ae7ec3f54cdcc.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1541">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1540"
        data-word1="모래놀이"
