@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1442</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1443</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$164.75</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$164.88</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1498"
+       data-word1="향수"
+       data-word2="만다라"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T03:24:06.182723+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1aXbxFktyJjOwRg54iC4pZRjNqb2VikO4" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1aXbxFktyJjOwRg54iC4pZRjNqb2VikO4')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">향수</span> x
+        <span class="w2">만다라</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1498 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 톤·무드·컬러 팔레트·텍스처 퀄리티를 충실히 반영하되 주제는 향수(nostalgia, faded memory, bittersweet longing)과 만다라(mandala, geometric cosmos)로 완전히 새롭게 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/1c/c4/24/1cc424b893f4206abc95ff89df357b81.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/1c/c4/24/1cc424b893f4206abc95ff89df357b81.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/20/76/20/207620882ca6250628cc192af3e185bf.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/20/76/20/207620882ca6250628cc192af3e185bf.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/7e/84/8c/7e848c4e6969515ff59c3f3a88a2e060.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/7e/84/8c/7e848c4e6969515ff59c3f3a88a2e060.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1498">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1497"
        data-word1="아이"
