@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1608</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1609</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$180.81</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$180.85</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1674"
+       data-word1="디지털 크래프트"
+       data-word2="물거품"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T11:51:32.234329+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1h2_7pbE3G0__21i8KtbRTAqg35p9bcGc" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1h2_7pbE3G0__21i8KtbRTAqg35p9bcGc')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">디지털 크래프트</span> x
+        <span class="w2">물거품</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1674 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 비주얼 톤과 퀄리티를 기준으로 삼아 디지털 크래프트(digital craft, handmade meets digital, hybrid artisan)과 물거품(bubble, fleeting sphere)를 결합한 리얼리스틱하고 디테일한 이미지를 만들어줘. 레퍼런스의 스타일만 흡수하고 주제는 새롭게. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/13/67/f5/1367f55228eade49546064f0034995cc.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/13/67/f5/1367f55228eade49546064f0034995cc.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/40/28/eb/4028eb620169558593ed8c90a4b06bcf.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/40/28/eb/4028eb620169558593ed8c90a4b06bcf.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1674">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1673"
        data-word1="경이"
