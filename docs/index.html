@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1469</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1470</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$168.36</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$168.50</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1525"
+       data-word1="연인"
+       data-word2="커피"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T04:07:16.493122+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1WgBKSFksA92JR8mqW6ky3Y-5Ikc1B3Jg" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1WgBKSFksA92JR8mqW6ky3Y-5Ikc1B3Jg')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">연인</span> x
+        <span class="w2">커피</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1525 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지에서 느껴지는 무드·컬러톤·라이팅·소재의 질감을 유지하면서 연인(lovers, intertwined figures, tender embrace)과 커피(coffee, morning ritual, bitter warmth)를 결합한 기발하고 디테일한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/11/5e/53/115e5385e4967dc16c4cf86b4e947d62.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/11/5e/53/115e5385e4967dc16c4cf86b4e947d62.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/d4/44/f5/d444f5abb23558fe74cb8477ee85d1b6.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/d4/44/f5/d444f5abb23558fe74cb8477ee85d1b6.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/97/f6/84/97f684ec2b79abaa104a087c51e58051.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/97/f6/84/97f684ec2b79abaa104a087c51e58051.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1525">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1524"
        data-word1="구글"
