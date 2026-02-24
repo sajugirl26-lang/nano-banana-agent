@@ -70,6 +70,7 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
   <div class="stat"><div class="stat-val">$181.01</div><div class="stat-lbl">Cost</div></div>
   <div class="stat"><div class="stat-val" id="nb-liked-stat">0</div><div class="stat-lbl">NB LIKED</div></div>
   <div class="stat"><div class="stat-val">134</div><div class="stat-lbl">MJ LIKED</div></div>
+  <div class="stat"><div class="stat-val" id="all-liked-stat">0</div><div class="stat-lbl">ALL LIKED</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -42127,7 +42128,9 @@ function toggleLiked() {
 }
 function updateLikedCounts() {
   const nbLiked = cards.filter(c => c.dataset.liked === 'true' && c.dataset.model !== 'mj').length;
+  const mjLiked = cards.filter(c => c.dataset.model === 'mj').length;
   document.getElementById('nb-liked-stat').textContent = nbLiked;
+  document.getElementById('all-liked-stat').textContent = nbLiked + mjLiked;
 }
 function filterCards(resetPage) {
   const q = document.getElementById('search').value.toLowerCase();
