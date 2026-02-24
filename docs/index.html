@@ -12,12 +12,10 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 .stat { text-align: center; }
 .stat-val { font-size: 1.5rem; font-weight: bold; color: #f0c040; }
 .stat-lbl { font-size: 0.7rem; color: #888; }
-.source-filter { display: flex; gap: 6px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
 .src-btn { padding: 6px 16px; border-radius: 6px; border: 1px solid #333; background: #1a1a1a; color: #666; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; user-select: none; }
 .src-btn:hover { border-color: #555; color: #aaa; }
 .src-btn.nb.active { border-color: #22c55e; color: #22c55e; background: #0a2a10; }
 .src-btn.mj.active { border-color: #a855f7; color: #a855f7; background: #1a0a2a; }
-.src-btn.liked-btn { padding: 6px 14px; margin-left: 8px; }
 .src-btn.liked-btn.active { border-color: #ff4757; color: #ff4757; background: #2a0a0a; }
 .controls { margin-bottom: 16px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 .controls input, .controls select { background: #1a1a1a; border: 1px solid #333; color: #e0e0e0; padding: 6px 10px; border-radius: 6px; font-size: 0.85rem; }
@@ -73,12 +71,6 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
   <div class="stat"><div class="stat-val" id="nb-liked-stat">0</div><div class="stat-lbl">NB LIKED</div></div>
   <div class="stat"><div class="stat-val">133</div><div class="stat-lbl">MJ LIKED</div></div>
 </div>
-<div class="source-filter">
-  <button id="filter-nb" class="src-btn nb active" onclick="toggleSource('nb')">NanoBanana</button>
-  <button id="filter-mj" class="src-btn mj active" onclick="toggleSource('mj')">Midjourney</button>
-  <button id="filter-liked" class="src-btn liked-btn" onclick="toggleLiked()">Liked Only</button>
-  <span id="count"></span>
-</div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
   <span class="date-filters"><label><input type="checkbox" id="date-all" checked onchange="toggleAllDates(this)"> All</label><label><input type="checkbox" class="date-cb" value="2026-02-24" checked onchange="onDateCbChange()"> 02-24</label><label><input type="checkbox" class="date-cb" value="2026-02-23" checked onchange="onDateCbChange()"> 02-23</label><label><input type="checkbox" class="date-cb" value="2026-02-22" checked onchange="onDateCbChange()"> 02-22</label><label><input type="checkbox" class="date-cb" value="2026-02-21" checked onchange="onDateCbChange()"> 02-21</label><label><input type="checkbox" class="date-cb" value="2026-02-20" checked onchange="onDateCbChange()"> 02-20</label><label><input type="checkbox" class="date-cb" value="2026-02-19" checked onchange="onDateCbChange()"> 02-19</label><label><input type="checkbox" class="date-cb" value="2026-02-18" checked onchange="onDateCbChange()"> 02-18</label></span>
@@ -88,6 +80,10 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
     <option value="cost-high">Cost High</option>
     <option value="cost-low">Cost Low</option>
   </select>
+  <button id="filter-nb" class="src-btn nb active" onclick="toggleSource('nb')">NanoBanana</button>
+  <button id="filter-mj" class="src-btn mj active" onclick="toggleSource('mj')">Midjourney</button>
+  <button id="filter-liked" class="src-btn liked-btn" onclick="toggleLiked()">Liked Only</button>
+  <span id="count"></span>
 </div>
 <div class="grid" id="grid">
 
@@ -42029,9 +42025,10 @@ likesRef.on('value', snap => {
   const data = snap.val() || {};
   likedSet.clear();
   cards.forEach(c => {
+    if (c.dataset.model === 'mj') return;
     c.dataset.liked = 'false';
-    c.querySelector('.heart-btn').classList.remove('liked');
-    c.querySelector('.heart-btn').innerHTML = '\u2661';
+    const hb = c.querySelector('.heart-btn');
+    if (hb) { hb.classList.remove('liked'); hb.innerHTML = '\u2661'; }
   });
   const toMigrate = {};
   Object.keys(data).forEach(key => {
@@ -42039,14 +42036,14 @@ likesRef.on('value', snap => {
     if (target) {
       likedSet.add(key);
       target.dataset.liked = 'true';
-      target.querySelector('.heart-btn').classList.add('liked');
-      target.querySelector('.heart-btn').innerHTML = '\u2665';
+      const hb = target.querySelector('.heart-btn');
+      if (hb) { hb.classList.add('liked'); hb.innerHTML = '\u2665'; }
     } else if (oldKeyToNew[key] && cardMap[oldKeyToNew[key]]) {
       const nk = oldKeyToNew[key];
       likedSet.add(nk);
       cardMap[nk].dataset.liked = 'true';
-      cardMap[nk].querySelector('.heart-btn').classList.add('liked');
-      cardMap[nk].querySelector('.heart-btn').innerHTML = '\u2665';
+      const hb = cardMap[nk].querySelector('.heart-btn');
+      if (hb) { hb.classList.add('liked'); hb.innerHTML = '\u2665'; }
       if (!migrated) toMigrate[key] = nk;
     }
   });
@@ -42109,6 +42106,7 @@ function filterCards(resetPage) {
   const nbOn = document.getElementById('filter-nb').classList.contains('active');
   const mjOn = document.getElementById('filter-mj').classList.contains('active');
   const lo = document.getElementById('filter-liked').classList.contains('active');
+  const prevLen = filteredCards.length;
   filteredCards = cards.filter(c => {
     const w = (c.dataset.word1 + ' ' + c.dataset.word2).toLowerCase();
     const p = (c.querySelector('.prompt')?.textContent || '').toLowerCase();
@@ -42120,7 +42118,7 @@ function filterCards(resetPage) {
       && dateOk
       && (!lo || c.dataset.liked === 'true');
   });
-  if (resetPage !== false) currentPage = 1;
+  if (resetPage !== false && filteredCards.length !== prevLen) currentPage = 1;
   updateLikedCounts();
   renderPage();
 }
