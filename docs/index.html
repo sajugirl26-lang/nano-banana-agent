@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1459</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1460</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$167.02</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$167.16</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1515"
+       data-word1="카드 게임"
+       data-word2="자기장"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T03:50:43.265967+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/17bQFElmdKowzW24yxl-YJ0GxUmUtHSjs" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/17bQFElmdKowzW24yxl-YJ0GxUmUtHSjs')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">카드 게임</span> x
+        <span class="w2">자기장</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1515 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 비주얼 톤과 퀄리티를 기준으로 삼아 카드 게임(playing cards, shuffled deck, royal suit)과 자기장(magnetic field, invisible force)를 결합한 리얼리스틱하고 디테일한 이미지를 만들어줘. 레퍼런스의 스타일만 흡수하고 주제는 새롭게. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/77/41/8a/77418af181d9fb77632f8a72bae14b27.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/77/41/8a/77418af181d9fb77632f8a72bae14b27.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/8e/54/f2/8e54f2d92029521227fbd54e78bddfbb.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/8e/54/f2/8e54f2d92029521227fbd54e78bddfbb.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/12/f7/83/12f783291b05bea1776acc0916e0aa53.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/12/f7/83/12f783291b05bea1776acc0916e0aa53.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/ac/fd/48/acfd483ccc761a943f0958fdf5a22bc9.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ac/fd/48/acfd483ccc761a943f0958fdf5a22bc9.png')"></div>
+      <div class="memo-area" data-memo-id="260224_1515">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1514"
        data-word1="클린걸"
