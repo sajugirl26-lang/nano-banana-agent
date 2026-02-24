@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1590</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1591</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$180.11</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$180.15</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1655"
+       data-word1="미니멀 조각"
+       data-word2="풍차"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T11:26:45.025652+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1mpDwBmVKRlPTml6ruMgIfZwJ3mCJ7XVc" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1mpDwBmVKRlPTml6ruMgIfZwJ3mCJ7XVc')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">미니멀 조각</span> x
+        <span class="w2">풍차</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1655 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지에서 느껴지는 무드·컬러톤·라이팅·소재의 질감을 유지하면서 미니멀 조각(minimal sculpture, reduced form, pure shape)과 풍차(windmill, turning force)를 결합한 기발하고 디테일한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/f5/68/dd/f568dda9fa6909a59de55ba5f62669b3.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/f5/68/dd/f568dda9fa6909a59de55ba5f62669b3.jpg')"><img class="pin-thumb" src="https://dm.savee-cdn.com/asset-image/original/68f77fa23c9caf31e0486f71.avif" loading="lazy" onclick="showPinPopup('https://dm.savee-cdn.com/asset-image/original/68f77fa23c9caf31e0486f71.avif')"><img class="pin-thumb" src="https://i.pinimg.com/originals/9e/7c/06/9e7c061b5baa58babc8256607fcdb822.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/9e/7c/06/9e7c061b5baa58babc8256607fcdb822.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/66/e9/e7/66e9e7231a295e675614119ee8297259.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/66/e9/e7/66e9e7231a295e675614119ee8297259.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1655">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1654"
        data-word1="스마일"
