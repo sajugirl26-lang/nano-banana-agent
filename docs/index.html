@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1559</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1560</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$178.90</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$178.94</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1623"
+       data-word1="아이"
+       data-word2="만화경"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T10:48:36.602954+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1RlG8l7ky7fqLLHfUToCmuq_tDZ4IypyR" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1RlG8l7ky7fqLLHfUToCmuq_tDZ4IypyR')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">아이</span> x
+        <span class="w2">만화경</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1623 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 톤·무드·컬러 팔레트·텍스처 퀄리티를 충실히 반영하되 주제는 아이(child, small wonder, curious gaze)과 만화경(kaleidoscope, symmetrical pattern)로 완전히 새롭게 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/66/4b/1b/664b1b30e1596896fbd398e2762c880f.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/66/4b/1b/664b1b30e1596896fbd398e2762c880f.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/0e/2f/40/0e2f403fb4845a8585593378c0ef539d.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/0e/2f/40/0e2f403fb4845a8585593378c0ef539d.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/a5/a8/31/a5a83108ad3e9c18723cab238d7506be.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/a5/a8/31/a5a83108ad3e9c18723cab238d7506be.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/af/c1/0f/afc10f4f7da2721226e0b79dc73586d7.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/af/c1/0f/afc10f4f7da2721226e0b79dc73586d7.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1623">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1622"
        data-word1="글래스모피즘"
