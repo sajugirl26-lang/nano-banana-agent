@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1519</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1520</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$175.06</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$175.20</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1575"
+       data-word1="꽃"
+       data-word2="꽃잎"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:22:38.257103+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/10wViFzuSIcL2xaVWLttSBjG90NTVOBOQ" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/10wViFzuSIcL2xaVWLttSBjG90NTVOBOQ')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">꽃</span> x
+        <span class="w2">꽃잎</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1575 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 색감·질감·분위기·렌더링 퀄리티를 깊이 참고하여 꽃(flower, delicate bloom, petal beauty)과 꽃잎(petal, delicate bloom)를 결합한 새로운 고퀄리티 이미지를 만들어줘. 레퍼런스의 오브젝트가 아닌 스타일을 흡수해줘. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/88/c9/29/88c9295107879a1032da8ef7e4ae437a.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/88/c9/29/88c9295107879a1032da8ef7e4ae437a.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/fd/7b/49/fd7b491867d986e292e5c0eabf8b6f40.gif" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/fd/7b/49/fd7b491867d986e292e5c0eabf8b6f40.gif')"></div>
+      <div class="memo-area" data-memo-id="260224_1575">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1574"
        data-word1="울림"
