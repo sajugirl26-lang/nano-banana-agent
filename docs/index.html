@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1578</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1579</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$179.64</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$179.68</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1643"
+       data-word1="아이"
+       data-word2="순환"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T11:12:29.146444+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1k7-I2ovlkHw9VqsSZUvw-U59QIR9ba3S" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1k7-I2ovlkHw9VqsSZUvw-U59QIR9ba3S')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">아이</span> x
+        <span class="w2">순환</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1643 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 아이(child, small wonder, curious gaze)과 순환(cycle, eternal return, revolving pattern)를 결합한 프로페셔널한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/72/5a/44/725a44ab7240134bb901e1b959a9e0d2.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/72/5a/44/725a44ab7240134bb901e1b959a9e0d2.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/a6/59/44/a65944cda985e12659e1cf8b2ea4f284.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/a6/59/44/a65944cda985e12659e1cf8b2ea4f284.png')"></div>
+      <div class="memo-area" data-memo-id="260224_1643">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1642"
        data-word1="레이스"
