@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1514</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1515</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$174.39</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$174.53</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1570"
+       data-word1="코티지코어"
+       data-word2="기어"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:13:55.348574+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1eCpuEbG0tvXH4Zk3rdecpJNWCSZZ8CgJ" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1eCpuEbG0tvXH4Zk3rdecpJNWCSZZ8CgJ')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">코티지코어</span> x
+        <span class="w2">기어</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1570 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 코티지코어(cottagecore, rural charm, wildflower pastoral)과 기어(mechanical gear, interlocking teeth)를 결합한 프로페셔널한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/dc/f6/11/dcf611dd3aa0c279f6a2373d7ff32dbd.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/dc/f6/11/dcf611dd3aa0c279f6a2373d7ff32dbd.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/20/76/20/207620882ca6250628cc192af3e185bf.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/20/76/20/207620882ca6250628cc192af3e185bf.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1570">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1569"
        data-word1="블록 레고"
