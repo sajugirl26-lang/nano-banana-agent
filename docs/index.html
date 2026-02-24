@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1589</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1590</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$180.07</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$180.11</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1654"
+       data-word1="스마일"
+       data-word2="벌집"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T11:25:18.780449+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1i_nH643KR_giUIWtTmfCVW6GOr-u-SN3" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1i_nH643KR_giUIWtTmfCVW6GOr-u-SN3')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">스마일</span> x
+        <span class="w2">벌집</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1654 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 디자인 퀄리티·컬러 감각·재질 표현·조명 무드를 충실히 흡수하되, 피사체는 새롭게 스마일(smile, curved lips, cheerful face)과 벌집(honeycomb, hexagonal grid, natural structure)로 재해석하여 완성도 높은 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/09/3f/8b/093f8b8f96ce34e7919d7b995b848664.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/09/3f/8b/093f8b8f96ce34e7919d7b995b848664.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/28/d8/8e/28d88eed8e3e1376a02cb478d6a473b8.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/28/d8/8e/28d88eed8e3e1376a02cb478d6a473b8.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1654">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1653"
        data-word1="모자이크"
