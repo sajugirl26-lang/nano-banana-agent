@@ -21,8 +21,7 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 .date-filters label { font-size: 0.85rem; color: #aaa; cursor: pointer; }
 .date-filters label input { margin-right: 3px; }
 #count { color: #888; font-size: 0.8rem; }
-.grid { display: flex; gap: 12px; align-items: flex-start; }
-.grid-col { flex: 1; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.grid { position: relative; }
 .card { background: #1a1a1a; border-radius: 8px; overflow: hidden; }
 .card-img-wrap { position: relative; }
 .card-img { width: 100%; display: block; background: #222; }
@@ -49430,20 +49429,26 @@ function getColCount() {
 function renderPage() {
   const scrollY = window.scrollY;
   const end = currentPage * PAGE_SIZE;
-  const colCount = getColCount();
   while (grid.firstChild) grid.removeChild(grid.firstChild);
-  const cols = [];
-  for (let i = 0; i < colCount; i++) {
-    const col = document.createElement('div');
-    col.className = 'grid-col';
-    grid.appendChild(col);
-    cols.push(col);
-  }
   const visible = filteredCards.slice(0, end);
-  visible.forEach((card, i) => {
-    card.style.display = '';
-    cols[i % colCount].appendChild(card);
+  const gap = 12;
+  const colCount = getColCount();
+  const gridWidth = grid.clientWidth || grid.parentElement.clientWidth;
+  const colWidth = (gridWidth - gap * (colCount - 1)) / colCount;
+  const colHeights = new Array(colCount).fill(0);
+  // 1차: DOM에 추가하여 높이 측정
+  visible.forEach(card => {
+    card.style.cssText = 'position:absolute;visibility:hidden;width:' + colWidth + 'px';
+    grid.appendChild(card);
   });
+  // 2차: 측정 후 배치 (round-robin으로 순서 보장)
+  visible.forEach((card, i) => {
+    const col = i % colCount;
+    const h = card.offsetHeight;
+    card.style.cssText = 'position:absolute;width:' + colWidth + 'px;left:' + (col * (colWidth + gap)) + 'px;top:' + colHeights[col] + 'px';
+    colHeights[col] += h + gap;
+  });
+  grid.style.height = Math.max(...colHeights) + 'px';
   const btn = document.getElementById('load-more');
   btn.style.display = end < filteredCards.length ? '' : 'none';
   requestAnimationFrame(() => window.scrollTo(0, scrollY));
