@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1508</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1509</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$173.59</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$173.72</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1564"
+       data-word1="천사 조각상"
+       data-word2="산맥"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:03:44.641407+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1GjPxKDJd39VIhT-ba1a9KGijmsAqOvP1" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1GjPxKDJd39VIhT-ba1a9KGijmsAqOvP1')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">천사 조각상</span> x
+        <span class="w2">산맥</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1564 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지가 가진 디자인적 감각(색감, 조명, 재질, 공간감)을 살려서 천사 조각상(angel statue, stone wings, sacred form)과 산맥(mountain range, geological spine)를 결합한 재치있고 완성도 높은 이미지를 만들어줘. a high-end PBR 3D render (Octane/Redshift vibe), realistic materials for fabric, accurate roughness maps, strong sunlight with sharp shadows, preserve colors, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/0f/62/ef/0f62ef9a659e2dab9bffa64afe263c0a.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/0f/62/ef/0f62ef9a659e2dab9bffa64afe263c0a.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/5d/41/83/5d41834c5990df95a0b8bb71561ccb6f.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/5d/41/83/5d41834c5990df95a0b8bb71561ccb6f.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/3b/fb/62/3bfb62781915248a57753bc23daa3430.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/3b/fb/62/3bfb62781915248a57753bc23daa3430.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1564">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1563"
        data-word1="고프코어"
