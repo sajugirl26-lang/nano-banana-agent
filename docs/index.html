@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1446</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1447</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$165.28</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$165.42</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1502"
+       data-word1="나무"
+       data-word2="비눗방울"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T03:30:41.242055+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1BLRXoVZx2KsZFgAX7D-UAbbeJ462V1-Z" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1BLRXoVZx2KsZFgAX7D-UAbbeJ462V1-Z')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">나무</span> x
+        <span class="w2">비눗방울</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1502 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 톤·무드·컬러 팔레트·텍스처 퀄리티를 충실히 반영하되 주제는 나무(tree, rooted growth, branching canopy)과 비눗방울(soap bubble, iridescent sphere, floating film)로 완전히 새롭게 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/86/62/09/866209c32dbeab6a1f00daae38708488.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/86/62/09/866209c32dbeab6a1f00daae38708488.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/48/77/05/487705303240ff172ad8e15dfc4c87b3.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/48/77/05/487705303240ff172ad8e15dfc4c87b3.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/3a/95/26/3a95269def8a68f45a16ffbd297ad153.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/3a/95/26/3a95269def8a68f45a16ffbd297ad153.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/dc/09/a1/dc09a1778d169f342196874d20945b22.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/dc/09/a1/dc09a1778d169f342196874d20945b22.png')"></div>
+      <div class="memo-area" data-memo-id="260224_1502">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1501"
        data-word1="아이"
