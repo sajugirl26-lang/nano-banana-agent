@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1511</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1512</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$173.99</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$174.12</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1567"
+       data-word1="클린걸"
+       data-word2="회로"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:08:50.536739+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1TaWyMZu-9BxB1bPgYRSeBOHvFfXRkDQj" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1TaWyMZu-9BxB1bPgYRSeBOHvFfXRkDQj')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">클린걸</span> x
+        <span class="w2">회로</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1567 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 클린걸(clean girl, effortless minimal, dewy skin aesthetic)과 회로(circuit, electronic pathway)를 결합한 프로페셔널한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/28/6b/38/286b389cbddb4d874b6148dc0646dee4.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/28/6b/38/286b389cbddb4d874b6148dc0646dee4.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/64/1b/64/641b64127ee9e8379e6f0d8ef71b4d34.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/64/1b/64/641b64127ee9e8379e6f0d8ef71b4d34.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/d7/3e/5e/d73e5e3c86960a8d7fe585f357745d4f.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/d7/3e/5e/d73e5e3c86960a8d7fe585f357745d4f.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1567">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1566"
        data-word1="주사위"
