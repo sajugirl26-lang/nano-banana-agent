@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1456</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1457</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$166.62</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$166.75</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1512"
+       data-word1="폴라로이드"
+       data-word2="리본"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T03:46:28.348606+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1W4uo7oVGbGdHZrOT76qdasn573kT5hVU" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1W4uo7oVGbGdHZrOT76qdasn573kT5hVU')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">폴라로이드</span> x
+        <span class="w2">리본</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1512 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 톤·무드·컬러 팔레트·텍스처 퀄리티를 충실히 반영하되 주제는 폴라로이드(Polaroid, instant photo, retro snapshot)과 리본(ribbon, silk strip, decorative bow)로 완전히 새롭게 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/ce/fe/fc/cefefc2885b9d1b3213b36e817057872.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ce/fe/fc/cefefc2885b9d1b3213b36e817057872.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/dc/e0/fa/dce0fa49d127317d6340a2391ba92307.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/dc/e0/fa/dce0fa49d127317d6340a2391ba92307.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/b2/78/0e/b2780e2fd80c65b3bd1d95cd644db7bc.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/b2/78/0e/b2780e2fd80c65b3bd1d95cd644db7bc.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/8e/8b/5a/8e8b5ade8081316736fbdc7b734ff720.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/8e/8b/5a/8e8b5ade8081316736fbdc7b734ff720.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1512">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1511"
        data-word1="리퀴드 메탈"
