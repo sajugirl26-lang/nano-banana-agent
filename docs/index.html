@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1550</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1551</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$178.55</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$178.59</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1614"
+       data-word1="꿀"
+       data-word2="수치"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T10:35:23.951424+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1GDcSL1B2a98cN_vGJiRXPXHjtgReTimS" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1GDcSL1B2a98cN_vGJiRXPXHjtgReTimS')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">꿀</span> x
+        <span class="w2">수치</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1614 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지에서 느껴지는 무드·컬러톤·라이팅·소재의 질감을 유지하면서 꿀(honey, golden drip, viscous amber)과 수치(shame, hidden darkness, faded bloom)를 결합한 기발하고 디테일한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/0e/1a/9e/0e1a9e0902c8320b474ffba1b9f583d7.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/0e/1a/9e/0e1a9e0902c8320b474ffba1b9f583d7.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/8f/11/df/8f11df6de3a571e3c285a1397fe1e0ef.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/8f/11/df/8f11df6de3a571e3c285a1397fe1e0ef.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/03/32/1c/03321c962672316771b207899571b970.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/03/32/1c/03321c962672316771b207899571b970.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1614">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1613"
        data-word1="기억"
