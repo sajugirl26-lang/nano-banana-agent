@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1557</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1558</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$178.83</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$178.86</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1621"
+       data-word1="다이아몬드"
+       data-word2="자갈"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T10:45:50.067587+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1nEh-pTRygfO044-u0xGkhRYefcdacAEn" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1nEh-pTRygfO044-u0xGkhRYefcdacAEn')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">다이아몬드</span> x
+        <span class="w2">자갈</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1621 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지를 스타일 무드보드로 삼아 컬러톤·재질감·공간 분위기·디자인 퀄리티를 깊이 참고하여 다이아몬드(diamond, faceted gem, brilliant refraction)과 자갈(pebble, smooth stone, river-polished)를 결합한 영감을 주는 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/eb/be/aa/ebbeaa66e69580e7f518869c21e514fb.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/eb/be/aa/ebbeaa66e69580e7f518869c21e514fb.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/b0/ad/af/b0adaf49a52b0683dc116afd9108f695.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/b0/ad/af/b0adaf49a52b0683dc116afd9108f695.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/a1/74/96/a17496d6ee658b8be7e755931d29f4df.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/a1/74/96/a17496d6ee658b8be7e755931d29f4df.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1621">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1620"
        data-word1="버블티"
