@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1583</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1584</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$179.84</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$179.88</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1648"
+       data-word1="카드 게임"
+       data-word2="열기구"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T11:18:04.813811+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1VfB4d7wvzpsPDtPkfRa0j0XIeFjY2K_X" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1VfB4d7wvzpsPDtPkfRa0j0XIeFjY2K_X')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">카드 게임</span> x
+        <span class="w2">열기구</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1648 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 디자인 퀄리티·컬러 감각·재질 표현·조명 무드를 충실히 흡수하되, 피사체는 새롭게 카드 게임(playing cards, shuffled deck, royal suit)과 열기구(hot air balloon, colorful envelope, sky float)로 재해석하여 완성도 높은 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/1a/d8/48/1ad848d7c2d39832f1653348083c6869.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/1a/d8/48/1ad848d7c2d39832f1653348083c6869.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/65/ab/d4/65abd4c14d2103daf185113c058c16c9.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/65/ab/d4/65abd4c14d2103daf185113c058c16c9.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1648">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1647"
        data-word1="물방울"
