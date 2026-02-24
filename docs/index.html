@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1435</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1436</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$163.81</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$163.94</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1491"
+       data-word1="이끼"
+       data-word2="화살표"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T03:13:10.239939+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1FnLHjN5gCTIWWfuHBT5A_96RvheWbdev" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1FnLHjN5gCTIWWfuHBT5A_96RvheWbdev')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">이끼</span> x
+        <span class="w2">화살표</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1491 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지가 가진 디자인적 감각(색감, 조명, 재질, 공간감)을 살려서 이끼(moss, soft green carpet, micro forest)과 화살표(arrow sign, directional pointer, guiding mark)를 결합한 재치있고 완성도 높은 이미지를 만들어줘. a high-end PBR 3D render (Octane/Redshift vibe), realistic materials for fabric, accurate roughness maps, strong sunlight with sharp shadows, preserve colors, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/db/26/42/db26423a13e99b569d588e5c738be8f8.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/db/26/42/db26423a13e99b569d588e5c738be8f8.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/93/03/90/930390100bef2b8566ec29a824ac03fb.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/93/03/90/930390100bef2b8566ec29a824ac03fb.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/3b/f7/51/3bf751f506af47c8ade124b632d6cbe9.webp" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/3b/f7/51/3bf751f506af47c8ade124b632d6cbe9.webp')"></div>
+      <div class="memo-area" data-memo-id="260224_1491">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1490"
        data-word1="무용수"
