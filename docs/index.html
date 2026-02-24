@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1593</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1594</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$180.23</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$180.27</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1658"
+       data-word1="선인장"
+       data-word2="허물"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T11:31:22.658499+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1oROLtuuVjeNgYvjVRVjsSWzmYKEMc2gX" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1oROLtuuVjeNgYvjVRVjsSWzmYKEMc2gX')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">선인장</span> x
+        <span class="w2">허물</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1658 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지를 스타일 무드보드로 삼아 컬러톤·재질감·공간 분위기·디자인 퀄리티를 깊이 참고하여 선인장(cactus, desert spine, resilient bloom)과 허물(shed skin, past form)를 결합한 영감을 주는 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/d6/19/d6/d619d69737452cb26c69951d89a10d5a.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/d6/19/d6/d619d69737452cb26c69951d89a10d5a.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/e5/78/37/e57837955e26f5c4bbbf4e3caf85dc01.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/e5/78/37/e57837955e26f5c4bbbf4e3caf85dc01.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/1c/1c/8b/1c1c8b0c55fc7d9709d07e2ecfae4472.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/1c/1c/8b/1c1c8b0c55fc7d9709d07e2ecfae4472.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/df/76/15/df7615a6e2be321af7b8140f908b04e4.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/df/76/15/df7615a6e2be321af7b8140f908b04e4.png')"></div>
+      <div class="memo-area" data-memo-id="260224_1658">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1657"
        data-word1="와플"
