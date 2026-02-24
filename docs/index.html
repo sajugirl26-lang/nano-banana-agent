@@ -80,6 +80,11 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
     <option value="cost-high">Cost High</option>
     <option value="cost-low">Cost Low</option>
   </select>
+  <select id="model-filter" onchange="filterCards()">
+    <option value="all">All models</option>
+    <option value="pro">Pro</option>
+    <option value="flash">Flash</option>
+  </select>
   <button id="filter-nb" class="src-btn nb active" onclick="toggleSource('nb')">NanoBanana</button>
   <button id="filter-mj" class="src-btn mj active" onclick="toggleSource('mj')">Midjourney</button>
   <button id="filter-liked" class="src-btn liked-btn" onclick="toggleLiked()">Liked Only</button>
@@ -42130,14 +42135,17 @@ function filterCards(resetPage) {
   const nbOn = document.getElementById('filter-nb').classList.contains('active');
   const mjOn = document.getElementById('filter-mj').classList.contains('active');
   const lo = document.getElementById('filter-liked').classList.contains('active');
+  const mf = document.getElementById('model-filter').value;
   const prevLen = filteredCards.length;
   filteredCards = cards.filter(c => {
     const w = (c.dataset.word1 + ' ' + c.dataset.word2).toLowerCase();
     const p = (c.querySelector('.prompt')?.textContent || '').toLowerCase();
     const isMj = c.dataset.model === 'mj';
     const srcOk = (isMj && mjOn) || (!isMj && nbOn);
+    const modelOk = mf === 'all' || isMj || c.dataset.model === mf;
     const dateOk = dates.length === 0 || dates.includes(c.dataset.date) || !c.dataset.date;
     return srcOk
+      && modelOk
       && (w.includes(q) || p.includes(q))
       && dateOk
       && (!lo || c.dataset.liked === 'true');
