@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1444</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1445</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$165.01</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$165.15</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1500"
+       data-word1="레트로퓨처"
+       data-word2="뿌리채"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T03:27:40.038351+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1sbQLSg3vVJl5VcYVOmCpPyPdq85cgeOq" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1sbQLSg3vVJl5VcYVOmCpPyPdq85cgeOq')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">레트로퓨처</span> x
+        <span class="w2">뿌리채</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1500 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 색감·질감·분위기·렌더링 퀄리티를 깊이 참고하여 레트로퓨처(retrofuture, vintage tomorrow, space-age nostalgia)과 뿌리채(root system, spreading grasp)를 결합한 새로운 고퀄리티 이미지를 만들어줘. 레퍼런스의 오브젝트가 아닌 스타일을 흡수해줘. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/66/21/f6/6621f6ec8b7707a93d33c8a91b459b83.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/66/21/f6/6621f6ec8b7707a93d33c8a91b459b83.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/6b/96/8f/6b968f543bf4845f444c22ec15aad5c8.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/6b/96/8f/6b968f543bf4845f444c22ec15aad5c8.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/6d/3f/7c/6d3f7cac6b223cc833431182ff919be6.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/6d/3f/7c/6d3f7cac6b223cc833431182ff919be6.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1500">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1499"
        data-word1="느낌표"
