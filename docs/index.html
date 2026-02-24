@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1476</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1477</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$169.30</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$169.44</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1532"
+       data-word1="초콜릿"
+       data-word2="창조"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T04:17:50.503973+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1Wy-qykP_xVxvVnUsJBbdpDbkDT89rzGS" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1Wy-qykP_xVxvVnUsJBbdpDbkDT89rzGS')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">초콜릿</span> x
+        <span class="w2">창조</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1532 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 초콜릿(chocolate, dark sheen, melted richness)과 창조(creation, birth of form, generative force)를 결합한 프로페셔널한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/7a/34/a3/7a34a3bc65224db404e1d2bd11ee64fe.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/7a/34/a3/7a34a3bc65224db404e1d2bd11ee64fe.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/21/89/38/218938cefee41cb417e7082acd1d32cd.webp" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/21/89/38/218938cefee41cb417e7082acd1d32cd.webp')"></div>
+      <div class="memo-area" data-memo-id="260224_1532">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1531"
        data-word1="스테인드글라스"
