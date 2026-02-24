@@ -93,8 +93,18 @@ def generate_viewer(session_id: str = None, date_str: str = None) -> Path | None
         _to_kst_date(e.get("generated_at", "")) for e in entries if e.get("generated_at")
     ) - {""}, reverse=True)
 
-    # 최신순 정렬 (combo_id 역순 — 안정적 순서 보장)
-    entries.sort(key=lambda e: e.get("combo_id", ""), reverse=True)
+    # 최신순 정렬 (combo_id 숫자 기준 — 자릿수 무관 안정 정렬)
+    def _combo_sort_key(e):
+        cid = e.get("combo_id", "")
+        parts = cid.split("_")
+        if len(parts) == 2:
+            try:
+                return (int(parts[0]), int(parts[1]))
+            except ValueError:
+                pass
+        return (0, 0)
+
+    entries.sort(key=_combo_sort_key, reverse=True)
 
     html_cards = ""
     for entry in entries:
@@ -491,13 +501,14 @@ function editMemo(textEl) {{
     if (e.key === 'Escape') {{ ta.value = current; save(); }}
   }});
 }}
+function _idNum(id) {{ const p = id.split('_'); return p.length === 2 ? parseInt(p[0]) * 100000 + parseInt(p[1]) : 0; }}
 function sortCards() {{
   const s = document.getElementById('sort').value;
   cards.sort((a, b) => {{
     if (s === 'cost-high') return parseFloat(b.dataset.cost) - parseFloat(a.dataset.cost);
     if (s === 'cost-low') return parseFloat(a.dataset.cost) - parseFloat(b.dataset.cost);
-    if (s === 'oldest') return a.dataset.id.localeCompare(b.dataset.id);
-    return b.dataset.id.localeCompare(a.dataset.id);
+    if (s === 'oldest') return _idNum(a.dataset.id) - _idNum(b.dataset.id);
+    return _idNum(b.dataset.id) - _idNum(a.dataset.id);
   }});
   filterCards();
 }}
