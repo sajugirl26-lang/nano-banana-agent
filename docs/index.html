@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1596</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1597</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$180.35</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$180.39</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1662"
+       data-word1="클린걸"
+       data-word2="소용돌이"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T11:35:46.233266+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1T9V6odmDf0MYVazab5LmJt2Dp0QuveAT" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1T9V6odmDf0MYVazab5LmJt2Dp0QuveAT')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">클린걸</span> x
+        <span class="w2">소용돌이</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1662 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 클린걸(clean girl, effortless minimal, dewy skin aesthetic)과 소용돌이(vortex, spiraling force)를 결합한 프로페셔널한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/c3/b3/87/c3b38741e4bfa36e3050afb60131ab20.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/c3/b3/87/c3b38741e4bfa36e3050afb60131ab20.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/0b/de/62/0bde627ef36d6a7977b004a46730655a.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/0b/de/62/0bde627ef36d6a7977b004a46730655a.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/56/4e/b5/564eb5658c6d4b1052c62d2fc1adb339.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/56/4e/b5/564eb5658c6d4b1052c62d2fc1adb339.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/8d/f6/8d/8df68d09bfff3a43c0dd94474cd231a6.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/8d/f6/8d/8df68d09bfff3a43c0dd94474cd231a6.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1662">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1660"
        data-word1="프리즘"
