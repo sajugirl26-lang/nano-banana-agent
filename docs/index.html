@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1496</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1497</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$171.98</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$172.12</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1552"
+       data-word1="여운"
+       data-word2="커피"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T04:45:36.931839+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1t7vWF6sNSmm8eU04cDCzr6Ox0wRVPImO" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1t7vWF6sNSmm8eU04cDCzr6Ox0wRVPImO')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">여운</span> x
+        <span class="w2">커피</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1552 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 여운(lingering feeling, emotional aftertaste, fading echo)과 커피(coffee, morning ritual, bitter warmth)를 결합한 프로페셔널한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/24/35/26/243526c260d025e55f1319d5d94e7541.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/24/35/26/243526c260d025e55f1319d5d94e7541.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/46/01/ef/4601efc2a452b27d4218971613cc7aaa.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/46/01/ef/4601efc2a452b27d4218971613cc7aaa.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1552">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1551"
        data-word1="소녀"
