@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1475</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1476</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$169.17</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$169.30</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1531"
+       data-word1="스테인드글라스"
+       data-word2="원자"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T04:16:29.005099+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1fcYVTwgueOoDRk-MPxG7yvRCE30s6G8D" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1fcYVTwgueOoDRk-MPxG7yvRCE30s6G8D')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">스테인드글라스</span> x
+        <span class="w2">원자</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1531 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지에서 느껴지는 무드·컬러톤·라이팅·소재의 질감을 유지하면서 스테인드글라스(stained glass, colored light, mosaic window)과 원자(atom, fundamental unit)를 결합한 기발하고 디테일한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/53/f5/83/53f5833bf99eb5c570c04ac5c8f1e4d0.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/53/f5/83/53f5833bf99eb5c570c04ac5c8f1e4d0.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/4a/72/d0/4a72d030298ef2dadae209c35e6b2488.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/4a/72/d0/4a72d030298ef2dadae209c35e6b2488.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/e7/6a/33/e76a33c407d81faa6edd91a1526351e4.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/e7/6a/33/e76a33c407d81faa6edd91a1526351e4.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/c1/0a/05/c10a05033ba497638c04640cdc0ba4c7.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/c1/0a/05/c10a05033ba497638c04640cdc0ba4c7.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1531">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1530"
        data-word1="버섯"
