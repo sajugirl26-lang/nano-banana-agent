@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1529</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1530</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$176.40</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$176.54</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1585"
+       data-word1="뉴탈지아"
+       data-word2="전사"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:37:23.850359+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1Y7xjW3jyloF8V0vec0hcBI0OOX__yWgk" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1Y7xjW3jyloF8V0vec0hcBI0OOX__yWgk')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">뉴탈지아</span> x
+        <span class="w2">전사</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1585 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지를 스타일 무드보드로 삼아 컬러톤·재질감·공간 분위기·디자인 퀄리티를 깊이 참고하여 뉴탈지아(newtalgia, 90s-2000s revival, modern retro reinterpretation)과 전사(warrior, battle-hardened, iron will)를 결합한 영감을 주는 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/51/2f/70/512f7098a7b5edc33c8f9c6970db58ee.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/51/2f/70/512f7098a7b5edc33c8f9c6970db58ee.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/fb/78/62/fb7862320a9ba94cd0071d23fce3b00b.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/fb/78/62/fb7862320a9ba94cd0071d23fce3b00b.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1585">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1584"
        data-word1="패브릭 주름"
