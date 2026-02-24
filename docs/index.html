@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1607</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1608</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$180.78</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$180.81</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1673"
+       data-word1="경이"
+       data-word2="문"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T11:49:47.044221+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1gKIyJSaTJPG5FZ38VME70saVX_uK0dBJ" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1gKIyJSaTJPG5FZ38VME70saVX_uK0dBJ')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">경이</span> x
+        <span class="w2">문</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1673 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 디자인 퀄리티·컬러 감각·재질 표현·조명 무드를 충실히 흡수하되, 피사체는 새롭게 경이(wonder, awe-struck moment, sublime beauty)과 문(door, threshold gateway)로 재해석하여 완성도 높은 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/03/1a/8e/031a8e84c43e1624b839fcd2baa61473.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/03/1a/8e/031a8e84c43e1624b839fcd2baa61473.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/3a/95/26/3a95269def8a68f45a16ffbd297ad153.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/3a/95/26/3a95269def8a68f45a16ffbd297ad153.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1673">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1672"
        data-word1="무중력"
