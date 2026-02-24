@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1560</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1561</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$178.94</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$178.98</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1624"
+       data-word1="피크닉"
+       data-word2="타로카드"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T10:49:54.403371+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1SX7-IAcx5ZTJlUTu9klK5VQmW-WWg2x5" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1SX7-IAcx5ZTJlUTu9klK5VQmW-WWg2x5')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">피크닉</span> x
+        <span class="w2">타로카드</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1624 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지가 가진 디자인적 감각(색감, 조명, 재질, 공간감)을 살려서 피크닉(picnic, checkered blanket, outdoor leisure)과 타로카드(tarot card, mystical image, divination art)를 결합한 재치있고 완성도 높은 이미지를 만들어줘. a high-end PBR 3D render (Octane/Redshift vibe), realistic materials for fabric, accurate roughness maps, strong sunlight with sharp shadows, preserve colors, no text, no logo</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/72/5d/46/725d46f81517ecb35050bb0db30b9bb5.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/72/5d/46/725d46f81517ecb35050bb0db30b9bb5.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/56/7c/e5/567ce5fec975a54a785095193d4a79d0.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/56/7c/e5/567ce5fec975a54a785095193d4a79d0.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/13/9b/f0/139bf02f641f106551ab63cc69889ede.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/13/9b/f0/139bf02f641f106551ab63cc69889ede.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/ad/b4/f8/adb4f8ffb0ff020b63f1b289e1f00d9a.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ad/b4/f8/adb4f8ffb0ff020b63f1b289e1f00d9a.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1624">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1623"
        data-word1="아이"
@@ -50130,17 +50162,6 @@ function getColCount() {
   if (window.innerWidth <= 1200) return 3;
   return 5;
 }
-function layoutCards(visible, colCount, colWidth, gap) {
-  const colHeights = new Array(colCount).fill(0);
-  visible.forEach((card, i) => {
-    const col = i % colCount;
-    const h = card.offsetHeight;
-    card.style.cssText = 'position:absolute;width:' + colWidth + 'px;left:' + (col * (colWidth + gap)) + 'px;top:' + colHeights[col] + 'px';
-    colHeights[col] += h + gap;
-  });
-  grid.style.height = Math.max(...colHeights) + 'px';
-}
-let _relayoutTimer;
 function renderPage() {
   const scrollY = window.scrollY;
   const end = currentPage * PAGE_SIZE;
@@ -50150,23 +50171,20 @@ function renderPage() {
   const colCount = getColCount();
   const gridWidth = grid.clientWidth || grid.parentElement.clientWidth;
   const colWidth = (gridWidth - gap * (colCount - 1)) / colCount;
+  const colHeights = new Array(colCount).fill(0);
+  // 1차: DOM에 추가하여 높이 측정
   visible.forEach(card => {
     card.style.cssText = 'position:absolute;visibility:hidden;width:' + colWidth + 'px';
     grid.appendChild(card);
   });
-  layoutCards(visible, colCount, colWidth, gap);
-  let pending = 0;
-  visible.forEach(card => {
-    const img = card.querySelector('.card-img');
-    if (img && !img.complete) {
-      pending++;
-      img.onload = img.onerror = () => {
-        pending--;
-        clearTimeout(_relayoutTimer);
-        _relayoutTimer = setTimeout(() => layoutCards(visible, colCount, colWidth, gap), pending > 0 ? 50 : 0);
-      };
-    }
+  // 2차: 측정 후 배치 (round-robin으로 순서 보장)
+  visible.forEach((card, i) => {
+    const col = i % colCount;
+    const h = card.offsetHeight;
+    card.style.cssText = 'position:absolute;width:' + colWidth + 'px;left:' + (col * (colWidth + gap)) + 'px;top:' + colHeights[col] + 'px';
+    colHeights[col] += h + gap;
   });
+  grid.style.height = Math.max(...colHeights) + 'px';
   const btn = document.getElementById('load-more');
   btn.style.display = end < filteredCards.length ? '' : 'none';
   requestAnimationFrame(() => window.scrollTo(0, scrollY));
