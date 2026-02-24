@@ -25,7 +25,7 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 .date-filters { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .date-filters label { font-size: 0.85rem; color: #aaa; cursor: pointer; }
 .date-filters label input { margin-right: 3px; }
-#count { color: #888; font-size: 0.8rem; }
+#count { color: #f0c040; font-size: 0.85rem; font-weight: bold; margin-left: 4px; }
 .grid { position: relative; }
 .card { background: #1a1a1a; border-radius: 8px; overflow: hidden; }
 .card-img-wrap { position: relative; }
@@ -42144,6 +42144,7 @@ function filterCards(resetPage) {
   });
   if (resetPage !== false && filteredCards.length !== prevLen) currentPage = 1;
   updateLikedCounts();
+  document.getElementById('count').textContent = filteredCards.length;
   renderPage();
 }
 function getColCount() {
