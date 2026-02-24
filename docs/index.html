@@ -59,9 +59,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1576</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1577</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$179.57</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$179.61</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -82,6 +82,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1641"
+       data-word1="침묵"
+       data-word2="자유"
+       data-cost="0.039"
+       data-model="flash"
+       data-date="2026-02-24"
+       data-time="2026-02-24T11:10:05.349968+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1daFRW-wEQJvo-Na8HgpHm4ijWwykofhR" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1daFRW-wEQJvo-Na8HgpHm4ijWwykofhR')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">침묵</span> x
+        <span class="w2">자유</span>
+      </div>
+      <div class="meta">
+        <span class="model-flash">Flash</span> ·
+        $0.039 ·
+        260224_1641 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지에서 느껴지는 무드·컬러톤·라이팅·소재의 질감을 유지하면서 침묵(silence, soundless void, still air)과 자유(freedom, liberation, open sky)를 결합한 기발하고 디테일한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/af/79/8d/af798df0a102d772bcac19ddcd73e0c1.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/af/79/8d/af798df0a102d772bcac19ddcd73e0c1.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/73/15/f2/7315f20588617fbb0809077d24669d9c.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/73/15/f2/7315f20588617fbb0809077d24669d9c.png')"></div>
+      <div class="memo-area" data-memo-id="260224_1641">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1640"
        data-word1="요요"
