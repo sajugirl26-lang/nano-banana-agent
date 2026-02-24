@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1533</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1534</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$176.94</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$177.07</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1589"
+       data-word1="설렘"
+       data-word2="알"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:44:02.028699+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/17_t1rqgvrckbohgnJq3xA-9muqB7ZHdd" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/17_t1rqgvrckbohgnJq3xA-9muqB7ZHdd')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">설렘</span> x
+        <span class="w2">알</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1589 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 톤·무드·컬러 팔레트·텍스처 퀄리티를 충실히 반영하되 주제는 설렘(excitement, fluttering heart, anticipation)과 알(egg, embryonic potential)로 완전히 새롭게 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/84/ac/3c/84ac3c623183eb6086645af084ffd3f1.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/84/ac/3c/84ac3c623183eb6086645af084ffd3f1.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/a9/aa/fc/a9aafc9cd98999ba61cd0ae4683b219c.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/a9/aa/fc/a9aafc9cd98999ba61cd0ae4683b219c.png')"></div>
+      <div class="memo-area" data-memo-id="260224_1589">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1588"
        data-word1="잔상"
