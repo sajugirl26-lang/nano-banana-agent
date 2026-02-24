@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1507</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1508</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$173.46</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$173.59</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1563"
+       data-word1="고프코어"
+       data-word2="닻"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T05:02:10.971448+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1AAAWwq3rogaOToEW9OtDGkdsgY2u1ApX" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1AAAWwq3rogaOToEW9OtDGkdsgY2u1ApX')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">고프코어</span> x
+        <span class="w2">닻</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1563 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지를 스타일 무드보드로 삼아 컬러톤·재질감·공간 분위기·디자인 퀄리티를 깊이 참고하여 고프코어(gorpcore, outdoor utility, functional adventure wear)과 닻(anchor, holding weight)를 결합한 영감을 주는 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/81/1d/36/811d36f479592a52c8b9254db5db62f2.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/81/1d/36/811d36f479592a52c8b9254db5db62f2.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/17/0a/01/170a0103163ee1351e75891117c53824.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/17/0a/01/170a0103163ee1351e75891117c53824.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/97/f4/c9/97f4c93277ed85f10ff441e0b0857eb5.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/97/f4/c9/97f4c93277ed85f10ff441e0b0857eb5.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/25/47/9d/25479dabf7856c8ebc3aeb00ef69c145.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/25/47/9d/25479dabf7856c8ebc3aeb00ef69c145.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1563">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1562"
        data-word1="입술"
