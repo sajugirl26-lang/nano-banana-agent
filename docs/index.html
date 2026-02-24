@@ -60,9 +60,9 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1466</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1467</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$167.96</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$168.09</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1522"
+       data-word1="우주인 캐릭터"
+       data-word2="유기체"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T04:02:35.381173+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/1peTlcCG0udUoVvq14t1Z9YpFkJ_VfGpQ" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/1peTlcCG0udUoVvq14t1Z9YpFkJ_VfGpQ')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">우주인 캐릭터</span> x
+        <span class="w2">유기체</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1522 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 디자인 퀄리티·컬러 감각·재질 표현·조명 무드를 충실히 흡수하되, 피사체는 새롭게 우주인 캐릭터(astronaut character, space suit figure, cosmic explorer)과 유기체(organism, living system)로 재해석하여 완성도 높은 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/00/35/49/003549547719da4228f42828d59b1438.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/00/35/49/003549547719da4228f42828d59b1438.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/90/e0/3f/90e03fec4e15f8f76d020c4420aa8ef4.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/90/e0/3f/90e03fec4e15f8f76d020c4420aa8ef4.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1522">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260224_1521"
        data-word1="포도"
