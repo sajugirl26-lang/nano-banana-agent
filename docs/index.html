@@ -50130,6 +50130,17 @@ function getColCount() {
   if (window.innerWidth <= 1200) return 3;
   return 5;
 }
+function layoutCards(visible, colCount, colWidth, gap) {
+  const colHeights = new Array(colCount).fill(0);
+  visible.forEach((card, i) => {
+    const col = i % colCount;
+    const h = card.offsetHeight;
+    card.style.cssText = 'position:absolute;width:' + colWidth + 'px;left:' + (col * (colWidth + gap)) + 'px;top:' + colHeights[col] + 'px';
+    colHeights[col] += h + gap;
+  });
+  grid.style.height = Math.max(...colHeights) + 'px';
+}
+let _relayoutTimer;
 function renderPage() {
   const scrollY = window.scrollY;
   const end = currentPage * PAGE_SIZE;
@@ -50139,20 +50150,23 @@ function renderPage() {
   const colCount = getColCount();
   const gridWidth = grid.clientWidth || grid.parentElement.clientWidth;
   const colWidth = (gridWidth - gap * (colCount - 1)) / colCount;
-  const colHeights = new Array(colCount).fill(0);
-  // 1차: DOM에 추가하여 높이 측정
   visible.forEach(card => {
     card.style.cssText = 'position:absolute;visibility:hidden;width:' + colWidth + 'px';
     grid.appendChild(card);
   });
-  // 2차: 측정 후 배치 (round-robin으로 순서 보장)
-  visible.forEach((card, i) => {
-    const col = i % colCount;
-    const h = card.offsetHeight;
-    card.style.cssText = 'position:absolute;width:' + colWidth + 'px;left:' + (col * (colWidth + gap)) + 'px;top:' + colHeights[col] + 'px';
-    colHeights[col] += h + gap;
+  layoutCards(visible, colCount, colWidth, gap);
+  let pending = 0;
+  visible.forEach(card => {
+    const img = card.querySelector('.card-img');
+    if (img && !img.complete) {
+      pending++;
+      img.onload = img.onerror = () => {
+        pending--;
+        clearTimeout(_relayoutTimer);
+        _relayoutTimer = setTimeout(() => layoutCards(visible, colCount, colWidth, gap), pending > 0 ? 50 : 0);
+      };
+    }
   });
-  grid.style.height = Math.max(...colHeights) + 'px';
   const btn = document.getElementById('load-more');
   btn.style.display = end < filteredCards.length ? '' : 'none';
   requestAnimationFrame(() => window.scrollTo(0, scrollY));
