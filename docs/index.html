@@ -60,13 +60,13 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 <body>
 <h1>BOKBOK STUDIO</h1>
 <div class="stats">
-  <div class="stat"><div class="stat-val">1430</div><div class="stat-lbl">Total</div></div>
+  <div class="stat"><div class="stat-val">1431</div><div class="stat-lbl">Total</div></div>
   <div class="stat"><div class="stat-val" id="liked-stat">0</div><div class="stat-lbl">Liked</div></div>
-  <div class="stat"><div class="stat-val">$163.14</div><div class="stat-lbl">Cost</div></div>
+  <div class="stat"><div class="stat-val">$163.27</div><div class="stat-lbl">Cost</div></div>
 </div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search..." oninput="filterCards()">
-  <span class="date-filters"><label><input type="checkbox" id="date-all" checked onchange="toggleAllDates(this)"> All</label><label><input type="checkbox" class="date-cb" value="2026-02-23" checked onchange="onDateCbChange()"> 02-23</label><label><input type="checkbox" class="date-cb" value="2026-02-22" checked onchange="onDateCbChange()"> 02-22</label><label><input type="checkbox" class="date-cb" value="2026-02-21" checked onchange="onDateCbChange()"> 02-21</label><label><input type="checkbox" class="date-cb" value="2026-02-20" checked onchange="onDateCbChange()"> 02-20</label><label><input type="checkbox" class="date-cb" value="2026-02-19" checked onchange="onDateCbChange()"> 02-19</label><label><input type="checkbox" class="date-cb" value="2026-02-18" checked onchange="onDateCbChange()"> 02-18</label></span>
+  <span class="date-filters"><label><input type="checkbox" id="date-all" checked onchange="toggleAllDates(this)"> All</label><label><input type="checkbox" class="date-cb" value="2026-02-24" checked onchange="onDateCbChange()"> 02-24</label><label><input type="checkbox" class="date-cb" value="2026-02-23" checked onchange="onDateCbChange()"> 02-23</label><label><input type="checkbox" class="date-cb" value="2026-02-22" checked onchange="onDateCbChange()"> 02-22</label><label><input type="checkbox" class="date-cb" value="2026-02-21" checked onchange="onDateCbChange()"> 02-21</label><label><input type="checkbox" class="date-cb" value="2026-02-20" checked onchange="onDateCbChange()"> 02-20</label><label><input type="checkbox" class="date-cb" value="2026-02-19" checked onchange="onDateCbChange()"> 02-19</label><label><input type="checkbox" class="date-cb" value="2026-02-18" checked onchange="onDateCbChange()"> 02-18</label></span>
   <select id="model-filter" onchange="filterCards()">
     <option value="all">All models</option>
     <option value="pro">Pro</option>
@@ -83,6 +83,38 @@ h1 { font-size: 1.4rem; color: #f0c040; margin-bottom: 8px; }
 </div>
 <div class="grid" id="grid">
 
+  <div class="card"
+       data-id="260224_1485"
+       data-word1="에메랄드"
+       data-word2="심연"
+       data-cost="0.134"
+       data-model="pro"
+       data-date="2026-02-24"
+       data-time="2026-02-24T02:51:39.722378+00:00"
+       data-liked="false">
+    <div class="card-img-wrap">
+      <img class="card-img" src="https://lh3.googleusercontent.com/d/17kTXSkpF_5djsFWzPvWjOo5lBbcZ3-7t" loading="lazy" onclick="showPinPopup('https://lh3.googleusercontent.com/d/17kTXSkpF_5djsFWzPvWjOo5lBbcZ3-7t')" style="cursor:pointer">
+      <button class="heart-btn" onclick="toggleHeart(this)" title="Like">&#9825;</button>
+    </div>
+    <div class="card-body">
+      <div class="words">
+        <span class="w1">에메랄드</span> x
+        <span class="w2">심연</span>
+      </div>
+      <div class="meta">
+        <span class="model-pro">Pro</span> ·
+        $0.134 ·
+        260224_1485 ·
+        2026-02-24
+      </div>
+      <div class="prompt">첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 에메랄드(emerald, green gem, crystalline depth)과 심연(abyss, unfathomable depth, dark beyond)를 결합한 프로페셔널한 이미지를 만들어줘</div>
+      <div class="pins"><img class="pin-thumb" src="https://i.pinimg.com/originals/95/70/73/957073f45e261412fdc086eff829c98f.png" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/95/70/73/957073f45e261412fdc086eff829c98f.png')"><img class="pin-thumb" src="https://i.pinimg.com/originals/ee/92/b9/ee92b9e97faca6e7623758e91ae363cd.webp" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/ee/92/b9/ee92b9e97faca6e7623758e91ae363cd.webp')"><img class="pin-thumb" src="https://i.pinimg.com/originals/cd/96/d4/cd96d4c7e056586bb07732839280ef2b.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/cd/96/d4/cd96d4c7e056586bb07732839280ef2b.jpg')"><img class="pin-thumb" src="https://i.pinimg.com/originals/56/88/f7/5688f7a43544881f52e3d8a941b67016.jpg" loading="lazy" onclick="showPinPopup('https://i.pinimg.com/originals/56/88/f7/5688f7a43544881f52e3d8a941b67016.jpg')"></div>
+      <div class="memo-area" data-memo-id="260224_1485">
+        <div class="memo-text" onclick="editMemo(this)"></div>
+        <button class="memo-btn" onclick="editMemo(this.parentElement.querySelector('.memo-text'))" title="메모">&#9998;</button>
+      </div>
+    </div>
+  </div>
   <div class="card"
        data-id="260223_1484"
        data-word1="펭귄 캐릭터"
