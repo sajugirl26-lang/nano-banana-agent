@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BOKBOK STUDIO - 프롬프트 분석</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:20px;max-width:1200px;margin:0 auto}
+h1{color:#f0c040;font-size:1.4rem;margin-bottom:0}
+h2{color:#f0c040;font-size:1.1rem;margin-bottom:16px;border-bottom:1px solid #333;padding-bottom:8px}
+h3{color:#ccc;font-size:0.95rem;margin:12px 0 8px}
+.header{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.back-btn{padding:4px 12px;border-radius:6px;border:1px solid #333;background:#1a1a1a;color:#888;font-size:0.75rem;cursor:pointer;text-decoration:none;transition:all 0.2s}
+.back-btn:hover{border-color:#f0c040;color:#f0c040}
+.section{background:#111;border:1px solid #222;border-radius:8px;padding:20px;margin-bottom:20px}
+.overview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat-card{background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:16px;text-align:center}
+.stat-card .val{font-size:1.6rem;font-weight:700;color:#f0c040}
+.stat-card .lbl{font-size:0.75rem;color:#888;margin-top:4px}
+.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.chart-box{background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:16px;position:relative}
+.chart-box.full{grid-column:1/-1}
+.chart-box h3{margin-top:0}
+canvas{max-height:400px}
+table{width:100%;border-collapse:collapse;font-size:0.82rem;margin-top:8px}
+th,td{padding:6px 10px;border-bottom:1px solid #222;text-align:left}
+th{color:#f0c040;font-size:0.72rem;text-transform:uppercase}
+td{color:#ccc}
+tr:hover td{background:#1a1a1a}
+.rate-bar{display:inline-block;height:6px;border-radius:3px;background:#f0c040;vertical-align:middle;margin-right:6px}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:0.7rem;font-weight:600}
+.badge-gold{background:#f0c04033;color:#f0c040;border:1px solid #f0c04066}
+.tmpl-text{font-size:0.7rem;color:#666;max-width:400px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sub-note{font-size:0.72rem;color:#666;margin-top:4px}
+@media(max-width:768px){
+  .chart-row{grid-template-columns:1fr}
+  .overview-grid{grid-template-columns:repeat(3,1fr)}
+  body{padding:10px}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>BOKBOK STUDIO</h1>
+  <span style="color:#666;font-size:0.85rem">프롬프트 분석</span>
+  <a href="index.html" class="back-btn">&#8592; 갤러리</a>
+</div>
+
+<!-- Section 1: Overview -->
+<div class="section" id="s-overview">
+  <h2>Overview</h2>
+  <div class="overview-grid" id="overview-grid"></div>
+</div>
+
+<!-- Section 2: Template Performance -->
+<div class="section" id="s-templates">
+  <h2>Template Performance</h2>
+  <div class="chart-box full">
+    <canvas id="chart-tmpl"></canvas>
+  </div>
+  <table id="tmpl-table"></table>
+</div>
+
+<!-- Section 3: Word Analysis -->
+<div class="section" id="s-words">
+  <h2>Word Analysis</h2>
+  <div class="chart-row">
+    <div class="chart-box">
+      <h3>Word1 Top 15 (좋아요율)</h3>
+      <canvas id="chart-w1"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Word2 Top 15 (좋아요율)</h3>
+      <canvas id="chart-w2"></canvas>
+    </div>
+  </div>
+  <h3>Best Combinations</h3>
+  <table id="combo-table"></table>
+</div>
+
+<!-- Section 4: Model Comparison -->
+<div class="section" id="s-models">
+  <h2>Model Comparison</h2>
+  <div class="chart-row">
+    <div class="chart-box">
+      <canvas id="chart-model-count"></canvas>
+    </div>
+    <div class="chart-box">
+      <canvas id="chart-model-eff"></canvas>
+    </div>
+  </div>
+  <table id="model-table"></table>
+</div>
+
+<!-- Section 5: Design Patterns -->
+<div class="section" id="s-design">
+  <h2>Design Patterns <span class="sub-note">(GPT-4o 분석 기반)</span></h2>
+  <div class="chart-row">
+    <div class="chart-box"><h3>Style</h3><canvas id="chart-style"></canvas></div>
+    <div class="chart-box"><h3>Mood</h3><canvas id="chart-mood"></canvas></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-box"><h3>Color Temperature</h3><canvas id="chart-temp"></canvas></div>
+    <div class="chart-box"><h3>Render Quality</h3><canvas id="chart-render"></canvas></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-box"><h3>Emotional Appeal</h3><canvas id="chart-appeal"></canvas></div>
+    <div class="chart-box"><h3>Content Flags</h3><canvas id="chart-flags"></canvas></div>
+  </div>
+</div>
+
+<!-- Section 6: Daily Trend -->
+<div class="section" id="s-daily">
+  <h2>Daily Trend</h2>
+  <div class="chart-box full">
+    <canvas id="chart-daily"></canvas>
+  </div>
+</div>
+
+<div style="text-align:center;padding:20px;color:#444;font-size:0.7rem">
+  Generated by BOKBOK STUDIO Analysis
+</div>
+
+<script>
+const D = {"overview": {"total": 2984, "liked": 342, "rate": 11.5, "cost": 291.33, "costPerLike": 0.85, "dateStart": "2026-02-18", "dateEnd": "2026-03-02"}, "templates": [{"id": "core_01", "used": 16, "liked": 5, "rate": 31.2, "text": ""}, {"id": "free_08", "used": 30, "liked": 7, "rate": 23.3, "text": ""}, {"id": "core_04", "used": 22, "liked": 5, "rate": 22.7, "text": ""}, {"id": "free_01", "used": 22, "liked": 5, "rate": 22.7, "text": ""}, {"id": "free_02", "used": 30, "liked": 6, "rate": 20.0, "text": ""}, {"id": "free_03", "used": 35, "liked": 6, "rate": 17.1, "text": ""}, {"id": "core_06", "used": 19, "liked": 3, "rate": 15.8, "text": ""}, {"id": "core_07", "used": 32, "liked": 5, "rate": 15.6, "text": ""}, {"id": "free_06", "used": 32, "liked": 5, "rate": 15.6, "text": ""}, {"id": "style_01", "used": 205, "liked": 30, "rate": 14.6, "text": ""}, {"id": "style_09", "used": 207, "liked": 30, "rate": 14.5, "text": ""}, {"id": "free_05", "used": 28, "liked": 4, "rate": 14.3, "text": ""}, {"id": "style_02", "used": 216, "liked": 29, "rate": 13.4, "text": ""}, {"id": "style_03", "used": 232, "liked": 31, "rate": 13.4, "text": ""}, {"id": "free_04", "used": 30, "liked": 4, "rate": 13.3, "text": ""}, {"id": "core_08", "used": 23, "liked": 3, "rate": 13.0, "text": ""}, {"id": "free_07", "used": 33, "liked": 4, "rate": 12.1, "text": ""}, {"id": "style_05", "used": 215, "liked": 26, "rate": 12.1, "text": ""}, {"id": "core_09", "used": 25, "liked": 3, "rate": 12.0, "text": ""}, {"id": "style_07", "used": 215, "liked": 25, "rate": 11.6, "text": ""}, {"id": "style_06", "used": 234, "liked": 26, "rate": 11.1, "text": ""}, {"id": "style_08", "used": 214, "liked": 22, "rate": 10.3, "text": ""}, {"id": "aistudio_web", "used": 160, "liked": 14, "rate": 8.8, "text": ""}, {"id": "style_04", "used": 170, "liked": 14, "rate": 8.2, "text": ""}, {"id": "style_10", "used": 93, "liked": 6, "rate": 6.5, "text": ""}, {"id": "unknown", "used": 388, "liked": 23, "rate": 5.9, "text": ""}, {"id": "core_03", "used": 23, "liked": 1, "rate": 4.3, "text": ""}, {"id": "core_02", "used": 19, "liked": 0, "rate": 0.0, "text": ""}, {"id": "core_05", "used": 16, "liked": 0, "rate": 0.0, "text": ""}], "word1Top": [{"word": "사슴 캐릭터", "used": 6, "liked": 4, "rate": 66.7}, {"word": "토끼 캐릭터", "used": 12, "liked": 6, "rate": 50.0}, {"word": "인형의 집", "used": 9, "liked": 4, "rate": 44.4}, {"word": "정적", "used": 9, "liked": 4, "rate": 44.4}, {"word": "천사 조각상", "used": 14, "liked": 6, "rate": 42.9}, {"word": "케이크", "used": 12, "liked": 5, "rate": 41.7}, {"word": "바우하우스", "used": 15, "liked": 5, "rate": 33.3}, {"word": "쿨블루", "used": 6, "liked": 2, "rate": 33.3}, {"word": "무중력", "used": 6, "liked": 2, "rate": 33.3}, {"word": "초소형의", "used": 3, "liked": 1, "rate": 33.3}, {"word": "과즙이 흐르는", "used": 3, "liked": 1, "rate": 33.3}, {"word": "잎사귀", "used": 19, "liked": 6, "rate": 31.6}, {"word": "꽃", "used": 19, "liked": 6, "rate": 31.6}, {"word": "그리드 시스템", "used": 10, "liked": 3, "rate": 30.0}, {"word": "바이오모피즘", "used": 10, "liked": 3, "rate": 30.0}], "word2Top": [{"word": "파인애플", "used": 6, "liked": 4, "rate": 66.7}, {"word": "목걸이", "used": 13, "liked": 7, "rate": 53.8}, {"word": "산호", "used": 6, "liked": 3, "rate": 50.0}, {"word": "바다", "used": 4, "liked": 2, "rate": 50.0}, {"word": "그림자", "used": 4, "liked": 2, "rate": 50.0}, {"word": "연결", "used": 7, "liked": 3, "rate": 42.9}, {"word": "붓터치", "used": 7, "liked": 3, "rate": 42.9}, {"word": "모래성", "used": 5, "liked": 2, "rate": 40.0}, {"word": "오르골", "used": 5, "liked": 2, "rate": 40.0}, {"word": "비눗방울", "used": 5, "liked": 2, "rate": 40.0}, {"word": "수면 반사", "used": 5, "liked": 2, "rate": 40.0}, {"word": "거울", "used": 5, "liked": 2, "rate": 40.0}, {"word": "노끈", "used": 5, "liked": 2, "rate": 40.0}, {"word": "고양이", "used": 8, "liked": 3, "rate": 37.5}, {"word": "갑옷", "used": 8, "liked": 3, "rate": 37.5}], "comboTop": [{"w1": "수박", "w2": "산", "used": 2, "liked": 2, "rate": 100.0}, {"w1": "스티커", "w2": "산호", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "풍선", "w2": "톱니바퀴", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "꽃", "w2": "빙수", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "오로라", "w2": "엔트로피", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "고프코어", "w2": "닻", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "고독", "w2": "소멸", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "바우하우스", "w2": "고양이", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "정적", "w2": "결빙", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "피크닉", "w2": "공간", "used": 2, "liked": 1, "rate": 50.0}], "models": [{"count": 349, "liked": 23, "cost": 14.99, "label": "Flash", "rate": 6.6, "costPerLike": 0.65}, {"count": 2635, "liked": 319, "cost": 276.34, "label": "Pro", "rate": 12.1, "costPerLike": 0.87}], "design": {"total": 120, "style": [{"k": "surreal and whimsical art style", "v": 4}, {"k": "surreal and abstract", "v": 3}, {"k": "surreal and futuristic", "v": 3}, {"k": "surreal and fantastical art style", "v": 3}, {"k": "realistic with whimsical elements", "v": 2}, {"k": "whimsical and surrealistic", "v": 2}, {"k": "surrealist digital art", "v": 2}, {"k": "futuristic and surreal art style", "v": 2}, {"k": "surrealistic digital art", "v": 2}, {"k": "surreal and abstract art style", "v": 2}], "mood": [{"k": "playful and whimsical", "v": 12}, {"k": "mysterious and otherworldly", "v": 5}, {"k": "whimsical and serene", "v": 4}, {"k": "whimsical and playful", "v": 3}, {"k": "mysterious and enchanting", "v": 3}, {"k": "playful and dreamy", "v": 3}, {"k": "playful and serene", "v": 2}, {"k": "intriguing and futuristic", "v": 2}, {"k": "mysterious and elegant", "v": 2}, {"k": "mysterious and futuristic", "v": 2}], "renderQuality": [{"k": "photorealistic", "v": 68}, {"k": "stylized", "v": 40}, {"k": "photorealistic with surreal elements", "v": 2}, {"k": "highly stylized with a painterly and ethereal touch", "v": 1}, {"k": "photorealistic with a stylized touch", "v": 1}, {"k": "photorealistic with artistic elements", "v": 1}, {"k": "highly stylized", "v": 1}, {"k": "stylized and hyper-realistic", "v": 1}, {"k": "photorealistic with a touch of fantastical styling", "v": 1}, {"k": "stylized with clean lines and smooth surfaces", "v": 1}, {"k": "photorealistic with stylized digital enhancements", "v": 1}, {"k": "photorealistic with stylized elements", "v": 1}, {"k": "photorealistic with sci-fi enhancements", "v": 1}], "emotionalAppeal": [{"k": "whimsical", "v": 36}, {"k": "mysterious", "v": 12}, {"k": "elegant", "v": 11}, {"k": "whimsical and serene", "v": 7}, {"k": "playful", "v": 7}, {"k": "elegant and mysterious", "v": 5}, {"k": "playful and whimsical", "v": 5}, {"k": "mysterious and elegant", "v": 5}, {"k": "elegant and whimsical", "v": 3}, {"k": "elegant and serene", "v": 3}], "colorTemp": [{"k": "Warm", "v": 59}, {"k": "Cool", "v": 43}, {"k": "Neutral", "v": 18}], "dimension": [{"k": "3D", "v": 115}, {"k": "2.5D isometric", "v": 2}, {"k": "2D", "v": 2}, {"k": "2D with a 3D appearance due to shading and reflections", "v": 1}], "contentFlags": {"character": 31, "nature": 76, "architecture": 27, "none": 44}}, "daily": [{"date": "2026-02-18", "gen": 300, "liked": 38, "rate": 12.7}, {"date": "2026-02-19", "gen": 468, "liked": 39, "rate": 8.3}, {"date": "2026-02-20", "gen": 263, "liked": 27, "rate": 10.3}, {"date": "2026-02-21", "gen": 200, "liked": 27, "rate": 13.5}, {"date": "2026-02-22", "gen": 1, "liked": 0, "rate": 0.0}, {"date": "2026-02-23", "gen": 198, "liked": 33, "rate": 16.7}, {"date": "2026-02-24", "gen": 183, "liked": 22, "rate": 12.0}, {"date": "2026-02-25", "gen": 413, "liked": 23, "rate": 5.6}, {"date": "2026-02-26", "gen": 202, "liked": 26, "rate": 12.9}, {"date": "2026-02-27", "gen": 231, "liked": 28, "rate": 12.1}, {"date": "2026-02-28", "gen": 212, "liked": 26, "rate": 12.3}, {"date": "2026-03-01", "gen": 114, "liked": 19, "rate": 16.7}, {"date": "2026-03-02", "gen": 199, "liked": 34, "rate": 17.1}]};
+
+// ── Chart.js defaults ──
+Chart.defaults.color = '#aaa';
+Chart.defaults.borderColor = '#333';
+Chart.defaults.font.size = 11;
+const GOLD = '#f0c040';
+const BLUE = '#7eb8f7';
+const GREEN = '#22c55e';
+const PURPLE = '#a855f7';
+const RED = '#ff4757';
+const ORANGE = '#f09040';
+const COLORS = [GOLD, BLUE, GREEN, PURPLE, RED, ORANGE, '#00bcd4', '#e91e63', '#8bc34a', '#ff9800'];
+
+// ── Section 1: Overview ──
+(function() {
+  const o = D.overview;
+  const items = [
+    {val: o.total.toLocaleString(), lbl: 'Total Generated'},
+    {val: o.liked.toLocaleString(), lbl: 'Liked'},
+    {val: o.rate + '%', lbl: 'Like Rate'},
+    {val: '$' + o.cost.toLocaleString(), lbl: 'Total Cost'},
+    {val: '$' + o.costPerLike, lbl: 'Cost / Like'},
+    {val: o.dateStart + ' ~ ' + o.dateEnd, lbl: 'Period'},
+  ];
+  document.getElementById('overview-grid').innerHTML = items.map(i =>
+    '<div class="stat-card"><div class="val">' + i.val + '</div><div class="lbl">' + i.lbl + '</div></div>'
+  ).join('');
+})();
+
+// ── Section 2: Template Performance ──
+(function() {
+  const t = D.templates.filter(x => x.used >= 3);
+  new Chart(document.getElementById('chart-tmpl'), {
+    type: 'bar',
+    data: {
+      labels: t.map(x => x.id),
+      datasets: [
+        {label: 'Used', data: t.map(x => x.used), backgroundColor: BLUE + '88', borderColor: BLUE, borderWidth: 1},
+        {label: 'Liked', data: t.map(x => x.liked), backgroundColor: GOLD + '88', borderColor: GOLD, borderWidth: 1},
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {legend: {position: 'top'}},
+      scales: {x: {grid: {color: '#222'}}, y: {grid: {display: false}}}
+    }
+  });
+  // table
+  const rows = D.templates.filter(x => x.used >= 1).map(x =>
+    '<tr><td><strong>' + x.id + '</strong></td><td>' + x.used + '</td><td>' + x.liked + '</td>' +
+    '<td><span class="rate-bar" style="width:' + Math.min(x.rate * 2, 100) + 'px"></span>' + x.rate + '%</td>' +
+    '<td class="tmpl-text" title="' + (x.text||'').replace(/"/g, '&quot;') + '">' + (x.text || '-') + '</td></tr>'
+  ).join('');
+  document.getElementById('tmpl-table').innerHTML =
+    '<thead><tr><th>Template</th><th>Used</th><th>Liked</th><th>Rate</th><th>Prompt Text</th></tr></thead><tbody>' + rows + '</tbody>';
+})();
+
+// ── Section 3: Word Analysis ──
+function wordChart(canvasId, data) {
+  new Chart(document.getElementById(canvasId), {
+    type: 'bar',
+    data: {
+      labels: data.map(x => x.word),
+      datasets: [{
+        label: 'Like Rate %',
+        data: data.map(x => x.rate),
+        backgroundColor: data.map((_, i) => COLORS[i % COLORS.length] + '88'),
+        borderColor: data.map((_, i) => COLORS[i % COLORS.length]),
+        borderWidth: 1,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: {display: false},
+        tooltip: {callbacks: {afterLabel: function(ctx) { const d = data[ctx.dataIndex]; return 'Used: ' + d.used + ', Liked: ' + d.liked; }}}
+      },
+      scales: {x: {grid: {color: '#222'}, title: {display: true, text: 'Like Rate %'}}, y: {grid: {display: false}}}
+    }
+  });
+}
+wordChart('chart-w1', D.word1Top);
+wordChart('chart-w2', D.word2Top);
+
+// combo table
+(function() {
+  const rows = D.comboTop.map(x =>
+    '<tr><td>' + x.w1 + '</td><td>' + x.w2 + '</td><td>' + x.used + '</td><td>' + x.liked + '</td>' +
+    '<td><span class="rate-bar" style="width:' + Math.min(x.rate * 2, 100) + 'px"></span>' + x.rate + '%</td></tr>'
+  ).join('');
+  document.getElementById('combo-table').innerHTML =
+    '<thead><tr><th>Word1</th><th>Word2</th><th>Used</th><th>Liked</th><th>Rate</th></tr></thead><tbody>' + rows + '</tbody>';
+})();
+
+// ── Section 4: Model Comparison ──
+(function() {
+  const m = D.models;
+  new Chart(document.getElementById('chart-model-count'), {
+    type: 'bar',
+    data: {
+      labels: m.map(x => x.label),
+      datasets: [
+        {label: 'Generated', data: m.map(x => x.count), backgroundColor: BLUE + '88', borderColor: BLUE, borderWidth: 1},
+        {label: 'Liked', data: m.map(x => x.liked), backgroundColor: GOLD + '88', borderColor: GOLD, borderWidth: 1},
+      ]
+    },
+    options: {responsive: true, plugins: {legend: {position: 'top'}}, scales: {y: {grid: {color: '#222'}}, x: {grid: {display: false}}}}
+  });
+
+  new Chart(document.getElementById('chart-model-eff'), {
+    type: 'bar',
+    data: {
+      labels: m.map(x => x.label),
+      datasets: [
+        {label: 'Like Rate %', data: m.map(x => x.rate), backgroundColor: GREEN + '88', borderColor: GREEN, borderWidth: 1},
+        {label: 'Cost/Like $', data: m.map(x => x.costPerLike), backgroundColor: ORANGE + '88', borderColor: ORANGE, borderWidth: 1, yAxisID: 'y1'},
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {legend: {position: 'top'}},
+      scales: {
+        y: {grid: {color: '#222'}, title: {display: true, text: 'Like Rate %'}},
+        y1: {position: 'right', grid: {display: false}, title: {display: true, text: 'Cost/Like $'}},
+        x: {grid: {display: false}}
+      }
+    }
+  });
+
+  const rows = m.map(x =>
+    '<tr><td><strong>' + x.label + '</strong></td><td>' + x.count.toLocaleString() + '</td><td>' + x.liked + '</td>' +
+    '<td>' + x.rate + '%</td><td>$' + x.cost.toLocaleString() + '</td><td>$' + x.costPerLike + '</td></tr>'
+  ).join('');
+  document.getElementById('model-table').innerHTML =
+    '<thead><tr><th>Model</th><th>Generated</th><th>Liked</th><th>Rate</th><th>Cost</th><th>Cost/Like</th></tr></thead><tbody>' + rows + '</tbody>';
+})();
+
+// ── Section 5: Design Patterns ──
+(function() {
+  const ds = D.design;
+  if (!ds || !ds.total) {
+    document.getElementById('s-design').style.display = 'none';
+    return;
+  }
+
+  function doughnut(canvasId, items) {
+    new Chart(document.getElementById(canvasId), {
+      type: 'doughnut',
+      data: {
+        labels: items.map(x => x.k),
+        datasets: [{data: items.map(x => x.v), backgroundColor: COLORS.slice(0, items.length).map(c => c + 'cc'), borderColor: '#111', borderWidth: 2}]
+      },
+      options: {responsive: true, plugins: {legend: {position: 'right', labels: {boxWidth: 12, font: {size: 10}}}}}
+    });
+  }
+
+  doughnut('chart-style', ds.style);
+  doughnut('chart-mood', ds.mood);
+  doughnut('chart-temp', ds.colorTemp);
+  doughnut('chart-render', ds.renderQuality);
+
+  // emotional appeal bar
+  new Chart(document.getElementById('chart-appeal'), {
+    type: 'bar',
+    data: {
+      labels: ds.emotionalAppeal.map(x => x.k),
+      datasets: [{data: ds.emotionalAppeal.map(x => x.v), backgroundColor: COLORS.map(c => c + '88'), borderColor: COLORS, borderWidth: 1}]
+    },
+    options: {indexAxis: 'y', responsive: true, plugins: {legend: {display: false}}, scales: {x: {grid: {color: '#222'}}, y: {grid: {display: false}}}}
+  });
+
+  // content flags bar
+  const fl = ds.contentFlags;
+  new Chart(document.getElementById('chart-flags'), {
+    type: 'bar',
+    data: {
+      labels: ['Character', 'Nature', 'Architecture'],
+      datasets: [{data: [fl.character, fl.nature, fl.architecture], backgroundColor: [PURPLE + '88', GREEN + '88', ORANGE + '88'], borderColor: [PURPLE, GREEN, ORANGE], borderWidth: 1}]
+    },
+    options: {responsive: true, plugins: {legend: {display: false}, tooltip: {callbacks: {afterLabel: function(ctx) { return 'out of ' + ds.total + ' images'; }}}}, scales: {y: {grid: {color: '#222'}}, x: {grid: {display: false}}}}
+  });
+})();
+
+// ── Section 6: Daily Trend ──
+(function() {
+  const d = D.daily;
+  new Chart(document.getElementById('chart-daily'), {
+    type: 'line',
+    data: {
+      labels: d.map(x => x.date.slice(5)),
+      datasets: [
+        {label: 'Generated', data: d.map(x => x.gen), borderColor: BLUE, backgroundColor: BLUE + '22', fill: true, tension: 0.3, yAxisID: 'y'},
+        {label: 'Like Rate %', data: d.map(x => x.rate), borderColor: GOLD, backgroundColor: GOLD + '22', fill: false, tension: 0.3, yAxisID: 'y1', borderDash: [5, 5]},
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: {mode: 'index', intersect: false},
+      plugins: {legend: {position: 'top'}},
+      scales: {
+        y: {grid: {color: '#222'}, title: {display: true, text: 'Count'}},
+        y1: {position: 'right', grid: {display: false}, title: {display: true, text: 'Like Rate %'}, min: 0},
+        x: {grid: {color: '#222'}}
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>
