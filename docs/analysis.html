@@ -709,7 +709,7 @@ var EN = {"overview": {"total": 3839, "liked": 339, "rate": 8.8, "nano_total": 2
     'GPT-4o vs Gemini 키워드 비교: Mood 1위가 각각 <strong>'+gptMood1.k+'</strong>('+gptMood1.v+') vs <strong>'+gemMood1.k+'</strong>('+gemMood1.v+'). ' +
     'Gemini는 더 구체적이고 기술적인 용어를 사용하는 경향. 두 모델 공통 키워드가 진정한 취향 DNA.';
 
-  function kc(id,d,c){var t=d.slice(0,15);new Chart(document.getElementById(id),{type:'bar',data:{labels:t.map(function(x){return x.k}),datasets:[{data:t.map(function(x){return x.v}),backgroundColor:c+'88',borderColor:c,borderWidth:1}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:'#222'}},y:{grid:{display:false}}}})}};
+  function kc(id,d,c){var t=d.slice(0,15);new Chart(document.getElementById(id),{type:'bar',data:{labels:t.map(function(x){return x.k}),datasets:[{data:t.map(function(x){return x.v}),backgroundColor:c+'88',borderColor:c,borderWidth:1}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:'#222'}},y:{grid:{display:false}}}}})}
   kc('chart-gem-mood',gp.mood,'#e91e63');
   kc('chart-gem-style',gp.style,'#00bcd4');
   kc('chart-gem-color',gp.color,'#8bc34a');
