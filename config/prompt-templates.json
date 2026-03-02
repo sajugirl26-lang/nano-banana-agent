@@ -1,40 +1,120 @@
 {
   "templates": [
     {
-      "id": "style_01",
-      "text": "첨부 이미지의 디자인 퀄리티·컬러 감각·재질 표현·조명 무드를 충실히 흡수하되, 피사체는 새롭게 {word1}({word1_en})과 {word2}({word2_en})로 재해석하여 완성도 높은 이미지를 만들어줘"
+      "id": "core_01",
+      "text": "{word1}({word1_en}) {relation} {word2}({word2_en}). 첨부 이미지의 스타일 DNA(색감, 질감, 공간리듬)만 흡수. 피사체는 복제하지 마. no text, no logo"
     },
     {
-      "id": "style_02",
-      "text": "첨부 이미지의 색감·질감·분위기·렌더링 퀄리티를 깊이 참고하여 {word1}({word1_en})과 {word2}({word2_en})를 결합한 새로운 고퀄리티 이미지를 만들어줘. 레퍼런스의 오브젝트가 아닌 스타일을 흡수해줘. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo"
+      "id": "core_02",
+      "text": "{word1}({word1_en}) {relation} {word2}({word2_en}). 이 관계를 물리적으로 해석해. 첨부 이미지는 무드보드로만 참고. no text, no logo"
     },
     {
-      "id": "style_03",
-      "text": "첨부 이미지에서 느껴지는 무드·컬러톤·라이팅·소재의 질감을 유지하면서 {word1}({word1_en})과 {word2}({word2_en})를 결합한 기발하고 디테일한 이미지를 만들어줘"
+      "id": "core_03",
+      "text": "{word1}({word1_en}) {relation} {word2}({word2_en}). 말도 안 되는 이 문장을 진지하게 시각화해. 첨부 이미지의 컬러톤과 재질감만 가져와. no text, no logo"
     },
     {
-      "id": "style_04",
-      "text": "첨부 이미지의 비주얼 완성도와 색채 감각을 그대로 이어받아 {word1}({word1_en})과 {word2}({word2_en})를 결합한 상상력 넘치는 이미지를 만들어줘. 피사체만 새롭게 표현해줘. a stylized realism 3D render, slightly exaggerated forms with realistic textures, accurate reflections, filmic lens look, shallow depth of field, no text, no logo"
+      "id": "core_04",
+      "text": "If {word1}({word1_en}) {relation} {word2}({word2_en}), what would the evidence look like? 첨부 이미지의 비주얼 퀄리티와 톤을 유지. no text, no logo"
     },
     {
-      "id": "style_05",
-      "text": "첨부 이미지의 톤·무드·컬러 팔레트·텍스처 퀄리티를 충실히 반영하되 주제는 {word1}({word1_en})과 {word2}({word2_en})로 완전히 새롭게 만들어줘"
+      "id": "core_05",
+      "text": "A museum exhibit labeled: '{word1_en} {relation} {word2_en}'. 첨부 이미지의 라이팅과 색채 감각으로 렌더링. no text, no logo"
     },
     {
-      "id": "style_06",
-      "text": "첨부 이미지가 가진 디자인적 감각(색감, 조명, 재질, 공간감)을 살려서 {word1}({word1_en})과 {word2}({word2_en})를 결합한 재치있고 완성도 높은 이미지를 만들어줘. a high-end PBR 3D render (Octane/Redshift vibe), realistic materials for fabric, accurate roughness maps, strong sunlight with sharp shadows, preserve colors, no text, no logo"
+      "id": "core_06",
+      "text": "Scientific documentation of {word1}({word1_en}) {relation} {word2}({word2_en}). 첨부 이미지의 무드와 텍스처 퀄리티를 기준으로. no text, no logo"
     },
     {
-      "id": "style_07",
-      "text": "첨부 이미지의 렌더링 스타일·광택·컬러 무드·디테일 수준을 유지하면서 {word1}({word1_en})과 {word2}({word2_en})를 결합한 프로페셔널한 이미지를 만들어줘"
+      "id": "core_07",
+      "text": "{word1}({word1_en}) {relation} {word2}({word2_en}) — the moment of contact. 첨부 이미지에서 컬러 팔레트와 공간 분위기만 추출해서 적용. no text, no logo"
     },
     {
-      "id": "style_08",
-      "text": "첨부 이미지의 비주얼 톤과 퀄리티를 기준으로 삼아 {word1}({word1_en})과 {word2}({word2_en})를 결합한 리얼리스틱하고 디테일한 이미지를 만들어줘. 레퍼런스의 스타일만 흡수하고 주제는 새롭게. modern cinematic 3D render with strong art-direction, saturated yet tasteful color grade, subtle depth haze, realistic shadows, high material fidelity, preserve framing, no text, no logo"
+      "id": "core_08",
+      "text": "Cross-section view: {word1}({word1_en}) {relation} {word2}({word2_en}). 첨부 이미지의 렌더링 퀄리티와 재질 표현을 유지. no text, no logo"
     },
     {
-      "id": "style_09",
-      "text": "첨부 이미지를 스타일 무드보드로 삼아 컬러톤·재질감·공간 분위기·디자인 퀄리티를 깊이 참고하여 {word1}({word1_en})과 {word2}({word2_en})를 결합한 영감을 주는 이미지를 만들어줘"
+      "id": "core_09",
+      "text": "{word1}({word1_en}) {relation} {word2}({word2_en}). 이것이 자연현상이라면 어떤 모습일까. 첨부 이미지의 디자인 감각을 흡수. no text, no logo"
+    },
+    {
+      "id": "free_01",
+      "type": "free",
+      "text": "Create a completely new, original image. Absorb ONLY the visual DNA from the attached references: color palette, material texture, lighting mood, spatial rhythm, and overall aesthetic quality. Do NOT replicate any subject, object, or composition from the references. Instead, imagine something entirely unexpected that belongs in the same visual universe. Cinematic framing, high-end render quality. no text, no logo"
+    },
+    {
+      "id": "free_02",
+      "type": "free",
+      "text": "Create a completely new scene that could exist within the world of the attached references. Absorb only the color palette, material textures, lighting, and spatial feel — make the subject and composition entirely different. The viewer should sense the same brand-like tonal unity. no text, no logo"
+    },
+    {
+      "id": "free_03",
+      "type": "free",
+      "text": "The attached images are a mood board. Extract the invisible rules: what makes them feel cohesive? Now generate a new image that follows those same unspoken rules but depicts something the mood board never showed. Premium quality, editorial finish. no text, no logo"
+    },
+    {
+      "id": "free_04",
+      "type": "free",
+      "text": "Study the attached references as fragments of one unified world. What kind of space, object, or moment would exist in this world but hasn't been shown yet? Generate that missing piece. Match the exact rendering quality, color grading, and material fidelity of the references. no text, no logo"
+    },
+    {
+      "id": "free_05",
+      "type": "free",
+      "text": "The attached images are fragments from a single world. Imagine a scene that exists in this world but hasn't been revealed yet. Match the exact rendering quality, color grading, and material fidelity of the references. no text, no logo"
+    },
+    {
+      "id": "free_06",
+      "type": "free",
+      "text": "These references share a hidden narrative. Imagine the next chapter — a scene that continues the story with the same visual language: same palette, same textures, same atmosphere. But surprise me with what appears in frame. High-end 3D render quality, cinematic composition. no text, no logo"
+    },
+    {
+      "id": "free_07",
+      "type": "free",
+      "text": "Look at the attached references. Now forget the subjects — keep only the feeling. The warmth of the light, the weight of the materials, the rhythm of the composition. Build something completely new from that feeling alone. Photorealistic quality, gallery-worthy. no text, no logo"
+    },
+    {
+      "id": "free_08",
+      "type": "free",
+      "text": "Extract the mood of the attached images like a scent. Visualize a completely different scene that someone would imagine after breathing in that essence. Preserve the original color temperature, depth of texture, and direction of light, but make the subject entirely new. no text, no logo"
+    },
+    {
+      "id": "deep_01",
+      "type": "free",
+      "text": "Extract the mood of the attached images like a scent — the warmth of soft diffused light, the weight of polished surfaces, the quiet rhythm of surreal spaces. Now visualize a completely different scene that someone would imagine after breathing in that essence. Whimsical yet serene. Photorealistic 3D render, smooth translucent materials, warm color temperature. no text, no logo"
+    },
+    {
+      "id": "deep_02",
+      "type": "free",
+      "text": "Absorb ONLY the visual DNA from the attached references: the soft warm lighting, smooth glossy textures, surreal spatial composition, and pastel-to-warm color palette. Do NOT replicate any subject or object. Instead, generate something entirely unexpected — an organic form or architectural space that feels whimsical and dreamlike, as if discovered in a parallel universe. Cinematic 3D render. no text, no logo"
+    },
+    {
+      "id": "deep_03",
+      "type": "free",
+      "text": "The attached images define a visual world. Create a new scene from that world featuring an organic, nature-inspired subject — something botanical, marine, or geological — rendered with the same surreal whimsy. Soft diffused lighting, smooth polished surfaces, warm undertones. The viewer should feel playful wonder. High-end photorealistic 3D render. no text, no logo"
+    },
+    {
+      "id": "deep_04",
+      "type": "free",
+      "text": "Study the architectural rhythm and spatial feeling of the attached references. Now imagine an impossible interior or structure that exists in the same surreal universe — elegant, serene, and slightly mysterious. Match the material fidelity: glass, metal, stone with soft warm lighting. 3D render quality, editorial finish, gallery-worthy composition. no text, no logo"
+    },
+    {
+      "id": "deep_05",
+      "type": "free",
+      "text": "These references speak through materials — smooth glass, warm metal, translucent organic forms, soft matte surfaces catching diffused light. Create a completely new still-life or spatial scene using the same material vocabulary. The mood should hover between whimsical and contemplative. Photorealistic rendering, warm color grading, no harsh shadows. no text, no logo"
+    },
+    {
+      "id": "deep_06",
+      "type": "free",
+      "text": "These references are fragments of a dreamlike story. Imagine the next scene — something playful and surreal, where organic forms meet impossible physics. Same warm palette, same glossy-to-matte texture interplay, same soft glowing light. Surprise me with what appears, but keep the feeling of gentle wonder. High-end 3D render, cinematic framing. no text, no logo"
+    },
+    {
+      "id": "deep_07",
+      "type": "free",
+      "text": "The attached images follow invisible aesthetic rules: surreal composition, soft warm lighting, smooth polished surfaces, a balance between photorealism and stylized fantasy, and an emotional tone that is whimsical without being childish. Generate a new image that obeys these exact rules but shows something the mood board never imagined. Premium 3D render quality. no text, no logo"
+    },
+    {
+      "id": "deep_08",
+      "type": "free",
+      "text": "Look at the attached references as windows into a parallel universe. Now open a new window — show us a scene from the same universe that feels both mysterious and elegant. Organic or architectural forms, soft diffused lighting with warm highlights, translucent and reflective materials. The image should feel like a quiet discovery. Photorealistic 3D, museum-quality composition. no text, no logo"
     }
   ]
 }
