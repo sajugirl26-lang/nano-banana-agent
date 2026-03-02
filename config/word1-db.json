@@ -1,166 +1,306 @@
 {
   "브랜드/캐릭터": [
-    {"word": "구글", "en": "Google, colorful logo, tech giant"},
-    {"word": "애플", "en": "Apple, bitten fruit logo, minimalist design"},
-    {"word": "디즈니캐릭터", "en": "Disney character, animated icon, magical world"}
+    {
+      "word": "디즈니캐릭터",
+      "en": "Disney character, animated icon, magical world"
+    }
   ],
   "자연/생물": [
-    {"word": "고양이 캐릭터", "en": "cat character, feline figure, cute kitty"},
-    {"word": "토끼 캐릭터", "en": "rabbit character, bunny figure, fluffy ears"},
-    {"word": "강아지 캐릭터", "en": "dog character, puppy figure, loyal companion"},
-    {"word": "곰 캐릭터", "en": "bear character, teddy figure, cozy creature"},
-    {"word": "여우 캐릭터", "en": "fox character, cunning figure, russet tail"},
-    {"word": "사슴 캐릭터", "en": "deer character, gentle figure, antlered grace"},
-    {"word": "펭귄 캐릭터", "en": "penguin character, waddling figure, tuxedo bird"},
-    {"word": "곰돌이 캐릭터", "en": "bear doll character, stuffed teddy, plush figure"},
-    {"word": "꽃", "en": "flower, delicate bloom, petal beauty"},
-    {"word": "버섯", "en": "mushroom, forest cap, spore umbrella"},
-    {"word": "나비", "en": "butterfly, wing pattern, graceful flutter"},
-    {"word": "나무", "en": "tree, rooted growth, branching canopy"},
-    {"word": "잎사귀", "en": "leaf, green vein, organic pattern"},
-    {"word": "구름", "en": "cloud, drifting shape, sky cotton"},
-    {"word": "햇빛", "en": "sunlight, warm rays, golden glow"},
-    {"word": "태양", "en": "sun, blazing star, radiant circle"},
-    {"word": "오리 인형", "en": "rubber duck, yellow toy, bath companion"},
-    {"word": "산호", "en": "coral, ocean colony, branching form"},
-    {"word": "해파리", "en": "jellyfish, translucent bell, drifting glow"},
-    {"word": "문어", "en": "octopus, eight arms, fluid intelligence"},
-    {"word": "조개", "en": "seashell, spiral chamber, ocean memory"},
-    {"word": "선인장", "en": "cactus, desert spine, resilient bloom"},
-    {"word": "이끼", "en": "moss, soft green carpet, micro forest"},
-    {"word": "물방울", "en": "water drop, liquid lens, surface tension"},
-    {"word": "깃털", "en": "feather, soft barb, floating grace"}
+    {
+      "word": "토끼 캐릭터",
+      "en": "rabbit character, bunny figure, fluffy ears"
+    },
+    {
+      "word": "곰 캐릭터",
+      "en": "bear character, teddy figure, cozy creature"
+    },
+    {
+      "word": "여우 캐릭터",
+      "en": "fox character, cunning figure, russet tail"
+    },
+    {
+      "word": "곰돌이 캐릭터",
+      "en": "bear doll character, stuffed teddy, plush figure"
+    },
+    {
+      "word": "꽃",
+      "en": "flower, delicate bloom, petal beauty"
+    },
+    {
+      "word": "버섯",
+      "en": "mushroom, forest cap, spore umbrella"
+    },
+    {
+      "word": "나무",
+      "en": "tree, rooted growth, branching canopy"
+    },
+    {
+      "word": "잎사귀",
+      "en": "leaf, green vein, organic pattern"
+    },
+    {
+      "word": "산호",
+      "en": "coral, ocean colony, branching form"
+    },
+    {
+      "word": "해마",
+      "en": "seahorse, curled tail, drifting grace"
+    },
+    {
+      "word": "이끼",
+      "en": "moss, soft green carpet, micro forest"
+    }
   ],
   "오브젝트": [
-    {"word": "풍선", "en": "balloon, floating color, inflated joy"},
-    {"word": "촛불", "en": "candle, flickering flame, warm wax"},
-    {"word": "향", "en": "incense, smoky trail, aromatic stick"},
-    {"word": "폴라로이드", "en": "Polaroid, instant photo, retro snapshot"},
-    {"word": "스티커", "en": "sticker, adhesive art, peel-and-stick"},
-    {"word": "문양 들어간 카드", "en": "patterned card, tarot rune design, mystical deck"},
-    {"word": "모래시계", "en": "hourglass, flowing sand, time vessel"},
-    {"word": "프리즘", "en": "prism, light splitter, rainbow maker"},
-    {"word": "우산", "en": "umbrella, curved canopy, rain shelter"},
-    {"word": "유리병", "en": "glass bottle, transparent vessel, captured light"},
-    {"word": "모빌", "en": "mobile, hanging sculpture, balanced art"},
-    {"word": "거울", "en": "mirror, reflective surface, distorted self"}
+    {
+      "word": "풍선",
+      "en": "balloon, floating color, inflated joy"
+    },
+    {
+      "word": "진주",
+      "en": "pearl, lustrous sphere, iridescent nacre"
+    },
+    {
+      "word": "에메랄드",
+      "en": "emerald, green gem, crystalline depth"
+    }
   ],
   "장난감/게임": [
-    {"word": "게임기", "en": "game console, gaming device, play machine"},
-    {"word": "레고", "en": "LEGO, building brick, snap-together block"},
-    {"word": "블록 레고", "en": "LEGO blocks, colorful bricks, stacked construction"},
-    {"word": "장난감", "en": "toy, playful object, childhood wonder"},
-    {"word": "루빅스 큐브", "en": "Rubik's cube, color puzzle, twisting logic"},
-    {"word": "주사위", "en": "dice, random chance, spotted cube"},
-    {"word": "종이접기", "en": "origami, folded paper, geometric art"},
-    {"word": "팽이", "en": "spinning top, rotating axis, balanced motion"},
-    {"word": "인형의 집", "en": "dollhouse, miniature furniture, tiny world"},
-    {"word": "틴토이", "en": "tin toy, vintage clockwork, retro metal plaything"},
-    {"word": "크레파스", "en": "crayon, waxy color stick, childhood drawing"},
-    {"word": "점토 놀이", "en": "play-doh, moldable color, squishy creation"},
-    {"word": "구슬치기", "en": "marble game, glass sphere, rolling collision"},
-    {"word": "비눗방울 놀이", "en": "bubble wand, iridescent sphere, floating joy"},
-    {"word": "모래놀이", "en": "sandbox play, sculpted sand, tiny kingdom"},
-    {"word": "물총", "en": "water gun, splash stream, summer toy"},
-    {"word": "카드 게임", "en": "playing cards, shuffled deck, royal suit"},
-    {"word": "보드게임 말", "en": "board game piece, wooden token, game figure"},
-    {"word": "요요", "en": "yo-yo, spinning disc, string trick"},
-    {"word": "만화경", "en": "kaleidoscope, rotating pattern, symmetry toy"}
+    {
+      "word": "레고",
+      "en": "LEGO, building brick, snap-together block"
+    }
   ],
   "감정/추상": [
-    {"word": "사람들의 욕구", "en": "human desire, primal want, inner craving"},
-    {"word": "소녀", "en": "girl, youthful figure, innocent charm"},
-    {"word": "웃음", "en": "laughter, joyful burst, happy sound"},
-    {"word": "스마일", "en": "smile, curved lips, cheerful face"},
-    {"word": "날개", "en": "wings, feathered span, soaring flight"},
-    {"word": "하트", "en": "heart, love symbol, red shape"},
-    {"word": "이모지", "en": "emoji, digital expression, icon face"},
-    {"word": "별", "en": "star, twinkling point, celestial light"},
-    {"word": "눈", "en": "eye, gazing pupil, window to soul"},
-    {"word": "손", "en": "hand, reaching fingers, human touch"},
-    {"word": "입술", "en": "lips, speaking curve, sensual form"},
-    {"word": "무한대 기호", "en": "infinity symbol, endless loop, eternal form"},
-    {"word": "물음표", "en": "question mark, curiosity symbol, seeking form"},
-    {"word": "느낌표", "en": "exclamation mark, surprise impact, bold emphasis"},
-    {"word": "꿈", "en": "dream, surreal vision, floating imagination"},
-    {"word": "기억", "en": "memory, faded moment, nostalgic trace"},
-    {"word": "고독", "en": "solitude, lonely stillness, quiet isolation"},
-    {"word": "설렘", "en": "excitement, fluttering heart, anticipation"},
-    {"word": "그리움", "en": "longing, distant yearning, aching miss"},
-    {"word": "자유", "en": "freedom, open sky, unbound spirit"},
-    {"word": "순수", "en": "purity, innocent light, untainted beauty"},
-    {"word": "용기", "en": "courage, bold heart, fearless spirit"},
-    {"word": "아이", "en": "child, small wonder, curious gaze"},
-    {"word": "노인", "en": "old person, weathered wisdom, gentle hand"},
-    {"word": "연인", "en": "lovers, intertwined figures, tender embrace"},
-    {"word": "무용수", "en": "dancer, arched body, frozen motion"},
-    {"word": "인어", "en": "mermaid, half sea creature, mythic beauty"},
-    {"word": "로봇 캐릭터", "en": "robot character, metal companion, digital heart"},
-    {"word": "천사 조각상", "en": "angel statue, stone wings, sacred form"},
-    {"word": "마리오네트", "en": "marionette, string puppet, controlled dance"}
+    {
+      "word": "손",
+      "en": "hand, reaching fingers, human touch"
+    },
+    {
+      "word": "고독",
+      "en": "solitude, lonely stillness, quiet isolation"
+    },
+    {
+      "word": "설렘",
+      "en": "excitement, fluttering heart, anticipation"
+    },
+    {
+      "word": "순수",
+      "en": "purity, innocent light, untainted beauty"
+    },
+    {
+      "word": "연인",
+      "en": "lovers, intertwined figures, tender embrace"
+    },
+    {
+      "word": "인어",
+      "en": "mermaid, half sea creature, mythic beauty"
+    },
+    {
+      "word": "천사 조각상",
+      "en": "angel statue, stone wings, sacred form"
+    },
+    {
+      "word": "마리오네트",
+      "en": "marionette, string puppet, controlled dance"
+    },
+    {
+      "word": "여백",
+      "en": "negative space, empty margin, breathing room"
+    },
+    {
+      "word": "침묵",
+      "en": "silence, soundless void, still air"
+    },
+    {
+      "word": "혼돈",
+      "en": "chaos, tangled disorder, swirling entropy"
+    },
+    {
+      "word": "잔상",
+      "en": "afterimage, lingering trace, ghost outline"
+    },
+    {
+      "word": "떨림",
+      "en": "tremor, subtle vibration, quivering motion"
+    },
+    {
+      "word": "부유",
+      "en": "floating, suspended drift, hovering lightness"
+    },
+    {
+      "word": "정적",
+      "en": "stillness, frozen calm, absolute quiet"
+    },
+    {
+      "word": "몰입",
+      "en": "immersion, deep focus, absorbed state"
+    },
+    {
+      "word": "공명",
+      "en": "resonance, harmonic vibration, sympathetic echo"
+    },
+    {
+      "word": "미열",
+      "en": "low fever, warm glow, subtle heat"
+    },
+    {
+      "word": "번짐",
+      "en": "bleed, spreading stain, ink diffusion"
+    },
+    {
+      "word": "시차",
+      "en": "time lag, parallax shift, delayed perception"
+    },
+    {
+      "word": "여운",
+      "en": "lingering feeling, emotional aftertaste, fading echo"
+    },
+    {
+      "word": "환영",
+      "en": "illusion, phantom vision, mirage apparition"
+    },
+    {
+      "word": "기시감",
+      "en": "deja vu, familiar strangeness, repeated moment"
+    }
   ],
   "트렌드": [
-    {"word": "버블코어", "en": "bubblecore, pastel bubbles, playful inflated aesthetic"},
-    {"word": "코티지코어", "en": "cottagecore, rural charm, wildflower pastoral"},
-    {"word": "다크아카데미아", "en": "dark academia, gothic study, candlelit knowledge"},
-    {"word": "Y2K", "en": "Y2K, early 2000s aesthetic, chrome futurism"},
-    {"word": "클린걸", "en": "clean girl, effortless minimal, dewy skin aesthetic"},
-    {"word": "보보코어", "en": "bobocore, bohemian bourgeois, eclectic layered style"},
-    {"word": "고프코어", "en": "gorpcore, outdoor utility, functional adventure wear"},
-    {"word": "피크닉", "en": "picnic, checkered blanket, outdoor leisure"},
-    {"word": "젤리코어", "en": "jellycore, transparent jelly texture, glossy aesthetic"},
-    {"word": "쿨블루", "en": "cool blue, icy blue mood, frosty palette"},
-    {"word": "글라마라티", "en": "glamoratti, 80s glam fashion, bold shoulder sculptural"},
-    {"word": "에일리언코어", "en": "alien-core, sci-fi extraterrestrial aesthetic, otherworldly"},
-    {"word": "맥시멀리즘", "en": "maximalism, ornate decoration, abundant layered beauty"},
-    {"word": "레이스", "en": "lace, delicate mesh pattern, intricate textile texture"}
+    {
+      "word": "코티지코어",
+      "en": "cottagecore, rural charm, wildflower pastoral"
+    },
+    {
+      "word": "다크아카데미아",
+      "en": "dark academia, gothic study, candlelit knowledge"
+    },
+    {
+      "word": "고프코어",
+      "en": "gorpcore, outdoor utility, functional adventure wear"
+    },
+    {
+      "word": "피크닉",
+      "en": "picnic, checkered blanket, outdoor leisure"
+    },
+    {
+      "word": "뉴탈지아",
+      "en": "newtalgia, 90s-2000s revival, modern retro reinterpretation"
+    }
   ],
   "음식": [
-    {"word": "딸기", "en": "strawberry, red seed fruit, sweet surface"},
-    {"word": "사과", "en": "apple, glossy skin fruit, crisp bite"},
-    {"word": "체리", "en": "cherry, paired red fruit, shiny stem"},
-    {"word": "마카롱", "en": "macaron, pastel sandwich cookie, delicate shell"},
-    {"word": "케이크", "en": "cake, layered confection, frosted art"},
-    {"word": "수박", "en": "watermelon, striped rind, juicy red slice"},
-    {"word": "포도", "en": "grape, clustered sphere, translucent skin"},
-    {"word": "아이스크림", "en": "ice cream, melting scoop, creamy swirl"},
-    {"word": "꿀", "en": "honey, golden drip, viscous amber"},
-    {"word": "젤리", "en": "jelly, translucent wiggle, glossy bounce"},
-    {"word": "솜사탕", "en": "cotton candy, spun sugar cloud, pastel fluff"},
-    {"word": "초콜릿", "en": "chocolate, dark sheen, melted richness"},
-    {"word": "달걀", "en": "egg, smooth oval, cracked shell"},
-    {"word": "석류", "en": "pomegranate, ruby seeds, jeweled fruit"},
-    {"word": "무화과", "en": "fig, purple skin, honeyed interior"},
-    {"word": "복숭아", "en": "peach, velvety skin, blushing fruit"},
-    {"word": "와플", "en": "waffle, grid pattern, golden crisp"},
-    {"word": "버블티", "en": "bubble tea, tapioca pearl, layered drink"},
-    {"word": "사탕", "en": "candy, wrapped sweetness, sugar crystal"},
-    {"word": "빵", "en": "bread, crusty surface, warm dough"}
+    {
+      "word": "복숭아",
+      "en": "peach, velvety skin, blushing fruit"
+    },
+    {
+      "word": "버블티",
+      "en": "bubble tea, tapioca pearl, layered drink"
+    },
+    {
+      "word": "빵",
+      "en": "bread, crusty surface, warm dough"
+    }
   ],
   "모션그래픽 소재": [
-    {"word": "리퀴드", "en": "liquid, fluid motion, viscous flow"},
-    {"word": "메타볼", "en": "metaball, blobby merge, organic 3D form"},
-    {"word": "노이즈 텍스처", "en": "noise texture, Perlin grain, procedural surface"},
-    {"word": "크롬 반사", "en": "chrome reflection, mirror metal, liquid silver"},
-    {"word": "유리 굴절", "en": "glass refraction, light bend, transparent distortion"}
+    {
+      "word": "노이즈 텍스처",
+      "en": "noise texture, Perlin grain, procedural surface"
+    },
+    {
+      "word": "유리 굴절",
+      "en": "glass refraction, light bend, transparent distortion"
+    },
+    {
+      "word": "테라코타",
+      "en": "terracotta, warm clay, earthy fired surface"
+    }
   ],
   "디자인/아트 소재": [
-    {"word": "테라조", "en": "terrazzo, speckled stone, composite surface"},
-    {"word": "대리석", "en": "marble, veined stone, luxurious surface"},
-    {"word": "세라믹", "en": "ceramic, glazed form, kiln-fired art"},
-    {"word": "패브릭 주름", "en": "fabric fold, draped textile, soft crease"},
-    {"word": "콜라주", "en": "collage, layered cutout, mixed media"},
-    {"word": "아이소메트릭", "en": "isometric, angled perspective, flat 3D"},
-    {"word": "블롭", "en": "blob, organic shape, amorphous form"},
-    {"word": "그리드 시스템", "en": "grid system, structured layout, modular design"},
-    {"word": "타이포그래피", "en": "typography, letter form, type design"},
-    {"word": "팝아트", "en": "pop art, bold color, Warhol style"},
-    {"word": "바우하우스", "en": "Bauhaus, functional form, geometric simplicity"},
-    {"word": "아르누보", "en": "Art Nouveau, organic curve, decorative vine"},
-    {"word": "미니멀 조각", "en": "minimal sculpture, reduced form, pure shape"},
-    {"word": "키네틱 아트", "en": "kinetic art, moving sculpture, mechanical beauty"},
-    {"word": "설치미술", "en": "installation art, spatial experience, immersive form"},
-    {"word": "스테인드글라스", "en": "stained glass, colored light, mosaic window"},
-    {"word": "모자이크", "en": "mosaic, tessera pattern, fragmented image"}
+    {
+      "word": "콜라주",
+      "en": "collage, layered cutout, mixed media"
+    },
+    {
+      "word": "바우하우스",
+      "en": "Bauhaus, functional form, geometric simplicity"
+    }
+  ],
+  "형용사/수식어": [
+    {
+      "word": "몽환적인",
+      "en": "dreamy, hazy ethereal, soft surreal"
+    },
+    {
+      "word": "반투명한",
+      "en": "translucent, frosted layer, diffused glow"
+    },
+    {
+      "word": "폭신한",
+      "en": "fluffy, plush softness, cloud-like cushion"
+    },
+    {
+      "word": "번쩍이는",
+      "en": "sparkling, glittering flash, metallic shimmer"
+    },
+    {
+      "word": "그라데이션",
+      "en": "gradient, smooth color transition, blended tone"
+    },
+    {
+      "word": "빈티지한",
+      "en": "vintage, aged patina, retro warmth"
+    },
+    {
+      "word": "미니멀한",
+      "en": "minimal, clean reduction, essential form"
+    },
+    {
+      "word": "오버사이즈",
+      "en": "oversized, exaggerated scale, giant proportion"
+    },
+    {
+      "word": "유기적인",
+      "en": "organic, flowing curve, natural form"
+    },
+    {
+      "word": "물에 젖은",
+      "en": "water-soaked, drenched surface, wet sheen"
+    },
+    {
+      "word": "부풀어 오른",
+      "en": "inflated, swelling form, expanded volume"
+    },
+    {
+      "word": "잘게 부서진",
+      "en": "fragmented, shattered pieces, broken mosaic"
+    },
+    {
+      "word": "초소형의",
+      "en": "micro-scale, miniaturized, tiny detail"
+    },
+    {
+      "word": "과즙이 흐르는",
+      "en": "juicy, dripping nectar, fruity overflow"
+    },
+    {
+      "word": "매트한",
+      "en": "matte, non-reflective, soft flat finish"
+    },
+    {
+      "word": "글로시한",
+      "en": "glossy, high-shine, lacquered surface"
+    },
+    {
+      "word": "파스텔톤의",
+      "en": "pastel-toned, soft hue, muted color"
+    },
+    {
+      "word": "네온빛의",
+      "en": "neon-lit, electric glow, vivid fluorescent"
+    },
+    {
+      "word": "다층적인",
+      "en": "multi-layered, stacked depth, complex structure"
+    }
   ]
 }

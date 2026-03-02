@@ -20,10 +20,6 @@
     "en": "compass, guiding direction"
   },
   {
-    "word": "모래시계",
-    "en": "hourglass, flowing time"
-  },
-  {
     "word": "거울",
     "en": "mirror, reflective surface"
   },
@@ -96,10 +92,6 @@
     "en": "ruins, forgotten glory"
   },
   {
-    "word": "도서관",
-    "en": "library, knowledge repository"
-  },
-  {
     "word": "수중",
     "en": "underwater, submerged world"
   },
@@ -108,20 +100,12 @@
     "en": "cosmos, stellar expanse"
   },
   {
-    "word": "화산",
-    "en": "volcano, molten fury"
-  },
-  {
     "word": "동굴",
     "en": "cave, hidden depths"
   },
   {
     "word": "빙하",
     "en": "glacier, ancient ice"
-  },
-  {
-    "word": "녹슨",
-    "en": "rusty, weathered decay"
   },
   {
     "word": "투명한",
@@ -160,20 +144,12 @@
     "en": "vortex, spiraling force"
   },
   {
-    "word": "연기",
-    "en": "smoke, wisping trail"
-  },
-  {
     "word": "물거품",
     "en": "bubble, fleeting sphere"
   },
   {
     "word": "결빙",
     "en": "frost, crystalline cold"
-  },
-  {
-    "word": "낙엽",
-    "en": "fallen leaf, autumnal end"
   },
   {
     "word": "씨앗",
@@ -204,10 +180,6 @@
     "en": "mechanical arm, robotic limb"
   },
   {
-    "word": "회로",
-    "en": "circuit, electronic pathway"
-  },
-  {
     "word": "프리즘",
     "en": "prism, light splitter"
   },
@@ -218,10 +190,6 @@
   {
     "word": "홀로그램",
     "en": "hologram, 3D projection"
-  },
-  {
-    "word": "블랙홀",
-    "en": "black hole, event horizon"
   },
   {
     "word": "성운",
@@ -264,12 +232,12 @@
     "en": "crown, sovereign symbol"
   },
   {
-    "word": "칼",
-    "en": "sword, decisive edge"
-  },
-  {
     "word": "마스크",
     "en": "mask, hidden face"
+  },
+  {
+    "word": "칼",
+    "en": "sword, decisive edge"
   },
   {
     "word": "인형",
@@ -328,10 +296,6 @@
     "en": "vein, life channel"
   },
   {
-    "word": "심장",
-    "en": "heart, vital core"
-  },
-  {
     "word": "눈물",
     "en": "tear, emotional liquid"
   },
@@ -370,10 +334,6 @@
   {
     "word": "결정",
     "en": "crystal formation, ordered structure"
-  },
-  {
-    "word": "파동",
-    "en": "wave pattern, oscillating energy"
   },
   {
     "word": "공명",
@@ -476,10 +436,6 @@
     "en": "formula, mathematical truth"
   },
   {
-    "word": "흉터",
-    "en": "scar, healed wound"
-  },
-  {
     "word": "그물",
     "en": "net, capturing web"
   },
@@ -580,10 +536,6 @@
     "en": "joint, articulated connection"
   },
   {
-    "word": "척추",
-    "en": "spine, central column"
-  },
-  {
     "word": "발톱",
     "en": "claw, gripping talon"
   },
@@ -598,10 +550,6 @@
   {
     "word": "점토",
     "en": "clay, moldable earth"
-  },
-  {
-    "word": "산맥",
-    "en": "mountain range, geological spine"
   },
   {
     "word": "절벽",
@@ -634,10 +582,6 @@
   {
     "word": "뇌",
     "en": "brain, thinking center"
-  },
-  {
-    "word": "기어",
-    "en": "mechanical gear, interlocking teeth"
   },
   {
     "word": "유리창",
@@ -676,12 +620,12 @@
     "en": "disc, spinning form"
   },
   {
-    "word": "소라",
-    "en": "conch shell, spiral chamber"
-  },
-  {
     "word": "솔방울",
     "en": "pine cone, layered scales"
+  },
+  {
+    "word": "소라",
+    "en": "conch shell, spiral chamber"
   },
   {
     "word": "전구",
@@ -710,10 +654,6 @@
   {
     "word": "바이올린",
     "en": "violin, trembling string"
-  },
-  {
-    "word": "드럼",
-    "en": "drum, pounding rhythm"
   },
   {
     "word": "촛대",
@@ -780,10 +720,6 @@
     "en": "castle, fortified dwelling"
   },
   {
-    "word": "감옥",
-    "en": "prison, confined space"
-  },
-  {
     "word": "온천",
     "en": "hot spring, mineral pool"
   },
@@ -794,6 +730,10 @@
   {
     "word": "부두",
     "en": "dock, water's edge"
+  },
+  {
+    "word": "감옥",
+    "en": "prison, confined space"
   },
   {
     "word": "광산",
@@ -824,10 +764,6 @@
     "en": "freedom, liberation, open sky"
   },
   {
-    "word": "슬픔",
-    "en": "sorrow, melancholy, quiet tears"
-  },
-  {
     "word": "기쁨",
     "en": "joy, elation, radiant happiness"
   },
@@ -846,10 +782,6 @@
   {
     "word": "분노",
     "en": "rage, fierce storm, burning intensity"
-  },
-  {
-    "word": "경이",
-    "en": "wonder, awe, breathtaking marvel"
   },
   {
     "word": "두려움",
@@ -876,10 +808,6 @@
     "en": "tranquility, still water, calm breath"
   },
   {
-    "word": "열정",
-    "en": "passion, blazing desire, unstoppable drive"
-  },
-  {
     "word": "질투",
     "en": "jealousy, green fire, burning envy"
   },
@@ -894,10 +822,6 @@
   {
     "word": "숲",
     "en": "forest, ancient canopy, dappled light"
-  },
-  {
-    "word": "달",
-    "en": "moon, silver glow, night guardian"
   },
   {
     "word": "별",
@@ -1204,10 +1128,6 @@
     "en": "screw, spiral thread, fastening helix"
   },
   {
-    "word": "도르래",
-    "en": "pulley, lifting wheel, mechanical leverage"
-  },
-  {
     "word": "태엽",
     "en": "clockwork spring, wound energy, mechanical tension"
   },
@@ -1260,10 +1180,6 @@
     "en": "soap bubble, iridescent sphere, floating film"
   },
   {
-    "word": "엽서",
-    "en": "postcard, distant greeting, stamped memory"
-  },
-  {
     "word": "달팽이",
     "en": "snail, spiral shell, slow journey"
   },
@@ -1278,10 +1194,6 @@
   {
     "word": "개미",
     "en": "ant, organized colony, tiny strength"
-  },
-  {
-    "word": "벌집",
-    "en": "honeycomb, hexagonal grid, natural structure"
   },
   {
     "word": "거북이",
@@ -1364,10 +1276,6 @@
     "en": "pebble, smooth stone, river-polished"
   },
   {
-    "word": "진주",
-    "en": "pearl, lustrous sphere, layered nacre"
-  },
-  {
     "word": "보석",
     "en": "gemstone, faceted brilliance, light trap"
   },
@@ -1382,6 +1290,10 @@
   {
     "word": "네온 빛",
     "en": "neon light, electric glow, vibrant tube"
+  },
+  {
+    "word": "진주",
+    "en": "pearl, lustrous sphere, layered nacre"
   },
   {
     "word": "그림자 놀이",
@@ -1484,10 +1396,6 @@
     "en": "button, sewn disc, fastening circle"
   },
   {
-    "word": "리본",
-    "en": "ribbon, silk strip, decorative bow"
-  },
-  {
     "word": "종이꽃",
     "en": "paper flower, crafted petal, folded bloom"
   },
@@ -1540,14 +1448,6 @@
     "en": "arrow sign, directional pointer, guiding mark"
   },
   {
-    "word": "QR코드",
-    "en": "QR code, pixel matrix, encoded data"
-  },
-  {
-    "word": "바코드",
-    "en": "barcode, lined pattern, scanned identity"
-  },
-  {
     "word": "픽셀",
     "en": "pixel, digital dot, screen unit"
   },
@@ -1576,15 +1476,107 @@
     "en": "shaved ice, fluffy snow, sweet topping"
   },
   {
-    "word": "타로카드",
-    "en": "tarot card, mystical image, divination art"
-  },
-  {
     "word": "오페라 마스크",
     "en": "opera mask, theatrical face, dramatic disguise"
   },
   {
-    "word": "발레 슈즈",
-    "en": "ballet shoes, satin point, graceful dance"
+    "word": "쪼그라든",
+    "en": "shrunken, compressed form"
+  },
+  {
+    "word": "스며드는",
+    "en": "seeping, gradual permeation"
+  },
+  {
+    "word": "얼어붙은",
+    "en": "frozen, crystallized stillness"
+  },
+  {
+    "word": "발광하는",
+    "en": "luminescent, self-glowing"
+  },
+  {
+    "word": "뒤틀린",
+    "en": "warped, distorted shape"
+  },
+  {
+    "word": "겹겹이 쌓인",
+    "en": "layered, stacked depth"
+  },
+  {
+    "word": "흐릿한",
+    "en": "blurred, soft-focus haze"
+  },
+  {
+    "word": "무거운",
+    "en": "heavy, gravitational pull"
+  },
+  {
+    "word": "날카로운",
+    "en": "sharp, cutting edge"
+  },
+  {
+    "word": "매끄러운",
+    "en": "sleek, polished smooth"
+  },
+  {
+    "word": "축축한",
+    "en": "damp, moist surface"
+  },
+  {
+    "word": "바삭한",
+    "en": "crispy, brittle shell"
+  },
+  {
+    "word": "물렁한",
+    "en": "mushy, yielding softness"
+  },
+  {
+    "word": "쫀득한",
+    "en": "chewy, elastic stretch"
+  },
+  {
+    "word": "가벼운",
+    "en": "lightweight, floating ease"
+  },
+  {
+    "word": "반짝거리는",
+    "en": "glittering, sparkling surface"
+  },
+  {
+    "word": "부드러운",
+    "en": "soft, gentle touch"
+  },
+  {
+    "word": "뾰족한",
+    "en": "pointed, sharp spike"
+  },
+  {
+    "word": "울퉁불퉁한",
+    "en": "bumpy, uneven surface"
+  },
+  {
+    "word": "접힌",
+    "en": "folded, creased form"
+  },
+  {
+    "word": "이어붙인",
+    "en": "patched, stitched together"
+  },
+  {
+    "word": "증발하는",
+    "en": "evaporating, vanishing mist"
+  },
+  {
+    "word": "팽창하는",
+    "en": "expanding, growing outward"
+  },
+  {
+    "word": "수축하는",
+    "en": "contracting, shrinking inward"
+  },
+  {
+    "word": "결정화된",
+    "en": "crystallized, solidified pattern"
   }
 ]
