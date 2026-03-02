@@ -19,7 +19,7 @@ h3{color:#ccc;font-size:0.95rem;margin:12px 0 8px}
 .chart-box{background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:16px;position:relative}
 .chart-box.full{grid-column:1/-1}
 .chart-box h3{margin-top:0}
-canvas{max-height:1200px}
+canvas{max-height:600px}
 table{width:100%;border-collapse:collapse;font-size:0.82rem;margin-top:8px}
 th,td{padding:6px 10px;border-bottom:1px solid #222;text-align:left}
 th{color:#f0c040;font-size:0.72rem;text-transform:uppercase}
@@ -51,16 +51,6 @@ tr:hover td{background:#1a1a1a}
   <a href="index.html" class="back-btn">&#8592; 갤러리</a>
 </div>
 
-<!-- Section: Overview Dashboard -->
-<div class="section" id="s-overview">
-  <h2>Overview</h2>
-  <div id="overview-cards" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:16px"></div>
-  <div class="chart-row">
-    <div class="chart-box"><h3>Model Performance</h3><canvas id="chart-model"></canvas></div>
-    <div class="chart-box"><h3>Template Group Performance</h3><canvas id="chart-tmpl-group"></canvas></div>
-  </div>
-</div>
-
 <!-- Section 0: Template Ranking -->
 <div class="section" id="s-templates">
   <h2>Template Ranking</h2>
@@ -73,11 +63,11 @@ tr:hover td{background:#1a1a1a}
   <h2>Word Analysis</h2>
   <p class="insight" id="word-insight"></p>
   <div class="chart-row">
-    <div class="chart-box" style="min-height:750px">
+    <div class="chart-box">
       <h3>Word1 Top 30 (좋아요율)</h3>
       <canvas id="chart-w1"></canvas>
     </div>
-    <div class="chart-box" style="min-height:750px">
+    <div class="chart-box">
       <h3>Word2 Top 30 (좋아요율)</h3>
       <canvas id="chart-w2"></canvas>
     </div>
@@ -87,17 +77,9 @@ tr:hover td{background:#1a1a1a}
   <div class="chart-box full">
     <canvas id="chart-cat"></canvas>
   </div>
-</div>
-
-
-<!-- Section: Word Worst Performers -->
-<div class="section" id="s-worst">
-  <h2>Word Worst Performers <span class="sub-note">(0% 좋아요율, 5회 이상 사용)</span></h2>
-  <p class="insight" id="worst-insight"></p>
-  <div class="chart-row">
-    <div class="chart-box" style="min-height:500px"><h3>Word1 Worst 20</h3><canvas id="chart-w1-worst"></canvas></div>
-    <div class="chart-box" style="min-height:500px"><h3>Word2 Worst 20</h3><canvas id="chart-w2-worst"></canvas></div>
-  </div>
+  <h3>Best Combinations</h3>
+  <p class="insight" id="combo-insight"></p>
+  <table id="combo-table"></table>
 </div>
 
 <!-- Section 2: Word Correlation -->
@@ -132,145 +114,12 @@ tr:hover td{background:#1a1a1a}
   </div>
 </div>
 
-
-
-<!-- Section: Relation Type Analysis -->
-<div class="section" id="s-relations">
-  <h2>관계 표현 (Relation) 성과 분석</h2>
-  <p class="insight" id="relation-insight"></p>
-  <div class="chart-row">
-    <div class="chart-box full" style="min-height:400px"><h3>Relation별 좋아요율</h3><canvas id="chart-relations"></canvas></div>
-  </div>
-</div>
-
-<!-- Section: Liked vs Not-Liked Comparison -->
-<div class="section" id="s-lvn">
-  <h2>좋아요 vs 안좋아요 비교 <span class="sub-note">(Phase 3 #8)</span></h2>
-  <p class="insight" id="lvn-insight"></p>
-  <div class="chart-row">
-    <div class="chart-box"><h3>카테고리별 좋아요율</h3><canvas id="chart-lvn-cat"></canvas></div>
-    <div class="chart-box"><h3>템플릿별 좋아요율</h3><canvas id="chart-lvn-tmpl"></canvas></div>
-  </div>
-  <h3 style="margin-top:16px">Word1 Top 15 vs Bottom 15</h3>
-  <div class="chart-row">
-    <div class="chart-box" style="min-height:450px"><h3>Word1 Best (좋아요율 높음)</h3><canvas id="chart-lvn-w1top"></canvas></div>
-    <div class="chart-box" style="min-height:450px"><h3>Word1 Worst (좋아요율 0%)</h3><canvas id="chart-lvn-w1bot"></canvas></div>
-  </div>
-  <div class="chart-row">
-    <div class="chart-box" style="min-height:450px"><h3>Word2 Best (좋아요율 높음)</h3><canvas id="chart-lvn-w2top"></canvas></div>
-    <div class="chart-box" style="min-height:450px"><h3>Word2 Worst (좋아요율 0%)</h3><canvas id="chart-lvn-w2bot"></canvas></div>
-  </div>
-</div>
-
-
-<!-- Section: Word Combination Patterns -->
-<div class="section" id="s-combos">
-  <h2>단어 조합 성공 패턴 <span class="sub-note">(Phase 4 #12)</span></h2>
-  <p class="insight" id="combo-insight2"></p>
-  <div class="chart-row">
-    <div class="chart-box full" style="min-height:500px"><h3>Top 30 조합 (좋아요율 기준)</h3><canvas id="chart-combo-top"></canvas></div>
-  </div>
-  <h3 style="margin-top:16px">실패한 조합 (0% 좋아요, 3회 이상 사용)</h3>
-  <table id="combo-zero-table"></table>
-</div>
-
-
-<!-- Section: Taste Clustering -->
-<div class="section" id="s-clusters">
-  <h2>취향 클러스터 분석 <span class="sub-note">(Phase 4 #9-10)</span></h2>
-  <p class="insight" id="cluster-insight"></p>
-  <div class="chart-row">
-    <div class="chart-box"><h3>GPT-4o 기반 클러스터</h3><canvas id="chart-cluster-gpt"></canvas></div>
-    <div class="chart-box"><h3>Gemini 기반 클러스터</h3><canvas id="chart-cluster-gem"></canvas></div>
-  </div>
-  <h3 style="margin-top:16px">클러스터 상세 비교</h3>
-  <table id="cluster-table"></table>
-</div>
-
-<!-- ═══ DEEP ANALYSIS START ═══ -->
-<div class="section" id="s-comparison">
-  <h2>GPT-4o vs Gemini 비교 분석 <span class="sub-note" id="comp-meta"></span></h2>
-  <h3>필드별 합의도 (Agreement Rate)</h3>
-  <p class="insight" id="agree-insight"></p>
-  <div class="chart-row"><div class="chart-box full"><canvas id="chart-agreement"></canvas></div></div>
-  <table id="agree-table"></table>
-  <h3 style="margin-top:24px">자유 텍스트 필드 — 서술 깊이 비교</h3>
-  <p class="insight" id="text-insight"></p>
-  <div class="chart-row"><div class="chart-box full"><canvas id="chart-text-length"></canvas></div></div>
-  <table id="text-table"></table>
-  <h3 style="margin-top:24px">키워드 비교 — GPT만 vs 공통 vs Gemini만</h3>
-  <p class="insight" id="keyword-insight"></p>
-  <div id="keyword-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px"></div>
-</div>
-
-<div class="section" id="s-repro">
-  <h2>Reproduction Prompt 비교</h2>
-  <p class="insight" id="repro-insight"></p>
-  <div class="chart-row">
-    <div class="chart-box"><h3>GPT-4o 핵심 키워드</h3><canvas id="chart-repro-gpt"></canvas></div>
-    <div class="chart-box"><h3>Gemini 핵심 키워드</h3><canvas id="chart-repro-gem"></canvas></div>
-  </div>
-  <div class="chart-row">
-    <div class="chart-box"><h3>GPT-4o 프롬프트 시작 패턴</h3><table id="repro-gpt-start"></table></div>
-    <div class="chart-box"><h3>Gemini 프롬프트 시작 패턴</h3><table id="repro-gem-start"></table></div>
-  </div>
-  <h3 style="margin-top:24px">기법 키워드 사용 비교</h3>
-  <p class="insight" id="technique-insight"></p>
-  <div class="chart-box full" style="margin-top:8px"><canvas id="chart-technique"></canvas></div>
-</div>
-
-<div class="section" id="s-deep-patterns">
-  <h2>취향 키워드 심층 분석 <span class="sub-note">(GPT-4o 전체 데이터 기반)</span></h2>
-  <p class="insight" id="deep-insight"></p>
-  <div class="chart-row">
-    <div class="chart-box"><h3>Mood 키워드</h3><canvas id="chart-deep-mood"></canvas></div>
-    <div class="chart-box"><h3>Material 키워드</h3><canvas id="chart-deep-material"></canvas></div>
-  </div>
-  <div class="chart-row">
-    <div class="chart-box"><h3>Color Palette Top 25</h3><canvas id="chart-deep-color"></canvas></div>
-    <div class="chart-box"><h3>Lighting 키워드</h3><canvas id="chart-deep-lighting"></canvas></div>
-  </div>
-  <div class="chart-row">
-    <div class="chart-box"><h3>Texture 키워드</h3><canvas id="chart-deep-texture"></canvas></div>
-    <div class="chart-box"><h3>Style 키워드</h3><canvas id="chart-deep-style"></canvas></div>
-  </div>
-
-  <h3 style="margin-top:24px">Gemini 키워드 비교 — 같은 필드, 다른 관점</h3>
-  <p class="insight" id="gem-pattern-insight"></p>
-  <div class="chart-row">
-    <div class="chart-box"><h3>Gemini Mood 키워드</h3><canvas id="chart-gem-mood"></canvas></div>
-    <div class="chart-box"><h3>Gemini Style 키워드</h3><canvas id="chart-gem-style"></canvas></div>
-  </div>
-  <div class="chart-row">
-    <div class="chart-box"><h3>Gemini Color Palette Top 25</h3><canvas id="chart-gem-color"></canvas></div>
-    <div class="chart-box"><h3>Gemini Lighting 키워드</h3><canvas id="chart-gem-lighting"></canvas></div>
-  </div>
-  <div class="chart-row">
-    <div class="chart-box"><h3>Gemini Texture 키워드</h3><canvas id="chart-gem-texture"></canvas></div>
-    <div class="chart-box"><h3>Gemini Material 키워드</h3><canvas id="chart-gem-material"></canvas></div>
-  </div>
-</div>
-
-<div class="section" id="s-guide">
-  <h2>프롬프트 개선 가이드</h2>
-  <p class="insight" id="guide-intro"></p>
-  <h3>써야 하는 것 (DO)</h3>
-  <div id="guide-do" style="margin-bottom:16px"></div>
-  <h3>피해야 하는 것 (DON'T)</h3>
-  <div id="guide-dont" style="margin-bottom:16px"></div>
-  <h3>Gemini가 더 잘 잡는 요소 (프롬프트에 명시할 것)</h3>
-  <div id="guide-gem" style="margin-bottom:16px"></div>
-  <h3>두 모델이 공통으로 확인한 취향 DNA</h3>
-  <p class="insight" id="guide-dna"></p>
-</div>
-<!-- ═══ DEEP ANALYSIS END ═══ -->
-
 <div style="text-align:center;padding:20px;color:#444;font-size:0.7rem">
   Generated by BOKBOK STUDIO Analysis
 </div>
 
 <script>
-const D = {"overview": {"total": 2984, "liked": 342, "rate": 11.5, "cost": 291.33, "costPerLike": 0.85, "dateStart": "2026-02-18", "dateEnd": "2026-03-02"}, "templates": [{"id": "core_01", "used": 16, "liked": 5, "rate": 31.2, "text": ""}, {"id": "free_08", "used": 30, "liked": 7, "rate": 23.3, "text": ""}, {"id": "core_04", "used": 22, "liked": 5, "rate": 22.7, "text": ""}, {"id": "free_01", "used": 22, "liked": 5, "rate": 22.7, "text": ""}, {"id": "free_02", "used": 30, "liked": 6, "rate": 20.0, "text": ""}, {"id": "free_03", "used": 35, "liked": 6, "rate": 17.1, "text": ""}, {"id": "core_06", "used": 19, "liked": 3, "rate": 15.8, "text": ""}, {"id": "core_07", "used": 32, "liked": 5, "rate": 15.6, "text": ""}, {"id": "free_06", "used": 32, "liked": 5, "rate": 15.6, "text": ""}, {"id": "style_01", "used": 205, "liked": 30, "rate": 14.6, "text": ""}, {"id": "style_09", "used": 207, "liked": 30, "rate": 14.5, "text": ""}, {"id": "free_05", "used": 28, "liked": 4, "rate": 14.3, "text": ""}, {"id": "style_02", "used": 216, "liked": 29, "rate": 13.4, "text": ""}, {"id": "style_03", "used": 232, "liked": 31, "rate": 13.4, "text": ""}, {"id": "free_04", "used": 30, "liked": 4, "rate": 13.3, "text": ""}, {"id": "core_08", "used": 23, "liked": 3, "rate": 13.0, "text": ""}, {"id": "free_07", "used": 33, "liked": 4, "rate": 12.1, "text": ""}, {"id": "style_05", "used": 215, "liked": 26, "rate": 12.1, "text": ""}, {"id": "core_09", "used": 25, "liked": 3, "rate": 12.0, "text": ""}, {"id": "style_07", "used": 215, "liked": 25, "rate": 11.6, "text": ""}, {"id": "style_06", "used": 234, "liked": 26, "rate": 11.1, "text": ""}, {"id": "style_08", "used": 214, "liked": 22, "rate": 10.3, "text": ""}, {"id": "aistudio_web", "used": 160, "liked": 14, "rate": 8.8, "text": ""}, {"id": "style_04", "used": 170, "liked": 14, "rate": 8.2, "text": ""}, {"id": "style_10", "used": 93, "liked": 6, "rate": 6.5, "text": ""}, {"id": "unknown", "used": 388, "liked": 23, "rate": 5.9, "text": ""}, {"id": "core_03", "used": 23, "liked": 1, "rate": 4.3, "text": ""}, {"id": "core_02", "used": 19, "liked": 0, "rate": 0.0, "text": ""}, {"id": "core_05", "used": 16, "liked": 0, "rate": 0.0, "text": ""}], "word1Top": [{"word": "사슴 캐릭터", "used": 6, "liked": 4, "rate": 66.7}, {"word": "토끼 캐릭터", "used": 12, "liked": 6, "rate": 50.0}, {"word": "인형의 집", "used": 9, "liked": 4, "rate": 44.4}, {"word": "정적", "used": 9, "liked": 4, "rate": 44.4}, {"word": "천사 조각상", "used": 14, "liked": 6, "rate": 42.9}, {"word": "케이크", "used": 12, "liked": 5, "rate": 41.7}, {"word": "바우하우스", "used": 15, "liked": 5, "rate": 33.3}, {"word": "쿨블루", "used": 6, "liked": 2, "rate": 33.3}, {"word": "무중력", "used": 6, "liked": 2, "rate": 33.3}, {"word": "초소형의", "used": 3, "liked": 1, "rate": 33.3}, {"word": "과즙이 흐르는", "used": 3, "liked": 1, "rate": 33.3}, {"word": "잎사귀", "used": 19, "liked": 6, "rate": 31.6}, {"word": "꽃", "used": 19, "liked": 6, "rate": 31.6}, {"word": "그리드 시스템", "used": 10, "liked": 3, "rate": 30.0}, {"word": "바이오모피즘", "used": 10, "liked": 3, "rate": 30.0}, {"word": "코티지코어", "used": 17, "liked": 5, "rate": 29.4}, {"word": "해파리", "used": 14, "liked": 4, "rate": 28.6}, {"word": "진주", "used": 7, "liked": 2, "rate": 28.6}, {"word": "파스텔톤의", "used": 7, "liked": 2, "rate": 28.6}, {"word": "솜사탕", "used": 11, "liked": 3, "rate": 27.3}, {"word": "기시감", "used": 11, "liked": 3, "rate": 27.3}, {"word": "연인", "used": 15, "liked": 4, "rate": 26.7}, {"word": "나무", "used": 19, "liked": 5, "rate": 26.3}, {"word": "산호", "used": 19, "liked": 5, "rate": 26.3}, {"word": "구형 조이스틱", "used": 8, "liked": 2, "rate": 25.0}, {"word": "블록 레고", "used": 16, "liked": 4, "rate": 25.0}, {"word": "종이 질감", "used": 4, "liked": 1, "rate": 25.0}, {"word": "Y2K", "used": 8, "liked": 2, "rate": 25.0}, {"word": "빵", "used": 8, "liked": 2, "rate": 25.0}, {"word": "클레이모피즘", "used": 8, "liked": 2, "rate": 25.0}], "word2Top": [{"word": "파인애플", "used": 6, "liked": 4, "rate": 66.7}, {"word": "목걸이", "used": 13, "liked": 7, "rate": 53.8}, {"word": "산호", "used": 6, "liked": 3, "rate": 50.0}, {"word": "바다", "used": 4, "liked": 2, "rate": 50.0}, {"word": "그림자", "used": 4, "liked": 2, "rate": 50.0}, {"word": "연결", "used": 7, "liked": 3, "rate": 42.9}, {"word": "붓터치", "used": 7, "liked": 3, "rate": 42.9}, {"word": "모래성", "used": 5, "liked": 2, "rate": 40.0}, {"word": "오르골", "used": 5, "liked": 2, "rate": 40.0}, {"word": "비눗방울", "used": 5, "liked": 2, "rate": 40.0}, {"word": "수면 반사", "used": 5, "liked": 2, "rate": 40.0}, {"word": "거울", "used": 5, "liked": 2, "rate": 40.0}, {"word": "노끈", "used": 5, "liked": 2, "rate": 40.0}, {"word": "고양이", "used": 8, "liked": 3, "rate": 37.5}, {"word": "갑옷", "used": 8, "liked": 3, "rate": 37.5}, {"word": "이끼", "used": 8, "liked": 3, "rate": 37.5}, {"word": "나선", "used": 8, "liked": 3, "rate": 37.5}, {"word": "폭포", "used": 6, "liked": 2, "rate": 33.3}, {"word": "산", "used": 6, "liked": 2, "rate": 33.3}, {"word": "망토", "used": 6, "liked": 2, "rate": 33.3}, {"word": "레일", "used": 6, "liked": 2, "rate": 33.3}, {"word": "척추", "used": 9, "liked": 3, "rate": 33.3}, {"word": "향기", "used": 6, "liked": 2, "rate": 33.3}, {"word": "해파리", "used": 6, "liked": 2, "rate": 33.3}, {"word": "무당벌레", "used": 6, "liked": 2, "rate": 33.3}, {"word": "고래", "used": 9, "liked": 3, "rate": 33.3}, {"word": "요정", "used": 9, "liked": 3, "rate": 33.3}, {"word": "카오스", "used": 6, "liked": 2, "rate": 33.3}, {"word": "항아리", "used": 6, "liked": 2, "rate": 33.3}, {"word": "깃털", "used": 6, "liked": 2, "rate": 33.3}], "comboTop": [{"w1": "수박", "w2": "산", "used": 2, "liked": 2, "rate": 100.0}, {"w1": "스티커", "w2": "산호", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "풍선", "w2": "톱니바퀴", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "꽃", "w2": "빙수", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "오로라", "w2": "엔트로피", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "고프코어", "w2": "닻", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "고독", "w2": "소멸", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "바우하우스", "w2": "고양이", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "정적", "w2": "결빙", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "피크닉", "w2": "공간", "used": 2, "liked": 1, "rate": 50.0}], "categories": [{"cat": "자연/생물", "used": 181, "liked": 40, "rate": 22.1}, {"cat": "감정/추상", "used": 296, "liked": 52, "rate": 17.6}, {"cat": "오브젝트", "used": 39, "liked": 6, "rate": 15.4}, {"cat": "음식", "used": 37, "liked": 5, "rate": 13.5}, {"cat": "형용사/수식어", "used": 104, "liked": 14, "rate": 13.5}, {"cat": "트렌드", "used": 105, "liked": 13, "rate": 12.4}, {"cat": "디자인/아트 소재", "used": 55, "liked": 6, "rate": 10.9}, {"cat": "장난감/게임", "used": 47, "liked": 5, "rate": 10.6}, {"cat": "모션그래픽 소재", "used": 51, "liked": 5, "rate": 9.8}, {"cat": "브랜드/캐릭터", "used": 9, "liked": 0, "rate": 0.0}], "crossTable": [{"w1c": "음식", "w2c": "사물/도구", "used": 8, "liked": 3, "rate": 37.5}, {"w1c": "자연/생물", "w2c": "자연현상", "used": 40, "liked": 13, "rate": 32.5}, {"w1c": "감정/추상", "w2c": "사물/도구", "used": 68, "liked": 18, "rate": 26.5}, {"w1c": "오브젝트", "w2c": "사물/도구", "used": 12, "liked": 3, "rate": 25.0}, {"w1c": "디자인/아트 소재", "w2c": "추상/감정", "used": 8, "liked": 2, "rate": 25.0}, {"w1c": "자연/생물", "w2c": "추상/감정", "used": 30, "liked": 6, "rate": 20.0}, {"w1c": "트렌드", "w2c": "음식", "used": 5, "liked": 1, "rate": 20.0}, {"w1c": "감정/추상", "w2c": "재질/소재", "used": 5, "liked": 1, "rate": 20.0}, {"w1c": "자연/생물", "w2c": "기타", "used": 56, "liked": 11, "rate": 19.6}, {"w1c": "트렌드", "w2c": "자연현상", "used": 21, "liked": 4, "rate": 19.0}, {"w1c": "트렌드", "w2c": "추상/감정", "used": 21, "liked": 4, "rate": 19.0}, {"w1c": "장난감/게임", "w2c": "자연현상", "used": 11, "liked": 2, "rate": 18.2}, {"w1c": "음식", "w2c": "기타", "used": 11, "liked": 2, "rate": 18.2}, {"w1c": "형용사/수식어", "w2c": "자연현상", "used": 33, "liked": 6, "rate": 18.2}, {"w1c": "자연/생물", "w2c": "사물/도구", "used": 46, "liked": 8, "rate": 17.4}, {"w1c": "오브젝트", "w2c": "자연현상", "used": 12, "liked": 2, "rate": 16.7}, {"w1c": "모션그래픽 소재", "w2c": "자연현상", "used": 18, "liked": 3, "rate": 16.7}, {"w1c": "자연/생물", "w2c": "음식", "used": 6, "liked": 1, "rate": 16.7}, {"w1c": "오브젝트", "w2c": "추상/감정", "used": 6, "liked": 1, "rate": 16.7}, {"w1c": "감정/추상", "w2c": "자연현상", "used": 72, "liked": 12, "rate": 16.7}, {"w1c": "감정/추상", "w2c": "추상/감정", "used": 36, "liked": 6, "rate": 16.7}, {"w1c": "장난감/게임", "w2c": "기타", "used": 14, "liked": 2, "rate": 14.3}, {"w1c": "모션그래픽 소재", "w2c": "사물/도구", "used": 7, "liked": 1, "rate": 14.3}, {"w1c": "형용사/수식어", "w2c": "추상/감정", "used": 14, "liked": 2, "rate": 14.3}, {"w1c": "감정/추상", "w2c": "기타", "used": 105, "liked": 14, "rate": 13.3}, {"w1c": "디자인/아트 소재", "w2c": "사물/도구", "used": 8, "liked": 1, "rate": 12.5}, {"w1c": "트렌드", "w2c": "기타", "used": 39, "liked": 4, "rate": 10.3}, {"w1c": "장난감/게임", "w2c": "추상/감정", "used": 10, "liked": 1, "rate": 10.0}, {"w1c": "감정/추상", "w2c": "음식", "used": 10, "liked": 1, "rate": 10.0}, {"w1c": "형용사/수식어", "w2c": "기타", "used": 30, "liked": 3, "rate": 10.0}, {"w1c": "형용사/수식어", "w2c": "사물/도구", "used": 21, "liked": 2, "rate": 9.5}, {"w1c": "디자인/아트 소재", "w2c": "기타", "used": 23, "liked": 2, "rate": 8.7}, {"w1c": "디자인/아트 소재", "w2c": "자연현상", "used": 12, "liked": 1, "rate": 8.3}, {"w1c": "모션그래픽 소재", "w2c": "기타", "used": 12, "liked": 0, "rate": 0.0}, {"w1c": "음식", "w2c": "추상/감정", "used": 7, "liked": 0, "rate": 0.0}, {"w1c": "장난감/게임", "w2c": "사물/도구", "used": 12, "liked": 0, "rate": 0.0}, {"w1c": "오브젝트", "w2c": "기타", "used": 9, "liked": 0, "rate": 0.0}, {"w1c": "모션그래픽 소재", "w2c": "추상/감정", "used": 11, "liked": 0, "rate": 0.0}, {"w1c": "음식", "w2c": "자연현상", "used": 10, "liked": 0, "rate": 0.0}, {"w1c": "트렌드", "w2c": "사물/도구", "used": 16, "liked": 0, "rate": 0.0}, {"w1c": "브랜드/캐릭터", "w2c": "자연현상", "used": 5, "liked": 0, "rate": 0.0}], "direction": {"sameUsed": 204, "sameLiked": 39, "sameRate": 19.1, "oppUsed": 208, "oppLiked": 40, "oppRate": 19.2}, "refPins": [{"url": "https://i.pinimg.com/originals/c4/34/02/c4340263378bbef8ba5c0f646fcaf412.png", "used": 8, "liked": 5, "rate": 62.5}, {"url": "https://i.pinimg.com/originals/86/0c/82/860c828cb157f98a10be8a57fc85684b.jpg", "used": 8, "liked": 4, "rate": 50.0}, {"url": "https://i.pinimg.com/originals/b4/e7/3a/b4e73a64d2439e97ddd9e1697e8fe01c.png", "used": 9, "liked": 4, "rate": 44.4}, {"url": "https://i.pinimg.com/originals/be/69/fe/be69fe954b7eb2aea97583acef9cf651.jpg", "used": 11, "liked": 4, "rate": 36.4}, {"url": "https://i.pinimg.com/originals/10/27/d8/1027d84a0dc34fb2cd77d4e4a5c9f747.png", "used": 3, "liked": 3, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/6e/20/c1/6e20c1100c20ebd36d90ca1a40ac0d63.png", "used": 3, "liked": 3, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/df/56/ab/df56ab3b160bfeb063c1466f24b89381.jpg", "used": 4, "liked": 3, "rate": 75.0}, {"url": "https://i.pinimg.com/originals/97/f6/84/97f684ec2b79abaa104a087c51e58051.jpg", "used": 4, "liked": 3, "rate": 75.0}, {"url": "https://i.pinimg.com/originals/1c/c4/24/1cc424b893f4206abc95ff89df357b81.jpg", "used": 4, "liked": 3, "rate": 75.0}, {"url": "https://i.pinimg.com/originals/07/68/7d/07687dd123b7b36da82d59eaca75251a.png", "used": 4, "liked": 3, "rate": 75.0}, {"url": "https://i.pinimg.com/originals/64/76/39/647639dbef92540a4c40fe56ce8c949e.png", "used": 5, "liked": 3, "rate": 60.0}, {"url": "https://i.pinimg.com/originals/0c/11/a0/0c11a0370eff8197801750b137abd92a.jpg", "used": 5, "liked": 3, "rate": 60.0}, {"url": "https://i.pinimg.com/originals/58/fc/57/58fc57c2dc33192efa657fb96c4451ab.jpg", "used": 6, "liked": 3, "rate": 50.0}, {"url": "https://i.pinimg.com/originals/d7/cb/44/d7cb44c13b8c797939d99694b5706c1b.jpg", "used": 6, "liked": 3, "rate": 50.0}, {"url": "https://i.pinimg.com/originals/bd/48/49/bd48492994278e909d125aa9ee9a6c5f.jpg", "used": 6, "liked": 3, "rate": 50.0}, {"url": "https://i.pinimg.com/originals/d6/83/80/d68380ec1946b7aaa76800ec8fd8290e.jpg", "used": 6, "liked": 3, "rate": 50.0}, {"url": "https://i.pinimg.com/originals/23/01/f5/2301f5d6a72b88cde67ff6b37a37c3e9.jpg", "used": 7, "liked": 3, "rate": 42.9}, {"url": "https://i.pinimg.com/originals/19/a5/8e/19a58e6c3636510e7e79b4dc69bc0d45.webp", "used": 7, "liked": 3, "rate": 42.9}, {"url": "https://i.pinimg.com/originals/e4/4f/df/e44fdf1ed644017e982ec05cab86c088.jpg", "used": 8, "liked": 3, "rate": 37.5}, {"url": "https://i.pinimg.com/originals/e9/b1/46/e9b146aa2d25ecddfdd2400d6308aa58.jpg", "used": 10, "liked": 3, "rate": 30.0}, {"url": "https://i.pinimg.com/originals/47/1c/f4/471cf4376242d2999a2f55c30f52a4a1.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/74/84/d7/7484d73e35e241c1d78c644ad4bfd925.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/f6/f8/f8/f6f8f87e4e21f5b7868f8af4e38ffb33.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/1a/d5/dd/1ad5dd6c663d7ff2a7e04b151ffea41c.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/0c/ce/7c/0cce7c0343d29e8c7db32e242b856d1d.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/21/7b/00/217b008622cdc2214c7b82790862318f.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/c0/5f/92/c05f92d8d2b0661578a538cb9bb347ae.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/bc/18/4f/bc184ff3a7042debc23c3a63bc2bb9ff.webp", "used": 3, "liked": 2, "rate": 66.7}, {"url": "https://i.pinimg.com/originals/6b/7e/71/6b7e7196eb7b26e24f679873d454dc58.jpg", "used": 3, "liked": 2, "rate": 66.7}, {"url": "https://i.pinimg.com/originals/66/bf/05/66bf05d001060bc3d0a1becfaa4fcba7.jpg", "used": 3, "liked": 2, "rate": 66.7}], "models": [{"count": 349, "liked": 23, "cost": 14.99, "label": "Flash", "rate": 6.6, "costPerLike": 0.65}, {"count": 2635, "liked": 319, "cost": 276.34, "label": "Pro", "rate": 12.1, "costPerLike": 0.87}], "design": {"total": 341, "style": [{"k": "surreal and whimsical art style", "v": 8}, {"k": "surrealistic digital art", "v": 6}, {"k": "surreal and fantastical art style", "v": 5}, {"k": "surreal and futuristic", "v": 4}, {"k": "surreal and fantastical", "v": 4}, {"k": "fantasy art", "v": 4}, {"k": "whimsical and surreal art style", "v": 3}, {"k": "modern surrealism", "v": 3}, {"k": "futuristic and surreal art style", "v": 3}, {"k": "surreal and abstract", "v": 3}], "mood": [{"k": "playful and whimsical", "v": 21}, {"k": "whimsical and serene", "v": 15}, {"k": "whimsical and playful", "v": 10}, {"k": "playful and dreamy", "v": 7}, {"k": "playful and imaginative", "v": 7}, {"k": "calm and serene", "v": 7}, {"k": "playful and serene", "v": 5}, {"k": "mysterious and otherworldly", "v": 5}, {"k": "futuristic and intriguing", "v": 5}, {"k": "serene and contemplative", "v": 5}], "renderQuality": [{"k": "photorealistic", "v": 194}, {"k": "stylized", "v": 117}, {"k": "photorealistic with stylized elements", "v": 8}, {"k": "photorealistic with surreal elements", "v": 6}, {"k": "highly stylized", "v": 2}, {"k": "photorealistic with fantastical elements", "v": 2}, {"k": "highly stylized with a painterly and ethereal touch", "v": 1}, {"k": "photorealistic with a stylized touch", "v": 1}, {"k": "photorealistic with artistic elements", "v": 1}, {"k": "stylized and hyper-realistic", "v": 1}, {"k": "photorealistic with a touch of fantastical styling", "v": 1}, {"k": "stylized with clean lines and smooth surfaces", "v": 1}, {"k": "photorealistic with stylized digital enhancements", "v": 1}, {"k": "photorealistic with sci-fi enhancements", "v": 1}, {"k": "Photorealistic", "v": 1}, {"k": "stylized and photorealistic", "v": 1}, {"k": "realistic with whimsical undertones", "v": 1}, {"k": "painterly", "v": 1}], "emotionalAppeal": [{"k": "whimsical", "v": 102}, {"k": "mysterious", "v": 32}, {"k": "elegant", "v": 29}, {"k": "serene", "v": 26}, {"k": "elegant and serene", "v": 16}, {"k": "whimsical and serene", "v": 15}, {"k": "playful", "v": 15}, {"k": "elegant and mysterious", "v": 12}, {"k": "mysterious and elegant", "v": 10}, {"k": "playful and whimsical", "v": 9}], "colorTemp": [{"k": "Warm", "v": 178}, {"k": "Cool", "v": 104}, {"k": "Neutral", "v": 59}], "dimension": [{"k": "3D", "v": 327}, {"k": "2D", "v": 7}, {"k": "2.5D isometric", "v": 4}, {"k": "2D with a 3D appearance due to shading and reflections", "v": 1}, {"k": "2D with a 3D appearance", "v": 1}, {"k": "2D with depth elements", "v": 1}], "contentFlags": {"character": 91, "nature": 201, "architecture": 105, "none": 140}}};
+const D = {"overview": {"total": 2997, "liked": 342, "rate": 11.4, "cost": 292.2, "costPerLike": 0.85, "dateStart": "2026-02-18", "dateEnd": "2026-03-02"}, "templates": [{"id": "core_01", "used": 16, "liked": 5, "rate": 31.2, "text": ""}, {"id": "free_08", "used": 30, "liked": 7, "rate": 23.3, "text": ""}, {"id": "core_04", "used": 22, "liked": 5, "rate": 22.7, "text": ""}, {"id": "free_01", "used": 22, "liked": 5, "rate": 22.7, "text": ""}, {"id": "free_02", "used": 30, "liked": 6, "rate": 20.0, "text": ""}, {"id": "free_03", "used": 35, "liked": 6, "rate": 17.1, "text": ""}, {"id": "core_06", "used": 19, "liked": 3, "rate": 15.8, "text": ""}, {"id": "core_07", "used": 32, "liked": 5, "rate": 15.6, "text": ""}, {"id": "free_06", "used": 32, "liked": 5, "rate": 15.6, "text": ""}, {"id": "style_01", "used": 205, "liked": 30, "rate": 14.6, "text": ""}, {"id": "style_09", "used": 207, "liked": 30, "rate": 14.5, "text": ""}, {"id": "free_05", "used": 28, "liked": 4, "rate": 14.3, "text": ""}, {"id": "style_02", "used": 216, "liked": 29, "rate": 13.4, "text": ""}, {"id": "style_03", "used": 232, "liked": 31, "rate": 13.4, "text": ""}, {"id": "free_04", "used": 30, "liked": 4, "rate": 13.3, "text": ""}, {"id": "core_08", "used": 23, "liked": 3, "rate": 13.0, "text": ""}, {"id": "free_07", "used": 33, "liked": 4, "rate": 12.1, "text": ""}, {"id": "style_05", "used": 215, "liked": 26, "rate": 12.1, "text": ""}, {"id": "core_09", "used": 25, "liked": 3, "rate": 12.0, "text": ""}, {"id": "style_07", "used": 215, "liked": 25, "rate": 11.6, "text": ""}, {"id": "style_06", "used": 234, "liked": 26, "rate": 11.1, "text": ""}, {"id": "style_08", "used": 214, "liked": 22, "rate": 10.3, "text": ""}, {"id": "aistudio_web", "used": 160, "liked": 14, "rate": 8.8, "text": ""}, {"id": "style_04", "used": 170, "liked": 14, "rate": 8.2, "text": ""}, {"id": "style_10", "used": 93, "liked": 6, "rate": 6.5, "text": ""}, {"id": "unknown", "used": 388, "liked": 23, "rate": 5.9, "text": ""}, {"id": "core_03", "used": 23, "liked": 1, "rate": 4.3, "text": ""}, {"id": "core_02", "used": 19, "liked": 0, "rate": 0.0, "text": ""}, {"id": "core_05", "used": 16, "liked": 0, "rate": 0.0, "text": ""}, {"id": "deep_01", "used": 4, "liked": 0, "rate": 0.0, "text": ""}, {"id": "deep_03", "used": 1, "liked": 0, "rate": 0.0, "text": ""}, {"id": "deep_04", "used": 5, "liked": 0, "rate": 0.0, "text": ""}, {"id": "deep_06", "used": 1, "liked": 0, "rate": 0.0, "text": ""}, {"id": "deep_08", "used": 2, "liked": 0, "rate": 0.0, "text": ""}], "word1Top": [{"word": "사슴 캐릭터", "used": 6, "liked": 4, "rate": 66.7}, {"word": "토끼 캐릭터", "used": 13, "liked": 6, "rate": 46.2}, {"word": "인형의 집", "used": 9, "liked": 4, "rate": 44.4}, {"word": "정적", "used": 9, "liked": 4, "rate": 44.4}, {"word": "천사 조각상", "used": 14, "liked": 6, "rate": 42.9}, {"word": "케이크", "used": 12, "liked": 5, "rate": 41.7}, {"word": "바우하우스", "used": 15, "liked": 5, "rate": 33.3}, {"word": "쿨블루", "used": 6, "liked": 2, "rate": 33.3}, {"word": "무중력", "used": 6, "liked": 2, "rate": 33.3}, {"word": "빈티지한", "used": 3, "liked": 1, "rate": 33.3}, {"word": "잎사귀", "used": 19, "liked": 6, "rate": 31.6}, {"word": "꽃", "used": 19, "liked": 6, "rate": 31.6}, {"word": "그리드 시스템", "used": 10, "liked": 3, "rate": 30.0}, {"word": "바이오모피즘", "used": 10, "liked": 3, "rate": 30.0}, {"word": "코티지코어", "used": 17, "liked": 5, "rate": 29.4}, {"word": "해파리", "used": 14, "liked": 4, "rate": 28.6}, {"word": "진주", "used": 7, "liked": 2, "rate": 28.6}, {"word": "파스텔톤의", "used": 7, "liked": 2, "rate": 28.6}, {"word": "솜사탕", "used": 11, "liked": 3, "rate": 27.3}, {"word": "기시감", "used": 11, "liked": 3, "rate": 27.3}, {"word": "연인", "used": 15, "liked": 4, "rate": 26.7}, {"word": "나무", "used": 19, "liked": 5, "rate": 26.3}, {"word": "산호", "used": 19, "liked": 5, "rate": 26.3}, {"word": "구형 조이스틱", "used": 8, "liked": 2, "rate": 25.0}, {"word": "블록 레고", "used": 16, "liked": 4, "rate": 25.0}, {"word": "종이 질감", "used": 4, "liked": 1, "rate": 25.0}, {"word": "Y2K", "used": 8, "liked": 2, "rate": 25.0}, {"word": "빵", "used": 8, "liked": 2, "rate": 25.0}, {"word": "클레이모피즘", "used": 8, "liked": 2, "rate": 25.0}, {"word": "잔상", "used": 12, "liked": 3, "rate": 25.0}], "word2Top": [{"word": "파인애플", "used": 6, "liked": 4, "rate": 66.7}, {"word": "목걸이", "used": 13, "liked": 7, "rate": 53.8}, {"word": "산호", "used": 6, "liked": 3, "rate": 50.0}, {"word": "바다", "used": 4, "liked": 2, "rate": 50.0}, {"word": "그림자", "used": 4, "liked": 2, "rate": 50.0}, {"word": "연결", "used": 7, "liked": 3, "rate": 42.9}, {"word": "붓터치", "used": 7, "liked": 3, "rate": 42.9}, {"word": "모래성", "used": 5, "liked": 2, "rate": 40.0}, {"word": "오르골", "used": 5, "liked": 2, "rate": 40.0}, {"word": "수면 반사", "used": 5, "liked": 2, "rate": 40.0}, {"word": "거울", "used": 5, "liked": 2, "rate": 40.0}, {"word": "노끈", "used": 5, "liked": 2, "rate": 40.0}, {"word": "고양이", "used": 8, "liked": 3, "rate": 37.5}, {"word": "갑옷", "used": 8, "liked": 3, "rate": 37.5}, {"word": "이끼", "used": 8, "liked": 3, "rate": 37.5}, {"word": "나선", "used": 8, "liked": 3, "rate": 37.5}, {"word": "폭포", "used": 6, "liked": 2, "rate": 33.3}, {"word": "산", "used": 6, "liked": 2, "rate": 33.3}, {"word": "망토", "used": 6, "liked": 2, "rate": 33.3}, {"word": "레일", "used": 6, "liked": 2, "rate": 33.3}, {"word": "척추", "used": 9, "liked": 3, "rate": 33.3}, {"word": "향기", "used": 6, "liked": 2, "rate": 33.3}, {"word": "해파리", "used": 6, "liked": 2, "rate": 33.3}, {"word": "비눗방울", "used": 6, "liked": 2, "rate": 33.3}, {"word": "무당벌레", "used": 6, "liked": 2, "rate": 33.3}, {"word": "고래", "used": 9, "liked": 3, "rate": 33.3}, {"word": "요정", "used": 9, "liked": 3, "rate": 33.3}, {"word": "카오스", "used": 6, "liked": 2, "rate": 33.3}, {"word": "항아리", "used": 6, "liked": 2, "rate": 33.3}, {"word": "깃털", "used": 6, "liked": 2, "rate": 33.3}], "comboTop": [{"w1": "수박", "w2": "산", "used": 2, "liked": 2, "rate": 100.0}, {"w1": "스티커", "w2": "산호", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "풍선", "w2": "톱니바퀴", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "꽃", "w2": "빙수", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "오로라", "w2": "엔트로피", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "고프코어", "w2": "닻", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "고독", "w2": "소멸", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "바우하우스", "w2": "고양이", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "정적", "w2": "결빙", "used": 2, "liked": 1, "rate": 50.0}, {"w1": "피크닉", "w2": "공간", "used": 2, "liked": 1, "rate": 50.0}], "categories": [{"cat": "자연/생물", "used": 183, "liked": 40, "rate": 21.9}, {"cat": "감정/추상", "used": 263, "liked": 52, "rate": 19.8}, {"cat": "장난감/게임", "used": 30, "liked": 5, "rate": 16.7}, {"cat": "디자인/아트 소재", "used": 36, "liked": 6, "rate": 16.7}, {"cat": "오브젝트", "used": 40, "liked": 6, "rate": 15.0}, {"cat": "형용사/수식어", "used": 108, "liked": 14, "rate": 13.0}, {"cat": "음식", "used": 39, "liked": 5, "rate": 12.8}, {"cat": "트렌드", "used": 106, "liked": 13, "rate": 12.3}, {"cat": "모션그래픽 소재", "used": 51, "liked": 5, "rate": 9.8}, {"cat": "브랜드/캐릭터", "used": 10, "liked": 0, "rate": 0.0}], "crossTable": [{"w1c": "음식", "w2c": "사물/도구", "used": 8, "liked": 3, "rate": 37.5}, {"w1c": "자연/생물", "w2c": "자연현상", "used": 37, "liked": 13, "rate": 35.1}, {"w1c": "디자인/아트 소재", "w2c": "추상/감정", "used": 6, "liked": 2, "rate": 33.3}, {"w1c": "오브젝트", "w2c": "사물/도구", "used": 10, "liked": 3, "rate": 30.0}, {"w1c": "감정/추상", "w2c": "사물/도구", "used": 60, "liked": 18, "rate": 30.0}, {"w1c": "장난감/게임", "w2c": "자연현상", "used": 9, "liked": 2, "rate": 22.2}, {"w1c": "자연/생물", "w2c": "추상/감정", "used": 28, "liked": 6, "rate": 21.4}, {"w1c": "감정/추상", "w2c": "자연현상", "used": 58, "liked": 12, "rate": 20.7}, {"w1c": "장난감/게임", "w2c": "기타", "used": 10, "liked": 2, "rate": 20.0}, {"w1c": "트렌드", "w2c": "추상/감정", "used": 20, "liked": 4, "rate": 20.0}, {"w1c": "감정/추상", "w2c": "재질/소재", "used": 5, "liked": 1, "rate": 20.0}, {"w1c": "자연/생물", "w2c": "사물/도구", "used": 41, "liked": 8, "rate": 19.5}, {"w1c": "트렌드", "w2c": "자연현상", "used": 21, "liked": 4, "rate": 19.0}, {"w1c": "감정/추상", "w2c": "추상/감정", "used": 32, "liked": 6, "rate": 18.8}, {"w1c": "형용사/수식어", "w2c": "자연현상", "used": 33, "liked": 6, "rate": 18.2}, {"w1c": "모션그래픽 소재", "w2c": "자연현상", "used": 17, "liked": 3, "rate": 17.6}, {"w1c": "오브젝트", "w2c": "자연현상", "used": 12, "liked": 2, "rate": 16.7}, {"w1c": "오브젝트", "w2c": "추상/감정", "used": 6, "liked": 1, "rate": 16.7}, {"w1c": "음식", "w2c": "기타", "used": 12, "liked": 2, "rate": 16.7}, {"w1c": "감정/추상", "w2c": "음식", "used": 6, "liked": 1, "rate": 16.7}, {"w1c": "자연/생물", "w2c": "기타", "used": 70, "liked": 11, "rate": 15.7}, {"w1c": "모션그래픽 소재", "w2c": "사물/도구", "used": 7, "liked": 1, "rate": 14.3}, {"w1c": "감정/추상", "w2c": "기타", "used": 102, "liked": 14, "rate": 13.7}, {"w1c": "디자인/아트 소재", "w2c": "기타", "used": 15, "liked": 2, "rate": 13.3}, {"w1c": "형용사/수식어", "w2c": "추상/감정", "used": 15, "liked": 2, "rate": 13.3}, {"w1c": "디자인/아트 소재", "w2c": "자연현상", "used": 9, "liked": 1, "rate": 11.1}, {"w1c": "형용사/수식어", "w2c": "기타", "used": 33, "liked": 3, "rate": 9.1}, {"w1c": "형용사/수식어", "w2c": "사물/도구", "used": 22, "liked": 2, "rate": 9.1}, {"w1c": "트렌드", "w2c": "기타", "used": 45, "liked": 4, "rate": 8.9}, {"w1c": "모션그래픽 소재", "w2c": "기타", "used": 13, "liked": 0, "rate": 0.0}, {"w1c": "음식", "w2c": "추상/감정", "used": 7, "liked": 0, "rate": 0.0}, {"w1c": "장난감/게임", "w2c": "사물/도구", "used": 7, "liked": 0, "rate": 0.0}, {"w1c": "오브젝트", "w2c": "기타", "used": 12, "liked": 0, "rate": 0.0}, {"w1c": "모션그래픽 소재", "w2c": "추상/감정", "used": 11, "liked": 0, "rate": 0.0}, {"w1c": "음식", "w2c": "자연현상", "used": 11, "liked": 0, "rate": 0.0}, {"w1c": "트렌드", "w2c": "사물/도구", "used": 15, "liked": 0, "rate": 0.0}, {"w1c": "브랜드/캐릭터", "w2c": "자연현상", "used": 5, "liked": 0, "rate": 0.0}], "direction": {"sameUsed": 183, "sameLiked": 39, "sameRate": 21.3, "oppUsed": 174, "oppLiked": 40, "oppRate": 23.0}, "refPins": [{"url": "https://i.pinimg.com/originals/c4/34/02/c4340263378bbef8ba5c0f646fcaf412.png", "used": 8, "liked": 5, "rate": 62.5}, {"url": "https://i.pinimg.com/originals/86/0c/82/860c828cb157f98a10be8a57fc85684b.jpg", "used": 8, "liked": 4, "rate": 50.0}, {"url": "https://i.pinimg.com/originals/b4/e7/3a/b4e73a64d2439e97ddd9e1697e8fe01c.png", "used": 9, "liked": 4, "rate": 44.4}, {"url": "https://i.pinimg.com/originals/be/69/fe/be69fe954b7eb2aea97583acef9cf651.jpg", "used": 11, "liked": 4, "rate": 36.4}, {"url": "https://i.pinimg.com/originals/10/27/d8/1027d84a0dc34fb2cd77d4e4a5c9f747.png", "used": 3, "liked": 3, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/6e/20/c1/6e20c1100c20ebd36d90ca1a40ac0d63.png", "used": 3, "liked": 3, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/df/56/ab/df56ab3b160bfeb063c1466f24b89381.jpg", "used": 4, "liked": 3, "rate": 75.0}, {"url": "https://i.pinimg.com/originals/97/f6/84/97f684ec2b79abaa104a087c51e58051.jpg", "used": 4, "liked": 3, "rate": 75.0}, {"url": "https://i.pinimg.com/originals/1c/c4/24/1cc424b893f4206abc95ff89df357b81.jpg", "used": 4, "liked": 3, "rate": 75.0}, {"url": "https://i.pinimg.com/originals/07/68/7d/07687dd123b7b36da82d59eaca75251a.png", "used": 4, "liked": 3, "rate": 75.0}, {"url": "https://i.pinimg.com/originals/64/76/39/647639dbef92540a4c40fe56ce8c949e.png", "used": 5, "liked": 3, "rate": 60.0}, {"url": "https://i.pinimg.com/originals/0c/11/a0/0c11a0370eff8197801750b137abd92a.jpg", "used": 5, "liked": 3, "rate": 60.0}, {"url": "https://i.pinimg.com/originals/58/fc/57/58fc57c2dc33192efa657fb96c4451ab.jpg", "used": 6, "liked": 3, "rate": 50.0}, {"url": "https://i.pinimg.com/originals/d7/cb/44/d7cb44c13b8c797939d99694b5706c1b.jpg", "used": 6, "liked": 3, "rate": 50.0}, {"url": "https://i.pinimg.com/originals/bd/48/49/bd48492994278e909d125aa9ee9a6c5f.jpg", "used": 6, "liked": 3, "rate": 50.0}, {"url": "https://i.pinimg.com/originals/d6/83/80/d68380ec1946b7aaa76800ec8fd8290e.jpg", "used": 6, "liked": 3, "rate": 50.0}, {"url": "https://i.pinimg.com/originals/23/01/f5/2301f5d6a72b88cde67ff6b37a37c3e9.jpg", "used": 7, "liked": 3, "rate": 42.9}, {"url": "https://i.pinimg.com/originals/19/a5/8e/19a58e6c3636510e7e79b4dc69bc0d45.webp", "used": 7, "liked": 3, "rate": 42.9}, {"url": "https://i.pinimg.com/originals/e4/4f/df/e44fdf1ed644017e982ec05cab86c088.jpg", "used": 8, "liked": 3, "rate": 37.5}, {"url": "https://i.pinimg.com/originals/e9/b1/46/e9b146aa2d25ecddfdd2400d6308aa58.jpg", "used": 10, "liked": 3, "rate": 30.0}, {"url": "https://i.pinimg.com/originals/47/1c/f4/471cf4376242d2999a2f55c30f52a4a1.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/74/84/d7/7484d73e35e241c1d78c644ad4bfd925.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/f6/f8/f8/f6f8f87e4e21f5b7868f8af4e38ffb33.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/1a/d5/dd/1ad5dd6c663d7ff2a7e04b151ffea41c.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/0c/ce/7c/0cce7c0343d29e8c7db32e242b856d1d.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/21/7b/00/217b008622cdc2214c7b82790862318f.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/c0/5f/92/c05f92d8d2b0661578a538cb9bb347ae.jpg", "used": 2, "liked": 2, "rate": 100.0}, {"url": "https://i.pinimg.com/originals/bc/18/4f/bc184ff3a7042debc23c3a63bc2bb9ff.webp", "used": 3, "liked": 2, "rate": 66.7}, {"url": "https://i.pinimg.com/originals/6b/7e/71/6b7e7196eb7b26e24f679873d454dc58.jpg", "used": 3, "liked": 2, "rate": 66.7}, {"url": "https://i.pinimg.com/originals/66/bf/05/66bf05d001060bc3d0a1becfaa4fcba7.jpg", "used": 3, "liked": 2, "rate": 66.7}], "models": [{"count": 349, "liked": 23, "cost": 14.99, "label": "Flash", "rate": 6.6, "costPerLike": 0.65}, {"count": 2648, "liked": 319, "cost": 277.21, "label": "Pro", "rate": 12.0, "costPerLike": 0.87}], "design": {"total": 341, "style": [{"k": "surreal and whimsical art style", "v": 8}, {"k": "surrealistic digital art", "v": 6}, {"k": "surreal and fantastical art style", "v": 5}, {"k": "surreal and futuristic", "v": 4}, {"k": "surreal and fantastical", "v": 4}, {"k": "fantasy art", "v": 4}, {"k": "whimsical and surreal art style", "v": 3}, {"k": "modern surrealism", "v": 3}, {"k": "futuristic and surreal art style", "v": 3}, {"k": "surreal and abstract", "v": 3}], "mood": [{"k": "playful and whimsical", "v": 21}, {"k": "whimsical and serene", "v": 15}, {"k": "whimsical and playful", "v": 10}, {"k": "playful and dreamy", "v": 7}, {"k": "playful and imaginative", "v": 7}, {"k": "calm and serene", "v": 7}, {"k": "playful and serene", "v": 5}, {"k": "mysterious and otherworldly", "v": 5}, {"k": "futuristic and intriguing", "v": 5}, {"k": "serene and contemplative", "v": 5}], "renderQuality": [{"k": "photorealistic", "v": 194}, {"k": "stylized", "v": 117}, {"k": "photorealistic with stylized elements", "v": 8}, {"k": "photorealistic with surreal elements", "v": 6}, {"k": "highly stylized", "v": 2}, {"k": "photorealistic with fantastical elements", "v": 2}, {"k": "highly stylized with a painterly and ethereal touch", "v": 1}, {"k": "photorealistic with a stylized touch", "v": 1}, {"k": "photorealistic with artistic elements", "v": 1}, {"k": "stylized and hyper-realistic", "v": 1}, {"k": "photorealistic with a touch of fantastical styling", "v": 1}, {"k": "stylized with clean lines and smooth surfaces", "v": 1}, {"k": "photorealistic with stylized digital enhancements", "v": 1}, {"k": "photorealistic with sci-fi enhancements", "v": 1}, {"k": "Photorealistic", "v": 1}, {"k": "stylized and photorealistic", "v": 1}, {"k": "realistic with whimsical undertones", "v": 1}, {"k": "painterly", "v": 1}], "emotionalAppeal": [{"k": "whimsical", "v": 102}, {"k": "mysterious", "v": 32}, {"k": "elegant", "v": 29}, {"k": "serene", "v": 26}, {"k": "elegant and serene", "v": 16}, {"k": "whimsical and serene", "v": 15}, {"k": "playful", "v": 15}, {"k": "elegant and mysterious", "v": 12}, {"k": "mysterious and elegant", "v": 10}, {"k": "playful and whimsical", "v": 9}], "colorTemp": [{"k": "Warm", "v": 178}, {"k": "Cool", "v": 104}, {"k": "Neutral", "v": 59}], "dimension": [{"k": "3D", "v": 327}, {"k": "2D", "v": 7}, {"k": "2.5D isometric", "v": 4}, {"k": "2D with a 3D appearance due to shading and reflections", "v": 1}, {"k": "2D with a 3D appearance", "v": 1}, {"k": "2D with depth elements", "v": 1}], "contentFlags": {"character": 91, "nature": 201, "architecture": 105, "none": 140}}};
 
 // ── Chart.js defaults ──
 Chart.defaults.color = '#aaa';
@@ -340,7 +189,7 @@ function wordChart(canvasId, data) {
       }]
     },
     options: {
-      indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      indexAxis: 'y', responsive: true,
       plugins: {legend: {display: false}, tooltip: {callbacks: {afterLabel: function(ctx) { const d = data[ctx.dataIndex]; return 'Used: ' + d.used + ', Liked: ' + d.liked; }}}},
       scales: {x: {grid: {color: '#222'}, title: {display: true, text: 'Like Rate %'}}, y: {grid: {display: false}}}
     }
@@ -380,6 +229,29 @@ wordChart('chart-w2', D.word2Top);
   });
 })();
 
+// combo table + insight
+(function() {
+  const c = D.comboTop;
+  if (c.length >= 2) {
+    let ci = '최고 조합: <strong>' + c[0].w1 + ' x ' + c[0].w2 + '</strong> (<em>' + c[0].rate + '%</em>). ';
+    const concrete = c.filter(x => x.w2.length <= 4);
+    const abstract = c.filter(x => x.w2.length > 4);
+    if (concrete.length && abstract.length) {
+      const cAvg = (concrete.reduce((s,x)=>s+x.rate,0)/concrete.length).toFixed(1);
+      const aAvg = (abstract.reduce((s,x)=>s+x.rate,0)/abstract.length).toFixed(1);
+      ci += '짧고 구체적인 Word2(1-2글자)가 평균 <em>' + cAvg + '%</em>, 긴 Word2가 <em>' + aAvg + '%</em>. ';
+    }
+    ci += '구체적 사물끼리의 대비 조합이 가장 효과적.';
+    document.getElementById('combo-insight').innerHTML = ci;
+  }
+  const rows = c.map((x, i) =>
+    '<tr><td style="color:' + (i < 3 ? GOLD : '#ccc') + ';font-weight:' + (i < 3 ? '700' : '400') + '">#' + (i+1) + '</td>' +
+    '<td>' + x.w1 + '</td><td>' + x.w2 + '</td><td>' + x.used + '</td><td>' + x.liked + '</td>' +
+    '<td><span class="rate-bar" style="width:' + Math.min(x.rate * 2, 100) + 'px"></span>' + x.rate + '%</td></tr>'
+  ).join('');
+  document.getElementById('combo-table').innerHTML =
+    '<thead><tr><th>#</th><th>Word1</th><th>Word2</th><th>Used</th><th>Liked</th><th>Rate</th></tr></thead><tbody>' + rows + '</tbody>';
+})();
 
 // ── Section 2: Word Correlation ──
 (function() {
@@ -481,432 +353,6 @@ wordChart('chart-w2', D.word2Top);
     options: {responsive: true, plugins: {legend: {display: false}, tooltip: {callbacks: {afterLabel: function(ctx) { return 'out of ' + ds.total + ' images'; }}}}, scales: {y: {grid: {color: '#222'}}, x: {grid: {display: false}}}}
   });
 })();
-// ═══ DEEP ANALYSIS JS START ═══
-var DA = {"meta": {"gpt_count": 341, "gem_count": 339, "overlap": 337}, "agreement": {"render_quality": {"agreement_rate": 66.2, "exact_matches": 223, "total": 337, "mismatches": [{"id": "260218_0039", "gpt": "stylized", "gem": "photorealistic", "partial": false}, {"id": "260218_0042", "gpt": "stylized", "gem": "photorealistic", "partial": false}, {"id": "260218_0054", "gpt": "stylized", "gem": "photorealistic environment with stylized characters and graphics", "partial": true}, {"id": "260218_0070", "gpt": "stylized", "gem": "photorealistic", "partial": false}, {"id": "260218_0076", "gpt": "stylized", "gem": "photorealistic", "partial": false}]}, "dimension": {"agreement_rate": 96.1, "exact_matches": 324, "total": 337, "mismatches": [{"id": "260219_0514", "gpt": "2.5d isometric", "gem": "3d", "partial": false}, {"id": "260219_0682", "gpt": "2d with a 3d appearance due to shading and reflections", "gem": "2.5d", "partial": false}, {"id": "260220_0975", "gpt": "2d", "gem": "3d", "partial": false}, {"id": "260221_1142", "gpt": "2.5d isometric", "gem": "3d", "partial": false}, {"id": "260223_1377", "gpt": "3d", "gem": "2.5d isometric", "partial": false}]}, "camera_angle": {"agreement_rate": 69.1, "exact_matches": 233, "total": 337, "mismatches": [{"id": "260218_0001", "gpt": "eye-level", "gem": "high-angle", "partial": false}, {"id": "260218_0029", "gpt": "eye-level, slightly tilted", "gem": "low angle", "partial": false}, {"id": "260218_0036", "gpt": "eye-level, slightly tilted upwards", "gem": "low angle", "partial": false}, {"id": "260218_0071", "gpt": "eye-level with the waves", "gem": "low angle", "partial": false}, {"id": "260218_0115", "gpt": "eye-level", "gem": "slightly low angle", "partial": false}]}, "depth_of_field": {"agreement_rate": 50.9, "exact_matches": 171, "total": 337, "mismatches": [{"id": "260218_0029", "gpt": "deep focus", "gem": "shallow bokeh", "partial": false}, {"id": "260218_0042", "gpt": "shallow bokeh", "gem": "deep focus", "partial": false}, {"id": "260218_0043", "gpt": "deep focus", "gem": "medium focus, sharp subject with slight depth in the portal and background", "partial": false}, {"id": "260218_0054", "gpt": "shallow bokeh", "gem": "shallow bokeh background with sharp foreground focus", "partial": true}, {"id": "260218_0071", "gpt": "deep focus", "gem": "shallow bokeh", "partial": false}]}, "color_temperature": {"agreement_rate": 66.3, "exact_matches": 223, "total": 337, "mismatches": [{"id": "260218_0029", "gpt": "warm", "gem": "cool", "partial": false}, {"id": "260218_0031", "gpt": "cool", "gem": "neutral", "partial": false}, {"id": "260218_0039", "gpt": "cool", "gem": "warm", "partial": false}, {"id": "260218_0043", "gpt": "cool", "gem": "neutral with vibrant multi-colored accents", "partial": false}, {"id": "260218_0093", "gpt": "neutral leaning towards warm due to the amber tones", "gem": "warm", "partial": true}]}, "contrast": {"agreement_rate": 52.1, "exact_matches": 175, "total": 337, "mismatches": [{"id": "260218_0021", "gpt": "soft", "gem": "high contrast", "partial": false}, {"id": "260218_0042", "gpt": "soft contrast", "gem": "soft", "partial": true}, {"id": "260218_0043", "gpt": "soft", "gem": "high contrast", "partial": false}, {"id": "260218_0054", "gpt": "soft", "gem": "medium", "partial": false}, {"id": "260218_0071", "gpt": "soft", "gem": "high contrast", "partial": false}]}, "detail_level": {"agreement_rate": 92.6, "exact_matches": 312, "total": 337, "mismatches": [{"id": "260218_0036", "gpt": "medium", "gem": "highly detailed", "partial": false}, {"id": "260218_0054", "gpt": "highly detailed", "gem": "highly detailed textures and surfaces", "partial": true}, {"id": "260218_0127", "gpt": "medium", "gem": "highly detailed", "partial": false}, {"id": "260218_0128", "gpt": "medium", "gem": "highly detailed", "partial": false}, {"id": "260218_0183", "gpt": "medium", "gem": "highly detailed", "partial": false}]}, "object_count": {"agreement_rate": 63.6, "exact_matches": 214, "total": 337, "mismatches": [{"id": "260218_0021", "gpt": "few", "gem": "single", "partial": false}, {"id": "260218_0029", "gpt": "single", "gem": "few", "partial": false}, {"id": "260218_0031", "gpt": "few", "gem": "many", "partial": false}, {"id": "260218_0070", "gpt": "few", "gem": "many", "partial": false}, {"id": "260218_0071", "gpt": "few", "gem": "pattern", "partial": false}]}, "has_character": {"agreement_rate": 93.2, "exact_matches": 314, "total": 337, "mismatches": [{"id": "260218_0054", "gpt": "false", "gem": "true", "partial": false}, {"id": "260218_0070", "gpt": "false", "gem": "true", "partial": false}, {"id": "260218_0186", "gpt": "true", "gem": "false", "partial": false}, {"id": "260218_0287", "gpt": "false", "gem": "true", "partial": false}, {"id": "260219_0509", "gpt": "true", "gem": "false", "partial": false}]}, "has_nature": {"agreement_rate": 80.1, "exact_matches": 270, "total": 337, "mismatches": [{"id": "260218_0029", "gpt": "false", "gem": "true", "partial": false}, {"id": "260218_0093", "gpt": "false", "gem": "true", "partial": false}, {"id": "260218_0115", "gpt": "false", "gem": "true", "partial": false}, {"id": "260218_0118", "gpt": "false", "gem": "true", "partial": false}, {"id": "260218_0127", "gpt": "false", "gem": "true", "partial": false}]}, "has_architecture": {"agreement_rate": 81.6, "exact_matches": 275, "total": 337, "mismatches": [{"id": "260218_0021", "gpt": "false", "gem": "true", "partial": false}, {"id": "260218_0036", "gpt": "false", "gem": "true", "partial": false}, {"id": "260218_0127", "gpt": "false", "gem": "true", "partial": false}, {"id": "260218_0136", "gpt": "false", "gem": "true", "partial": false}, {"id": "260218_0140", "gpt": "false", "gem": "true", "partial": false}]}, "emotional_appeal": {"agreement_rate": 59.5, "exact_matches": 200, "total": 337, "mismatches": [{"id": "260218_0021", "gpt": "elegant and mysterious", "gem": "elegant", "partial": true}, {"id": "260218_0039", "gpt": "whimsical and serene", "gem": "whimsical", "partial": true}, {"id": "260218_0042", "gpt": "whimsical", "gem": "serene", "partial": false}, {"id": "260218_0071", "gpt": "playful", "gem": "whimsical", "partial": false}, {"id": "260218_0088", "gpt": "elegant and whimsical", "gem": "elegant", "partial": true}]}}, "freetext": {"style": {"avg_length_gpt": 33.0, "avg_length_gem": 54.0, "length_ratio": 1.63, "common_keywords": ["abstract", "aesthetic", "art", "design", "digital", "elements", "fantasy", "futuristic", "interior", "minimalist", "modern", "render", "surreal", "surrealism", "whimsical"], "gpt_only_keywords": ["artistic", "contemporary", "fantastical", "focus", "life", "minimalistic", "playful", "quality", "realistic", "rendering"], "gem_only_keywords": ["aesthetics", "architectural", "cinematic", "conceptual", "dreamlike", "ethereal", "high-end", "hyper-realistic", "organic", "photography"], "gpt_top10": ["art", "surreal", "style", "futuristic", "modern", "whimsical", "abstract", "digital", "surrealistic", "contemporary"], "gem_top10": ["digital", "render", "art", "surreal", "surrealist", "aesthetic", "minimalist", "photography", "modern", "high-end"]}, "mood": {"avg_length_gpt": 23.0, "avg_length_gem": 42.0, "length_ratio": 1.84, "common_keywords": ["contemplative", "creative", "dreamlike", "dreamy", "dynamic", "elegant", "ethereal", "futuristic", "magical", "mysterious", "mystical", "otherworldly", "peaceful", "playful", "serene"], "gpt_only_keywords": ["calm", "curious", "dramatic", "enchanting", "energetic", "enigmatic", "imaginative", "innovative", "intriguing"], "gem_only_keywords": ["high-tech", "luxurious", "meditative", "melancholic", "nostalgic", "quiet", "sense", "surrealism", "wonder"], "gpt_top10": ["whimsical", "serene", "playful", "mysterious", "calm", "dreamlike", "intriguing", "tranquil", "futuristic", "contemplative"], "gem_top10": ["serene", "whimsical", "ethereal", "sophisticated", "dreamlike", "surreal", "mysterious", "tranquil", "magical", "futuristic"]}, "subject": {"avg_length_gpt": 109.0, "avg_length_gem": 255.0, "length_ratio": 2.33, "common_keywords": ["abstract", "featuring", "floating", "flowers", "glass", "glowing", "green", "landscape", "large", "made", "metallic", "sculpture", "small", "translucent", "wooden"], "gpt_only_keywords": ["colorful", "elements", "flowing", "modern", "placed", "reflective", "resembling", "room", "structure", "structures"], "gem_only_keywords": ["blue", "central", "dark", "features", "iridescent", "liquid", "metal", "orange", "organic", "pink"], "gpt_top10": ["large", "colorful", "surrounded", "floating", "metallic", "resembling", "flowers", "abstract", "structure", "landscape"], "gem_top10": ["large", "translucent", "glass", "white", "pink", "green", "blue", "glowing", "iridescent", "floating"]}, "lighting": {"avg_length_gpt": 59.0, "avg_length_gem": 144.0, "length_ratio": 2.45, "common_keywords": ["ambient", "bright", "casting", "creating", "diffused", "gentle", "glow", "highlights", "light", "lighting", "metallic", "natural", "reflections", "shadows", "soft"], "gpt_only_keywords": ["atmosphere", "even", "glowing", "highlighting", "illumination", "reflective", "suggesting", "sunset", "window"], "gem_only_keywords": ["directional", "dramatic", "glass", "golden", "hour", "internal", "sharp", "side", "studio"], "gpt_top10": ["soft", "lighting", "diffused", "natural", "shadows", "glow", "highlights", "gentle", "warm", "even"], "gem_top10": ["soft", "lighting", "highlights", "shadows", "creating", "diffused", "light", "glow", "gentle", "warm"]}, "texture": {"avg_length_gpt": 63.0, "avg_length_gem": 130.0, "length_ratio": 2.08, "common_keywords": ["delicate", "fabric", "glass", "glossy", "matte", "metal", "metallic", "organic", "petals", "plastic", "polished", "reflective", "rough", "smooth", "soft"], "gpt_only_keywords": ["contrasted", "elements", "finish", "fluffy", "natural", "plush", "textured"], "gem_only_keywords": ["concrete", "fine", "grainy", "iridescent", "liquid", "porous", "weathered"], "gpt_top10": ["smooth", "surfaces", "glossy", "soft", "textures", "metallic", "surface", "texture", "rough", "fabric"], "gem_top10": ["smooth", "soft", "polished", "matte", "rough", "glass", "surfaces", "translucent", "glossy", "reflective"]}, "composition": {"avg_length_gpt": 76.0, "avg_length_gem": 138.0, "length_ratio": 1.82, "common_keywords": ["arrangement", "background", "balanced", "centered", "central", "centralized", "composition", "creating", "dynamic", "floating", "focal", "foreground", "framed", "framing", "leading"], "gpt_only_keywords": ["around", "arranged", "centrally", "elements", "eye", "focus", "layout", "main", "movement", "surrounded"], "gem_only_keywords": ["depth", "diagonal", "eye-level", "frame", "large", "low-angle", "perspective", "right", "sense", "shot"], "gpt_top10": ["central", "focus", "centered", "balanced", "composition", "elements", "centralized", "layout", "focal", "point"], "gem_top10": ["centered", "vertical", "shot", "point", "focal", "sense", "balanced", "background", "composition", "central"]}, "background": {"avg_length_gpt": 59.0, "avg_length_gem": 115.0, "length_ratio": 1.94, "common_keywords": ["background", "blue", "blurred", "clouds", "dark", "gradient", "landscape", "large", "light", "minimalist", "pink", "purple", "sky", "soft", "transitioning"], "gpt_only_keywords": ["abstract", "creating", "distant", "mountains", "neutral", "pastel", "plain", "setting", "simple", "subject"], "gem_only_keywords": ["clean", "deep", "featuring", "hazy", "hills", "horizon", "interior", "pale", "rolling", "sunset"], "gpt_top10": ["sky", "gradient", "soft", "background", "landscape", "pastel", "plain", "blurred", "blue", "pink"], "gem_top10": ["sky", "minimalist", "soft", "gradient", "under", "blue", "hazy", "light", "dark", "pink"]}}, "repro": {"avg_length_gpt": 475.0, "avg_length_gem": 710.0, "length_ratio": 1.5, "common_keywords": ["atmosphere", "background", "blue", "creating", "detailed", "glass", "green", "large", "lighting", "photorealistic", "pink", "render", "scene", "soft", "surreal", "textures", "warm"], "gpt_only_keywords": ["angle", "color", "composition", "contrast", "cool", "create", "deep", "elements", "eye-level", "featuring", "focus", "high", "image", "metallic", "mood"], "gem_only_keywords": ["bright", "cinematic", "dark", "depth", "digital", "ethereal", "field", "floating", "glowing", "highly", "intricate", "light", "made", "metal", "minimalist"], "gpt_top15": [{"k": "soft", "v": 445}, {"k": "lighting", "v": 279}, {"k": "scene", "v": 262}, {"k": "color", "v": 227}, {"k": "background", "v": 194}, {"k": "photorealistic", "v": 184}, {"k": "mood", "v": 179}, {"k": "focus", "v": 179}, {"k": "warm", "v": 165}, {"k": "should", "v": 144}, {"k": "eye-level", "v": 142}, {"k": "create", "v": 142}, {"k": "pink", "v": 140}, {"k": "deep", "v": 137}, {"k": "whimsical", "v": 137}], "gem_top15": [{"k": "soft", "v": 433}, {"k": "lighting", "v": 270}, {"k": "render", "v": 267}, {"k": "background", "v": 253}, {"k": "pink", "v": 209}, {"k": "textures", "v": 205}, {"k": "white", "v": 199}, {"k": "large", "v": 195}, {"k": "blue", "v": 192}, {"k": "scene", "v": 179}, {"k": "green", "v": 175}, {"k": "glass", "v": 173}, {"k": "light", "v": 165}, {"k": "warm", "v": 160}, {"k": "photorealistic", "v": 157}], "gpt_start_patterns": [{"k": "create a surreal", "v": 34}, {"k": "create a photorealistic", "v": 33}, {"k": "a photorealistic image", "v": 29}, {"k": "a photorealistic 3d", "v": 18}, {"k": "a surreal 3d", "v": 15}, {"k": "create a 3d", "v": 11}, {"k": "a highly detailed", "v": 9}, {"k": "create a surreal,", "v": 7}, {"k": "a surreal scene", "v": 6}, {"k": "a whimsical 3d", "v": 6}], "gem_start_patterns": [{"k": "a high-detail 3d", "v": 35}, {"k": "a high-end 3d", "v": 29}, {"k": "a high-quality 3d", "v": 29}, {"k": "a highly detailed", "v": 27}, {"k": "a surreal 3d", "v": 13}, {"k": "a hyper-realistic 3d", "v": 8}, {"k": "a high-end, photorealistic", "v": 8}, {"k": "a photorealistic 3d", "v": 8}, {"k": "a highly detailed,", "v": 7}, {"k": "a high-detail, photorealistic", "v": 7}], "gpt_technique_words": [{"k": "lighting", "v": 278}, {"k": "realistic", "v": 204}, {"k": "texture", "v": 196}, {"k": "focus", "v": 195}, {"k": "photorealistic", "v": 186}, {"k": "detail", "v": 181}, {"k": "render", "v": 164}, {"k": "depth", "v": 59}, {"k": "bokeh", "v": 7}, {"k": "studio", "v": 2}, {"k": "high-detail", "v": 1}, {"k": "resolution", "v": 1}, {"k": "high-resolution", "v": 1}], "gem_technique_words": [{"k": "lighting", "v": 262}, {"k": "render", "v": 256}, {"k": "texture", "v": 250}, {"k": "detail", "v": 244}, {"k": "realistic", "v": 208}, {"k": "photorealistic", "v": 158}, {"k": "resolution", "v": 138}, {"k": "depth", "v": 120}, {"k": "8k", "v": 113}, {"k": "cinematic", "v": 109}, {"k": "focus", "v": 103}, {"k": "high-detail", "v": 58}, {"k": "studio", "v": 51}, {"k": "high-resolution", "v": 28}, {"k": "bokeh", "v": 12}, {"k": "hyper-detailed", "v": 10}, {"k": "ultra", "v": 5}, {"k": "4k", "v": 1}]}, "patterns": {"mood_keywords": [{"k": "whimsical", "v": 94}, {"k": "playful", "v": 86}, {"k": "serene", "v": 85}, {"k": "mysterious", "v": 42}, {"k": "calm", "v": 25}, {"k": "dreamlike", "v": 22}, {"k": "intriguing", "v": 20}, {"k": "tranquil", "v": 18}, {"k": "contemplative", "v": 17}, {"k": "futuristic", "v": 16}, {"k": "dreamy", "v": 16}, {"k": "mystical", "v": 14}, {"k": "enchanting", "v": 14}, {"k": "otherworldly", "v": 13}, {"k": "imaginative", "v": 12}, {"k": "elegant", "v": 11}, {"k": "ethereal", "v": 11}, {"k": "curious", "v": 10}, {"k": "innovative", "v": 8}, {"k": "sophisticated", "v": 8}], "style_keywords": [{"k": "art", "v": 138}, {"k": "surreal", "v": 125}, {"k": "style", "v": 80}, {"k": "futuristic", "v": 63}, {"k": "modern", "v": 50}, {"k": "whimsical", "v": 47}, {"k": "abstract", "v": 37}, {"k": "digital", "v": 37}, {"k": "surrealistic", "v": 36}, {"k": "realistic", "v": 32}, {"k": "contemporary", "v": 31}, {"k": "fantasy", "v": 29}, {"k": "design", "v": 22}, {"k": "minimalist", "v": 22}, {"k": "fantastical", "v": 21}, {"k": "rendering", "v": 19}, {"k": "elements", "v": 17}, {"k": "artistic", "v": 14}, {"k": "surrealism", "v": 13}, {"k": "playful", "v": 13}], "material_keywords": [{"k": "metal", "v": 120}, {"k": "mixed", "v": 120}, {"k": "materials", "v": 104}, {"k": "glass", "v": 93}, {"k": "fabric", "v": 78}, {"k": "including", "v": 52}, {"k": "wood", "v": 41}, {"k": "stone", "v": 41}, {"k": "organic", "v": 38}, {"k": "plastic", "v": 36}, {"k": "elements", "v": 33}, {"k": "glass-like", "v": 29}, {"k": "material", "v": 19}, {"k": "synthetic", "v": 17}, {"k": "textures", "v": 15}, {"k": "metallic", "v": 14}, {"k": "natural", "v": 14}, {"k": "ceramic", "v": 14}, {"k": "digital", "v": 13}, {"k": "focus", "v": 13}], "color_keywords": [{"k": "white", "v": 95}, {"k": "pink", "v": 90}, {"k": "purple", "v": 84}, {"k": "green", "v": 83}, {"k": "blue", "v": 82}, {"k": "orange", "v": 72}, {"k": "beige", "v": 59}, {"k": "silver", "v": 54}, {"k": "lavender", "v": 54}, {"k": "brown", "v": 45}, {"k": "gray", "v": 42}, {"k": "black", "v": 41}, {"k": "gold", "v": 40}, {"k": "pastel pink", "v": 37}, {"k": "soft pink", "v": 35}, {"k": "yellow", "v": 30}, {"k": "red", "v": 28}, {"k": "peach", "v": 26}, {"k": "light brown", "v": 24}, {"k": "cream", "v": 22}, {"k": "light blue", "v": 20}, {"k": "pastel blue", "v": 16}, {"k": "metallic silver", "v": 14}, {"k": "soft blue", "v": 12}, {"k": "mint green", "v": 12}, {"k": "light gray", "v": 12}, {"k": "grey", "v": 11}, {"k": "sky blue", "v": 11}, {"k": "soft orange", "v": 10}, {"k": "soft beige", "v": 8}], "lighting_keywords": [{"k": "soft", "v": 277}, {"k": "lighting", "v": 220}, {"k": "diffused", "v": 102}, {"k": "natural", "v": 77}, {"k": "shadows", "v": 74}, {"k": "glow", "v": 68}, {"k": "highlights", "v": 61}, {"k": "warm", "v": 60}, {"k": "gentle", "v": 59}, {"k": "even", "v": 55}, {"k": "creating", "v": 53}, {"k": "highlighting", "v": 38}, {"k": "light", "v": 35}, {"k": "bright", "v": 34}, {"k": "surfaces", "v": 28}, {"k": "reflections", "v": 25}, {"k": "ambient", "v": 24}, {"k": "sunset", "v": 22}, {"k": "casting", "v": 22}, {"k": "subtle", "v": 21}], "texture_keywords": [{"k": "smooth", "v": 325}, {"k": "surfaces", "v": 127}, {"k": "glossy", "v": 102}, {"k": "soft", "v": 94}, {"k": "textures", "v": 81}, {"k": "surface", "v": 66}, {"k": "metallic", "v": 65}, {"k": "texture", "v": 61}, {"k": "rough", "v": 46}, {"k": "fabric", "v": 32}, {"k": "reflective", "v": 31}, {"k": "metal", "v": 28}, {"k": "glass", "v": 28}, {"k": "polished", "v": 25}, {"k": "stone", "v": 25}, {"k": "elements", "v": 23}, {"k": "delicate", "v": 23}, {"k": "fluffy", "v": 22}, {"k": "contrasted", "v": 20}, {"k": "water", "v": 19}]}, "guide": {"use_keywords": {"common_moods": ["dreamlike", "mysterious", "serene", "tranquil", "whimsical"], "top_emotional_appeal": [{"k": "whimsical", "v": 102}, {"k": "mysterious", "v": 32}, {"k": "elegant", "v": 29}, {"k": "serene", "v": 26}, {"k": "elegant and serene", "v": 16}], "color_temperature": [{"k": "warm", "v": 144}, {"k": "cool", "v": 94}, {"k": "neutral", "v": 55}, {"k": "neutral to cool", "v": 4}, {"k": "neutral to warm", "v": 3}], "contrast": [{"k": "soft", "v": 226}, {"k": "high contrast", "v": 46}, {"k": "soft contrast", "v": 27}, {"k": "high contrast with vibrant highlights against dark shadows", "v": 1}, {"k": "soft with glowing elements", "v": 1}], "depth_of_field": [{"k": "deep focus", "v": 216}, {"k": "shallow bokeh", "v": 52}, {"k": "deep focus, everything in sharp detail", "v": 2}, {"k": "deep focus with all elements in sharp detail", "v": 2}, {"k": "shallow bokeh focusing on the cloak", "v": 1}], "render_quality": [{"k": "photorealistic", "v": 195}, {"k": "stylized", "v": 117}, {"k": "photorealistic with stylized elements", "v": 8}, {"k": "photorealistic with surreal elements", "v": 6}, {"k": "highly stylized", "v": 2}], "character_ratio": 26.7}, "gem_insights": ["render", "detail", "resolution", "depth", "8k", "cinematic", "high-detail", "studio", "high-resolution", "bokeh", "hyper-detailed", "ultra", "4k"], "avoid_appeals": ["elegant and whimsical", "mysterious, whimsical, serene", "playful and whimsical", "whimsical and playful", "innovative and serene", "mysterious and elegant", "mystical", "whimsical and elegant", "modern and abstract", "playful and dynamic", "dramatic", "serene and elegant", "serene and whimsical", "mysterious and whimsical", "mysterious and surreal", "elegant and contemplative", "mysterious and serene", "elegant and futuristic", "dreamlike and mysterious", "cute and whimsical", "whimsical and dreamy", "cute and playful", "mysterious and dramatic", "whimsical and romantic", "whimsical and enchanting", "playful and endearing", "futuristic and innovative", "surreal and serene", "curious and introspective", "whimsical and mysterious", "cute", "serene and industrious", "mysterious and slightly dramatic", "futuristic", "elegant and modern"]}};
-
-(function(){
-  var meta=DA.meta;
-  document.getElementById('comp-meta').textContent='(GPT-4o '+meta.gpt_count+'\uAC1C, Gemini '+meta.gem_count+'\uAC1C, \uACB9\uCE58\uB294 '+meta.overlap+'\uAC1C)';
-  var ag=DA.agreement;
-  var fields=Object.keys(ag).sort(function(a,b){return ag[b].agreement_rate-ag[a].agreement_rate});
-  var perfect=fields.filter(function(f){return ag[f].agreement_rate>=95});
-  var low=fields.filter(function(f){return ag[f].agreement_rate<60});
-  var avgRate=(fields.reduce(function(s,f){return s+ag[f].agreement_rate},0)/fields.length).toFixed(1);
-  var ins='\uC804\uCCB4 \uD3C9\uADE0 \uD569\uC758\uB3C4 <em>'+avgRate+'%</em>. ';
-  if(perfect.length)ins+='<strong>'+perfect.join(', ')+'</strong>\uC740 \uAC70\uC758 \uC644\uBCBD\uD788 \uC77C\uCE58. ';
-  if(low.length)ins+='<strong>'+low.join(', ')+'</strong>\uC740 \uD569\uC758\uB3C4 \uB0AE\uC74C — \uD574\uC11D\uC774 \uC8FC\uAD00\uC801\uC778 \uC18D\uC131.';
-  document.getElementById('agree-insight').innerHTML=ins;
-  new Chart(document.getElementById('chart-agreement'),{type:'bar',data:{labels:fields,datasets:[{label:'Agreement %',data:fields.map(function(f){return ag[f].agreement_rate}),backgroundColor:fields.map(function(f){return ag[f].agreement_rate>=80?GREEN+'88':ag[f].agreement_rate>=60?GOLD+'88':RED+'88'}),borderColor:fields.map(function(f){return ag[f].agreement_rate>=80?GREEN:ag[f].agreement_rate>=60?GOLD:RED}),borderWidth:1}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{min:0,max:100,grid:{color:'#222'}},y:{grid:{display:false}}}}});
-  var rows=fields.map(function(f){var a=ag[f];var mis=a.mismatches.slice(0,2).map(function(m){return '<span style="font-size:0.68rem;color:#888">'+m.id+': G='+m.gpt.substring(0,22)+' / E='+m.gem.substring(0,22)+'</span>'}).join('<br>');return '<tr><td><strong>'+f+'</strong></td><td><span class="rate-bar" style="width:'+Math.min(a.agreement_rate*1.5,150)+'px;background:'+(a.agreement_rate>=80?GREEN:a.agreement_rate>=60?GOLD:RED)+'"></span>'+a.agreement_rate+'%</td><td>'+a.exact_matches+'/'+a.total+'</td><td>'+(mis||'-')+'</td></tr>'}).join('');
-  document.getElementById('agree-table').innerHTML='<thead><tr><th>Field</th><th>Agreement</th><th>Match</th><th>Mismatch</th></tr></thead><tbody>'+rows+'</tbody>';
-})();
-
-(function(){
-  var ft=DA.freetext;var fields=Object.keys(ft);
-  var ratios=fields.map(function(f){return ft[f].length_ratio});
-  var avgR=(ratios.reduce(function(s,r){return s+r},0)/ratios.length).toFixed(1);
-  var md=fields.reduce(function(a,b){return ft[a].length_ratio>ft[b].length_ratio?a:b});
-  document.getElementById('text-insight').innerHTML='Gemini\uB294 \uAC70\uC758 \uBAA8\uB4E0 \uD544\uB4DC\uC5D0\uC11C GPT\uBCF4\uB2E4 <em>'+avgR+'\uBC30</em> \uB354 \uC0C1\uC138\uD558\uAC8C \uC11C\uC220. \uD2B9\uD788 <strong>'+md+'</strong> \uD544\uB4DC\uAC00 '+ft[md].length_ratio+'\uBC30 \uCC28\uC774\uB85C \uAC00\uC7A5 \uD07C.';
-  new Chart(document.getElementById('chart-text-length'),{type:'bar',data:{labels:fields,datasets:[{label:'GPT-4o',data:fields.map(function(f){return ft[f].avg_length_gpt}),backgroundColor:BLUE+'88',borderColor:BLUE,borderWidth:1},{label:'Gemini',data:fields.map(function(f){return ft[f].avg_length_gem}),backgroundColor:PURPLE+'88',borderColor:PURPLE,borderWidth:1}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:12}}},scales:{y:{grid:{color:'#222'}},x:{grid:{display:false}}}}});
-  var rows=fields.map(function(f){var d=ft[f];return '<tr><td><strong>'+f+'</strong></td><td>'+d.avg_length_gpt+'</td><td>'+d.avg_length_gem+'</td><td>'+d.length_ratio+'x</td><td style="font-size:0.68rem;color:#7eb8f7">'+d.gpt_only_keywords.slice(0,5).join(', ')+'</td><td style="font-size:0.68rem;color:#a855f7">'+d.gem_only_keywords.slice(0,5).join(', ')+'</td><td style="font-size:0.68rem;color:#22c55e">'+d.common_keywords.slice(0,5).join(', ')+'</td></tr>'}).join('');
-  document.getElementById('text-table').innerHTML='<thead><tr><th>Field</th><th>GPT</th><th>GEM</th><th>Ratio</th><th style="color:#7eb8f7">GPT Only</th><th style="color:#a855f7">GEM Only</th><th style="color:#22c55e">Common</th></tr></thead><tbody>'+rows+'</tbody>';
-  var kf=['mood','style','lighting','texture'];
-  document.getElementById('keyword-cards').innerHTML=kf.map(function(f){var d=ft[f];return '<div style="background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:12px"><h3 style="margin-top:0">'+f+'</h3><div style="font-size:0.73rem;margin-bottom:6px"><span style="color:#7eb8f7">GPT only:</span> '+d.gpt_only_keywords.join(', ')+'</div><div style="font-size:0.73rem;margin-bottom:6px"><span style="color:#a855f7">GEM only:</span> '+d.gem_only_keywords.join(', ')+'</div><div style="font-size:0.73rem"><span style="color:#22c55e">Common:</span> '+d.common_keywords.join(', ')+'</div></div>'}).join('');
-})();
-
-(function(){
-  var rp=DA.repro;
-  document.getElementById('repro-insight').innerHTML='Reproduction prompt: GPT <em>'+rp.avg_length_gpt+'</em>\uC790 vs Gemini <em>'+rp.avg_length_gem+'</em>\uC790 ('+rp.length_ratio+'\uBC30). \uACF5\uD1B5 <em>'+rp.common_keywords.length+'</em>\uAC1C, GPT\uB9CC <em>'+rp.gpt_only_keywords.length+'</em>\uAC1C, Gemini\uB9CC <em>'+rp.gem_only_keywords.length+'</em>\uAC1C.';
-  function rc(id,d,c){new Chart(document.getElementById(id),{type:'bar',data:{labels:d.map(function(x){return x.k}),datasets:[{data:d.map(function(x){return x.v}),backgroundColor:c+'88',borderColor:c,borderWidth:1}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:'#222'}},y:{grid:{display:false}}}}})}
-  rc('chart-repro-gpt',rp.gpt_top15,BLUE);rc('chart-repro-gem',rp.gem_top15,PURPLE);
-  function st(id,d){document.getElementById(id).innerHTML='<thead><tr><th>Pattern</th><th>#</th></tr></thead><tbody>'+d.map(function(x){return '<tr><td style="font-size:0.73rem">'+x.k+'</td><td>'+x.v+'</td></tr>'}).join('')+'</tbody>'}
-  st('repro-gpt-start',rp.gpt_start_patterns);st('repro-gem-start',rp.gem_start_patterns);
-  var at={};rp.gpt_technique_words.forEach(function(x){at[x.k]=1});rp.gem_technique_words.forEach(function(x){at[x.k]=1});
-  var tl=Object.keys(at);
-  var gt=tl.map(function(t){var f=rp.gpt_technique_words.find(function(x){return x.k===t});return f?f.v:0});
-  var et=tl.map(function(t){var f=rp.gem_technique_words.find(function(x){return x.k===t});return f?f.v:0});
-  var gm=tl.filter(function(t,i){return et[i]>gt[i]*1.2});
-  var gp=tl.filter(function(t,i){return gt[i]>et[i]*1.2});
-  var ti='';if(gm.length)ti+='Gemini\uAC00 \uB354 \uC790\uC8FC: <strong>'+gm.join(', ')+'</strong>. ';
-  if(gp.length)ti+='GPT\uAC00 \uB354 \uC790\uC8FC: <strong>'+gp.join(', ')+'</strong>. ';
-  document.getElementById('technique-insight').innerHTML=ti;
-  new Chart(document.getElementById('chart-technique'),{type:'bar',data:{labels:tl,datasets:[{label:'GPT-4o',data:gt,backgroundColor:BLUE+'88',borderColor:BLUE,borderWidth:1},{label:'Gemini',data:et,backgroundColor:PURPLE+'88',borderColor:PURPLE,borderWidth:1}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:12}}},scales:{y:{grid:{color:'#222'}},x:{grid:{display:false}}}}});
-})();
-
-(function(){
-  var dp=DA.patterns;
-  var ins='';
-  if(dp.mood_keywords.length)ins+='Mood: <strong>'+dp.mood_keywords[0].k+'</strong>('+dp.mood_keywords[0].v+'\uD68C). ';
-  if(dp.material_keywords.length>=3)ins+='\uC18C\uC7AC: <strong>'+dp.material_keywords.slice(0,3).map(function(x){return x.k}).join(', ')+'</strong>. ';
-  if(dp.color_keywords.length>=3)ins+='\uC0C9\uC0C1: <strong>'+dp.color_keywords.slice(0,3).map(function(x){return x.k}).join(', ')+'</strong> TOP3.';
-  document.getElementById('deep-insight').innerHTML=ins;
-  function kc(id,d,c){var t=d.slice(0,15);new Chart(document.getElementById(id),{type:'bar',data:{labels:t.map(function(x){return x.k}),datasets:[{data:t.map(function(x){return x.v}),backgroundColor:c+'88',borderColor:c,borderWidth:1}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:'#222'}},y:{grid:{display:false}}}}})}
-  kc('chart-deep-mood',dp.mood_keywords,GOLD);
-  kc('chart-deep-material',dp.material_keywords,GREEN);
-  kc('chart-deep-color',dp.color_keywords,PURPLE);
-  kc('chart-deep-lighting',dp.lighting_keywords,BLUE);
-  kc('chart-deep-texture',dp.texture_keywords,ORANGE);
-  kc('chart-deep-style',dp.style_keywords,RED);
-})();
-
-(function(){
-  var g=DA.guide;
-  document.getElementById('guide-intro').innerHTML='GPT-4o <em>'+DA.meta.gpt_count+'</em>\uAC1C + Gemini <em>'+DA.meta.gem_count+'</em>\uAC1C \uBE44\uAD50 \uAE30\uBC18 <strong>\uD504\uB86C\uD504\uD2B8 \uAC00\uC774\uB4DC</strong>.';
-  var dh='';
-  if(g.use_keywords){var uk=g.use_keywords;
-    dh+='<div class="insight"><strong>Mood:</strong> '+uk.common_moods.join(', ')+'</div>';
-    if(uk.top_emotional_appeal)dh+='<div class="insight"><strong>Emotional Appeal:</strong> '+uk.top_emotional_appeal.map(function(x){return x.k+'('+x.v+')'}).join(', ')+'</div>';
-    if(uk.color_temperature)dh+='<div class="insight"><strong>Color Temperature:</strong> '+uk.color_temperature.map(function(x){return x.k+'('+x.v+')'}).join(', ')+'</div>';
-    if(uk.contrast)dh+='<div class="insight"><strong>Contrast:</strong> '+uk.contrast.map(function(x){return x.k+'('+x.v+')'}).join(', ')+'</div>';
-    if(uk.render_quality)dh+='<div class="insight"><strong>Render Quality:</strong> '+uk.render_quality.map(function(x){return x.k+'('+x.v+')'}).join(', ')+'</div>';
-    dh+='<div class="insight"><strong>Character:</strong> '+uk.character_ratio+'% — \uCE90\uB9AD\uD130 \uC5C6\uB294 \uC624\uBE0C\uC81C \uC911\uC2EC '+(100-uk.character_ratio).toFixed(1)+'%</div>';
-  }
-  document.getElementById('guide-do').innerHTML=dh;
-  var dn='';
-  if(g.avoid_appeals&&g.avoid_appeals.length)dn+='<div class="insight" style="border-left-color:#ff475766"><strong>\uD68C\uD53C:</strong> '+g.avoid_appeals.join(', ')+' (3% \uBBF8\uB9CC)</div>';
-  dn+='<div class="insight" style="border-left-color:#ff475766">\uCE90\uB9AD\uD130 \uC911\uC2EC\uBCF4\uB2E4 <strong>\uC624\uBE0C\uC81C/\uACF5\uAC04 \uC911\uC2EC</strong> \uAD6C\uB3C4 \uC120\uD638</div>';
-  document.getElementById('guide-dont').innerHTML=dn;
-  var gh='';
-  if(g.gem_insights&&g.gem_insights.length)gh+='<div class="insight" style="border-left-color:#a855f766">Gemini \uACE0\uC720 \uD0A4\uC6CC\uB4DC: <strong>'+g.gem_insights.join(', ')+'</strong></div>';
-  document.getElementById('guide-gem').innerHTML=gh||'<div class="insight">\uB450 \uBAA8\uB378 \uBE44\uC2B7</div>';
-  document.getElementById('guide-dna').innerHTML='\uCDE8\uD5A5 DNA: <strong>3D surreal objects</strong>, <strong>soft diffused lighting</strong>, <strong>pastel + metallic palette</strong>, <strong>whimsical/playful mood</strong>, <strong>no character focus</strong>, <strong>highly detailed textures</strong>.';
-})();
-
-// ═══ DEEP ANALYSIS JS END ═══
-
-// ═══ ENHANCEMENT JS START ═══
-var EN = {"overview": {"total": 3839, "liked": 339, "rate": 8.8, "nano_total": 2984, "nano_liked": 339, "nano_rate": 11.4, "total_cost": 325.53, "cost_per_like": 0.96}, "models": [{"model": "Flash 3.1", "used": 49, "liked": 7, "rate": 14.3, "cost": 3.29, "costPerLike": 0.47}, {"model": "Pro", "used": 2635, "liked": 316, "rate": 12.0, "cost": 276.34, "costPerLike": 0.87}, {"model": "Flash 2.5", "used": 300, "liked": 16, "rate": 5.3, "cost": 11.7, "costPerLike": 0.73}, {"model": "Midjourney v7", "used": 855, "liked": 0, "rate": 0.0, "cost": 34.2, "costPerLike": 0}], "template_groups": {"core": {"used": 195, "liked": 25, "rate": 12.8}, "free": {"used": 240, "liked": 41, "rate": 17.1}, "style": {"used": 2613, "liked": 238, "rate": 9.1}, "mj": {"used": 243, "liked": 0, "rate": 0.0}, "aistudio": {"used": 160, "liked": 14, "rate": 8.8}}, "word1_worst": [{"word": "테라조", "used": 19, "liked": 0, "rate": 0.0}, {"word": "구름", "used": 18, "liked": 0, "rate": 0.0}, {"word": "그리움", "used": 18, "liked": 0, "rate": 0.0}, {"word": "태양", "used": 17, "liked": 0, "rate": 0.0}, {"word": "팽이", "used": 17, "liked": 0, "rate": 0.0}, {"word": "아이", "used": 17, "liked": 0, "rate": 0.0}, {"word": "웃음", "used": 16, "liked": 0, "rate": 0.0}, {"word": "키네틱 아트", "used": 16, "liked": 0, "rate": 0.0}, {"word": "루빅스 큐브", "used": 15, "liked": 0, "rate": 0.0}, {"word": "팝아트", "used": 15, "liked": 0, "rate": 0.0}, {"word": "타이포그래피", "used": 15, "liked": 0, "rate": 0.0}, {"word": "프리즘", "used": 15, "liked": 0, "rate": 0.0}, {"word": "종이접기", "used": 13, "liked": 0, "rate": 0.0}, {"word": "물음표", "used": 13, "liked": 0, "rate": 0.0}, {"word": "글라마라티", "used": 13, "liked": 0, "rate": 0.0}, {"word": "달팽이", "used": 13, "liked": 0, "rate": 0.0}, {"word": "포도", "used": 13, "liked": 0, "rate": 0.0}, {"word": "비디오 테이프 / CD", "used": 12, "liked": 0, "rate": 0.0}, {"word": "선글라스", "used": 11, "liked": 0, "rate": 0.0}, {"word": "기업의 로고", "used": 11, "liked": 0, "rate": 0.0}], "word2_worst": [{"word": "산맥", "used": 15, "liked": 0, "rate": 0.0}, {"word": "연기", "used": 15, "liked": 0, "rate": 0.0}, {"word": "벌집", "used": 15, "liked": 0, "rate": 0.0}, {"word": "심장", "used": 13, "liked": 0, "rate": 0.0}, {"word": "드럼", "used": 13, "liked": 0, "rate": 0.0}, {"word": "슬픔", "used": 13, "liked": 0, "rate": 0.0}, {"word": "달", "used": 13, "liked": 0, "rate": 0.0}, {"word": "회로", "used": 13, "liked": 0, "rate": 0.0}, {"word": "경이", "used": 12, "liked": 0, "rate": 0.0}, {"word": "화산", "used": 12, "liked": 0, "rate": 0.0}, {"word": "도르래", "used": 12, "liked": 0, "rate": 0.0}, {"word": "기어", "used": 11, "liked": 0, "rate": 0.0}, {"word": "블랙홀", "used": 11, "liked": 0, "rate": 0.0}, {"word": "모래시계", "used": 11, "liked": 0, "rate": 0.0}, {"word": "파동", "used": 11, "liked": 0, "rate": 0.0}, {"word": "흉터", "used": 11, "liked": 0, "rate": 0.0}, {"word": "도서관", "used": 11, "liked": 0, "rate": 0.0}, {"word": "리본", "used": 11, "liked": 0, "rate": 0.0}, {"word": "낙엽", "used": 10, "liked": 0, "rate": 0.0}, {"word": "열정", "used": 10, "liked": 0, "rate": 0.0}], "relations": [{"relation": "translated into the language of", "used": 8, "liked": 3, "rate": 37.5}, {"relation": "giving birth to", "used": 7, "liked": 2, "rate": 28.6}, {"relation": "on trial for becoming", "used": 5, "liked": 1, "rate": 20.0}, {"relation": "performing surgery on", "used": 5, "liked": 1, "rate": 20.0}, {"relation": "(free)", "used": 298, "liked": 52, "rate": 17.4}, {"relation": "composting into", "used": 7, "liked": 1, "rate": 14.3}, {"relation": "diagnosed with", "used": 7, "liked": 1, "rate": 14.3}, {"relation": "excavated from beneath", "used": 8, "liked": 1, "rate": 12.5}, {"relation": "dreaming about", "used": 10, "liked": 1, "rate": 10.0}, {"relation": "unknown", "used": 3404, "liked": 273, "rate": 8.0}, {"relation": "allergic to", "used": 7, "liked": 0, "rate": 0.0}, {"relation": "disguised as", "used": 9, "liked": 0, "rate": 0.0}, {"relation": "fossilized inside", "used": 5, "liked": 0, "rate": 0.0}, {"relation": "haunted by the ghost of", "used": 5, "liked": 0, "rate": 0.0}, {"relation": "melting into the shape of", "used": 5, "liked": 0, "rate": 0.0}, {"relation": "orbiting around", "used": 8, "liked": 0, "rate": 0.0}], "fixed_appeals": [{"k": "whimsical", "v": 102}, {"k": "mysterious", "v": 32}, {"k": "elegant", "v": 29}, {"k": "serene", "v": 26}, {"k": "elegant and serene", "v": 16}, {"k": "whimsical and serene", "v": 15}, {"k": "playful", "v": 15}, {"k": "elegant and mysterious", "v": 13}], "gem_patterns": {"mood": [{"k": "serene", "v": 208}, {"k": "whimsical", "v": 127}, {"k": "ethereal", "v": 75}, {"k": "dreamlike", "v": 57}, {"k": "sophisticated", "v": 56}, {"k": "surreal", "v": 56}, {"k": "mysterious", "v": 53}, {"k": "tranquil", "v": 37}, {"k": "magical", "v": 30}, {"k": "futuristic", "v": 23}, {"k": "dreamy", "v": 22}, {"k": "otherworldly", "v": 21}, {"k": "contemplative", "v": 20}, {"k": "playful", "v": 19}, {"k": "sense", "v": 18}], "style": [{"k": "digital", "v": 179}, {"k": "render", "v": 136}, {"k": "art", "v": 127}, {"k": "surreal", "v": 104}, {"k": "surrealist", "v": 98}, {"k": "aesthetic", "v": 68}, {"k": "minimalist", "v": 55}, {"k": "photography", "v": 51}, {"k": "modern", "v": 48}, {"k": "whimsical", "v": 42}, {"k": "high-end", "v": 41}, {"k": "abstract", "v": 40}, {"k": "photorealistic", "v": 36}, {"k": "futuristic", "v": 35}, {"k": "architectural", "v": 35}], "lighting": [{"k": "soft", "v": 335}, {"k": "lighting", "v": 212}, {"k": "highlights", "v": 175}, {"k": "creating", "v": 156}, {"k": "shadows", "v": 156}, {"k": "diffused", "v": 148}, {"k": "light", "v": 140}, {"k": "glow", "v": 129}, {"k": "gentle", "v": 106}, {"k": "warm", "v": 106}, {"k": "surfaces", "v": 98}, {"k": "studio", "v": 86}, {"k": "subtle", "v": 79}, {"k": "internal", "v": 78}, {"k": "bright", "v": 67}], "texture": [{"k": "smooth", "v": 282}, {"k": "soft", "v": 136}, {"k": "polished", "v": 125}, {"k": "matte", "v": 123}, {"k": "glass", "v": 104}, {"k": "rough", "v": 104}, {"k": "surfaces", "v": 88}, {"k": "translucent", "v": 86}, {"k": "glossy", "v": 82}, {"k": "texture", "v": 80}, {"k": "reflective", "v": 80}, {"k": "metal", "v": 78}, {"k": "fabric", "v": 67}, {"k": "porous", "v": 64}, {"k": "stone", "v": 64}], "color": [{"k": "blue", "v": 202}, {"k": "green", "v": 194}, {"k": "soft", "v": 164}, {"k": "pink", "v": 163}, {"k": "lavender", "v": 137}, {"k": "white", "v": 126}, {"k": "orange", "v": 109}, {"k": "silver", "v": 99}, {"k": "purple", "v": 91}, {"k": "deep", "v": 91}, {"k": "yellow", "v": 86}, {"k": "grey", "v": 84}, {"k": "pale", "v": 75}, {"k": "brown", "v": 66}, {"k": "beige", "v": 65}, {"k": "gold", "v": 65}, {"k": "iridescent", "v": 55}, {"k": "warm", "v": 55}, {"k": "charcoal", "v": 52}, {"k": "vibrant", "v": 51}, {"k": "cream", "v": 51}, {"k": "pastel", "v": 48}, {"k": "golden", "v": 48}, {"k": "gray", "v": 47}, {"k": "muted", "v": 46}], "material": [{"k": "metal", "v": 160}, {"k": "glass", "v": 155}, {"k": "fabric", "v": 98}, {"k": "organic", "v": 92}, {"k": "stone", "v": 89}, {"k": "wood", "v": 74}, {"k": "plastic", "v": 69}, {"k": "mixed", "v": 63}, {"k": "water", "v": 58}, {"k": "liquid", "v": 44}, {"k": "concrete", "v": 42}, {"k": "matter", "v": 36}, {"k": "ceramic", "v": 35}, {"k": "resin", "v": 30}, {"k": "moss", "v": 30}]}};
-
-// Overview cards
-(function(){
-  var ov = EN.overview;
-  var cards = [
-    {label:'Total Generated', value:ov.total, color:GOLD},
-    {label:'Liked', value:ov.liked, color:GREEN},
-    {label:'Like Rate', value:ov.nano_rate+'%', color:BLUE},
-    {label:'Total Cost', value:'$'+ov.total_cost, color:ORANGE},
-    {label:'Cost per Like', value:'$'+ov.cost_per_like, color:PURPLE},
-  ];
-  document.getElementById('overview-cards').innerHTML = cards.map(function(c){
-    return '<div style="background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:16px;text-align:center">' +
-      '<div style="font-size:1.5rem;font-weight:700;color:'+c.color+'">'+c.value+'</div>' +
-      '<div style="font-size:0.72rem;color:#888;margin-top:4px">'+c.label+'</div></div>';
-  }).join('');
-
-  // Model chart
-  var ms = EN.models;
-  new Chart(document.getElementById('chart-model'),{
-    type:'bar',
-    data:{
-      labels:ms.map(function(x){return x.model}),
-      datasets:[{
-        label:'Like Rate %',data:ms.map(function(x){return x.rate}),
-        backgroundColor:[GREEN+'88',BLUE+'88',GOLD+'88',RED+'88'],
-        borderColor:[GREEN,BLUE,GOLD,RED],borderWidth:1
-      }]
-    },
-    options:{responsive:true,plugins:{legend:{display:false},
-      tooltip:{callbacks:{afterLabel:function(ctx){var m=ms[ctx.dataIndex];return 'Used: '+m.used+', Liked: '+m.liked+'\nCost: $'+m.cost}}}},
-      scales:{y:{grid:{color:'#222'},title:{display:true,text:'Like Rate %'}},x:{grid:{display:false}}}
-    }
-  });
-
-  // Template group chart
-  var tg = EN.template_groups;
-  var gNames = ['core','free','style','mj','aistudio'];
-  var gLabels = ['Core','Free','Style (legacy)','Midjourney','AI Studio'];
-  var gData = gNames.map(function(g){return tg[g]?tg[g].rate:0});
-  var gUsed = gNames.map(function(g){return tg[g]?tg[g].used:0});
-  var gLiked = gNames.map(function(g){return tg[g]?tg[g].liked:0});
-  new Chart(document.getElementById('chart-tmpl-group'),{
-    type:'bar',
-    data:{
-      labels:gLabels,
-      datasets:[{
-        label:'Like Rate %',data:gData,
-        backgroundColor:[GOLD+'88',GREEN+'88',BLUE+'88',PURPLE+'88',ORANGE+'88'],
-        borderColor:[GOLD,GREEN,BLUE,PURPLE,ORANGE],borderWidth:1
-      }]
-    },
-    options:{responsive:true,plugins:{legend:{display:false},
-      tooltip:{callbacks:{afterLabel:function(ctx){return 'Used: '+gUsed[ctx.dataIndex]+', Liked: '+gLiked[ctx.dataIndex]}}}},
-      scales:{y:{grid:{color:'#222'},title:{display:true,text:'Like Rate %'}},x:{grid:{display:false}}}
-    }
-  });
-})();
-
-// Word Worst Performers
-(function(){
-  var w1w = EN.word1_worst;
-  var w2w = EN.word2_worst;
-  var zeroW1 = w1w.filter(function(x){return x.rate===0}).length;
-  var zeroW2 = w2w.filter(function(x){return x.rate===0}).length;
-  document.getElementById('worst-insight').innerHTML =
-    'Word1에서 <strong>'+zeroW1+'개</strong>, Word2에서 <strong>'+zeroW2+'개</strong> 단어가 5회 이상 사용되었지만 좋아요 0%. ' +
-    '이 단어들을 피하거나 word DB에서 제거하면 전체 좋아요율을 높일 수 있음.';
-
-  function worstChart(id, data){
-    new Chart(document.getElementById(id),{
-      type:'bar',
-      data:{
-        labels:data.map(function(x){return x.word}),
-        datasets:[{
-          label:'Used (0 likes)',data:data.map(function(x){return x.used}),
-          backgroundColor:RED+'66',borderColor:RED,borderWidth:1
-        }]
-      },
-      options:{
-        indexAxis:'y',responsive:true,
-        plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(ctx){var d=data[ctx.dataIndex];return 'Rate: '+d.rate+'%'}}}},
-        scales:{x:{grid:{color:'#222'},title:{display:true,text:'Times Used'}},y:{grid:{display:false}}}
-      }
-    });
-  }
-  worstChart('chart-w1-worst', w1w);
-  worstChart('chart-w2-worst', w2w);
-})();
-
-// Fix keyword-insight (was empty)
-(function(){
-  var ft = DA.freetext;
-  var fields = Object.keys(ft);
-  var allCommon = new Set();
-  var allGptOnly = new Set();
-  var allGemOnly = new Set();
-  fields.forEach(function(f){
-    ft[f].common_keywords.forEach(function(k){allCommon.add(k)});
-    ft[f].gpt_only_keywords.forEach(function(k){allGptOnly.add(k)});
-    ft[f].gem_only_keywords.forEach(function(k){allGemOnly.add(k)});
-  });
-  document.getElementById('keyword-insight').innerHTML =
-    '전체 필드에서 공통 키워드 <em>'+allCommon.size+'</em>개, GPT만 <em>'+allGptOnly.size+'</em>개, Gemini만 <em>'+allGemOnly.size+'</em>개. ' +
-    'Gemini는 <strong>cinematic, ethereal, high-end, hyper-realistic</strong> 같은 품질 수식어를 더 자주 사용. ' +
-    'GPT는 <strong>playful, realistic, contemporary</strong> 같은 감성 수식어 선호.';
-})();
-
-// Fix avoid_appeals in guide section
-(function(){
-  // The avoid_appeals list was incorrectly computed.
-  // All emotional appeals come from LIKED images, so they are all good.
-  // Replace DON'T section with word-based avoidance
-  var w1w = EN.word1_worst.filter(function(x){return x.rate===0});
-  var w2w = EN.word2_worst.filter(function(x){return x.rate===0});
-  var dn = '';
-  if(w1w.length) dn += '<div class="insight" style="border-left-color:#ff475766"><strong>Word1 회피 (0% 좋아요):</strong> ' + w1w.slice(0,10).map(function(x){return x.word+'('+x.used+'회)'}).join(', ') + '</div>';
-  if(w2w.length) dn += '<div class="insight" style="border-left-color:#ff475766"><strong>Word2 회피 (0% 좋아요):</strong> ' + w2w.slice(0,10).map(function(x){return x.word+'('+x.used+'회)'}).join(', ') + '</div>';
-  dn += '<div class="insight" style="border-left-color:#ff475766">Midjourney v7은 좋아요 <strong>0%</strong> — Gemini Pro 기반 생성이 압도적으로 효과적</div>';
-  dn += '<div class="insight" style="border-left-color:#ff475766">캐릭터 중심보다 <strong>오브젝트/공간 중심</strong> 구도 선호</div>';
-  document.getElementById('guide-dont').innerHTML = dn;
-})();
-
-// Gemini patterns comparison (Enhancement C)
-(function(){
-  var gp = EN.gem_patterns;
-  // Cross-model insight
-  var gptMood1 = DA.patterns.mood_keywords[0];
-  var gemMood1 = gp.mood[0];
-  document.getElementById('gem-pattern-insight').innerHTML =
-    'GPT-4o vs Gemini 키워드 비교: Mood 1위가 각각 <strong>'+gptMood1.k+'</strong>('+gptMood1.v+') vs <strong>'+gemMood1.k+'</strong>('+gemMood1.v+'). ' +
-    'Gemini는 더 구체적이고 기술적인 용어를 사용하는 경향. 두 모델 공통 키워드가 진정한 취향 DNA.';
-
-  function kc(id,d,c){var t=d.slice(0,15);new Chart(document.getElementById(id),{type:'bar',data:{labels:t.map(function(x){return x.k}),datasets:[{data:t.map(function(x){return x.v}),backgroundColor:c+'88',borderColor:c,borderWidth:1}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:'#222'}},y:{grid:{display:false}}}}})}
-  kc('chart-gem-mood',gp.mood,'#e91e63');
-  kc('chart-gem-style',gp.style,'#00bcd4');
-  kc('chart-gem-color',gp.color,'#8bc34a');
-  kc('chart-gem-lighting',gp.lighting,'#ff9800');
-  if(gp.texture) kc('chart-gem-texture',gp.texture,'#e91e63');
-  if(gp.material) kc('chart-gem-material',gp.material,'#00bcd4');
-})();
-
-// Relation type analysis
-(function(){
-  var rels = EN.relations;
-  if(!rels || !rels.length) return;
-  // Filter out 'unknown' and show meaningful relations
-  var meaningful = rels.filter(function(x){return x.relation !== 'unknown' && x.used >= 5});
-  var freeRel = rels.find(function(x){return x.relation === '(free)'});
-  var unknownRel = rels.find(function(x){return x.relation === 'unknown'});
-  var best = meaningful.filter(function(x){return x.rate > 0}).sort(function(a,b){return b.rate - a.rate});
-  var worst = meaningful.filter(function(x){return x.rate === 0});
-
-  var ins = '';
-  if(freeRel) ins += 'Free 템플릿 (관계 없음): <em>'+freeRel.rate+'%</em> ('+freeRel.used+'회). ';
-  if(best.length) ins += '최고 관계 표현: <strong>'+best[0].relation+'</strong> (<em>'+best[0].rate+'%</em>, '+best[0].used+'회). ';
-  if(best.length >= 2) ins += '2위: <strong>'+best[1].relation+'</strong> (<em>'+best[1].rate+'%</em>). ';
-  if(worst.length) ins += '0% 관계 표현 <strong>'+worst.length+'</strong>개 — 이 관계 유형은 피하는 것이 좋음. ';
-  ins += '독특하고 서사적인 관계 표현이 더 효과적.';
-  document.getElementById('relation-insight').innerHTML = ins;
-
-  // Chart: only meaningful relations (exclude 'unknown')
-  var chartData = rels.filter(function(x){return x.relation !== 'unknown' && x.used >= 5}).sort(function(a,b){return b.rate - a.rate});
-  new Chart(document.getElementById('chart-relations'),{
-    type:'bar',
-    data:{
-      labels:chartData.map(function(x){return x.relation}),
-      datasets:[{
-        label:'Like Rate %',data:chartData.map(function(x){return x.rate}),
-        backgroundColor:chartData.map(function(x){return x.rate>=20?GREEN+'88':(x.rate>=10?GOLD+'88':RED+'88')}),
-        borderColor:chartData.map(function(x){return x.rate>=20?GREEN:(x.rate>=10?GOLD:RED)}),borderWidth:1
-      }]
-    },
-    options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(ctx){var d=chartData[ctx.dataIndex];return 'Used: '+d.used+', Liked: '+d.liked}}}},scales:{x:{grid:{color:'#222'},title:{display:true,text:'Like Rate %'}},y:{grid:{display:false}}}}
-  });
-})();
-
-// ═══ ENHANCEMENT JS END ═══
-
-
-// ═══ PHASE 2 ENHANCEMENT JS START ═══
-var P2 = {"liked_vs_notliked": {"total_nano": 2984, "liked": 339, "not_liked": 2645, "overall_rate": 11.4, "w1_top": [{"word": "사슴 캐릭터", "total": 6, "liked": 4, "not_liked": 2, "rate": 66.7}, {"word": "토끼 캐릭터", "total": 12, "liked": 6, "not_liked": 6, "rate": 50.0}, {"word": "인형의 집", "total": 9, "liked": 4, "not_liked": 5, "rate": 44.4}, {"word": "정적", "total": 9, "liked": 4, "not_liked": 5, "rate": 44.4}, {"word": "천사 조각상", "total": 14, "liked": 6, "not_liked": 8, "rate": 42.9}, {"word": "Y2K", "total": 8, "liked": 3, "not_liked": 5, "rate": 37.5}, {"word": "바우하우스", "total": 15, "liked": 5, "not_liked": 10, "rate": 33.3}, {"word": "케이크", "total": 12, "liked": 4, "not_liked": 8, "rate": 33.3}, {"word": "눈", "total": 6, "liked": 2, "not_liked": 4, "rate": 33.3}, {"word": "쿨블루", "total": 6, "liked": 2, "not_liked": 4, "rate": 33.3}, {"word": "무중력", "total": 6, "liked": 2, "not_liked": 4, "rate": 33.3}, {"word": "잎사귀", "total": 19, "liked": 6, "not_liked": 13, "rate": 31.6}, {"word": "꽃", "total": 19, "liked": 6, "not_liked": 13, "rate": 31.6}, {"word": "그리드 시스템", "total": 10, "liked": 3, "not_liked": 7, "rate": 30.0}, {"word": "바이오모피즘", "total": 10, "liked": 3, "not_liked": 7, "rate": 30.0}], "w1_bottom": [{"word": "테라조", "total": 19, "liked": 0, "not_liked": 19, "rate": 0.0}, {"word": "구름", "total": 18, "liked": 0, "not_liked": 18, "rate": 0.0}, {"word": "그리움", "total": 18, "liked": 0, "not_liked": 18, "rate": 0.0}, {"word": "태양", "total": 17, "liked": 0, "not_liked": 17, "rate": 0.0}, {"word": "팽이", "total": 17, "liked": 0, "not_liked": 17, "rate": 0.0}, {"word": "아이", "total": 17, "liked": 0, "not_liked": 17, "rate": 0.0}, {"word": "웃음", "total": 16, "liked": 0, "not_liked": 16, "rate": 0.0}, {"word": "키네틱 아트", "total": 16, "liked": 0, "not_liked": 16, "rate": 0.0}, {"word": "루빅스 큐브", "total": 15, "liked": 0, "not_liked": 15, "rate": 0.0}, {"word": "팝아트", "total": 15, "liked": 0, "not_liked": 15, "rate": 0.0}, {"word": "타이포그래피", "total": 15, "liked": 0, "not_liked": 15, "rate": 0.0}, {"word": "프리즘", "total": 15, "liked": 0, "not_liked": 15, "rate": 0.0}, {"word": "종이접기", "total": 13, "liked": 0, "not_liked": 13, "rate": 0.0}, {"word": "물음표", "total": 13, "liked": 0, "not_liked": 13, "rate": 0.0}, {"word": "글라마라티", "total": 13, "liked": 0, "not_liked": 13, "rate": 0.0}], "w2_top": [{"word": "파인애플", "total": 6, "liked": 4, "not_liked": 2, "rate": 66.7}, {"word": "목걸이", "total": 13, "liked": 7, "not_liked": 6, "rate": 53.8}, {"word": "산호", "total": 6, "liked": 3, "not_liked": 3, "rate": 50.0}, {"word": "스텐실", "total": 10, "liked": 4, "not_liked": 6, "rate": 40.0}, {"word": "모래성", "total": 5, "liked": 2, "not_liked": 3, "rate": 40.0}, {"word": "오르골", "total": 5, "liked": 2, "not_liked": 3, "rate": 40.0}, {"word": "비눗방울", "total": 5, "liked": 2, "not_liked": 3, "rate": 40.0}, {"word": "수면 반사", "total": 5, "liked": 2, "not_liked": 3, "rate": 40.0}, {"word": "거울", "total": 5, "liked": 2, "not_liked": 3, "rate": 40.0}, {"word": "노끈", "total": 5, "liked": 2, "not_liked": 3, "rate": 40.0}, {"word": "고양이", "total": 8, "liked": 3, "not_liked": 5, "rate": 37.5}, {"word": "갑옷", "total": 8, "liked": 3, "not_liked": 5, "rate": 37.5}, {"word": "이끼", "total": 8, "liked": 3, "not_liked": 5, "rate": 37.5}, {"word": "나선", "total": 8, "liked": 3, "not_liked": 5, "rate": 37.5}, {"word": "척추", "total": 9, "liked": 3, "not_liked": 6, "rate": 33.3}], "w2_bottom": [{"word": "산맥", "total": 15, "liked": 0, "not_liked": 15, "rate": 0.0}, {"word": "연기", "total": 15, "liked": 0, "not_liked": 15, "rate": 0.0}, {"word": "벌집", "total": 15, "liked": 0, "not_liked": 15, "rate": 0.0}, {"word": "심장", "total": 13, "liked": 0, "not_liked": 13, "rate": 0.0}, {"word": "드럼", "total": 13, "liked": 0, "not_liked": 13, "rate": 0.0}, {"word": "슬픔", "total": 13, "liked": 0, "not_liked": 13, "rate": 0.0}, {"word": "달", "total": 13, "liked": 0, "not_liked": 13, "rate": 0.0}, {"word": "회로", "total": 13, "liked": 0, "not_liked": 13, "rate": 0.0}, {"word": "경이", "total": 12, "liked": 0, "not_liked": 12, "rate": 0.0}, {"word": "화산", "total": 12, "liked": 0, "not_liked": 12, "rate": 0.0}, {"word": "도르래", "total": 12, "liked": 0, "not_liked": 12, "rate": 0.0}, {"word": "기어", "total": 11, "liked": 0, "not_liked": 11, "rate": 0.0}, {"word": "블랙홀", "total": 11, "liked": 0, "not_liked": 11, "rate": 0.0}, {"word": "모래시계", "total": 11, "liked": 0, "not_liked": 11, "rate": 0.0}, {"word": "파동", "total": 11, "liked": 0, "not_liked": 11, "rate": 0.0}], "cat_comparison": [{"cat": "자연/생물", "total": 181, "liked": 40, "not_liked": 141, "rate": 22.1}, {"cat": "감정/추상", "total": 296, "liked": 50, "not_liked": 246, "rate": 16.9}, {"cat": "오브젝트", "total": 39, "liked": 6, "not_liked": 33, "rate": 15.4}, {"cat": "형용사/수식어", "total": 104, "liked": 14, "not_liked": 90, "rate": 13.5}, {"cat": "음식", "total": 37, "liked": 5, "not_liked": 32, "rate": 13.5}, {"cat": "트렌드", "total": 105, "liked": 13, "not_liked": 92, "rate": 12.4}, {"cat": "디자인/아트 소재", "total": 55, "liked": 6, "not_liked": 49, "rate": 10.9}, {"cat": "장난감/게임", "total": 47, "liked": 5, "not_liked": 42, "rate": 10.6}, {"cat": "모션그래픽 소재", "total": 51, "liked": 4, "not_liked": 47, "rate": 7.8}], "tmpl_comparison": [{"tmpl": "core_01", "total": 16, "liked": 5, "not_liked": 11, "rate": 31.2}, {"tmpl": "free_08", "total": 30, "liked": 7, "not_liked": 23, "rate": 23.3}, {"tmpl": "core_04", "total": 22, "liked": 5, "not_liked": 17, "rate": 22.7}, {"tmpl": "free_01", "total": 22, "liked": 5, "not_liked": 17, "rate": 22.7}, {"tmpl": "free_02", "total": 30, "liked": 6, "not_liked": 24, "rate": 20.0}, {"tmpl": "free_03", "total": 35, "liked": 6, "not_liked": 29, "rate": 17.1}, {"tmpl": "core_06", "total": 19, "liked": 3, "not_liked": 16, "rate": 15.8}, {"tmpl": "core_07", "total": 32, "liked": 5, "not_liked": 27, "rate": 15.6}, {"tmpl": "free_06", "total": 32, "liked": 5, "not_liked": 27, "rate": 15.6}, {"tmpl": "style_01", "total": 205, "liked": 30, "not_liked": 175, "rate": 14.6}, {"tmpl": "style_09", "total": 207, "liked": 30, "not_liked": 177, "rate": 14.5}, {"tmpl": "free_05", "total": 28, "liked": 4, "not_liked": 24, "rate": 14.3}, {"tmpl": "style_03", "total": 232, "liked": 31, "not_liked": 201, "rate": 13.4}, {"tmpl": "style_02", "total": 216, "liked": 29, "not_liked": 187, "rate": 13.4}, {"tmpl": "free_04", "total": 30, "liked": 4, "not_liked": 26, "rate": 13.3}]}, "combo_patterns": {"top_combos": [{"w1": "수박", "w2": "산", "total": 2, "liked": 2, "rate": 100.0}, {"w1": "스티커", "w2": "산호", "total": 2, "liked": 1, "rate": 50.0}, {"w1": "풍선", "w2": "톱니바퀴", "total": 2, "liked": 1, "rate": 50.0}, {"w1": "꽃", "w2": "빙수", "total": 2, "liked": 1, "rate": 50.0}, {"w1": "오로라", "w2": "엔트로피", "total": 2, "liked": 1, "rate": 50.0}, {"w1": "고프코어", "w2": "닻", "total": 2, "liked": 1, "rate": 50.0}, {"w1": "고독", "w2": "소멸", "total": 2, "liked": 1, "rate": 50.0}, {"w1": "바우하우스", "w2": "고양이", "total": 2, "liked": 1, "rate": 50.0}, {"w1": "정적", "w2": "결빙", "total": 2, "liked": 1, "rate": 50.0}, {"w1": "피크닉", "w2": "공간", "total": 2, "liked": 1, "rate": 50.0}, {"w1": "주사위", "w2": "포탈", "total": 3, "liked": 0, "rate": 0.0}, {"w1": "하트", "w2": "심장", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "날개", "w2": "화산", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "날개", "w2": "별", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "하트", "w2": "파동", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "사람들의 욕구", "w2": "편지", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "자", "w2": "기쁨", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "명찰", "w2": "증기", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "비디오 테이프 / CD", "w2": "도서관", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "날개", "w2": "종이꽃", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "팝아트", "w2": "황홀", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "깃털", "w2": "선풍기", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "우산", "w2": "렌즈", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "향", "w2": "모래", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "게임기", "w2": "씨방", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "곰돌이 캐릭터", "w2": "투명한", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "소녀", "w2": "모래시계", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "달걀", "w2": "타로카드", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "다이아몬드", "w2": "불가사리", "total": 2, "liked": 0, "rate": 0.0}, {"w1": "디지털 크래프트", "w2": "흉터", "total": 2, "liked": 0, "rate": 0.0}], "zero_combos": [{"w1": "주사위", "w2": "포탈", "total": 3, "liked": 0, "rate": 0.0}], "total_unique_combos": 2937, "combos_with_likes": 338}, "clusters": {"gpt_clusters": [{"render": "stylized", "temp": "warm", "emotion": "whimsical", "count": 59, "pct": 17.3}, {"render": "photorealistic", "temp": "warm", "emotion": "elegant", "count": 33, "pct": 9.7}, {"render": "photorealistic", "temp": "warm", "emotion": "whimsical", "count": 33, "pct": 9.7}, {"render": "stylized", "temp": "cool", "emotion": "whimsical", "count": 26, "pct": 7.6}, {"render": "photorealistic", "temp": "cool", "emotion": "elegant", "count": 22, "pct": 6.5}, {"render": "photorealistic", "temp": "cool", "emotion": "whimsical", "count": 20, "pct": 5.9}, {"render": "photorealistic", "temp": "neutral", "emotion": "whimsical", "count": 17, "pct": 5.0}, {"render": "photorealistic", "temp": "neutral", "emotion": "elegant", "count": 16, "pct": 4.7}, {"render": "photorealistic", "temp": "warm", "emotion": "serene", "count": 16, "pct": 4.7}, {"render": "photorealistic", "temp": "cool", "emotion": "mysterious", "count": 15, "pct": 4.4}, {"render": "photorealistic", "temp": "warm", "emotion": "mysterious", "count": 10, "pct": 2.9}, {"render": "photorealistic", "temp": "cool", "emotion": "serene", "count": 9, "pct": 2.6}, {"render": "photorealistic", "temp": "neutral", "emotion": "mysterious", "count": 8, "pct": 2.3}, {"render": "photorealistic", "temp": "warm", "emotion": "playful", "count": 7, "pct": 2.1}, {"render": "stylized", "temp": "cool", "emotion": "mysterious", "count": 7, "pct": 2.1}], "gem_clusters": [{"render": "photorealistic", "temp": "warm", "emotion": "whimsical", "count": 77, "pct": 22.7}, {"render": "photorealistic", "temp": "neutral", "emotion": "whimsical", "count": 39, "pct": 11.5}, {"render": "photorealistic", "temp": "warm", "emotion": "serene", "count": 33, "pct": 9.7}, {"render": "photorealistic", "temp": "warm", "emotion": "elegant", "count": 23, "pct": 6.8}, {"render": "photorealistic", "temp": "warm", "emotion": "mysterious", "count": 21, "pct": 6.2}, {"render": "stylized", "temp": "warm", "emotion": "whimsical", "count": 21, "pct": 6.2}, {"render": "photorealistic", "temp": "neutral", "emotion": "elegant", "count": 20, "pct": 5.9}, {"render": "photorealistic", "temp": "cool", "emotion": "serene", "count": 17, "pct": 5.0}, {"render": "photorealistic", "temp": "cool", "emotion": "whimsical", "count": 14, "pct": 4.1}, {"render": "photorealistic", "temp": "cool", "emotion": "mysterious", "count": 14, "pct": 4.1}, {"render": "photorealistic", "temp": "cool", "emotion": "elegant", "count": 13, "pct": 3.8}, {"render": "photorealistic", "temp": "neutral", "emotion": "mysterious", "count": 11, "pct": 3.2}, {"render": "photorealistic", "temp": "neutral", "emotion": "serene", "count": 8, "pct": 2.4}, {"render": "stylized", "temp": "neutral", "emotion": "whimsical", "count": 6, "pct": 1.8}, {"render": "stylized", "temp": "cool", "emotion": "whimsical", "count": 4, "pct": 1.2}], "gpt_total": 341, "gem_total": 339}, "design_extra": {"dim_3d": 327, "dim_total": 341, "dof_deep": 254, "dof_shallow": 78, "nature_count": 201, "arch_count": 105, "char_count": 91, "nature_pct": 58.9, "char_pct": 26.7}};
-
-// Liked vs Not-Liked
-(function(){
-  var lvn = P2.liked_vs_notliked;
-  document.getElementById('lvn-insight').innerHTML =
-    'Nano-banana 전체 <em>'+lvn.total_nano+'</em>개 중 <strong>'+lvn.liked+'</strong>개 좋아요 (<em>'+lvn.overall_rate+'%</em>). ' +
-    '좋아요율 0%인 Word1이 <strong>'+lvn.w1_bottom.length+'</strong>개, Word2가 <strong>'+lvn.w2_bottom.length+'</strong>개 — ' +
-    '이 단어들을 제거하면 효율 향상 가능.';
-
-  // Category chart
-  var cats = lvn.cat_comparison;
-  new Chart(document.getElementById('chart-lvn-cat'),{
-    type:'bar',
-    data:{
-      labels:cats.map(function(x){return x.cat}),
-      datasets:[
-        {label:'Liked',data:cats.map(function(x){return x.liked}),backgroundColor:GREEN+'88',borderColor:GREEN,borderWidth:1},
-        {label:'Not Liked',data:cats.map(function(x){return x.not_liked}),backgroundColor:RED+'44',borderColor:RED,borderWidth:1}
-      ]
-    },
-    options:{responsive:true,plugins:{legend:{labels:{boxWidth:12}},tooltip:{callbacks:{afterLabel:function(ctx){var c=cats[ctx.dataIndex];return 'Rate: '+c.rate+'%'}}}},scales:{y:{stacked:true,grid:{color:'#222'}},x:{stacked:true,grid:{display:false}}}}
-  });
-
-  // Template chart
-  var tmpls = lvn.tmpl_comparison;
-  new Chart(document.getElementById('chart-lvn-tmpl'),{
-    type:'bar',
-    data:{
-      labels:tmpls.map(function(x){return x.tmpl}),
-      datasets:[{
-        label:'Like Rate %',data:tmpls.map(function(x){return x.rate}),
-        backgroundColor:tmpls.map(function(x){return x.rate>=15?GREEN+'88':(x.rate>=10?GOLD+'88':RED+'88')}),
-        borderColor:tmpls.map(function(x){return x.rate>=15?GREEN:(x.rate>=10?GOLD:RED)}),borderWidth:1
-      }]
-    },
-    options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(ctx){var t=tmpls[ctx.dataIndex];return 'Used: '+t.total+', Liked: '+t.liked}}}},scales:{x:{grid:{color:'#222'}},y:{grid:{display:false}}}}
-  });
-
-  // W1 top/bottom charts
-  function lvnChart(id,data,color){
-    new Chart(document.getElementById(id),{
-      type:'bar',
-      data:{
-        labels:data.map(function(x){return x.word}),
-        datasets:[{
-          label:'Like Rate %',data:data.map(function(x){return x.rate}),
-          backgroundColor:color+'88',borderColor:color,borderWidth:1
-        }]
-      },
-      options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(ctx){var d=data[ctx.dataIndex];return 'Total: '+d.total+', Liked: '+d.liked}}}},scales:{x:{grid:{color:'#222'},title:{display:true,text:'Like Rate %'}},y:{grid:{display:false}}}}
-    });
-  }
-  lvnChart('chart-lvn-w1top',lvn.w1_top,GREEN);
-  lvnChart('chart-lvn-w1bot',lvn.w1_bottom,RED);
-  lvnChart('chart-lvn-w2top',lvn.w2_top,GREEN);
-  lvnChart('chart-lvn-w2bot',lvn.w2_bottom,RED);
-})();
-
-// Word Combination Patterns
-(function(){
-  var cp = P2.combo_patterns;
-  document.getElementById('combo-insight2').innerHTML =
-    '총 <em>'+cp.total_unique_combos+'</em>개 고유 조합 중 <strong>'+cp.combos_with_likes+'</strong>개만 좋아요 획득 ('+Math.round(cp.combos_with_likes/cp.total_unique_combos*100)+'%). ' +
-    '대부분의 조합은 1회 사용 — 반복 사용되면서 좋아요도 받은 조합이 진정한 "황금 조합".';
-
-  var top = cp.top_combos.filter(function(x){return x.rate > 0});
-  new Chart(document.getElementById('chart-combo-top'),{
-    type:'bar',
-    data:{
-      labels:top.map(function(x){return x.w1+' × '+x.w2}),
-      datasets:[{
-        label:'Like Rate %',data:top.map(function(x){return x.rate}),
-        backgroundColor:top.map(function(x){return x.rate>=50?GREEN+'88':(x.rate>=25?GOLD+'88':BLUE+'88')}),
-        borderColor:top.map(function(x){return x.rate>=50?GREEN:(x.rate>=25?GOLD:BLUE)}),borderWidth:1
-      }]
-    },
-    options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(ctx){var d=top[ctx.dataIndex];return 'Used: '+d.total+', Liked: '+d.liked}}}},scales:{x:{grid:{color:'#222'},title:{display:true,text:'Like Rate %'}},y:{grid:{display:false},ticks:{font:{size:10}}}}}
-  });
-
-  // Zero-rate combos table
-  var zero = cp.zero_combos;
-  if(zero.length){
-    var rows = zero.map(function(x,i){
-      return '<tr><td>'+(i+1)+'</td><td>'+x.w1+'</td><td>'+x.w2+'</td><td>'+x.total+'</td><td style="color:#ff4757">0%</td></tr>';
-    }).join('');
-    document.getElementById('combo-zero-table').innerHTML =
-      '<thead><tr><th>#</th><th>Word1</th><th>Word2</th><th>Used</th><th>Rate</th></tr></thead><tbody>'+rows+'</tbody>';
-  }
-})();
-
-// Clustering
-(function(){
-  var cl = P2.clusters;
-  var gTop = cl.gpt_clusters[0];
-  var gemTop = cl.gem_clusters[0];
-  document.getElementById('cluster-insight').innerHTML =
-    '좋아요 이미지를 <strong>Render × Color Temp × Emotion</strong> 3축으로 클러스터링. ' +
-    'GPT-4o 기준 최대 클러스터: <strong>'+gTop.render+' / '+gTop.temp+' / '+gTop.emotion+'</strong> ('+gTop.count+'개, '+gTop.pct+'%). ' +
-    'Gemini 기준: <strong>'+gemTop.render+' / '+gemTop.temp+' / '+gemTop.emotion+'</strong> ('+gemTop.count+'개, '+gemTop.pct+'%).';
-
-  function clusterChart(id,data,colors){
-    var labels = data.map(function(x){return x.render+'/'+x.temp+'/'+x.emotion});
-    new Chart(document.getElementById(id),{
-      type:'bar',
-      data:{
-        labels:labels,
-        datasets:[{
-          label:'Count',data:data.map(function(x){return x.count}),
-          backgroundColor:data.map(function(x,i){return colors[i%colors.length]+'88'}),
-          borderColor:data.map(function(x,i){return colors[i%colors.length]}),borderWidth:1
-        }]
-      },
-      options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(ctx){return data[ctx.dataIndex].pct+'% of total'}}}},scales:{x:{grid:{color:'#222'}},y:{grid:{display:false},ticks:{font:{size:9}}}}}
-    });
-  }
-  clusterChart('chart-cluster-gpt',cl.gpt_clusters.slice(0,12),[GOLD,BLUE,GREEN,PURPLE,RED,ORANGE,'#00bcd4','#e91e63','#8bc34a','#ff9800','#9c27b0','#03a9f4']);
-  clusterChart('chart-cluster-gem',cl.gem_clusters.slice(0,12),[PURPLE,GREEN,BLUE,GOLD,RED,ORANGE,'#00bcd4','#e91e63','#8bc34a','#ff9800','#9c27b0','#03a9f4']);
-
-  // Cluster comparison table
-  var allKeys = {};
-  cl.gpt_clusters.forEach(function(x){allKeys[x.render+'/'+x.temp+'/'+x.emotion]=true});
-  cl.gem_clusters.forEach(function(x){allKeys[x.render+'/'+x.temp+'/'+x.emotion]=true});
-  var keys = Object.keys(allKeys).sort();
-  var rows = keys.slice(0,20).map(function(k){
-    var gpt = cl.gpt_clusters.find(function(x){return x.render+'/'+x.temp+'/'+x.emotion===k});
-    var gem = cl.gem_clusters.find(function(x){return x.render+'/'+x.temp+'/'+x.emotion===k});
-    var gC = gpt?gpt.count:0;
-    var eC = gem?gem.count:0;
-    var diff = gC-eC;
-    var diffStr = diff>0?'+'+diff:(diff<0?''+diff:'=');
-    return '<tr><td style="font-size:0.73rem">'+k+'</td><td>'+gC+'</td><td>'+eC+'</td><td style="color:'+(diff>2?GREEN:(diff<-2?RED:'#888'))+'">'+diffStr+'</td></tr>';
-  }).join('');
-  document.getElementById('cluster-table').innerHTML =
-    '<thead><tr><th>Cluster</th><th>GPT</th><th>Gemini</th><th>Diff</th></tr></thead><tbody>'+rows+'</tbody>';
-})();
-
-// Improved Design Patterns insight
-(function(){
-  var de = P2.design_extra;
-  var di = D.design.total + '개 좋아요 이미지 GPT-4o 분석: ';
-  di += '<strong>3D</strong> '+Math.round(de.dim_3d/de.dim_total*100)+'% 압도적 — 2D는 거의 선호하지 않음. ';
-  di += '자연 요소 <strong>'+de.nature_pct+'%</strong>, 건축 요소 <strong>'+Math.round(de.arch_count/de.dim_total*100)+'%</strong>, 캐릭터 <strong>'+de.char_pct+'%</strong>. ';
-  di += 'DOF: deep focus <strong>'+de.dof_deep+'</strong>개 vs shallow bokeh <strong>'+de.dof_shallow+'</strong>개 — 전체가 또렷한 deep focus 선호. ';
-  di += '결론: <strong>3D 포토리얼 + soft lighting + 자연 요소 포함 + deep focus</strong>가 핵심 레시피.';
-  document.getElementById('design-insight').innerHTML = di;
-})();
-
-// ═══ PHASE 2 ENHANCEMENT JS END ═══
-
 </script>
 </body>
 </html>
