@@ -19,7 +19,7 @@ h3{color:#ccc;font-size:0.95rem;margin:12px 0 8px}
 .chart-box{background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:16px;position:relative}
 .chart-box.full{grid-column:1/-1}
 .chart-box h3{margin-top:0}
-canvas{max-height:600px}
+canvas{max-height:1200px}
 table{width:100%;border-collapse:collapse;font-size:0.82rem;margin-top:8px}
 th,td{padding:6px 10px;border-bottom:1px solid #222;text-align:left}
 th{color:#f0c040;font-size:0.72rem;text-transform:uppercase}
@@ -73,11 +73,11 @@ tr:hover td{background:#1a1a1a}
   <h2>Word Analysis</h2>
   <p class="insight" id="word-insight"></p>
   <div class="chart-row">
-    <div class="chart-box">
+    <div class="chart-box" style="min-height:750px">
       <h3>Word1 Top 30 (좋아요율)</h3>
       <canvas id="chart-w1"></canvas>
     </div>
-    <div class="chart-box">
+    <div class="chart-box" style="min-height:750px">
       <h3>Word2 Top 30 (좋아요율)</h3>
       <canvas id="chart-w2"></canvas>
     </div>
@@ -87,9 +87,6 @@ tr:hover td{background:#1a1a1a}
   <div class="chart-box full">
     <canvas id="chart-cat"></canvas>
   </div>
-  <h3>Best Combinations</h3>
-  <p class="insight" id="combo-insight"></p>
-  <table id="combo-table"></table>
 </div>
 
 
@@ -136,6 +133,15 @@ tr:hover td{background:#1a1a1a}
 </div>
 
 
+
+<!-- Section: Relation Type Analysis -->
+<div class="section" id="s-relations">
+  <h2>관계 표현 (Relation) 성과 분석</h2>
+  <p class="insight" id="relation-insight"></p>
+  <div class="chart-row">
+    <div class="chart-box full" style="min-height:400px"><h3>Relation별 좋아요율</h3><canvas id="chart-relations"></canvas></div>
+  </div>
+</div>
 
 <!-- Section: Liked vs Not-Liked Comparison -->
 <div class="section" id="s-lvn">
@@ -238,6 +244,10 @@ tr:hover td{background:#1a1a1a}
   <div class="chart-row">
     <div class="chart-box"><h3>Gemini Color Palette Top 25</h3><canvas id="chart-gem-color"></canvas></div>
     <div class="chart-box"><h3>Gemini Lighting 키워드</h3><canvas id="chart-gem-lighting"></canvas></div>
+  </div>
+  <div class="chart-row">
+    <div class="chart-box"><h3>Gemini Texture 키워드</h3><canvas id="chart-gem-texture"></canvas></div>
+    <div class="chart-box"><h3>Gemini Material 키워드</h3><canvas id="chart-gem-material"></canvas></div>
   </div>
 </div>
 
@@ -370,29 +380,6 @@ wordChart('chart-w2', D.word2Top);
   });
 })();
 
-// combo table + insight
-(function() {
-  const c = D.comboTop;
-  if (c.length >= 2) {
-    let ci = '최고 조합: <strong>' + c[0].w1 + ' x ' + c[0].w2 + '</strong> (<em>' + c[0].rate + '%</em>). ';
-    const concrete = c.filter(x => x.w2.length <= 4);
-    const abstract = c.filter(x => x.w2.length > 4);
-    if (concrete.length && abstract.length) {
-      const cAvg = (concrete.reduce((s,x)=>s+x.rate,0)/concrete.length).toFixed(1);
-      const aAvg = (abstract.reduce((s,x)=>s+x.rate,0)/abstract.length).toFixed(1);
-      ci += '짧고 구체적인 Word2(1-2글자)가 평균 <em>' + cAvg + '%</em>, 긴 Word2가 <em>' + aAvg + '%</em>. ';
-    }
-    ci += '구체적 사물끼리의 대비 조합이 가장 효과적.';
-    document.getElementById('combo-insight').innerHTML = ci;
-  }
-  const rows = c.map((x, i) =>
-    '<tr><td style="color:' + (i < 3 ? GOLD : '#ccc') + ';font-weight:' + (i < 3 ? '700' : '400') + '">#' + (i+1) + '</td>' +
-    '<td>' + x.w1 + '</td><td>' + x.w2 + '</td><td>' + x.used + '</td><td>' + x.liked + '</td>' +
-    '<td><span class="rate-bar" style="width:' + Math.min(x.rate * 2, 100) + 'px"></span>' + x.rate + '%</td></tr>'
-  ).join('');
-  document.getElementById('combo-table').innerHTML =
-    '<thead><tr><th>#</th><th>Word1</th><th>Word2</th><th>Used</th><th>Liked</th><th>Rate</th></tr></thead><tbody>' + rows + '</tbody>';
-})();
 
 // ── Section 2: Word Correlation ──
 (function() {
@@ -727,6 +714,43 @@ var EN = {"overview": {"total": 3839, "liked": 339, "rate": 8.8, "nano_total": 2
   kc('chart-gem-style',gp.style,'#00bcd4');
   kc('chart-gem-color',gp.color,'#8bc34a');
   kc('chart-gem-lighting',gp.lighting,'#ff9800');
+  if(gp.texture) kc('chart-gem-texture',gp.texture,'#e91e63');
+  if(gp.material) kc('chart-gem-material',gp.material,'#00bcd4');
+})();
+
+// Relation type analysis
+(function(){
+  var rels = EN.relations;
+  if(!rels || !rels.length) return;
+  // Filter out 'unknown' and show meaningful relations
+  var meaningful = rels.filter(function(x){return x.relation !== 'unknown' && x.used >= 5});
+  var freeRel = rels.find(function(x){return x.relation === '(free)'});
+  var unknownRel = rels.find(function(x){return x.relation === 'unknown'});
+  var best = meaningful.filter(function(x){return x.rate > 0}).sort(function(a,b){return b.rate - a.rate});
+  var worst = meaningful.filter(function(x){return x.rate === 0});
+
+  var ins = '';
+  if(freeRel) ins += 'Free 템플릿 (관계 없음): <em>'+freeRel.rate+'%</em> ('+freeRel.used+'회). ';
+  if(best.length) ins += '최고 관계 표현: <strong>'+best[0].relation+'</strong> (<em>'+best[0].rate+'%</em>, '+best[0].used+'회). ';
+  if(best.length >= 2) ins += '2위: <strong>'+best[1].relation+'</strong> (<em>'+best[1].rate+'%</em>). ';
+  if(worst.length) ins += '0% 관계 표현 <strong>'+worst.length+'</strong>개 — 이 관계 유형은 피하는 것이 좋음. ';
+  ins += '독특하고 서사적인 관계 표현이 더 효과적.';
+  document.getElementById('relation-insight').innerHTML = ins;
+
+  // Chart: only meaningful relations (exclude 'unknown')
+  var chartData = rels.filter(function(x){return x.relation !== 'unknown' && x.used >= 5}).sort(function(a,b){return b.rate - a.rate});
+  new Chart(document.getElementById('chart-relations'),{
+    type:'bar',
+    data:{
+      labels:chartData.map(function(x){return x.relation}),
+      datasets:[{
+        label:'Like Rate %',data:chartData.map(function(x){return x.rate}),
+        backgroundColor:chartData.map(function(x){return x.rate>=20?GREEN+'88':(x.rate>=10?GOLD+'88':RED+'88')}),
+        borderColor:chartData.map(function(x){return x.rate>=20?GREEN:(x.rate>=10?GOLD:RED)}),borderWidth:1
+      }]
+    },
+    options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(ctx){var d=chartData[ctx.dataIndex];return 'Used: '+d.used+', Liked: '+d.liked}}}},scales:{x:{grid:{color:'#222'},title:{display:true,text:'Like Rate %'}},y:{grid:{display:false}}}}
+  });
 })();
 
 // ═══ ENHANCEMENT JS END ═══
@@ -799,7 +823,7 @@ var P2 = {"liked_vs_notliked": {"total_nano": 2984, "liked": 339, "not_liked": 2
     '총 <em>'+cp.total_unique_combos+'</em>개 고유 조합 중 <strong>'+cp.combos_with_likes+'</strong>개만 좋아요 획득 ('+Math.round(cp.combos_with_likes/cp.total_unique_combos*100)+'%). ' +
     '대부분의 조합은 1회 사용 — 반복 사용되면서 좋아요도 받은 조합이 진정한 "황금 조합".';
 
-  var top = cp.top_combos;
+  var top = cp.top_combos.filter(function(x){return x.rate > 0});
   new Chart(document.getElementById('chart-combo-top'),{
     type:'bar',
     data:{
